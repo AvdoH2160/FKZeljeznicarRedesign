@@ -1,0 +1,28 @@
+#header-container.collapsed {
+    display:flex;
+    flex-direction: row;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    height: 100px;
+    align-self: center;
+    z-index: 1000;
+    transition: height 0.2s ease;
+    box-shadow: 5px 5px 10px gray;
+}
+
+#logo-option {
+    align-content: center;
+    margin-left: 2.5%;
+}
+
+#news-option {
+    color: white;
+    align-content: center;
+}
+
+
+
