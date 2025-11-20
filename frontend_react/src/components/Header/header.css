@@ -1,4 +1,13 @@
-#header-container.collapsed {
+@font-face {
+    font-family: "Montserrat" !important;
+    src:url('../../assets/fonts/Montserrat-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+#header-container {
+    font-family: "Montserrat", sans-serif;
     display:flex;
     flex-direction: row;
     position: fixed;
@@ -6,23 +15,41 @@
     left:0;
     width: 100%;
     background-color: black;
-    text-align: center;
     height: 100px;
-    align-self: center;
+    align-items: center;
     z-index: 1000;
     transition: height 0.2s ease;
     box-shadow: 5px 5px 10px gray;
 }
 
 #logo-option {
-    align-content: center;
-    margin-left: 2.5%;
+    margin-left: 50px;
 }
 
-#news-option {
+.header-options {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
     color: white;
-    align-content: center;
 }
 
+.header-option {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.arrow-down {
+    margin-left: 5px;
+}
+
+.user-icon {
+    margin-right: 5px;
+    height: 20px;
+}
+
+#sign-in-text {
+    color: white;
+    margin-right: 50px;
+}
 
 
