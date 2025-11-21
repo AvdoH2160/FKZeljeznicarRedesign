@@ -7,39 +7,50 @@ import "./header.css"
 const Header = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const clickOnOptions = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
-    <header id="header-container" style={{height:isExpanded ? "500px" : "100px"}}> 
-        <div id="logo-option">
-            <img src={Zeljo} alt="logo"></img>
+    <header id="header-container" style={{height:isExpanded ? "500px" : "100px"}}>
+      <div id="header-fixed"> 
+          <div id="logo-option">
+              <img src={Zeljo} alt="logo"></img>
+          </div>
+          <div className="header-options">
+            <div id="news-option" className="header-option" onClick={clickOnOptions}>
+              Novosti
+              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+            </div>
+            <div id="shop-option" className="header-option">
+              Shop
+              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+            </div>
+            <div id="tickets-option" className="header-option">
+              Ulaznice
+              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+            </div>
+            <div id="member-option" className="header-option">
+              Članstvo
+              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+            </div>
+            <div id="about-option" className="header-option">
+              O nama
+              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+            </div>
+          </div>
+          <div id="user-option">
+            <img src={User} alt="" className='user-icon'></img>
+          </div>
+          <div id="sign-in-text">
+            Prijavi se
+          </div>
+      </div>
+      {isExpanded && (
+        <div className="dropdown-container">
+          
         </div>
-        <div className="header-options">
-          <div id="news-option" className="header-option">
-            Novosti
-            <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-          </div>
-          <div id="shop-option" className="header-option">
-            Shop
-            <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-          </div>
-          <div id="tickets-option" className="header-option">
-            Ulaznice
-            <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-          </div>
-          <div id="member-option" className="header-option">
-            Članstvo
-            <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-          </div>
-          <div id="about-option" className="header-option">
-            O nama
-            <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-          </div>
-        </div>
-        <div id="user-option">
-          <img src={User} alt="" className='user-icon'></img>
-        </div>
-        <div id="sign-in-text">
-          Prijavi se
-        </div>
+      )}
     </header>
   )
 }

@@ -1,25 +1,25 @@
-@font-face {
-    font-family: "Montserrat" !important;
-    src:url('../../assets/fonts/Montserrat-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
 #header-container {
     font-family: "Montserrat", sans-serif;
-    display:flex;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top:0;
-    left:0;
+    left: 0;
     width: 100%;
     background-color: black;
     height: 100px;
-    align-items: center;
     z-index: 1000;
+    align-items: center;
     transition: height 0.2s ease;
     box-shadow: 5px 5px 10px gray;
+}
+
+#header-fixed {
+    display:flex;
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
 }
 
 #logo-option {
@@ -34,8 +34,9 @@
 }
 
 .header-option {
-    padding-left: 25px;
-    padding-right: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    width: max-content;
 }
 
 .arrow-down {
@@ -51,5 +52,10 @@
     color: white;
     margin-right: 50px;
 }
+
+.header-option,#logo-option,#user-option,#sign-in-text:hover {
+    cursor: pointer;
+}
+
 
 
