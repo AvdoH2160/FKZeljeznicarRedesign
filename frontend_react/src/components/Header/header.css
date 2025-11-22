@@ -6,12 +6,12 @@
     top:0;
     left: 0;
     width: 100%;
-    background-color: black;
+    background-color: transparent;
     height: 100px;
     z-index: 1000;
     align-items: center;
     transition: height 0.2s ease;
-    box-shadow: 5px 5px 10px gray;
+    /*box-shadow: 5px 5px 10px gray;*/
 }
 
 #header-fixed {

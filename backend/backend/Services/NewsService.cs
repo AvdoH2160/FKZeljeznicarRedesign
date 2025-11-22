@@ -184,7 +184,6 @@ namespace backend.Services
             {
                 await file.CopyToAsync(stream);
             }
-            Console.WriteLine("SaveFileAsyncUrl: " + $"/uploads/news/{fileName}");
 
             return $"/uploads/news/{fileName}";
         }

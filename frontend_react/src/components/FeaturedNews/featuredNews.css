@@ -1,0 +1,15 @@
+#featuredNewsImage-container {
+    width: 100%;
+}
+
+#featuredNews-image {
+    width: 100%;
+    height: auto;
+}
+
+#featuredNews-title {
+    position:absolute;
+    top: 70%;
+    left: 15%;
+}
+
