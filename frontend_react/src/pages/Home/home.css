@@ -4,3 +4,9 @@
     flex-direction: column;
     z-index: 1;
 }
+
+.blurred {
+    filter: blur(5px);
+    transform: scale(1.009);
+    transition: transform 0.1s ease-in-out, filter 0.2s ease;
+}

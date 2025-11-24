@@ -376,6 +376,9 @@
           "isFeatured": {
             "type": "boolean"
           },
+          "category": {
+            "type": "string"
+          },
           "publishedDate": {
             "type": "string",
             "format": "date-time"

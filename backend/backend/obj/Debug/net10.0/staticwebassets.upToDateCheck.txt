@@ -1,1 +1,4 @@
-wwwroot\uploads\news\78f76b35-773c-4d47-b946-8e715a402b79.png
+wwwroot\uploads\news\69a15634-93e1-4946-9c58-7425b931a173.png
+wwwroot\uploads\news\69bfc452-06f8-4f7e-ab72-09a6c26aa13e.jpg
+wwwroot\uploads\news\5305f742-4722-4567-91e6-f56abac6e993.jpg
+wwwroot\uploads\news\e67a43b7-ee7b-4fd2-8a10-85588b0a5276.jpg

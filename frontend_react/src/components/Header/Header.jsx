@@ -1,18 +1,83 @@
-import React,{useState, useRef} from 'react'
+import React,{useState, useRef, useEffect} from 'react'
 import Zeljo from "../../assets/svg/zeljo_white_icon.svg"
+import ZeljoColor from "../../assets/svg/zeljo_color_icon.svg"
 import ArrowDown from "../../assets/svg/arrow_down.svg"
 import User from "../../assets/svg/user.svg"
 import "./header.css"
 
-const Header = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeader}) => {
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
 
   const clickOnOptions = () => {
     setIsExpanded(!isExpanded);
+    const currentScrollY = window.scrollY;
+    if(currentScrollY < 200)
+    {
+      setBackgroundHeader(!backgroundHeader);
+    }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if(currentScrollY > lastScrollY.current && currentScrollY > 200)
+      {
+        setShowHeader(false);
+      }
+      else
+      {
+        setShowHeader(true);
+      }
+      if(currentScrollY > 200)
+      {
+        setBackgroundHeader(true);
+      }
+      else
+      {
+        setBackgroundHeader(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    const preventScroll = (e) => {
+      e.preventDefault();
+    };
+
+    if (isExpanded) {
+      window.addEventListener("wheel", preventScroll, { passive: false });
+      window.addEventListener("touchmove", preventScroll, { passive: false });
+      document.body.classList.add("no-scrollbar");
+    } else {
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+      document.body.classList.remove("no-scrollbar");
+    }
+
+    return () => {
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+    };
+  }, [isExpanded]);
+
   return (
-    <header id="header-container" style={{height:isExpanded ? "500px" : "100px"}}>
+    <header className={`${showHeader ? "show" : "hide"}`} 
+    id="header-container" 
+    style={{
+      height:isExpanded ? "500px" : "100px", 
+      backgroundColor:backgroundHeader ? "#002C6D" : "transparent",
+      }}
+    >
       <div id="header-fixed"> 
           <div id="logo-option">
               <img src={Zeljo} alt="logo"></img>

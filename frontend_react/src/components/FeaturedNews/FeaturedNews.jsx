@@ -1,5 +1,6 @@
 import React,{useState, useRef, useEffect} from 'react'
 import "./featuredNews.css"
+import ArrowRight from "../../assets/svg/arrow_right.svg"
 
 const FeaturedNews = () => {
   const [news, setNews] = useState([]);
@@ -20,7 +21,8 @@ const FeaturedNews = () => {
             <div id="featuredNewsImage-container">
                 <img src={`https://localhost:7010${news.thumbnailUrl}`} alt={news.title} id="featuredNews-image"/>
                 <div id="featuredNews-title">
-                    {news.title}
+                    <h1>{news.title}</h1>
+                    <h2>PROCITAJ VISE <img className="arrowRight-container" src={ArrowRight}></img><img src={ArrowRight}></img></h2>
                 </div>
             </div>
         )}

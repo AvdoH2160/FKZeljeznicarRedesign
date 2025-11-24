@@ -128,6 +128,7 @@ namespace backend.Services
                 Summary = n.Summary,
                 ThumbnailUrl = n.ThumbnailUrl,
                 IsFeatured = n.IsFeatured,
+                Category = n.Category,
                 PublishedDate = n.PublishedDate
             }).ToListAsync();
         }
@@ -146,6 +147,7 @@ namespace backend.Services
                 Summary = featuredNews.Summary,
                 ThumbnailUrl = featuredNews.ThumbnailUrl,
                 IsFeatured = featuredNews.IsFeatured,
+                Category = featuredNews.Category,
                 PublishedDate = featuredNews.PublishedDate
             };
         }

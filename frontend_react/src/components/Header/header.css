@@ -10,8 +10,15 @@
     height: 100px;
     z-index: 1000;
     align-items: center;
-    transition: height 0.2s ease;
-    /*box-shadow: 5px 5px 10px gray;*/
+    transition: height 0.2s ease, background-color 0.5s ease, transform 0.2s ease;
+}
+
+header.hide {
+    transform: translateY(-110%);
+}
+
+header.show {
+    transform: translateY(0);
 }
 
 #header-fixed {
@@ -26,11 +33,16 @@
     margin-left: 50px;
 }
 
+#logo-color {
+    height: 53px;
+}
+
 .header-options {
     display: flex;
     flex-direction: row;
     margin: auto;
     color: white;
+    transition: color 0.5s ease;
 }
 
 .header-option {
@@ -56,6 +68,4 @@
 .header-option,#logo-option,#user-option,#sign-in-text:hover {
     cursor: pointer;
 }
-
-
 
