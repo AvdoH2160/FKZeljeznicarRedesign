@@ -74,7 +74,7 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
     <header className={`${showHeader ? "show" : "hide"}`} 
     id="header-container" 
     style={{
-      height:isExpanded ? "500px" : "100px", 
+      height:isExpanded ? "450px" : "100px", 
       backgroundColor:backgroundHeader ? "#002C6D" : "transparent",
       }}
     >
@@ -112,8 +112,52 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
           </div>
       </div>
       {isExpanded && (
-        <div className="dropdown-container">
-          
+        <div id="dropdown-container">
+          <div className="dropdown-left">
+            <h1>ZA<br/>ŽIVOT<br/><div id="colored-text">CIJELI</div></h1>
+          </div>
+          <div id="dropdown-news" className="dropdown-items">
+            <h2>NOVOSTI</h2>
+            <br/>
+            <div className="dropdown-childItems">
+              <h3>NAJAVE</h3>
+              <h3>IZVJEŠTAJI</h3>
+            </div>
+          </div>
+          <div id="dropdown-shop" className="dropdown-items">
+            <h2>SHOP</h2>
+            <br/>
+            <div className="dropdown-childItems">
+              <h3>DRESOVI</h3>
+              <h3>AKCESOARI</h3>
+              <h3>ODJEČA</h3>
+            </div>
+          </div>
+          <div id="dropdown-tickets" className="dropdown-items">
+            <h2>ULAZNICE</h2>
+            <br/>
+            <div className="dropdown-childItems">
+              <h3>KUPI ULAZNICE</h3>
+            </div>
+          </div>
+          <div id="dropdown-membership" className="dropdown-items">
+            <h2>ČLANSTVO</h2>
+            <br/>
+            <div className="dropdown-childItems">
+              <h3>KAKO POSTATI ČLAN</h3>
+              <h3>OBNOVA ČLANARINE</h3>
+              <h3>PROVJERA STATUSA ČLANARINE</h3>
+            </div>
+          </div>
+          <div id="dropdown-aboutus" className="dropdown-items">
+            <h2>O NAMA</h2>
+            <br/>
+            <div className="dropdown-childItems">
+              <h3>PRVI TIM</h3>
+              <h3>STRUČNI ŠTAB</h3>
+              <h3>STADION GRBAVICA</h3>
+            </div>
+          </div>
         </div>
       )}
     </header>

@@ -187,5 +187,99 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "backend.Controllers.TableStandingsController",
+    "Method": "GetTableStandings",
+    "RelativePath": "api/TableStandings/{leagueId}/{season}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "leagueId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "season",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[backend.Model.TableStandings, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.TableStandingsController",
+    "Method": "DeleteLeagueTable",
+    "RelativePath": "api/TableStandings/delete/{leagueId}/{season}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "leagueId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "season",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TableStandingsController",
+    "Method": "RefreshTable",
+    "RelativePath": "api/TableStandings/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "leagueId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "season",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TableStandingsController",
+    "Method": "UpdateLeagueTable",
+    "RelativePath": "api/TableStandings/update/{leagueId}/{season}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "leagueId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "season",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

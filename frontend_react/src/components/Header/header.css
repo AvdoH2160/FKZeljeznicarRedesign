@@ -8,6 +8,7 @@
     width: 100%;
     background-color: transparent;
     height: 100px;
+    min-height: 100px;
     z-index: 1000;
     align-items: center;
     transition: height 0.2s ease, background-color 0.5s ease, transform 0.2s ease;
@@ -69,3 +70,44 @@ header.show {
     cursor: pointer;
 }
 
+
+#dropdown-container {
+    color: white;
+    font-family: "Poppins";
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: "-0.05em";
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    display: none;
+    display:grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    width: 100%;
+}
+
+.dropdown-left {
+    margin-left: 50px;
+    font-size: xx-large;
+    user-select: none;
+}
+
+#colored-text {
+    color: #4DA1FF;
+}
+
+.dropdown-items {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+#dropdown-childItems {
+    align-items: left;
+    justify-items: left
+}
+
+h3 {
+    margin-bottom: 10px;
+}

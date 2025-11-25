@@ -7,5 +7,6 @@ namespace backend.Data
     {
         public DbSet<News> News => Set<News>();
         public DbSet<NewsImage> NewsImages => Set<NewsImage>();
+        public DbSet<TableStandings> TableStandings => Set<TableStandings>();
     }
 }

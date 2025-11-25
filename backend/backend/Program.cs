@@ -12,6 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<INewsService, NewsService>();
+builder.Services.AddScoped<ITableStandingsService, TableStandingsService>();
+builder.Services.AddHostedService<LeagueTableUpdateService>();
+builder.Services.AddHttpClient<IApiFootballService, ApiFootballService>();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddCors(options =>
