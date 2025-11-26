@@ -1,0 +1,171 @@
+#shop-section-container {
+    font-family: "Poppins";
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: "-0.05em";
+    height: 75vh;
+    background-color: #002C6D;
+    color: white;
+}
+
+#text-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#shop-section-text {
+    margin: 20px 0 20px 100px;
+    align-self: center;
+}
+
+#shop-section-image {
+    justify-self: end;
+    margin: 20px 100px 20px 0;;
+}
+
+#card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    margin: 0 50px 20px 50px;
+    justify-content: center;
+}
+
+.shop-card {
+    border-radius: 20px;
+    height:420px;
+    width: 270px;
+    --card-transform: translateY(0px) translateX(0px) rotate(0deg);
+    transform: var(--card-transform);
+    transition: transform 0.3s;
+}
+
+.shop-card:hover {
+    cursor: pointer;
+    transform: var(--card-transform) scale(1.05);
+}
+
+.shop-card.item-0 {
+    background-color: white;
+    --card-transform: translateY(30px) translateX(clamp(50px, 22vw, 250px)) rotate(-12deg);
+    z-index: 8;
+}
+
+.shop-card.item-1 {
+    background-color: green;
+    --card-transform: translateY(clamp(-8px, -7px, 20px)) translateX(clamp(20px, 26vw, 120px)) rotate(-5deg);
+    z-index: 9;
+}
+
+.shop-card.item-2 {
+    background-color: black;
+    --card-transform: translateY(-20px) translateX(0) rotate(0deg);
+    z-index: 10;
+}
+
+.shop-card.item-3 {
+    background-color: yellow;
+    --card-transform: translateY(clamp(-8px, -7px, 20px)) translateX(clamp(-120px, -26vw, 20px)) rotate(5deg);
+    z-index: 9;
+}
+
+.shop-card.item-4 {
+    background-color: red;
+    --card-transform: translateY(30px) translateX(clamp(-250px, -22vw, -50px)) rotate(12deg);
+    z-index: 8;
+}
+
+@media (max-width: 1100px) {
+
+}
+
+
+/* .shop-card {
+  transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow .25s;
+  /* pretpostavlja se da već koristiš --card-transform kao u dosadašnjem CSS-u 
+  transform: var(--card-transform);
+}
+
+/* hovered card - veće, on top 
+.shop-card.is-active {
+  transform: var(--card-transform) scale(1.08) translateZ(18px);
+  z-index: 12;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* oni lijevo se pomaknu ulijevo 
+.shop-card.is-left {
+  transform: var(--card-transform) translateX(-36px) scale(0.98);
+  z-index: 9;
+}
+
+/* oni desno se pomaknu udesno 
+.shop-card.is-right {
+  transform: var(--card-transform) translateX(36px) scale(0.98);
+  z-index: 9;
+}
+
+/* manji ekrani: poništi pomake 
+@media (max-width: 900px) {
+  .shop-card.is-left,
+  .shop-card.is-right,
+  .shop-card.is-active {
+    transform: translateY(0) translateX(0) rotate(0) scale(1);
+    z-index: initial;
+  }
+} */
+
+
+/* @media (max-width: 1100px) {
+    /* pretvori grid u horizontalni carousel 
+    #card-container {
+        display: flex;
+        grid-template-columns: none;
+        gap: 16px;
+        padding: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        justify-content: start;
+    }
+
+    /* kartice postaju inline, onemogući njihove početne rotate/translate i hover efekte 
+    .shop-card {
+        flex: 0 0 80%;      /* širina kartice; prilagodi po želji 
+        max-width: 320px;
+        min-width: 260px;
+        transform: none !important; /* poništi var(--card-transform) 
+        --card-transform: translateY(0) translateX(0) rotate(0deg);
+        transition: none;
+        scroll-snap-align: center;
+        margin-inline: 8px;
+    }
+
+    /* makni hover efekte na mobilama 
+    .shop-card:hover {
+        transform: none !important;
+        box-shadow: none;
+        cursor: default;
+    }
+
+    /* stil kontrola (strelice) 
+    .carousel-controls {
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+    .carousel-controls button {
+        background: rgba(255,255,255,0.12);
+        color: white;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        font-size: 20px;
+        display: inline-grid;
+        place-items: center;
+    }
+} */
