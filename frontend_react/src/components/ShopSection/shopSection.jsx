@@ -4,6 +4,9 @@ import "./shopSection.css"
 import FkzShop from "../../assets/svg/fkz_shop.svg"
 
 const shopSection = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+
   return (
     <div id="shop-section-container">
         <div id="text-container">
@@ -11,7 +14,18 @@ const shopSection = () => {
             <img id="shop-section-image" src={FkzShop} alt="shop"></img>
         </div>
         <div id="card-container"> 
-            <div className="shop-card item-0">
+            <div className={`shop-card item-0 ${
+              activeIndex === null
+                ? ''
+                : activeIndex === i
+                ? 'is-active'
+                : i < activeIndex
+                ? 'is-left'
+                : 'is-right'
+              }`}
+              onMouseEnter={() => setActiveIndex(i)}
+              onMouseLeave={() => setActiveIndex(null)}
+            >
 
             </div>
             <div className="shop-card item-1">
@@ -60,3 +74,43 @@ export default shopSection
 //     ))}
 //   </div>
 // );
+
+// ...existing code...
+// import React, { useRef } from "react";
+
+// export default function ShopSection({ items }) {
+//   const containerRef = useRef(null);
+
+//   const scrollNext = () => {
+//     const c = containerRef.current;
+//     if (!c) return;
+//     const step = c.clientWidth * 0.8; // pomakni za širinu jedne kartice (prilagodi)
+//     c.scrollBy({ left: step, behavior: "smooth" });
+//   };
+
+//   const scrollPrev = () => {
+//     const c = containerRef.current;
+//     if (!c) return;
+//     const step = c.clientWidth * 0.8;
+//     c.scrollBy({ left: -step, behavior: "smooth" });
+//   };
+
+//   return (
+//     <section id="shop-section-container">
+//       {/* ...ostali elementi... */}
+//       <div id="card-container" ref={containerRef}>
+//         {items.map((item, i) => (
+//           <div key={item.id} className={`shop-card item-${i}`}>
+//             {/* ...card content... */}
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* kontrole će se prikazati na manjim ekranima (CSS ih može stilizirati/pozicionirati) */}
+//       <div className="carousel-controls">
+//         <button type="button" onClick={scrollPrev} aria-label="Previous">‹</button>
+//         <button type="button" onClick={scrollNext} aria-label="Next">›</button>
+//       </div>
+//     </section>
+//   );
+// }

@@ -6,10 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace backend.Services
 {
-    public class NewsService(AppDbContext context, IHttpContextAccessor httpContextAccessor) : INewsService
+    public class NewsService(AppDbContext context) : INewsService
     {
-        private string RequestScheme => httpContextAccessor.HttpContext.Request.Scheme;
-        private string RequestHost => httpContextAccessor.HttpContext.Request.Host.Value;
         public async Task<NewsListDto> CreateNewsAsync(NewsCreateUpdateDto request)
         {
             if(request.Thumbnail == null)
@@ -133,7 +131,7 @@ namespace backend.Services
             }).ToListAsync();
         }
 
-        public async Task<NewsListDto> GetFeaturedNewsAsync()
+        public async Task<NewsListDto?> GetFeaturedNewsAsync()
         {
             var featuredNews = await context.News.Where(n => n.IsFeatured).FirstOrDefaultAsync();
             if(featuredNews == null)

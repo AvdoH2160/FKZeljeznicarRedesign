@@ -13,6 +13,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddScoped<ITableStandingsService, TableStandingsService>();
+builder.Services.AddScoped<IProductsService, ProductsService>();
 builder.Services.AddHostedService<LeagueTableUpdateService>();
 builder.Services.AddHttpClient<IApiFootballService, ApiFootballService>();
 builder.Services.AddHttpContextAccessor();
