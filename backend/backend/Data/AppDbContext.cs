@@ -10,5 +10,18 @@ namespace backend.Data
         public DbSet<TableStandings> TableStandings => Set<TableStandings>();
         public DbSet<Products> Products => Set<Products>();
         public DbSet<ProductSize> ProductSizes => Set<ProductSize>();
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<Products>()
+                .Property(p => p.Price)
+                .HasPrecision(18, 2);
+
+            builder.Entity<ProductSize>()
+                .Property(ps => ps.PriceOverride)
+                .HasPrecision(18, 2);
+        }
     }
 }

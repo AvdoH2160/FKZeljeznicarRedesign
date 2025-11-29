@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace backend.Services
 {
-    public class NewsService(AppDbContext context) : INewsService
+    public class NewsService(AppDbContext context, ImageService imageService) : INewsService
     {
         public async Task<NewsListDto> CreateNewsAsync(NewsCreateUpdateDto request)
         {
@@ -14,14 +14,14 @@ namespace backend.Services
             {
                 throw new ArgumentNullException("Mora bit poslan");
             }    
-            var thumbnailUrl = await SaveFileAsync(request.Thumbnail);
+            var thumbnailUrl = await imageService.SaveFileAsync(request.Thumbnail, "news");
 
             var imageUrls = new List<string>();
             if (request.Images != null && request.Images.Count > 0)
             {
                 foreach(var img in request.Images)
                 {
-                    var url = await SaveFileAsync(img);
+                    var url = await imageService.SaveFileAsync(img, "news");
                     imageUrls.Add(url);
                 }
             }
@@ -68,7 +68,7 @@ namespace backend.Services
                 return false;
             }
 
-            if (news.IsFeatured && request.IsFeatured)
+            if (news.IsFeatured == true && request.IsFeatured == true)
             {
                 var currentFeatured = await context.News.FirstOrDefaultAsync(n => n.IsFeatured);
                 if (currentFeatured != null)
@@ -85,16 +85,22 @@ namespace backend.Services
 
             if (request.Thumbnail != null)
             {
-                var thumbnailUrl = await SaveFileAsync(request.Thumbnail);
+                var oldThumb = news.ThumbnailUrl;
+                imageService.DeleteFile(oldThumb);
+                var thumbnailUrl = await imageService.SaveFileAsync(request.Thumbnail, "news");
             }
 
             if (request.Images != null && request.Images.Count > 0)
             {
+                foreach(var img in news.Images)
+                {
+                    imageService.DeleteFile(img.ImageUrl);
+                }
                 context.NewsImages.RemoveRange(news.Images);
                 var imageUrls = new List<string>();
                 foreach (var img in request.Images)
                 {
-                    var url = await SaveFileAsync(img);
+                    var url = await imageService.SaveFileAsync(img, "news");
                     imageUrls.Add(url);
                 }
                 news.Images = imageUrls.Select(x => new NewsImage { ImageUrl = x }).ToList();
@@ -110,8 +116,15 @@ namespace backend.Services
             if(news == null)
             {
                 return false;
-            } 
-            context.NewsImages.RemoveRange(news.Images);
+            }
+            if (news.Images != null && news.Images.Count > 0)
+            {
+                foreach (var img in news.Images)
+                {
+                    imageService.DeleteFile(img.ImageUrl);
+                }
+                context.NewsImages.RemoveRange(news.Images);
+            }
             context.News.Remove(news);
             await context.SaveChangesAsync();
             return true;
@@ -170,22 +183,6 @@ namespace backend.Services
                 PublishedDate = news.PublishedDate,
                 ImageUrls = news.Images.Select(i => i.ImageUrl).ToList()
             };
-        }
-
-        private async Task<string> SaveFileAsync(IFormFile file)
-        {
-            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot", "uploads", "news");
-            if (!Directory.Exists(uploadsFolder))
-                Directory.CreateDirectory(uploadsFolder);
-            var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-            var filePath = Path.Combine(uploadsFolder, fileName);
-
-            using(var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
-
-            return $"/uploads/news/{fileName}";
         }
     }
 }

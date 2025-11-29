@@ -55,7 +55,7 @@ namespace backend.Controllers
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteNews(int id)
         {
             var isDeleted = await service.DeleteNewsAsync(id);

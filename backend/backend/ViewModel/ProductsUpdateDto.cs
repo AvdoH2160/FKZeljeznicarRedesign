@@ -2,13 +2,18 @@
 {
     public class ProductsUpdateDto
     {
-        public string? Name { get; set; } = string.Empty;
-        public string? Description { get; set; } = string.Empty;
+        public string? Name { get; set; }
+        public string? Description { get; set; }
         public decimal? Price { get; set; }
-        public string? Category { get; set; } = string.Empty;
-        public string? ImageUrl { get; set; } = string.Empty;
+        public string? Category { get; set; }
+        public IFormFile? ThumbnailUrl { get; set; } 
         public bool? IsFeatured { get; set; }
+        public int? FeaturedOrder { get; set; }
+        public string? Brand { get; set; }
+        public string? Color { get; set; }
 
-        public List<ProductsUpdateDto>? Sizes { get; set; } = new();
+        public List<IFormFile>? GalleryImages { get; set; }
+
+        public List<ProductSizeUpdateDto>? Sizes { get; set; }
     }
 }
