@@ -20,9 +20,9 @@ const TableSection = () => {
       <h1 id="table-section-text">TABELA</h1>
       <div id="table-container">
         <div id="table-graphic-container">
-        </div>
-        <div id="table-image-container">
-          <img id="image" src={WwinLeagueLogo} alt="league"></img>
+          <div id="table-image-container">
+            <img id="image" src={WwinLeagueLogo} alt="league"></img>
+          </div>
         </div>
         <div id="table-info-container">
           <div id="table-headers">

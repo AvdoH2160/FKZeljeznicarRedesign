@@ -5,7 +5,18 @@ import FkzShop from "../../assets/svg/fkz_shop.svg"
 
 const shopSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [cardFeatured, setCardFeatured] = useState([]);
+  const [bounce, setBounce] = useState(false);
 
+  useEffect(() => {
+    fetch("https://localhost:7010/api/Products/cardFeatured")
+    .then(res => res.json())
+    .then(data => {
+      const sorted = data.sort((a, b) => a.featuredOrder - b.featuredOrder);
+      setCardFeatured(sorted);
+    })
+    .catch(err => console.error("Greska prilikom dohvacanja!", err))
+  }, []);
 
   return (
     <div id="shop-section-container">
@@ -14,32 +25,30 @@ const shopSection = () => {
             <img id="shop-section-image" src={FkzShop} alt="shop"></img>
         </div>
         <div id="card-container"> 
-            <div className={`shop-card item-0 ${
+          {cardFeatured.map((item, index) => (
+            <div key = {item.id} className={`shop-card item-${index} ${
               activeIndex === null
                 ? ''
-                : activeIndex === i
+                : activeIndex === index
                 ? 'is-active'
-                : i < activeIndex
-                ? 'is-left'
-                : 'is-right'
-              }`}
-              onMouseEnter={() => setActiveIndex(i)}
+                : index < activeIndex
+                ? `is-left is-left-${activeIndex - index}`
+                : `is-right is-right-${index - activeIndex}`
+              } ${bounce ? "bounce" : ""}`}
+              onMouseEnter={() => {
+                setActiveIndex(index);
+                setBounce(true);
+                setTimeout(() => setBounce(false), 150);
+              }}
               onMouseLeave={() => setActiveIndex(null)}
             >
-
+              <img className="products-image" src={`https://localhost:7010${item.thumbnailUrl}`}/>
+              <h2 className="products-name">{item.name}</h2>
             </div>
-            <div className="shop-card item-1">
-                
-            </div>
-            <div className="shop-card item-2">
-                
-            </div>
-            <div className="shop-card item-3">
-                
-            </div>
-            <div className="shop-card item-4">
-                
-            </div>
+          ))}
+        </div>
+        <div id="shop-button">
+          <h2>SHOP</h2>
         </div>
     </div>
   )
