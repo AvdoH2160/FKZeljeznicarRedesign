@@ -1,0 +1,30 @@
+#stadium-section-container {
+    font-family: "Poppins";
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: "-0.05em";
+    height: 75vh;
+    color: white;
+}
+
+#stadium-image-text-container {
+    margin: 100px 50px 20px 50px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    
+}
+
+#stadium-image {
+    
+}
+
+#stadium-text-container {
+    margin-right: 50px;
+    width: 57vw;
+    height: 80%;
+    background-color: rgba(0,44,109, 0.95);
+    transform: translateX(-250px) translateY(55px);
+    text-align: left;
+    align-content: center;
+    padding-left: 20px;
+}

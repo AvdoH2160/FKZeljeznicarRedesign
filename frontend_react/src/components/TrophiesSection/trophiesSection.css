@@ -57,27 +57,40 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    border: 2px solid rgba(0, 44, 109, 0.5);
+    position: relative;
+}
+
+#alltrophies-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: rgba(0, 44, 109, 0.5);
+}
+
+#alltrophies-container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:50%;
+    height: 2px;
+    background-color: rgba(0, 44, 109, 0.5);
+}
+
+.trophy-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
 }
 
 .trophy {
-    border-style: solid;
-    border-color: black;
-}
-
-#trophy1 {
-    
-}
-
-#trophy2 {
-   
-}
-
-#trophy3 {
-    
-}
-
-#trophy4 {
-    
+    height: 150px;
 }
 
 #moving-text {
@@ -91,3 +104,4 @@
 .loop-text {
     user-select: none;
 }
+

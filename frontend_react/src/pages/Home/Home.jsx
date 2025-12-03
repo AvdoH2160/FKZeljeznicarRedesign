@@ -6,6 +6,7 @@ import NewsSection from "../../components/NewsSection/newsSection.jsx"
 import TableSection from '../../components/TableSection/TableSection.jsx'
 import ShopSection from '../../components/ShopSection/shopSection.jsx'
 import TrophiesSection from '../../components/TrophiesSection/TrophiesSection.jsx'
+import StadiumSection from "../../components/StadiumSection/StadiumSection.jsx"
 
 const Home = ({isHeaderExpanded}) => {  
   return (
@@ -15,6 +16,7 @@ const Home = ({isHeaderExpanded}) => {
       <TableSection></TableSection>
       <ShopSection></ShopSection>
       <TrophiesSection></TrophiesSection>
+      <StadiumSection></StadiumSection>
     </div>
   )
 }
