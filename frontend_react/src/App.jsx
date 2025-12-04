@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react"
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home/Home.jsx'
 import Header from './components/Header/Header.jsx'
+import Footer from './components/Footer/Footer.jsx'
 import "./app.css"
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home isHeaderExpanded={headerExpanded}></Home>}></Route>
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </div>
   )

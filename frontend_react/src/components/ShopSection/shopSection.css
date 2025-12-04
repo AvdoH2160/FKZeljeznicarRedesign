@@ -30,6 +30,7 @@
     grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 20px;
     margin: 70px 50px 20px 50px;
+    justify-self: center;
 }
 
 .shop-card {
@@ -43,12 +44,12 @@
 }
 
 .shop-card.item-0 {
-    --card-transform: translateY(30px) translateX(clamp(30px, 30vw, 320px)) rotate(-12deg);
+    --card-transform: translateY(30px) translateX(clamp(30px, 30vw, 220px)) rotate(-12deg);
     z-index: 8;
 }
 
 .shop-card.item-1 {
-    --card-transform: translateY(clamp(-8px, -7px, 20px)) translateX(clamp(20px, 26vw, 160px)) rotate(-5deg);
+    --card-transform: translateY(clamp(-8px, -7px, 20px)) translateX(clamp(20px, 26vw, 100px)) rotate(-5deg);
     z-index: 9;
 }
 
@@ -58,12 +59,12 @@
 }
 
 .shop-card.item-3 {
-    --card-transform: translateY(clamp(-8px, -7px, 20px)) translateX(clamp(-160px, -26vw, 20px)) rotate(5deg);
+    --card-transform: translateY(clamp(-8px, -7px, 20px)) translateX(clamp(-100px, -26vw, 20px)) rotate(5deg);
     z-index: 9;
 }
 
 .shop-card.item-4 {
-    --card-transform: translateY(30px) translateX(clamp(-320px, -30vw, -50px)) rotate(12deg);
+    --card-transform: translateY(30px) translateX(clamp(-220px, -30vw, -50px)) rotate(12deg);
     z-index: 8;
 }
 
