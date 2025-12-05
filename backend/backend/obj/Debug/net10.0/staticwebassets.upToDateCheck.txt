@@ -7,3 +7,9 @@ wwwroot\uploads\products\f20524b3-567a-4041-b4f8-621da06b3745.jpg
 wwwroot\uploads\products\16dc00b1-8c70-4373-b5ee-4fb2c1a955c7.jpg
 wwwroot\uploads\products\6e0281cb-7b00-4f67-b75d-86fe238eae77.jpg
 wwwroot\uploads\products\1a4f97e4-b36f-47b8-addd-d9000dd773bc.jpg
+wwwroot\uploads\news\641d69ce-9a14-4dae-9539-067bded0a6cc
+wwwroot\uploads\news\920779ba-c29d-4cbd-9a22-40db3042fee9
+wwwroot\uploads\players\56f88936-a573-4095-b75f-41ea098782fe.png
+wwwroot\uploads\players\c19461b7-0183-476f-98aa-63c885fc961c.png
+wwwroot\uploads\players\6967c767-4fe1-4961-a8e5-89e92f4b4678.png
+wwwroot\uploads\players\e08661f8-7d94-4a42-a550-4859e1be4f7d.png

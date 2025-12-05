@@ -14,6 +14,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddScoped<ITableStandingsService, TableStandingsService>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
+builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<ImageService>();
 builder.Services.AddHostedService<LeagueTableUpdateService>();
 builder.Services.AddHttpClient<IApiFootballService, ApiFootballService>();

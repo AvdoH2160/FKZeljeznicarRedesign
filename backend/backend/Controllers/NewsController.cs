@@ -44,7 +44,7 @@ namespace backend.Controllers
             return CreatedAtAction(nameof(GetNewsById), new { id = news.Id }, news);
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<ActionResult> UpdateNews(int id, NewsCreateUpdateDto request)
         {
             var isUpdated = await service.UpdateNewsAsync(id, request);

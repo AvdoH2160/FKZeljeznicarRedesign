@@ -38,7 +38,7 @@ namespace backend.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<NewsDetailsDto>> GetProductById(int id)
+        public async Task<ActionResult<ProductsDetailsDto>> GetProductById(int id)
         {
             var product = await service.GetProductByIdAsync(id);
             if (product == null)

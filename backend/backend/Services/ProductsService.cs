@@ -4,6 +4,7 @@ using backend.Model;
 using backend.ViewModel;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using System.Numerics;
 
 namespace backend.Services
 {
@@ -102,6 +103,10 @@ namespace backend.Services
                 {
                     imageService.DeleteFile(img);
                 }
+            }
+            if (product.ThumbnailUrl != null)
+            {
+                imageService.DeleteFile(product.ThumbnailUrl);
             }
             context.ProductSizes.RemoveRange(product.Sizes);
             context.Products.Remove(product);
@@ -228,7 +233,7 @@ namespace backend.Services
             if (product == null)
                 return false;
 
-            if (product.IsFeatured == true && update.IsFeatured ==true)
+            if (update.IsFeatured ==true)
             {
                 var currentFeatured = await context.Products.FirstOrDefaultAsync(p => p.IsFeatured);
                 if(currentFeatured != null) 

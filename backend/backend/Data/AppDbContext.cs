@@ -10,6 +10,7 @@ namespace backend.Data
         public DbSet<TableStandings> TableStandings => Set<TableStandings>();
         public DbSet<Products> Products => Set<Products>();
         public DbSet<ProductSize> ProductSizes => Set<ProductSize>();
+        public DbSet<Player> Player => Set<Player>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

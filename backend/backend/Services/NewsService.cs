@@ -68,7 +68,7 @@ namespace backend.Services
                 return false;
             }
 
-            if (news.IsFeatured == true && request.IsFeatured == true)
+            if (request.IsFeatured == true)
             {
                 var currentFeatured = await context.News.FirstOrDefaultAsync(n => n.IsFeatured);
                 if (currentFeatured != null)
@@ -77,11 +77,15 @@ namespace backend.Services
                 }
             }
 
-            news.Title = request.Title;
-            news.Summary = request.Summary;
-            news.Content = request.Content;
+            if(request.Title != null)
+                news.Title = request.Title;
+            if(request.Summary != null)
+                news.Summary = request.Summary;
+            if(request.Content != null)
+                news.Content = request.Content;
             news.IsFeatured = request.IsFeatured;
-            news.Category = request.Category;
+            if(request.Category != null)
+                news.Category = request.Category;  
 
             if (request.Thumbnail != null)
             {
@@ -124,6 +128,10 @@ namespace backend.Services
                     imageService.DeleteFile(img.ImageUrl);
                 }
                 context.NewsImages.RemoveRange(news.Images);
+            }
+            if(news.ThumbnailUrl != null)
+            {
+                imageService.DeleteFile(news.ThumbnailUrl);
             }
             context.News.Remove(news);
             await context.SaveChangesAsync();
