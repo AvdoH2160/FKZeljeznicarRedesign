@@ -15,8 +15,14 @@ const PlayerList = ({position}) => {
   return (
     <div id="player-card-container">
         {playerData.map((player, index) => (
-            <div className={`player item-${index}`}>
-                <img src={`https://localhost:7010${player.thumbnailUrl}`}></img>
+            <div key={player.id} className={`player item-${index}`}>
+              <div className="player-text">
+                <h1 className="player-name">{player.name}</h1>
+                <h1 className="player-surname">{player.surname.toUpperCase()}</h1>
+                <h1 className="player-position">{player.position}</h1>
+              </div>
+              <h1 className="player-number">{player.number}</h1>
+              <img className="player-image" src={`https://localhost:7010${player.thumbnailUrl}`}></img>
             </div>
         ))}
     </div>

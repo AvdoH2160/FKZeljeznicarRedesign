@@ -1,11 +1,99 @@
 #player-card-container {
-    width: 100%;
-    min-height: 400px;
-    display: flex;
-    flex-wrap: wrap;
+    
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .player {
+    overflow: hidden;
+    position: relative;
+    border-width: 0 1px;
     border-style: solid;
+    border-color: rgba(0, 44, 109, 0.5);
+    transition: border-color 0.2s ease;
+}
+
+.player:only-child {
+    max-width: calc((100% /4));
+}
+
+.player::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 44, 109, 0.5);
+    transition: background-color 0.2s ease, border-width 0.2s ease;
+}
+
+.player::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: rgba(0, 44, 109, 0.5);
+    transition: background-color 0.2s ease;
+}
+
+.player:hover {
+    border-color: rgba(0, 44, 109, 1);
+    cursor: pointer;
+}
+
+.player:hover::after {
+    background-color: rgba(0, 44, 109, 1);
+}
+
+.player:hover::before {
+    background-color: rgba(0, 44, 109, 1);
+}
+
+.player-text {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: #002C6D;
+}
+
+.player-name {
+    font-family: "Montserrat";
+    font-size: 30px;
+}
+
+.player-surname {
+    font-size: 40px;
+}
+
+.player-position {
+    font-family: "Montserrat";
+    font-size: 20px;
+}
+
+.player-number {
+    font-family: "Haettenschweiler";
+    position: absolute;
+    bottom: 10%;
+    left: 20px;
+    font-size: 230px;
+    font-weight: 300;
+    color: #002C6D;
+}
+
+.player-image {
+    width: 100%;
+    height: auto;
+    transform-origin: bottom right;
+    --card-transform: scale(0.9) translateX(clamp(50px, 80px , 130px)) translateY(clamp(80px, 80px, 130px));
+    transform: var(--card-transform);
+    transition: transform 0.3s ease; 
+}
+
+.player:hover .player-image {
+    transform: var(--card-transform) scale(1.05);
 }
 

@@ -62,8 +62,7 @@
               "RelativeToolTip": "backend\\Model\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T15:41:50.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T15:41:50.387Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "backend\\Services\\NewsService.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwFUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T12:10:43.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T12:10:43.093Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "backend\\Services\\PlayerService.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwGEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:41:09.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:41:09.007Z"
             },
             {
               "$type": "Document",
@@ -99,7 +96,7 @@
               "RelativeDocumentMoniker": "backend\\Controllers\\PlayerController.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\PlayerController.cs",
               "RelativeToolTip": "backend\\Controllers\\PlayerController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwCAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-05T11:31:27.521Z",
               "EditorCaption": ""
@@ -124,8 +121,7 @@
               "RelativeToolTip": "backend\\Services\\ProductsService.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAgwDUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:42:09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:42:09Z"
             },
             {
               "$type": "Document",
@@ -137,8 +133,7 @@
               "RelativeToolTip": "backend\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAEIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T13:28:17.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:28:17.898Z"
             },
             {
               "$type": "Document",
@@ -150,8 +145,7 @@
               "RelativeToolTip": "backend\\ViewModel\\PlayerUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:35:37.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:35:37.694Z"
             },
             {
               "$type": "Document",
@@ -176,8 +170,7 @@
               "RelativeToolTip": "backend\\Services\\IPlayerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T12:22:20.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T12:22:20.78Z"
             },
             {
               "$type": "Document",
@@ -189,8 +182,7 @@
               "RelativeToolTip": "backend\\ViewModel\\PlayerDetailsDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:32:52.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:32:52.173Z"
             }
           ]
         }
