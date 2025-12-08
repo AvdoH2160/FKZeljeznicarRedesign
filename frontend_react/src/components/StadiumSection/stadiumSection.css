@@ -4,27 +4,41 @@
     font-style: italic;
     letter-spacing: "-0.05em";
     height: 75vh;
+    width: 100%;
     color: white;
+    margin: 100px 50px 0 50px;
 }
 
 #stadium-image-text-container {
-    margin: 100px 50px 20px 50px;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #stadium-image {
-    
+    height: 100%;
+    width: auto;
+
 }
 
 #stadium-text-container {
-    margin-right: 50px;
-    width: 57vw;
+    width: 50vw;
     height: 80%;
-    background-color: rgba(0,44,109, 0.95);
+    background: linear-gradient(89.91deg, rgba(0, 44, 109, 0.8) 11.83%, #0055D3 119.94%);
     transform: translateX(-250px) translateY(55px);
     text-align: left;
-    align-content: center;
-    padding-left: 20px;
+    padding: 40px 40px 40px 40px;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 60px),
+        calc(100% - 60px) 100%,
+        0 100%
+    );
+}
+
+p.stadium-text {
+    font-style: normal;
+    font-weight: 300;
 }
