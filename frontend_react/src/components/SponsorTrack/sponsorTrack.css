@@ -1,0 +1,26 @@
+#sponsor-track-container {
+    width: auto;
+    height: 155px;
+    white-space: nowrap;
+    display: flex;
+    overflow: hidden;
+}
+
+.sponsor-track {
+    display:flex;
+    gap: 100px;
+    align-items: center;
+    padding-right: 100px;
+}
+
+.sponsor-track img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.sponsor-track img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

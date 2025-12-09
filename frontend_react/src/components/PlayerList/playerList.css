@@ -8,10 +8,15 @@
 .player {
     overflow: hidden;
     position: relative;
-    border-width: 0 1px;
+    border-width: 1px 1px 10px 1px;
     border-style: solid;
     border-color: rgba(0, 44, 109, 0.5);
-    transition: border-color 0.2s ease;
+    transition: border-color 0.5s ease;
+}
+
+.player:hover {
+    border-color: rgba(0, 44, 109, 1);
+    cursor: pointer;
 }
 
 .player:only-child {
@@ -21,36 +26,23 @@
 .player::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: rgba(0, 44, 109, 0.5);
-    transition: background-color 0.2s ease, border-width 0.2s ease;
-}
-
-.player::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background-color: rgba(0, 44, 109, 0.5);
-    transition: background-color 0.2s ease;
-}
-
-.player:hover {
-    border-color: rgba(0, 44, 109, 1);
-    cursor: pointer;
-}
-
-.player:hover::after {
-    background-color: rgba(0, 44, 109, 1);
+    inset: 0;           
+    background: linear-gradient(196.88deg, #002C6D 40%, #0043A6 71.37%, #0055D3 109.23%);;
+    clip-path: polygon(
+        100% 100%,
+        100% 0,
+        45% 45%,
+        49% 25%,
+        0 60%,
+        0 100%
+    );
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .player:hover::before {
-    background-color: rgba(0, 44, 109, 1);
+    opacity: 1;
 }
 
 .player-text {
@@ -67,6 +59,11 @@
 
 .player-surname {
     font-size: 40px;
+    transition: color 0.5s ease;
+}
+
+.player:hover .player-surname {
+    color: #4DA1FF;
 }
 
 .player-position {
@@ -82,6 +79,11 @@
     font-size: 230px;
     font-weight: 300;
     color: #002C6D;
+    transition: color 0.5s ease;
+}
+
+.player:hover .player-number {
+    color: white;
 }
 
 .player-image {
@@ -90,7 +92,7 @@
     transform-origin: bottom right;
     --card-transform: scale(0.9) translateX(clamp(50px, 80px , 130px)) translateY(clamp(80px, 80px, 130px));
     transform: var(--card-transform);
-    transition: transform 0.3s ease; 
+    transition: transform 0.5s ease; 
 }
 
 .player:hover .player-image {

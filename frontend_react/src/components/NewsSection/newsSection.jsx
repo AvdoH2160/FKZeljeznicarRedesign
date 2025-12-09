@@ -46,7 +46,7 @@ const newsSection = () => {
                 <img className={`news-image item-${index}`} src={`https://localhost:7010${news.thumbnailUrl}`}></img>
                 <div className="text-overlay">
                     <h3 className="top-overlay">{news.category+ ": "}{news.formattedDate}</h3>
-                    <h1>{news.title}</h1>
+                    <h1>{news.title.toUpperCase()}</h1>
                     <h3 className="summary">{news.summary}</h3>
                 </div>
             </div>
