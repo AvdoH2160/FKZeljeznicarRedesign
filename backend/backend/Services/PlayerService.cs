@@ -97,7 +97,33 @@ namespace backend.Services
                 Name = player.Name,
                 Surname = player.Surname,
                 Description = player.Description,
-                BirthDate = (DateOnly)player.BirthDate,
+                BirthDate = player.BirthDate,
+                PlaceOfBirth = player.PlaceOfBirth,
+                Nationality = player.Nationality,
+                Number = player.Number,
+                Position = player.Position,
+                ThumbnailUrl = player.ThumbnailUrl,
+                IsFeatured = player.IsFeatured,
+                PreviousClubs = player.PreviousClubs
+            };
+        }
+
+        public async Task<PlayerDetailsDto?> GetPlayerBySlugAsync(string slug)
+        {
+            var players = await context.Player.AsNoTracking().ToListAsync();
+
+            var player = players.FirstOrDefault(p => 
+                PlayerDetailsDto.ToSlug(p.Name.Trim(), p.Surname.Trim()) == slug
+                );
+            if (player == null) 
+                return null;
+            return new PlayerDetailsDto
+            {
+                Id = player.Id,
+                Name = player.Name,
+                Surname = player.Surname,
+                Description = player.Description,
+                BirthDate = player.BirthDate,
                 PlaceOfBirth = player.PlaceOfBirth,
                 Nationality = player.Nationality,
                 Number = player.Number,

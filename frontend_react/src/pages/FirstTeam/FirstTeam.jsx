@@ -4,6 +4,7 @@ import './firstTeam.css'
 import PlayerList from "../../components/PlayerList/PlayerList.jsx"
 
 const FirstTeam = () => {
+    document.title = "Igrači - FK Željezničar";
 
   return (
     <div id="first-team-container">

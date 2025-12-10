@@ -5,7 +5,12 @@
     letter-spacing: "-0.05em";
     width: 100%;
     height: 100vh;
-    background-color: #002C6D;
+    background: linear-gradient(
+        196.88deg, 
+        #002C6D 40%, 
+        #0043A6 71.37%, 
+        #0055D3 109.23%
+        );
     display: grid;
     grid-template-rows: 1fr 0.5fr;
 }

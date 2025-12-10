@@ -8,9 +8,10 @@ import ShopSection from '../../components/ShopSection/shopSection.jsx'
 import TrophiesSection2 from '../../components/TrophiesSection/TrophiesSection2.jsx'
 import StadiumSection from "../../components/StadiumSection/StadiumSection.jsx"
 
-const Home = ({isHeaderExpanded}) => {  
+const Home = () => {  
+  document.title="FK Željezničar"
   return (
-    <div id="home-container" className={isHeaderExpanded ? "blurred" : ""}>
+    <div id="home-container">
       <FeaturedNews></FeaturedNews>
       <NewsSection></NewsSection>
       <TableSection></TableSection>

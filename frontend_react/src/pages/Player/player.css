@@ -1,0 +1,137 @@
+.player-container {
+    font-family: "Poppins";
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: "-0.05em";
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.player-info {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(
+        196.88deg, 
+        #002C6D 40%, 
+        #0043A6 71.37%, 
+        #0055D3 109.23%
+        );
+    background-size: 150% 200%;
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    position: relative;
+}
+
+.player-text-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 100px;
+    margin-top: 50px;
+    z-index: 2;
+}
+
+.onlyPlayer-name-surname-position{
+    display: grid;
+    grid-template-rows: 0.4fr 1fr 0.4fr;
+    height: fit-content;
+    color: white;
+}
+
+.onlyPlayer-name {
+    font-size: 50px;
+    
+}
+
+.onlyPlayer-surname {
+    font-size: 100px;
+    font-family: "Marck Script";
+    color: #4DA1FF;
+    font-weight: 500;
+}
+
+.onlyPlayer-position {
+    font-size: 25px;
+}
+
+.player-image-container {
+    justify-self: center;
+    height: fit-content;
+    z-index: 2;
+}
+
+.onlyPlayer-image {
+    height: 95vh;
+    align-self: bottom;
+}
+
+.onlyPlayer-number {
+    display:inline-block;
+    position: absolute;
+    font-weight: 700;
+    background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.6) 30%,
+    rgba(255,255,255,0.3) 60%,
+    rgba(255,255,255,0.1) 100%
+    );
+    background-size: 200% 100%;
+    /* background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #dfe4ef 25%,
+        #ffffff 50%,
+        #c8d0e0 75%,
+        #ffffff 100%
+    ); */
+    opacity:0.6;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -47%);
+    font-size: 121vh;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+}
+
+.onlyPlayer-allDetails {
+    padding-top: 50px;
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+}
+
+div.top {
+    font-size: 20px;
+    color: gray;
+}
+
+span.info-bottom {
+    font-size: 30px;
+    color: black;
+}
+
+.onlyPlayer-details-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.onlyPlayer-details-biography {
+    padding-top: 50px;
+    font-size: 30px;
+}
+
+.biography {
+    font-size: 30px;
+    font-weight: 300;
+}

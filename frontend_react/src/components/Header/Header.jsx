@@ -1,4 +1,5 @@
 import React,{useState, useRef, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import Zeljo from "../../assets/svg/zeljo_white_icon.svg"
 import ZeljoColor from "../../assets/svg/zeljo_color_icon.svg"
 import ArrowDown from "../../assets/svg/arrow_down.svg"
@@ -12,7 +13,7 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
   const clickOnOptions = () => {
     setIsExpanded(!isExpanded);
     const currentScrollY = window.scrollY;
-    if(currentScrollY < 200)
+    if(currentScrollY < 50)
     {
       setBackgroundHeader(!backgroundHeader);
     }
@@ -30,7 +31,7 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
       {
         setShowHeader(true);
       }
-      if(currentScrollY > 200)
+      if(currentScrollY > 50)
       {
         setBackgroundHeader(true);
       }
@@ -79,9 +80,9 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
       }}
     >
       <div id="header-fixed"> 
-          <div id="logo-option">
-              <img src={Zeljo} alt="logo"></img>
-          </div>
+          <Link to="/"id="logo-option">
+            <img src={Zeljo} alt="logo"></img>
+          </Link>
           <div className="header-options">
             <div id="news-option" className="header-option" onClick={clickOnOptions}>
               Novosti

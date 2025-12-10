@@ -8,6 +8,7 @@ namespace backend.Services
         Task<List<PlayerListDto>> GetFeaturedPlayersAsync();
         Task<List<PlayerListDto>> GetPlayerByPositionAsync(string position);
         Task<PlayerDetailsDto?> GetPlayerByIdAsync(int id);
+        Task<PlayerDetailsDto?> GetPlayerBySlugAsync(string slug);
         Task<PlayerListDto> CreatePlayerAsync(PlayerCreateDto create);
         Task<bool> UpdatePlayerAsync(int id, PlayerUpdateDto update);
         Task<bool> DeletePlayerAsync(int id);

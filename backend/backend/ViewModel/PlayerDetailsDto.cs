@@ -6,7 +6,7 @@
         public string Name { get; set; } = string.Empty;
         public string Surname { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public DateOnly BirthDate { get; set; }
+        public DateOnly? BirthDate { get; set; }
         public string? PlaceOfBirth { get; set; }
         public string? Nationality { get; set; }
         public int Number { get; set; }
@@ -14,5 +14,14 @@
         public string ThumbnailUrl { get; set; } = string.Empty;
         public bool IsFeatured { get; set; }
         public List<string>? PreviousClubs { get; set; }
+
+        public static string ToSlug(string name, string surname)
+        {
+            return $"{name}-{surname}"
+                .ToLower()
+                .Replace(" ", "-")
+                .Replace("č", "c").Replace("ć", "c")
+                .Replace("š", "s").Replace("ž", "z").Replace("đ", "dj");
+        }
     }
 }

@@ -48,6 +48,17 @@ namespace backend.Controllers
             return Ok(player);
         }
 
+        [HttpGet("slug/{slug}")]
+        public async Task<ActionResult<PlayerDetailsDto>> GetPlayerBySlug(string slug)
+        {
+            var player = await service.GetPlayerBySlugAsync(slug);
+            if (player == null)
+            {
+                return NotFound("Ne postoji");
+            }
+            return Ok(player);
+        }
+
         [HttpPost]
         public async Task<ActionResult<PlayerListDto>> CreatePlayer([FromForm] PlayerCreateDto create)
         {
