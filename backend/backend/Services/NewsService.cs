@@ -47,6 +47,8 @@ namespace backend.Services
                 Images = imageUrls.Select(x => new NewsImage { ImageUrl = x }).ToList()
             };
 
+            news.Slug = await GenerateUniqueSlugAsync(news.Title);
+
             context.News.Add(news);
             await context.SaveChangesAsync();
             return new NewsListDto
@@ -191,6 +193,59 @@ namespace backend.Services
                 PublishedDate = news.PublishedDate,
                 ImageUrls = news.Images.Select(i => i.ImageUrl).ToList()
             };
+        }
+
+        public async Task<string> GenerateUniqueSlugAsync(string title)
+        {
+            string baseSlug = SlugHelper.GenerateSlug(title);
+            string slug = baseSlug;
+            int counter = 1;
+
+            while (await context.News.AnyAsync(n => n.Slug == slug))
+            {
+                slug = $"{baseSlug}-{counter}";
+                counter++;
+            }
+
+            return slug;
+        }
+
+        public async Task<NewsDetailsDto?> GetNewsBySlugAsync(string slug)
+        {
+            var news = await context.News.Include(n => n.Images)
+                .Where(n => n.Slug == slug).FirstOrDefaultAsync();
+            if (news == null)
+                return null;
+            return new NewsDetailsDto
+            {
+                Id = news.Id,
+                Title = news.Title,
+                Summary = news.Summary,
+                Content = news.Content,
+                ThumbnailUrl = news.ThumbnailUrl,
+                IsFeatured = news.IsFeatured,
+                ViewCount = news.ViewCount,
+                Category = news.Category,
+                PublishedDate = news.PublishedDate,
+                ImageUrls = news.Images.Select(i => i.ImageUrl).ToList()
+            };
+
+        }
+
+        public async Task<List<NewsListDto>> GetNewsByCategoryAsync(string category)
+        {
+            return await context.News
+                .Where(n => n.Category == category)
+                .Select(n => new NewsListDto
+            {
+                Id = n.Id,
+                Title = n.Title,
+                Summary = n.Summary,
+                ThumbnailUrl = n.ThumbnailUrl,
+                IsFeatured = n.IsFeatured,
+                Category = n.Category,
+                PublishedDate = n.PublishedDate
+            }).ToListAsync();
         }
     }
 }

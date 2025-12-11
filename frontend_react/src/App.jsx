@@ -7,6 +7,8 @@ import Player from './pages/Player/Player.jsx'
 import Header from './components/Header/Header.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import ScrollManager from './components/ScrollManager/ScrollManager.jsx'
+import NewsList from "./pages/NewsList/NewsList.jsx"
+import News from "./pages/News/News.jsx"
 import "./app.css"
 
 const App = () => {
@@ -33,6 +35,9 @@ const App = () => {
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/prvi-tim" element={<FirstTeam></FirstTeam>}></Route>
             <Route path="/prvi-tim/:slug" element={<Player></Player>}></Route>
+            <Route path="/novosti" element={<NewsList></NewsList>}></Route>
+            <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
+            <Route path="/novosti/:slug" element={<News></News>}></Route>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         <Footer/>

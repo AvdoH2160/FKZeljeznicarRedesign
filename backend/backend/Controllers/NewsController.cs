@@ -2,6 +2,7 @@
 using backend.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
@@ -34,6 +35,26 @@ namespace backend.Controllers
             {
                 return NotFound("Ne postoji");
             }
+            return Ok(news);
+        }
+
+        [HttpGet("/category/{category}")]
+        public async Task<ActionResult<NewsDetailsDto>> GetNewsByCategory(string category)
+        {
+            var news = await service.GetNewsByCategoryAsync(category);
+            if (news == null)
+            {
+                return NotFound("Ne postoji");
+            }
+            return Ok(news);
+        }
+
+        [HttpGet("slug/{slug}")]
+        public async Task<ActionResult<NewsDetailsDto>> GetNewsBySlug(string slug)
+        {
+            var news = await service.GetNewsBySlugAsync(slug);
+            if (news == null)
+                return NotFound("Ne postoji");
             return Ok(news);
         }
 
