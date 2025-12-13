@@ -78,8 +78,7 @@
               "RelativeToolTip": "backend\\Services\\INewsService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:51:59.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T11:51:59.987Z"
             },
             {
               "$type": "Document",
@@ -89,7 +88,7 @@
               "RelativeDocumentMoniker": "backend\\Controllers\\NewsController.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\NewsController.cs",
               "RelativeToolTip": "backend\\Controllers\\NewsController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T11:50:36.246Z",
               "EditorCaption": ""
@@ -104,8 +103,7 @@
               "RelativeToolTip": "backend\\Model\\News.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:42:57.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T11:42:57.857Z"
             },
             {
               "$type": "Document",
@@ -117,8 +115,7 @@
               "RelativeToolTip": "backend\\ViewModel\\NewsDetailsDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T17:21:52.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T17:21:52.41Z"
             },
             {
               "$type": "Document",
@@ -130,8 +127,7 @@
               "RelativeToolTip": "backend\\Services\\NewsService.cs",
               "ViewState": "AgIAAN4AAAAAAAAAAAAIwOoAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T12:10:43.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T12:10:43.093Z"
             },
             {
               "$type": "Document",
@@ -155,8 +151,7 @@
               "RelativeToolTip": "backend\\Services\\PlayerService.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAAgwK0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:41:09.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:41:09.007Z"
             },
             {
               "$type": "Document",
