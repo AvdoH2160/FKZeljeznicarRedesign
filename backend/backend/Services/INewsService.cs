@@ -1,4 +1,5 @@
-﻿using backend.ViewModel;
+﻿using backend.Model;
+using backend.ViewModel;
 
 namespace backend.Services
 {
@@ -9,6 +10,7 @@ namespace backend.Services
         Task<List<NewsListDto>> GetNewsByCategoryAsync(string category);
         Task<NewsDetailsDto?> GetNewsByIdAsync(int id);
         Task<NewsDetailsDto?> GetNewsBySlugAsync(string slug);
+        Task<PagedResult<NewsListDto>> GetPagedNewsAsync(int page, int pageSize);
         Task<NewsListDto> CreateNewsAsync(NewsCreateUpdateDto request);
         Task<bool> UpdateNewsAsync(int id, NewsCreateUpdateDto request);
         Task<bool> DeleteNewsAsync(int id);

@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/prvi-tim/:slug" element={<Player></Player>}></Route>
             <Route path="/novosti" element={<NewsList></NewsList>}></Route>
             <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
-            <Route path="/novosti/:slug" element={<News></News>}></Route>
+            <Route path="/novost/:slug" element={<News></News>}></Route>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         <Footer/>

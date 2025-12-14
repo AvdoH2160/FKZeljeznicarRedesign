@@ -1,5 +1,5 @@
 import React,{useState, useRef, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation} from 'react-router-dom'
 import Zeljo from "../../assets/svg/zeljo_white_icon.svg"
 import ZeljoColor from "../../assets/svg/zeljo_color_icon.svg"
 import ArrowDown from "../../assets/svg/arrow_down.svg"
@@ -7,19 +7,24 @@ import User from "../../assets/svg/user.svg"
 import "./header.css"
 
 const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeader}) => {
+  const location = useLocation();
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
 
   const clickOnOptions = () => {
     setIsExpanded(!isExpanded);
     const currentScrollY = window.scrollY;
-    if(currentScrollY < 50)
+    if(location.pathname === "/" && currentScrollY < 50)
     {
       setBackgroundHeader(!backgroundHeader);
     }
   };
 
   useEffect(() => {
+    if(location.pathname !== "/")
+    {
+      setBackgroundHeader(true);
+    }
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -31,11 +36,11 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
       {
         setShowHeader(true);
       }
-      if(currentScrollY > 50)
+      if(location.pathname === "/" && currentScrollY > 200)
       {
         setBackgroundHeader(true);
       }
-      else
+      else if(location.pathname === "/")
       {
         setBackgroundHeader(false);
       }

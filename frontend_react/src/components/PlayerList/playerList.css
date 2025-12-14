@@ -2,7 +2,7 @@
     
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
 }
 
 .player {
@@ -19,9 +19,9 @@
     cursor: pointer;
 }
 
-.player:only-child {
+/* .player:only-child {
     max-width: calc((100% /4));
-}
+} */
 
 .player::before {
     content: "";

@@ -29,3 +29,8 @@ body, html {
     z-index: 900; 
     pointer-events: auto; 
 }
+
+a {
+    text-decoration: none;
+    color:inherit;
+}

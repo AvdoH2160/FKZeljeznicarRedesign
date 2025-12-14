@@ -55,6 +55,7 @@ namespace backend.Services
             {
                 Id = news.Id,
                 Title = news.Title,
+                Slug = news.Slug,
                 Summary = news.Summary,
                 ThumbnailUrl = news.ThumbnailUrl,
                 IsFeatured = news.IsFeatured,
@@ -142,10 +143,13 @@ namespace backend.Services
 
         public async Task<List<NewsListDto>> GetAllNewsAsync()
         {
-            return await context.News.Select(n => new NewsListDto
+            return await context.News
+                .OrderByDescending(n => n.PublishedDate)
+                .Select(n => new NewsListDto
             {
                 Id = n.Id,
                 Title = n.Title,
+                Slug = n.Slug,
                 Summary = n.Summary,
                 ThumbnailUrl = n.ThumbnailUrl,
                 IsFeatured = n.IsFeatured,
@@ -165,6 +169,7 @@ namespace backend.Services
             {
                 Id = featuredNews.Id,
                 Title = featuredNews.Title,
+                Slug = featuredNews.Slug,
                 Summary = featuredNews.Summary,
                 ThumbnailUrl = featuredNews.ThumbnailUrl,
                 IsFeatured = featuredNews.IsFeatured,
@@ -240,12 +245,44 @@ namespace backend.Services
             {
                 Id = n.Id,
                 Title = n.Title,
+                Slug = n.Slug,
                 Summary = n.Summary,
                 ThumbnailUrl = n.ThumbnailUrl,
                 IsFeatured = n.IsFeatured,
                 Category = n.Category,
                 PublishedDate = n.PublishedDate
             }).ToListAsync();
+        }
+
+        public async Task<PagedResult<NewsListDto>> GetPagedNewsAsync(int page, int pageSize)
+        {
+            var query = context.News.OrderByDescending(n => n.PublishedDate);
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(n => new NewsListDto
+                {
+                    Id = n.Id,
+                    Title = n.Title,
+                    Slug = n.Slug,
+                    Summary = n.Summary,
+                    ThumbnailUrl = n.ThumbnailUrl,
+                    IsFeatured = n.IsFeatured,
+                    Category = n.Category,
+                    PublishedDate = n.PublishedDate
+                })
+                .ToListAsync();
+
+            return new PagedResult<NewsListDto>
+            {
+                Items = items,
+                Page = page,
+                PageSize = pageSize,
+                TotalCount = totalCount
+            };
         }
     }
 }

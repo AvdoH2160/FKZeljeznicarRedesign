@@ -190,6 +190,37 @@
   },
   {
     "ContainingType": "backend.Controllers.NewsController",
+    "Method": "GetPagedNews",
+    "RelativePath": "api/News/page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "backend.Model.PagedResult\u00601[[backend.ViewModel.NewsListDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.NewsController",
     "Method": "GetNewsBySlug",
     "RelativePath": "api/News/slug/{slug}",
     "HttpMethod": "GET",

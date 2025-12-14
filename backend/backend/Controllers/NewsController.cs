@@ -1,4 +1,5 @@
-﻿using backend.Services;
+﻿using backend.Model;
+using backend.Services;
 using backend.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -56,6 +57,12 @@ namespace backend.Controllers
             if (news == null)
                 return NotFound("Ne postoji");
             return Ok(news);
+        }
+
+        [HttpGet("page")]
+        public async Task<ActionResult<PagedResult<NewsListDto>>> GetPagedNews(int page  = 1, int pageSize = 16)
+        {
+            return Ok(await service.GetPagedNewsAsync(page, pageSize));
         }
 
         [HttpPost]
