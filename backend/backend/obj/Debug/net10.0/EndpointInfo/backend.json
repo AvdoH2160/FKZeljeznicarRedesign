@@ -402,6 +402,13 @@
               "format": "int32",
               "default": 16
             }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {

@@ -1,15 +1,29 @@
 import React from 'react'
 import {useState, useRef, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
+import Pagination from "../../components/Pagination/Pagination.jsx"
 import './newsList.css'
 
 const NewsList = () => {
   const [news, setNews] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const { category } = useParams();
+
+  const isActive = (value) =>
+  {
+    return (category ?? "sve") === value;
+  }
 
   useEffect(() => {
-    fetch(`https://localhost:7010/api/News/page?page=${page}&pageSize=12`)
+    const url = new URL("https://localhost:7010/api/News/page")
+    url.searchParams.append("page", page);
+    url.searchParams.append("pageSize", 12);
+
+    if(category) {
+      url.searchParams.append("category", category);
+    }
+    fetch(url)
         .then(res => {
           if (!res.ok) throw new Error("Fetch error");
           return res.json();
@@ -38,25 +52,46 @@ const NewsList = () => {
             console.log(formattedNews)
         })
         .catch(err => console.error("Greska prilikom dohvacanja!", err))
-  }, [page]);
+  }, [page, category]);
 
+  useEffect(() => {
+    setPage(1);
+  }, [category]);
   return (
     <div id="news-list-container">
         <div id="news-list-header">
             <h1 className="news-list-header-text">NOVOSTI</h1>
             <div className="news-list-header-options">
-              <p className="news-list-header-option">
-                SVE NOVOSTI
-              </p>
-              <p className="news-list-header-option">
+              <Link 
+                className={`news-list-header-option ${isActive("sve") ? "active" : ""}`} 
+                to="/novosti"
+              >
+                SVE VIJESTI
+              </Link>
+               <Link 
+                className={`news-list-header-option ${isActive("novosti") ? "active" : ""}`} 
+                to="/novosti/novosti"
+              >
+                NOVOSTI
+              </Link>
+              <Link 
+                className={`news-list-header-option ${isActive("najave") ? "active" : ""}`}
+                to="/novosti/najave"
+              >
                 NAJAVE
-              </p>
-              <p className="news-list-header-option">
+              </Link>
+              <Link 
+                className={`news-list-header-option ${isActive("izvještaji") ? "active" : ""}`}
+                to="/novosti/izvještaji"
+              >
                 IZVJEŠTAJI
-              </p>
-              <p className="news-list-header-option">
+              </Link>
+              <Link 
+                className={`news-list-header-option ${isActive("galerija") ? "active" : ""}`}
+                to="/novosti/galerija"
+              >
                 GALERIJA
-              </p>
+              </Link>
             </div>
         </div>
         <div className="news-list">
@@ -70,29 +105,11 @@ const NewsList = () => {
             </Link>
           ))}
         </div>
-        <div className="pagination">
-          <button 
-              disabled={page === 1}
-              onClick={() => setPage(p => p - 1)}>
-              ‹
-          </button>
-
-          {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                  key={i}
-                  className={page === i + 1 ? "active" : ""}
-                  onClick={() => setPage(i + 1)}
-              >
-                  {i + 1}
-              </button>
-          ))}
-
-          <button 
-              disabled={page === totalPages}
-              onClick={() => setPage(p => p + 1)}>
-              ›
-          </button>
-        </div>
+        <Pagination
+          setPage={setPage} 
+          page={page} 
+          totalPages={totalPages}
+        ></Pagination>
     </div>
   )
 }

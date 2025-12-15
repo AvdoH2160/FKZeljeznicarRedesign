@@ -254,9 +254,16 @@ namespace backend.Services
             }).ToListAsync();
         }
 
-        public async Task<PagedResult<NewsListDto>> GetPagedNewsAsync(int page, int pageSize)
+        public async Task<PagedResult<NewsListDto>> GetPagedNewsAsync(int page, int pageSize, string? category)
         {
-            var query = context.News.OrderByDescending(n => n.PublishedDate);
+            var query = context.News.AsQueryable();
+
+            if(!string.IsNullOrWhiteSpace(category))
+            {
+                query = query.Where(n => n.Category.ToLower() == category.ToLower());
+            }
+
+            query = query.OrderByDescending(n => n.PublishedDate);
 
             var totalCount = await query.CountAsync();
 

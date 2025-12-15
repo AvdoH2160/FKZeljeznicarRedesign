@@ -60,9 +60,12 @@ namespace backend.Controllers
         }
 
         [HttpGet("page")]
-        public async Task<ActionResult<PagedResult<NewsListDto>>> GetPagedNews(int page  = 1, int pageSize = 16)
+        public async Task<ActionResult<PagedResult<NewsListDto>>> GetPagedNews(
+            int page  = 1, 
+            int pageSize = 16,
+            string? category = null)
         {
-            return Ok(await service.GetPagedNewsAsync(page, pageSize));
+            return Ok(await service.GetPagedNewsAsync(page, pageSize, category));
         }
 
         [HttpPost]
