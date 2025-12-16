@@ -291,5 +291,48 @@ namespace backend.Services
                 TotalCount = totalCount
             };
         }
+
+        public async Task<List<NewsListDto>> GetRelatedNewsAsync(int currentId, DateTime publishedDate)
+        {
+            var fromDate = publishedDate.AddDays(-7);
+            var toDate = publishedDate.AddDays(7);
+
+            var result = await context.News
+                .Where(n =>
+                    n.Id != currentId &&
+                    n.PublishedDate >= fromDate &&
+                    n.PublishedDate <= toDate)
+                .OrderByDescending(n => n.PublishedDate)
+                .Take(4)
+                .Select(n => new NewsListDto
+                {
+                    Id = n.Id,
+                    Title = n.Title,
+                    Slug = n.Slug,
+                    Summary = n.Summary,
+                    ThumbnailUrl = n.ThumbnailUrl,
+                    IsFeatured = n.IsFeatured,
+                    Category = n.Category,
+                    PublishedDate = n.PublishedDate
+                }).ToListAsync();
+
+            if (!result.Any())
+            {
+                result = await context.News
+                .OrderByDescending(n => n.PublishedDate)
+                .Select(n => new NewsListDto
+                {
+                    Id = n.Id,
+                    Title = n.Title,
+                    Slug = n.Slug,
+                    Summary = n.Summary,
+                    ThumbnailUrl = n.ThumbnailUrl,
+                    IsFeatured = n.IsFeatured,
+                    Category = n.Category,
+                    PublishedDate = n.PublishedDate
+                }).ToListAsync();
+            }
+            return result;
+        }
     }
 }

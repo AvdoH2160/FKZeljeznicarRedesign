@@ -226,6 +226,37 @@
   },
   {
     "ContainingType": "backend.Controllers.NewsController",
+    "Method": "GetRelatedNews",
+    "RelativePath": "api/News/related",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "currentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "backend.ViewModel.NewsListDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.NewsController",
     "Method": "GetNewsBySlug",
     "RelativePath": "api/News/slug/{slug}",
     "HttpMethod": "GET",

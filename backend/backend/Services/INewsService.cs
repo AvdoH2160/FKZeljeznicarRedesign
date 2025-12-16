@@ -11,6 +11,7 @@ namespace backend.Services
         Task<NewsDetailsDto?> GetNewsByIdAsync(int id);
         Task<NewsDetailsDto?> GetNewsBySlugAsync(string slug);
         Task<PagedResult<NewsListDto>> GetPagedNewsAsync(int page, int pageSize, string? category);
+        Task<List<NewsListDto>> GetRelatedNewsAsync(int currentId, DateTime publishedDate);
         Task<NewsListDto> CreateNewsAsync(NewsCreateUpdateDto request);
         Task<bool> UpdateNewsAsync(int id, NewsCreateUpdateDto request);
         Task<bool> DeleteNewsAsync(int id);

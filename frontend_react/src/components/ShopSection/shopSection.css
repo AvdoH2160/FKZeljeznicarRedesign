@@ -4,7 +4,12 @@
     font-style: italic;
     letter-spacing: "-0.05em";
     height: 90vh;
-    background-color: #002C6D;
+    background: linear-gradient(
+        16.88deg, 
+        #002C6D 40%, 
+        #0043A6 71.37%, 
+        #0055D3 109.23%
+        );
     color: white;
 }
 

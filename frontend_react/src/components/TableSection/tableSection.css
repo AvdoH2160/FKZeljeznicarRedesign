@@ -24,7 +24,13 @@
     width: 180px;
     height: 730px;
     align-self: center;
-    background: #002C6D;
+    /* background: #002C6D; */
+    background: linear-gradient( 
+        10deg, 
+        #002C6D 40%,
+        #0043A6 71.37%, 
+        #0055D3 109.23% 
+    );
     border-radius: 0px 90px 90px 0px;
     margin-right: 90px;
 }

@@ -68,6 +68,13 @@ namespace backend.Controllers
             return Ok(await service.GetPagedNewsAsync(page, pageSize, category));
         }
 
+        [HttpGet("related")]
+        public async Task<ActionResult<NewsListDto>> GetRelatedNews(int currentId, DateTime date)
+        {
+            var result = await service.GetRelatedNewsAsync(currentId, date);
+            return Ok(result);
+        }
+
         [HttpPost]
         public async Task<ActionResult<NewsListDto>> CreateNews([FromForm] NewsCreateUpdateDto request)
         {
