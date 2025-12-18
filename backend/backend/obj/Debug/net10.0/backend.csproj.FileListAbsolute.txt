@@ -170,3 +170,4 @@ C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\o
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\obj\Debug\net10.0\backend.genruntimeconfig.cache
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\obj\Debug\net10.0\ref\backend.dll
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\backend.staticwebassets.runtime.json
+C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

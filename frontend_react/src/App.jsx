@@ -10,6 +10,8 @@ import ScrollManager from './components/ScrollManager/ScrollManager.jsx'
 import NewsList from "./pages/NewsList/NewsList.jsx"
 import News from "./pages/News/News.jsx"
 import "./app.css"
+import LoginRegister from "./pages/LoginRegister/LoginRegister.jsx"
+import ProtectedRoute from "./components/Routes/ProtectedRoute.jsx"
 
 const App = () => {
   const [headerExpanded, setHeaderExpanded] = useState(false);
@@ -38,6 +40,7 @@ const App = () => {
             <Route path="/novosti" element={<NewsList></NewsList>}></Route>
             <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
             <Route path="/novost/:slug" element={<News></News>}></Route>
+            <Route path="/prijava" element={<LoginRegister></LoginRegister>}></Route>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         <Footer/>

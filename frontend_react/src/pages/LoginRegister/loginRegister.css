@@ -1,0 +1,87 @@
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+
+.auth-page input,
+.auth-page button,
+.auth-page .auth-card {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.auth-card {
+    width: 700px;
+    background: white;
+    padding: 30px;
+    /* box-shadow: 0 10px 40px rgba(0,0,0,0.5); */
+}
+
+.auth-image {
+    justify-self: center;
+    text-align: center;
+    font-size: 40px;
+}
+
+.auth-image span {
+    color: #4DA1FF;
+}
+
+.auth-image img {
+    width: 100px;
+    height: auto;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.auth-tabs button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.auth-tabs button.active {
+    border-bottom: 2px solid #4DA1FF;
+    color: #4DA1FF;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.auth-form input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-weight: 500;
+}
+
+.auth-form button {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    background: #4DA1FF;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    clip-path: polygon(
+        0 0, 
+        100% 0, 
+        100% calc(100% - 10px), 
+        calc(100% - 10px) 100%, 
+        0 100%
+    );
+}
