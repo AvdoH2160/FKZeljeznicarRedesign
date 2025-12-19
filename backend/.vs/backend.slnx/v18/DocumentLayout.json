@@ -135,8 +135,7 @@
               "RelativeToolTip": "backend\\Model\\ApplicationUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T14:27:34.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T14:27:34.903Z"
             },
             {
               "$type": "Document",
@@ -148,8 +147,7 @@
               "RelativeToolTip": "backend\\Services\\AuthService.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAIwEsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:45:47.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:45:47.069Z"
             },
             {
               "$type": "Document",
@@ -161,8 +159,7 @@
               "RelativeToolTip": "backend\\Services\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:45:33.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:45:33.776Z"
             },
             {
               "$type": "Document",
@@ -174,8 +171,7 @@
               "RelativeToolTip": "backend\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwCAAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:44:18.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:44:18.911Z"
             },
             {
               "$type": "Document",
@@ -187,8 +183,7 @@
               "RelativeToolTip": "backend\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:20:30.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:20:30.943Z"
             },
             {
               "$type": "Document",
@@ -200,8 +195,7 @@
               "RelativeToolTip": "backend\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-17T13:32:01.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:32:01.226Z"
             },
             {
               "$type": "Document",
@@ -213,8 +207,7 @@
               "RelativeToolTip": "backend\\Model\\Membership.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:17:52.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:17:52.165Z"
             },
             {
               "$type": "Document",
@@ -226,8 +219,7 @@
               "RelativeToolTip": "backend\\Model\\Profile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:13:24.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:13:24.714Z"
             },
             {
               "$type": "Document",
@@ -239,8 +231,7 @@
               "RelativeToolTip": "backend\\Services\\INewsService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:51:59.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T11:51:59.987Z"
             },
             {
               "$type": "Document",
@@ -252,8 +243,7 @@
               "RelativeToolTip": "backend\\Controllers\\NewsController.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAIwEoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:50:36.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T11:50:36.246Z"
             },
             {
               "$type": "Document",
@@ -265,8 +255,7 @@
               "RelativeToolTip": "backend\\Model\\News.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:42:57.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T11:42:57.857Z"
             },
             {
               "$type": "Document",
@@ -278,8 +267,7 @@
               "RelativeToolTip": "backend\\ViewModel\\NewsDetailsDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T17:21:52.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T17:21:52.41Z"
             },
             {
               "$type": "Document",
@@ -291,8 +279,7 @@
               "RelativeToolTip": "backend\\Services\\NewsService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4BAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T12:10:43.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T12:10:43.093Z"
             },
             {
               "$type": "Document",
@@ -304,8 +291,7 @@
               "RelativeToolTip": "backend\\Model\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T15:41:50.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T15:41:50.387Z"
             },
             {
               "$type": "Document",
@@ -317,8 +303,7 @@
               "RelativeToolTip": "backend\\Services\\PlayerService.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAAgwK0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:41:09.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:41:09.007Z"
             },
             {
               "$type": "Document",
@@ -330,8 +315,7 @@
               "RelativeToolTip": "backend\\Controllers\\PlayerController.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAwwDsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:31:27.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:31:27.521Z"
             }
           ]
         },
@@ -366,8 +350,7 @@
               "RelativeToolTip": "backend\\Model\\PagedResult.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T12:07:18.209Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-13T12:07:18.209Z"
             },
             {
               "$type": "Document",
@@ -379,8 +362,7 @@
               "RelativeToolTip": "backend\\ViewModel\\PlayerUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:35:37.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:35:37.694Z"
             },
             {
               "$type": "Document",
@@ -392,8 +374,7 @@
               "RelativeToolTip": "backend\\ViewModel\\PlayerCreateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:33:22.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:33:22.479Z"
             },
             {
               "$type": "Document",
@@ -405,8 +386,7 @@
               "RelativeToolTip": "backend\\ViewModel\\PlayerDetailsDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:32:52.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:32:52.173Z"
             },
             {
               "$type": "Document",
@@ -418,8 +398,7 @@
               "RelativeToolTip": "backend\\Services\\IPlayerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T12:22:20.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T12:22:20.78Z"
             },
             {
               "$type": "Document",
@@ -431,8 +410,7 @@
               "RelativeToolTip": "backend\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAIBJwEIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T13:28:17.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:28:17.898Z"
             },
             {
               "$type": "Document",
@@ -444,8 +422,7 @@
               "RelativeToolTip": "backend\\Services\\ProductsService.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAgwDUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:42:09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:42:09Z"
             }
           ]
         }
