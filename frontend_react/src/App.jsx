@@ -12,6 +12,8 @@ import News from "./pages/News/News.jsx"
 import "./app.css"
 import LoginRegister from "./pages/LoginRegister/LoginRegister.jsx"
 import ProtectedRoute from "./components/Routes/ProtectedRoute.jsx"
+import Profile from "./pages/Profile/Profile.jsx"
+import { AuthProvider } from "./context/AuthContext.jsx"
 
 const App = () => {
   const [headerExpanded, setHeaderExpanded] = useState(false);
@@ -24,27 +26,34 @@ const App = () => {
 
   return (
     <div>
-      <BrowserRouter>
-        <Header isExpanded={headerExpanded} 
-        setIsExpanded={setHeaderExpanded} 
-        backgroundHeader={backgroundHeader}
-        setBackgroundHeader={setBackgroundHeader}/>
-        {headerExpanded && (
-          <div className="page-overlay" onClick={closeHeader}></div>
-        )}
-          <ScrollManager/>
-          <Routes>
-            <Route path="/" element={<Home></Home>}></Route>
-            <Route path="/prvi-tim" element={<FirstTeam></FirstTeam>}></Route>
-            <Route path="/prvi-tim/:slug" element={<Player></Player>}></Route>
-            <Route path="/novosti" element={<NewsList></NewsList>}></Route>
-            <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
-            <Route path="/novost/:slug" element={<News></News>}></Route>
-            <Route path="/prijava" element={<LoginRegister></LoginRegister>}></Route>
-            <Route path="*" element={<NotFound/>}/>
-          </Routes>
-        <Footer/>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header isExpanded={headerExpanded} 
+          setIsExpanded={setHeaderExpanded} 
+          backgroundHeader={backgroundHeader}
+          setBackgroundHeader={setBackgroundHeader}/>
+          {headerExpanded && (
+            <div className="page-overlay" onClick={closeHeader}></div>
+          )}
+            <ScrollManager/>
+            <Routes>
+              <Route path="/" element={<Home></Home>}></Route>
+              <Route path="/prvi-tim" element={<FirstTeam></FirstTeam>}></Route>
+              <Route path="/prvi-tim/:slug" element={<Player></Player>}></Route>
+              <Route path="/novosti" element={<NewsList></NewsList>}></Route>
+              <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
+              <Route path="/novost/:slug" element={<News></News>}></Route>
+              <Route path="/prijava" element={<LoginRegister></LoginRegister>}></Route>
+              <Route path="/profil" element={
+                <ProtectedRoute>
+                  <Profile></Profile>
+                </ProtectedRoute>
+              }></Route>
+              <Route path="*" element={<NotFound/>}/>
+            </Routes>
+          <Footer/>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   )
 }

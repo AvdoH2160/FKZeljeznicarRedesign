@@ -1,5 +1,5 @@
 import {createContext, useState, useEffect} from 'react';
-import {login, refreshToken} from '../services/authService.js';
+import {login, register, refreshToken} from '../services/authService.js';
 
 export const AuthContext = createContext();
 
@@ -33,6 +33,10 @@ export const AuthProvider = ({children}) => {
     return () => clearInterval(interval);
     }, [user?.id]);
 
+    const handleRegister = async (credentials) => {
+        await register(credentials);    
+    };
+
     const handleLogin = async (credentials) => {
         const data = await login(credentials);
 
@@ -57,6 +61,7 @@ export const AuthProvider = ({children}) => {
             user,
             isAuthenticated: !!user,
             login: handleLogin,
+            register: handleRegister,
             logout: handleLogout
             }}
         >

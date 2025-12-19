@@ -14,8 +14,15 @@ namespace backend.Controllers
         ILogger<AuthController> logger) : ControllerBase
     {
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterDto request)
+        public async Task<IActionResult> Register([FromBody]RegisterDto request)
         {
+            if (!ModelState.IsValid)
+            {
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                    Console.WriteLine("Validation error: " + error.ErrorMessage);
+                return BadRequest(ModelState);
+            }
+
             var result = await service.RegisterAsync(request);
             if (result == null)
             {
@@ -34,7 +41,7 @@ namespace backend.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginDto request)
+        public async Task<IActionResult> Login([FromBody]LoginDto request)
         {
             var result = await service.LoginAsync(request);
             if (result == null) return Unauthorized();

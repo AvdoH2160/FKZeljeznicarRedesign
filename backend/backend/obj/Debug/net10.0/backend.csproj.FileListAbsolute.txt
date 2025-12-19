@@ -1,5 +1,6 @@
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\appsettings.json
+C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\backend.staticwebassets.runtime.json
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\backend.staticwebassets.endpoints.json
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\backend.exe
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\backend.deps.json
@@ -10,6 +11,7 @@ C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\b
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Humanizer.dll
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
@@ -169,5 +171,3 @@ C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\o
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\obj\Debug\net10.0\backend.pdb
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\obj\Debug\net10.0\backend.genruntimeconfig.cache
 C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\obj\Debug\net10.0\ref\backend.dll
-C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\backend.staticwebassets.runtime.json
-C:\Users\avdoh\OneDrive\Dokumenti\GitHub\FKZeljeznicarRedesign\backend\backend\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

@@ -53,6 +53,10 @@ namespace backend.Services
             if (!result.Succeeded)
             {
                 logger.LogWarning("User registration failed for {Username}", request.UserName);
+                foreach (var error in result.Errors)
+                {
+                    Console.WriteLine($"Registration failed: {error.Code} - {error.Description}");
+                }
                 return null;
             }
 
