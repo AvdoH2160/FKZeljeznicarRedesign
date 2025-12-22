@@ -6,7 +6,7 @@ namespace backend.Services
     public interface IAuthService
     {
         Task<(ApplicationUser user, string jwtToken, string refreshToken)?> RegisterAsync(RegisterDto request);
-        Task<(ApplicationUser user, string jwtToken, string refreshToken)?> LoginAsync(LoginDto request);
+        Task<(ApplicationUser user, string jwtToken, string refreshToken, List<string> roles)?> LoginAsync(LoginDto request);
         Task<(string jwtToken, string refreshToken)?> RefreshTokenAsync(RefreshTokenRequestDto request);
         Task<string> GenerateEmailConfirmationTokenAsync(ApplicationUser user);
         Task<bool> ConfirmEmailAsync(int userId, string token);

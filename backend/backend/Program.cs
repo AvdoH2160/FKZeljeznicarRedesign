@@ -70,6 +70,9 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Configuration.AddEnvironmentVariables();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -91,4 +94,16 @@ app.UseStaticFiles();
 
 app.MapControllers();
 
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+
+//    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+//    var roleManager = services.GetRequiredService<RoleManager<IdentityRole<int>>>();
+//    var configuration = services.GetRequiredService<IConfiguration>();
+
+//    await DataSeeder.SeedRolesAndAdminAsync(userManager, roleManager, configuration);
+//}
+
 app.Run();
+

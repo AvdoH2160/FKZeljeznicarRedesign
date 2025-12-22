@@ -18,7 +18,12 @@ namespace backend.Services
         ILogger<AuthService> logger,
         IConfiguration configuration) : IAuthService
     {
-        public async Task<(ApplicationUser user, string jwtToken, string refreshToken)?> LoginAsync(LoginDto request)
+        public async Task<(
+            ApplicationUser user, 
+            string jwtToken, 
+            string refreshToken, 
+            List<string> roles)?> 
+            LoginAsync(LoginDto request)
         {
             var user = await userManager.FindByNameAsync(request.UserName);
 
@@ -28,13 +33,19 @@ namespace backend.Services
                 return null;
             }
 
-            var jwt = CreateToken(user);
+            var jwt = await CreateToken(user);
             var refresh = await GenerateRefreshTokenAsync(user);
 
-            return (user, jwt, refresh);
+            var roles = await userManager.GetRolesAsync(user);
+
+            return (user, jwt, refresh, roles.ToList());
         }
 
-        public async Task<(ApplicationUser user, string jwtToken, string refreshToken)?> RegisterAsync(RegisterDto request)
+        public async Task<(
+            ApplicationUser user, 
+            string jwtToken, 
+            string refreshToken)?> 
+            RegisterAsync(RegisterDto request)
         {
             var existingUser = await userManager.FindByNameAsync(request.UserName);
             if(existingUser != null)
@@ -79,30 +90,39 @@ namespace backend.Services
             context.Profiles.Add(profile);
             await context.SaveChangesAsync();
 
-            var jwt = CreateToken(user);
+            var jwt = await CreateToken(user);
             var refresh = await GenerateRefreshTokenAsync(user);
 
             return (user, jwt, refresh);
         }
 
-        public async Task<(string jwtToken, string refreshToken)?> RefreshTokenAsync(RefreshTokenRequestDto request)
+        public async Task<(
+            string jwtToken, 
+            string refreshToken)?> 
+            RefreshTokenAsync(RefreshTokenRequestDto request)
         {
             var user = await context.Users.FindAsync(request.UserId);
             if (user == null || user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
                 return null;
 
-            var jwt = CreateToken(user);
+            var jwt = await CreateToken(user);
             var refresh = await GenerateRefreshTokenAsync(user);
             return (jwt, refresh);
         }
 
-        private string CreateToken(ApplicationUser user)
+        private async Task<string> CreateToken(ApplicationUser user)
         {
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.UserName!)
             };
+
+            var roles = await userManager.GetRolesAsync(user);
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
 
             var key = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(configuration["AppSettings:Token"]!)

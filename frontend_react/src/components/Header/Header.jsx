@@ -97,8 +97,10 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
             <img src={Zeljo} alt="logo"></img>
           </Link>
           <div className="header-options">
-            <Link to="/novosti" className="dropdown header-option">
+            <div className="dropdown header-option">
+              <Link to="/novosti">
               VIJESTI
+              </Link>
               <div className="dropdown-menu">
                 <Link className="button" to="/novosti/novosti">NOVOSTI</Link>
                 <Link className="button" to="/novosti/najave">NAJAVE</Link>
@@ -106,25 +108,29 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
                 <Link className="button" to="/novosti/galerija">GALERIJA</Link>
               </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </Link>
-            <Link to="/prvi-tim" className="dropdown header-option">
+            </div>
+            <div className="dropdown header-option">
+              <Link to="/prvi-tim">
               KLUB
+              </Link>
               <div className="dropdown-menu">
                 <Link className="button" to="/prvi-tim">PRVI TIM</Link>
                 <Link className="button" to="/novosti/najave">HISTORIJA</Link>
                 <Link className="button" to="/novosti/izvještaji">KONTAKT</Link>
               </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </Link>
-            <Link to="/novosti" className="dropdown header-option">
-              ČLANSTVO
+            </div>
+            <div className="dropdown header-option">
+              <Link to="/prvi-tim">
+                ČLANSTVO
+              </Link>
               <div className="dropdown-menu">
                 <Link className="button" to="/prvi-tim">UČLANI SE</Link>
                 <Link className="button" to="/novosti/najave">OBNOVA</Link>
                 <Link className="button" to="/novosti/izvještaji">PROVJERI STATUS</Link>
               </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </Link>
+            </div>
             <Link to="/novosti" className="no-dropdown header-option">
               SHOP
             </Link>

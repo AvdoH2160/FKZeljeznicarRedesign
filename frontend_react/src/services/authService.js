@@ -5,4 +5,4 @@ export const login = data =>
 export const register = data => 
     api.post("/Auth/register", data).then(r => r.data);
 export const refreshToken = (userId, refreshToken) =>
-    api.post("/Auth/refresh-token", { userId, refreshToken }).then(r => r.data);
+    api.post("/Auth/refresh", { userId, refreshToken }).then(r => r.data);

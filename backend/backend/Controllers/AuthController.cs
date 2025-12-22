@@ -46,13 +46,14 @@ namespace backend.Controllers
             var result = await service.LoginAsync(request);
             if (result == null) return Unauthorized();
 
-            var (user, jwtToken, refreshToken) = result.Value;
+            var (user, jwtToken, refreshToken, roles) = result.Value;
             return Ok(new { 
                 id = user.Id,
                 username = user.UserName,
                 email = user.Email,
                 jwtToken, 
-                refreshToken 
+                refreshToken ,
+                roles
             });
         }
 

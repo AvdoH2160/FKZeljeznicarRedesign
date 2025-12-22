@@ -1,0 +1,71 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  margin-top: 100px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 250px;
+  background: #002c6d;
+  color: #fff;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 0;       
+  bottom: 0;        
+  overflow-y: auto; 
+  border-bottom-right-radius: 100px;
+}
+
+.admin-sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+}
+
+/* Sidebar links */
+.admin-sidebar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.1s;
+  font-weight: 500;
+}
+
+.admin-sidebar a:hover {
+  background: #1a3b7a;
+  transform: translateX(5px);
+}
+
+.admin-sidebar a.active {
+  background: #1a3b7a;
+  font-weight: 700;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 40px;
+  background: white;
+  min-height: calc(100vh - 100px);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-content > * {
+  /* background: rgb(245, 246, 250); */
+  background: rgb(233, 234, 240);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}

@@ -15,6 +15,14 @@ import ProtectedRoute from "./components/Routes/ProtectedRoute.jsx"
 import Profile from "./pages/Profile/Profile.jsx"
 import { AuthProvider } from "./context/AuthContext.jsx"
 import PublicRoute from "./components/Routes/PublicRoute.jsx"
+import RequireAuth from "./components/Routes/RequireAuth.jsx"
+import AdminLayout from "./admin/AdminLayout.jsx"
+import AdminDashboard from "./admin/pages/AdminDashboard.jsx"
+import AdminGames from "./admin/pages/AdminGames.jsx"
+import AdminNews from "./admin/pages/AdminNews.jsx"
+import AdminPlayers from "./admin/pages/AdminPlayers.jsx"
+import AdminUsers from "./admin/pages/AdminUsers.jsx"
+
 
 const App = () => {
   const [headerExpanded, setHeaderExpanded] = useState(false);
@@ -54,6 +62,18 @@ const App = () => {
                   <Profile></Profile>
                 </ProtectedRoute>
               }></Route>
+              <Route path="/admin" element={
+                <RequireAuth role="Admin">
+                  <AdminLayout></AdminLayout>
+                </RequireAuth>
+                }
+              >
+                <Route index element={<AdminDashboard></AdminDashboard>}></Route>
+                <Route path="users" element={<AdminUsers></AdminUsers>}></Route>
+                <Route path="news" element={<AdminNews></AdminNews>}></Route>
+                <Route path="games" element={<AdminGames></AdminGames>}></Route>
+                <Route path="players" element={<AdminPlayers></AdminPlayers>}></Route>
+              </Route>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
           <Footer/>

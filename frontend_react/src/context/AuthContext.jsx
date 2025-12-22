@@ -1,24 +1,20 @@
-import {createContext, useState, useEffect, use} from 'react';
+import {createContext, useState, useEffect} from 'react';
 import {login, register, refreshToken} from '../services/authService.js';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
-    // const [user, setUser] = useState(() => {
-    //     const saved = localStorage.getItem("auth");
-    //     return saved ? JSON.parse(saved) : null;
-    // });
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);   
 
     const parseJwt = (token) => {
-    try {
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        return JSON.parse(atob(base64));
-    } catch {
-        return null;
-    }
+        try {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            return JSON.parse(atob(base64));
+        } catch {
+            return null;
+        }
     };
 
     useEffect(() => {
@@ -36,53 +32,44 @@ export const AuthProvider = ({children}) => {
             } else {
                 setUser(parsed);
             }
-        } catch {
-            handleLogout();
+        } catch (err) {
+            if (err?.response?.status === 401) {
+                handleLogout();
+            }
         }
         setLoading(false);
     }, []);
 
 
     useEffect(() => {
-        if (!user?.refreshToken || !user?.id) return;
+        if (!user?.jwtToken || !user?.refreshToken) return;
 
-        const interval = setInterval(async () => {
+        const decoded = parseJwt(user.jwtToken);
+        if(!decoded?.exp) return;
+
+        const expiresAt = decoded.exp * 1000;
+        const refreshAt = expiresAt - 60_000;
+        const timeout = refreshAt - Date.now();
+
+        const refreshNow = async () => {
             try {
-                const data = await refreshToken(user.id, user.refreshToken);
-
+                const data  = await refreshToken(user.id, user.refreshToken);
                 const updatedUser = {
                     ...user,
                     jwtToken: data.jwtToken,
                     refreshToken: data.refreshToken
                 };
-
-            setUser(updatedUser);
-            localStorage.setItem("auth", JSON.stringify(updatedUser));
-            } catch (err) {
-                console.error("Error refreshing token:", err);
+                setUser(updatedUser);
+                localStorage.setItem("auth", JSON.stringify(updatedUser));
+            } catch {
                 handleLogout();
             }
-        }, 1000 * 60 * 10);
-
-    return () => clearInterval(interval);
-    }, [user]);
-
-    useEffect(() => {
-        if (!user?.jwtToken) return;
-        const decoded = parseJwt(user.jwtToken);
-        if(!decoded?.exp) return;
-
-        const expiredAt = decoded.exp * 1000;
-        const timeout= expiredAt - Date.now();
-
-        if(timeout <= 0) {
-            handleLogout();
+        };
+        if (timeout <= 0) {
+            refreshNow();
             return;
         }
-
-        const timer = setTimeout(() => {
-            handleLogout();
-        }, timeout);
+        const timer = setTimeout(refreshNow, timeout);
         return () => clearTimeout(timer);
     }, [user?.jwtToken]);
 
@@ -92,19 +79,25 @@ export const AuthProvider = ({children}) => {
 
     const handleLogin = async (credentials) => {
         const data = await login(credentials);
+        
+        const rolesArray = Array.isArray(data.roles)
+            ? data.roles
+            : data.roles ? [data.roles] : [];
 
         const authUser = {
             id: data.id,
             username: data.username,
+            roles: rolesArray,
             jwtToken: data.jwtToken,
             refreshToken: data.refreshToken
         };
+        console.log("logged user", authUser);
 
         setUser(authUser);
         localStorage.setItem("auth", JSON.stringify(authUser));
     };
 
-    const handleLogout =  async (credentials) => {
+    const handleLogout = () => {
         setUser(null);
         localStorage.removeItem("auth"); 
     }
