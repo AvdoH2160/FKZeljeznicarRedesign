@@ -12,4 +12,18 @@ api.interceptors.request.use(config => {
   return config;
 });
 
+api.interceptors.response.use(
+  response => response,
+  error => {
+    if (error.response?.status === 401) {
+      console.warn("JWT expired or unauthorized – logging out");
+
+      localStorage.removeItem("auth");
+
+      window.location.href = "/prijava";
+    }
+    return Promise.reject(error);
+  }
+);
+
 export default api;

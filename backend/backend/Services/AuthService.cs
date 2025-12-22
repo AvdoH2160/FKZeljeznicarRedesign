@@ -18,7 +18,7 @@ namespace backend.Services
         ILogger<AuthService> logger,
         IConfiguration configuration) : IAuthService
     {
-        public async Task<(string jwtToken, string refreshToken)?> LoginAsync(LoginDto request)
+        public async Task<(ApplicationUser user, string jwtToken, string refreshToken)?> LoginAsync(LoginDto request)
         {
             var user = await userManager.FindByNameAsync(request.UserName);
 
@@ -31,7 +31,7 @@ namespace backend.Services
             var jwt = CreateToken(user);
             var refresh = await GenerateRefreshTokenAsync(user);
 
-            return (jwt, refresh);
+            return (user, jwt, refresh);
         }
 
         public async Task<(ApplicationUser user, string jwtToken, string refreshToken)?> RegisterAsync(RegisterDto request)

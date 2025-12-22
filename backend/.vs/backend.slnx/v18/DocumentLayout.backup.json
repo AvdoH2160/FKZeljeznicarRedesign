@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\newslistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\newslistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\model\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\newslistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\newslistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -118,11 +118,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 199,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\RegisterDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\RegisterDto.cs",
@@ -135,20 +135,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "backend\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\AuthService.cs",
-              "RelativeToolTip": "backend\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADAAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "backend\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwDMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:45:47.069Z",
+              "WhenOpened": "2025-12-17T13:44:18.911Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IAuthService.cs",
+              "RelativeToolTip": "backend\\Services\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T13:45:33.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "backend\\Model\\ApplicationUser.cs",
@@ -156,25 +169,24 @@
               "RelativeToolTip": "backend\\Model\\ApplicationUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T14:27:34.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T14:27:34.903Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "backend\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "backend\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCgAAAAJAAAAAAAAAA==",
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\AuthService.cs",
+              "RelativeToolTip": "backend\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:44:18.911Z",
+              "WhenOpened": "2025-12-17T13:45:47.069Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "backend\\appsettings.json",
@@ -182,12 +194,11 @@
               "RelativeToolTip": "backend\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-17T13:32:01.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:32:01.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Profile.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Profile.cs",
               "RelativeDocumentMoniker": "backend\\Model\\Profile.cs",
@@ -195,12 +206,11 @@
               "RelativeToolTip": "backend\\Model\\Profile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:13:24.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:13:24.714Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Program.cs",
               "RelativeDocumentMoniker": "backend\\Program.cs",
@@ -208,12 +218,11 @@
               "RelativeToolTip": "backend\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T15:03:05.539Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T15:03:05.539Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\ProfileController.cs",
@@ -221,20 +230,7 @@
               "RelativeToolTip": "backend\\Controllers\\ProfileController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T11:16:56.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IAuthService.cs",
-              "RelativeDocumentMoniker": "backend\\Services\\IAuthService.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IAuthService.cs",
-              "RelativeToolTip": "backend\\Services\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:45:33.776Z"
+              "WhenOpened": "2025-12-19T11:16:56.986Z"
             },
             {
               "$type": "Document",
@@ -368,13 +364,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "NewsListDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\NewsListDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\NewsListDto.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\NewsListDto.cs",
               "RelativeToolTip": "backend\\ViewModel\\NewsListDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-13T12:10:42.558Z",
               "EditorCaption": ""

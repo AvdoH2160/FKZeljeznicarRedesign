@@ -46,8 +46,14 @@ namespace backend.Controllers
             var result = await service.LoginAsync(request);
             if (result == null) return Unauthorized();
 
-            var (jwtToken, refreshToken) = result.Value;
-            return Ok(new { jwtToken, refreshToken });
+            var (user, jwtToken, refreshToken) = result.Value;
+            return Ok(new { 
+                id = user.Id,
+                username = user.UserName,
+                email = user.Email,
+                jwtToken, 
+                refreshToken 
+            });
         }
 
         [HttpPost("refresh")]

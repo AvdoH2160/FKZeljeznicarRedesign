@@ -8,7 +8,7 @@ import "./loginRegister.css"
 const LoginRegister = () => {
     const [mode, setMode] = useState('login'); // 'login' or 'register'
 
-    const { login, register } = useContext(AuthContext);
+    const { login, register, isAuthenticated } = useContext(AuthContext);
 
     const navigate = useNavigate();
 

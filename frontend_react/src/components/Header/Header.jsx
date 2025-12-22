@@ -1,5 +1,6 @@
-import React,{useState, useRef, useEffect} from 'react'
+import React,{useState, useRef, useEffect, useContext} from 'react'
 import { Link, useLocation} from 'react-router-dom'
+import {AuthContext} from '../../context/AuthContext'
 import Zeljo from "../../assets/svg/zeljo_white_icon.svg"
 import ZeljoColor from "../../assets/svg/zeljo_color_icon.svg"
 import ArrowDown from "../../assets/svg/arrow_down.svg"
@@ -7,24 +8,30 @@ import User from "../../assets/svg/user.svg"
 import "./header.css"
 
 const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeader}) => {
+   const {user, logout, isAuthenticated, loading} = useContext(AuthContext);
   const location = useLocation();
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
 
+  const isHome = location.pathname === "/";
+
+
   const clickOnOptions = () => {
-    setIsExpanded(!isExpanded);
-    const currentScrollY = window.scrollY;
-    if(location.pathname === "/" && currentScrollY < 50)
-    {
-      setBackgroundHeader(!backgroundHeader);
-    }
+    setIsExpanded(prev => !prev);
   };
 
   useEffect(() => {
-    if(location.pathname !== "/")
+    if(!isHome)
     {
       setBackgroundHeader(true);
     }
+    else
+    {
+      setBackgroundHeader(window.scrollY > 200);
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -36,13 +43,10 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
       {
         setShowHeader(true);
       }
-      if(location.pathname === "/" && currentScrollY > 200)
+      
+      if(isHome)
       {
-        setBackgroundHeader(true);
-      }
-      else if(location.pathname === "/")
-      {
-        setBackgroundHeader(false);
+        setBackgroundHeader(currentScrollY > 200);
       }
 
       lastScrollY.current = currentScrollY;
@@ -53,7 +57,7 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [isHome]);
 
   useEffect(() => {
     const preventScroll = (e) => {
@@ -76,6 +80,10 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
     };
   }, [isExpanded]);
 
+  if(loading) {
+      return null;
+  }
+
   return (
     <header className={`${showHeader ? "show" : "hide"}`} 
     id="header-container" 
@@ -89,33 +97,58 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
             <img src={Zeljo} alt="logo"></img>
           </Link>
           <div className="header-options">
-            <div id="news-option" className="header-option" onClick={clickOnOptions}>
-              Novosti
+            <Link to="/novosti" className="dropdown header-option">
+              VIJESTI
+              <div className="dropdown-menu">
+                <Link className="button" to="/novosti/novosti">NOVOSTI</Link>
+                <Link className="button" to="/novosti/najave">NAJAVE</Link>
+                <Link className="button" to="/novosti/izvještaji">IZVJEŠTAJI</Link>
+                <Link className="button" to="/novosti/galerija">GALERIJA</Link>
+              </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </div>
-            <div id="shop-option" className="header-option">
-              Shop
+            </Link>
+            <Link to="/prvi-tim" className="dropdown header-option">
+              KLUB
+              <div className="dropdown-menu">
+                <Link className="button" to="/prvi-tim">PRVI TIM</Link>
+                <Link className="button" to="/novosti/najave">HISTORIJA</Link>
+                <Link className="button" to="/novosti/izvještaji">KONTAKT</Link>
+              </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </div>
-            <div id="tickets-option" className="header-option">
-              Ulaznice
+            </Link>
+            <Link to="/novosti" className="dropdown header-option">
+              ČLANSTVO
+              <div className="dropdown-menu">
+                <Link className="button" to="/prvi-tim">UČLANI SE</Link>
+                <Link className="button" to="/novosti/najave">OBNOVA</Link>
+                <Link className="button" to="/novosti/izvještaji">PROVJERI STATUS</Link>
+              </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </div>
-            <div id="member-option" className="header-option">
-              Članstvo
-              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </div>
-            <div id="about-option" className="header-option">
-              O nama
-              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </div>
+            </Link>
+            <Link to="/novosti" className="no-dropdown header-option">
+              SHOP
+            </Link>
+            <Link to="/novosti" className="no-dropdown header-option">
+              ULAZNICE
+            </Link>
           </div>
-          <div id="user-option">
-            <img src={User} alt="" className='user-icon'></img>
-          </div>
-          <div id="sign-in-text">
-            Prijavi se
-          </div>
+          {!isAuthenticated ? (
+              <Link to="/prijava" className="no-dropdown user-option">
+                <img src={User} alt="" className='user-icon'></img>
+                PRIJAVI SE
+              </Link>
+              ) : (
+              <Link to="/profil" className="dropdown user-option">
+                <img src={User} alt="" className='user-icon'></img>
+                <span id="username">
+                  {user?.username?.toUpperCase()}
+                </span>
+                <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+                <div className="dropdown-menu">
+                  <div className="button" onClick={logout}>ODJAVA</div>
+                </div>
+              </Link>
+            )}
       </div>
       {isExpanded && (
         <div id="dropdown-container">

@@ -1,5 +1,9 @@
 #header-container {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins";
+    font-weight: 700;
+    font-style: italic;
+    font-size: 20px;
+    color: white;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -23,9 +27,9 @@ header.show {
 }
 
 #header-fixed {
-    display:flex;
+    display:grid;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
     height: 100px;
-    flex-direction: row;
     align-items: center;
     width: 100%;
 }
@@ -34,26 +38,19 @@ header.show {
     margin-left: 50px;
 }
 
-#logo-color {
-    height: 53px;
-}
-
 .header-options {
     display: flex;
     flex-direction: row;
     margin: auto;
-    color: white;
-    transition: color 0.5s ease;
 }
 
 .header-option {
-    margin-left: 25px;
-    margin-right: 25px;
-    width: max-content;
+    padding: 10px 30px 10px 30px;
 }
 
 .arrow-down {
-    margin-left: 5px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
 }
 
 .user-icon {
@@ -61,9 +58,83 @@ header.show {
     height: 20px;
 }
 
-#sign-in-text {
-    color: white;
+.user-option {
     margin-right: 50px;
+    padding: 10px 15px;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.no-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position:absolute;
+    top: 100%;
+    right: 0;
+    background: #002C6D;
+    width: 100%;
+    display: flex;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown .dropdown-menu:hover {
+    transition: opacity 0.3s ease;
+    user-select: all;
+    pointer-events: all;
+    opacity: 1;
+}
+
+.dropdown:hover {
+    background-color: #002C6D;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    color: #4DA1FF;
+}
+
+.dropdown:hover .arrow-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        0 100%
+    );
+}
+
+.dropdown-menu .button {
+    user-select: none;
+    padding: 10px 15px;
+    font-family: "Poppins";
+    font-weight: 700;
+    font-style: italic;
+    font-size: 15px;
+    color: white;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu .button:hover {
+    color:#4DA1FF;
 }
 
 .header-option,#logo-option,#user-option,#sign-in-text:hover {

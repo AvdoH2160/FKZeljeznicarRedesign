@@ -14,6 +14,7 @@ import LoginRegister from "./pages/LoginRegister/LoginRegister.jsx"
 import ProtectedRoute from "./components/Routes/ProtectedRoute.jsx"
 import Profile from "./pages/Profile/Profile.jsx"
 import { AuthProvider } from "./context/AuthContext.jsx"
+import PublicRoute from "./components/Routes/PublicRoute.jsx"
 
 const App = () => {
   const [headerExpanded, setHeaderExpanded] = useState(false);
@@ -43,7 +44,11 @@ const App = () => {
               <Route path="/novosti" element={<NewsList></NewsList>}></Route>
               <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
               <Route path="/novost/:slug" element={<News></News>}></Route>
-              <Route path="/prijava" element={<LoginRegister></LoginRegister>}></Route>
+              <Route path="/prijava" element={
+                <PublicRoute>
+                  <LoginRegister></LoginRegister>
+                </PublicRoute>
+              }></Route>
               <Route path="/profil" element={
                 <ProtectedRoute>
                   <Profile></Profile>
