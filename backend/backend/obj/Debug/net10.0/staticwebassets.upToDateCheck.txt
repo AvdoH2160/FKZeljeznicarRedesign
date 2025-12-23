@@ -21,3 +21,5 @@ wwwroot\uploads\products\1a4f97e4-b36f-47b8-addd-d9000dd773bc.jpg
 wwwroot\uploads\products\6e0281cb-7b00-4f67-b75d-86fe238eae77.jpg
 wwwroot\uploads\products\6fea0184-1a70-44f7-aa9d-5e55119e23d6.png
 wwwroot\uploads\products\f20524b3-567a-4041-b4f8-621da06b3745.jpg
+wwwroot\uploads\news\4135799b-b4cd-4d6a-a482-37f8ed1b9f07.jpg
+wwwroot\uploads\news\bea1a0f4-89aa-43f6-9699-5ac0ada45d9d.jpg

@@ -1,0 +1,98 @@
+.admin-news {
+  padding: 20px;
+}
+
+.admin-news h1 {
+  margin-bottom: 20px;
+}
+
+.news-form {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.news-form input, .news-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.news-form input[type="file"] {
+  border: none;
+}
+
+.preview-container {
+  display: flex;
+  gap: 15px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.preview-image {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #002c6d;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.preview-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+.form-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #002c6d;
+  color: white;
+}
+.form-actions button.cancel {
+  background-color: #a00;
+}
+
+.adminNews-table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 12px;
+  text-align: left;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.adminNews-table th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.adminNews-table th {
+    color: white;
+    background: #002c6d;
+}
+
+.actions button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  color: white;
+}
+.actions .edit {
+  background-color: #28a745;
+}
+.actions .delete {
+  background-color: #dc3545;
+}

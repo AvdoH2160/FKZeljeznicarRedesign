@@ -26,10 +26,10 @@ namespace backend.Services
                 }
             }
 
-            if(request.IsFeatured)
+            if (request.IsFeatured.HasValue && request.IsFeatured.Value)
             {
-                var existingFeatured = await context.News.Where(n => n.IsFeatured).FirstOrDefaultAsync();
-                if(existingFeatured != null)
+                var existingFeatured = await context.News.Where(n => n.IsFeatured == true).FirstOrDefaultAsync();
+                if (existingFeatured != null)
                 {
                     existingFeatured.IsFeatured = false;
                 }
@@ -41,7 +41,7 @@ namespace backend.Services
                 Summary = request.Summary,
                 Content = request.Content,
                 ThumbnailUrl = thumbnailUrl,
-                IsFeatured = request.IsFeatured,
+                IsFeatured = request.IsFeatured.Value,
                 Category = request.Category,
                 PublishedDate = DateTime.UtcNow,
                 Images = imageUrls.Select(x => new NewsImage { ImageUrl = x }).ToList()
@@ -81,20 +81,26 @@ namespace backend.Services
             }
 
             if(request.Title != null)
+            {
                 news.Title = request.Title;
+                news.Slug = await GenerateUniqueSlugAsync(request.Title);
+            }
             if(request.Summary != null)
                 news.Summary = request.Summary;
             if(request.Content != null)
                 news.Content = request.Content;
-            news.IsFeatured = request.IsFeatured;
-            if(request.Category != null)
+            if (request.IsFeatured.HasValue)
+            {
+                news.IsFeatured = request.IsFeatured.Value;
+            }
+            if (request.Category != null)
                 news.Category = request.Category;  
 
             if (request.Thumbnail != null)
             {
                 var oldThumb = news.ThumbnailUrl;
                 imageService.DeleteFile(oldThumb);
-                var thumbnailUrl = await imageService.SaveFileAsync(request.Thumbnail, "news");
+                news.ThumbnailUrl = await imageService.SaveFileAsync(request.Thumbnail, "news");
             }
 
             if (request.Images != null && request.Images.Count > 0)
@@ -320,6 +326,7 @@ namespace backend.Services
             {
                 result = await context.News
                 .OrderByDescending(n => n.PublishedDate)
+                .Take(4)
                 .Select(n => new NewsListDto
                 {
                     Id = n.Id,

@@ -1,0 +1,82 @@
+.admin-players {
+  padding: 20px;
+}
+
+.player-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.player-form input,
+.player-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.player-form input[type="file"] {
+  border: none;
+}
+
+.thumbnail-preview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid #002c6d;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.form-actions button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #002c6d;
+  color: white;
+}
+
+.form-actions button.cancel {
+  background-color: #a00;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  background: #002c6d;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.actions button {
+  margin-right: 5px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.actions .edit {
+  background-color: #28a745;
+}
+
+.actions .delete {
+  background-color: #dc3545;
+}

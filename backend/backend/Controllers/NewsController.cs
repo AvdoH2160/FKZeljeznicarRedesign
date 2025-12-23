@@ -1,6 +1,7 @@
 ﻿using backend.Model;
 using backend.Services;
 using backend.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -75,6 +76,7 @@ namespace backend.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<NewsListDto>> CreateNews([FromForm] NewsCreateUpdateDto request)
         {
@@ -82,6 +84,7 @@ namespace backend.Controllers
             return CreatedAtAction(nameof(GetNewsById), new { id = news.Id }, news);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateNews(int id, NewsCreateUpdateDto request)
         {
@@ -93,6 +96,7 @@ namespace backend.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteNews(int id)
         {
