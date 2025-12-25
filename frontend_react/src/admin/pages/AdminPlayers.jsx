@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
+import Notification from "../components/Notification"
 import "./adminPlayers.css";
 
 export default function AdminPlayers() {
+  const [notification, setNotification] = useState(null);
   const [players, setPlayers] = useState([]);
   const [editingPlayer, setEditingPlayer] = useState(null);
 
-  // Form state
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [description, setDescription] = useState("");
@@ -19,7 +20,6 @@ export default function AdminPlayers() {
   const [isFeatured, setIsFeatured] = useState(false);
   const [previousClubs, setPreviousClubs] = useState("");
 
-  // Load players
   const loadPlayers = () => {
     api.get("/player").then(res => setPlayers(res.data));
   };
@@ -43,7 +43,6 @@ export default function AdminPlayers() {
     setPreviousClubs("");
   };
 
-  // Create or Update
   const savePlayer = async () => {
     const formData = new FormData();
     formData.append("Name", name);
@@ -61,42 +60,76 @@ export default function AdminPlayers() {
 
     try {
       if (editingPlayer) {
-        await api.put(`/player/${editingPlayer.id}`, formData);
+        await api.put(`/player/${editingPlayer}`, formData);
+        setNotification({
+          type: "success",
+          message: "Igrač uspjesno ažuriran"
+        });
       } else {
         await api.post("/player", formData);
+        setNotification({
+          type: "success",
+          message: "Igrač uspješno dodan"
+        });
       }
       resetForm();
       loadPlayers();
+      setTimeout(() => setNotification(null), 3000);
     } catch (err) {
       console.error(err);
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
     }
   };
 
-  const editPlayer = (player) => {
-    setEditingPlayer(player);
-    setName(player.name);
-    setSurname(player.surname);
-    setDescription(player.description);
-    setBirthDate(player.birthDate?.split("T")[0] || "");
-    setPlaceOfBirth(player.placeOfBirth || "");
-    setNationality(player.nationality || "");
-    setNumber(player.number);
-    setPosition(player.position);
-    setIsFeatured(player.isFeatured);
-    setPreviousClubs(player.previousClubs?.join(", ") || "");
+  const editPlayer = async (id) => {
+    const res = await api.get(`/player/${id}`);
+    const n = res.data;
+    console.log("EDIT PLAYER ID:", id);
+    console.log("EDIT PLAYER ID:", n.id);
+    setEditingPlayer(n.id);
+    setName(n.name);
+    setSurname(n.surname);
+    setDescription(n.description);
+    setBirthDate(n.birthDate?.split("T")[0] || "");
+    setPlaceOfBirth(n.placeOfBirth || "");
+    setNationality(n.nationality || "");
+    setNumber(n.number);
+    setPosition(n.position);
+    setIsFeatured(n.isFeatured);
+    setPreviousClubs(n.previousClubs?.join(", ") || "");
   };
 
   const deletePlayer = async (id) => {
     if (!window.confirm("Delete player?")) return;
-    await api.delete(`/player/${id}`);
-    loadPlayers();
+    try {
+      await api.delete(`/player/${id}`);
+      loadPlayers();
+
+      setNotification({
+        type: "success",
+        message: "Igrač uspješno obrisan"
+      });
+
+      setTimeout(() => setNotification(null), 3000);
+    } catch {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
   };
 
   return (
     <div className="admin-players">
+      <Notification
+        notification={notification}  
+        onClose={() => setNotification(null)}
+      />
       <h1>Players</h1>
 
-      {/* Form */}
       <div className="player-form">
         <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
         <input placeholder="Surname" value={surname} onChange={e => setSurname(e.target.value)} />
@@ -114,6 +147,16 @@ export default function AdminPlayers() {
           Thumbnail:
           <input type="file" onChange={e => setThumbnail(e.target.files[0])} />
         </label>
+        {editingPlayer && players.find(n => n.id === editingPlayer)?.thumbnailUrl && !thumbnail && (
+            <div className="preview-container">
+              <span className="preview-label">Current Thumbnail:</span>
+              <img
+                src={`https://localhost:7010${players.find(n => n.id === editingPlayer).thumbnailUrl}`}
+                alt="Current Thumbnail"
+                className="preview-image"
+              />
+            </div>
+          )}
         {thumbnail && <img src={URL.createObjectURL(thumbnail)} alt="Preview" className="thumbnail-preview" />}
 
         <label>
@@ -127,7 +170,6 @@ export default function AdminPlayers() {
         </div>
       </div>
 
-      {/* Table */}
       <table className="admin-table">
         <thead>
           <tr>
@@ -144,7 +186,7 @@ export default function AdminPlayers() {
               <td>{p.number}</td>
               <td>{p.position}</td>
               <td className="actions">
-                <button className="edit" onClick={() => editPlayer(p)}>Edit</button>
+                <button className="edit" onClick={() => editPlayer(p.id)}>Edit</button>
                 <button className="delete" onClick={() => deletePlayer(p.id)}>Delete</button>
               </td>
             </tr>

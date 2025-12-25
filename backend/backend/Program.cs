@@ -21,6 +21,7 @@ builder.Services.AddScoped<ITableStandingsService, TableStandingsService>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
 builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IGamesService, GameService>();
 builder.Services.AddScoped<ImageService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddHostedService<LeagueTableUpdateService>();

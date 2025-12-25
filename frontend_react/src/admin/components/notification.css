@@ -1,0 +1,47 @@
+.notification {
+  position: fixed;
+  top: 90px;
+  right: 30px;
+  min-width: 260px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+}
+
+.notification.success {
+  background: #e6f4ea;
+  color: #1e7e34;
+  border-left: 5px solid #28a745;
+}
+
+.notification.error {
+  background: #fdecea;
+  color: #c82333;
+  border-left: 5px solid #dc3545;
+}
+
+.notification button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

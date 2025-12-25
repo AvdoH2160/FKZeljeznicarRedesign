@@ -183,6 +183,8 @@ namespace backend.Services
             if(update.PreviousClubs != null)
                 player.PreviousClubs = update.PreviousClubs;
 
+            await context.SaveChangesAsync();
+
             return true;
         }
     }

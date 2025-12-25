@@ -86,10 +86,10 @@ const Player = () => {
                     Državljanstvo:<br/>
                     <span className="info-bottom">{player.nationality}</span>
                 </div>
-                <div className="onlyPlayer-details top">
-                    BIVŠI KLUBOVI:
-                    <span className="info-bottom">{player.previousClubs}</span>
-                </div>
+            </div>
+            <div className="onlyPlayer-details top">
+                BIVŠI KLUBOVI:<br/>
+                <span className="info-bottom">{player.previousClubs}</span>
             </div>
             <div className="onlyPlayer-details-biography">
                 BIOGRAFIJA:<br/>

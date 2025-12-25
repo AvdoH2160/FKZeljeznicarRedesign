@@ -19,6 +19,7 @@ namespace backend.Data
         public DbSet<Player> Player => Set<Player>();
         public DbSet<Profile> Profiles => Set<Profile>();
         public DbSet<Membership> Memberships => Set<Membership>();
+        public DbSet<Games> Games => Set<Games>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
