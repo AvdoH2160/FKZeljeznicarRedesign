@@ -23,3 +23,9 @@ wwwroot\uploads\products\6fea0184-1a70-44f7-aa9d-5e55119e23d6.png
 wwwroot\uploads\products\f20524b3-567a-4041-b4f8-621da06b3745.jpg
 wwwroot\uploads\news\4135799b-b4cd-4d6a-a482-37f8ed1b9f07.jpg
 wwwroot\uploads\news\bea1a0f4-89aa-43f6-9699-5ac0ada45d9d.jpg
+wwwroot\uploads\players\c76fd771-3792-4ecf-82e5-315d4244c38d.png
+wwwroot\uploads\players\09522df7-e6a5-4d81-b4a1-13a4e2a464b5.png
+wwwroot\uploads\players\54d27c97-8ae8-4b61-b9be-0b13b112c9b4.png
+wwwroot\uploads\players\3e724311-c2de-4750-89b9-b08644d52542.png
+wwwroot\uploads\players\b3d6a349-c852-4011-8683-82c666485d11.png
+wwwroot\uploads\players\0a266458-f73d-4fbb-b974-6ea8198af0b3.png

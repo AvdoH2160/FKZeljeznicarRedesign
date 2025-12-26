@@ -179,8 +179,7 @@
               "RelativeToolTip": "backend\\Services\\GameService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T13:31:27.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-25T13:31:27.331Z"
             },
             {
               "$type": "Document",
@@ -192,8 +191,7 @@
               "RelativeToolTip": "backend\\Services\\IGamesService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T13:31:20.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-25T13:31:20.829Z"
             },
             {
               "$type": "Document",
@@ -205,8 +203,7 @@
               "RelativeToolTip": "backend\\Controllers\\GamesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T13:30:51.73Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-25T13:30:51.73Z"
             },
             {
               "$type": "Document",
@@ -218,8 +215,7 @@
               "RelativeToolTip": "backend\\Model\\GameStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T13:23:58.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-25T13:23:58.997Z"
             },
             {
               "$type": "Document",
@@ -231,8 +227,7 @@
               "RelativeToolTip": "backend\\Program.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABcAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T12:42:31.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-23T12:42:31.646Z"
             },
             {
               "$type": "Document",
@@ -244,8 +239,7 @@
               "RelativeToolTip": "backend\\Controllers\\PlayerController.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAIwEQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:31:27.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:31:27.521Z"
             },
             {
               "$type": "Document",
@@ -257,8 +251,7 @@
               "RelativeToolTip": "backend\\Model\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T15:41:50.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T15:41:50.387Z"
             },
             {
               "$type": "Document",
@@ -270,8 +263,7 @@
               "RelativeToolTip": "backend\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAA1wBUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:20:30.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:20:30.943Z"
             },
             {
               "$type": "Document",
@@ -295,8 +287,7 @@
               "RelativeToolTip": "backend\\Controllers\\NewsController.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAuwE4AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:50:36.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T11:50:36.246Z"
             },
             {
               "$type": "Document",
@@ -308,8 +299,7 @@
               "RelativeToolTip": "backend\\Services\\PlayerService.cs",
               "ViewState": "AgIAAKEAAAAAAAAAAAAIwLkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:41:09.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:41:09.007Z"
             },
             {
               "$type": "Document",
@@ -533,7 +523,7 @@
               "RelativeDocumentMoniker": "backend\\Model\\Games.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Games.cs",
               "RelativeToolTip": "backend\\Model\\Games.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAoAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-25T13:19:40.637Z",
               "EditorCaption": ""
@@ -548,8 +538,7 @@
               "RelativeToolTip": "backend\\ViewModel\\PlayerUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:35:37.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:35:37.694Z"
             },
             {
               "$type": "Document",
@@ -561,8 +550,7 @@
               "RelativeToolTip": "backend\\ViewModel\\PlayerCreateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T11:33:22.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T11:33:22.479Z"
             },
             {
               "$type": "Document",
