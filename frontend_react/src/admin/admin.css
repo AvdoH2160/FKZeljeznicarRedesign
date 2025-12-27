@@ -1,0 +1,235 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.admin-card {
+  /* background: white; */
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.admin-card h1 {
+  margin-bottom: 25px;
+  color: #002c6d;
+  font-size: 28px;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.admin-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+  border-color: #002c6d;
+}
+
+/* FILE INPUT */
+.admin-form input[type="file"] {
+  border: none;
+  padding: 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.admin-form button,
+.btn {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.admin-form button {
+  background: #002c6d;
+  color: white;
+}
+
+.admin-form button:hover {
+  background: #001f4d;
+}
+
+.btn.delete {
+  background: #dc3545;
+  color: white;
+}
+
+.btn.cancel {
+  background: #dc3545;
+}
+
+.btn.ban {
+  background: #ffc107;
+}
+
+.btn.unban {
+  background: #28a745;
+  color: white;
+}
+
+.btn.promote {
+  background: #007bff;
+  color: white;
+}
+
+.btn.edit {
+  background: #28a745;
+  color: white;
+}
+
+.btn.secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.active {
+  background: #e6f4ea;
+  color: #1e7e34;
+}
+
+.badge.banned {
+  background: #fdecea;
+  color: #c82333;
+}
+/* =========================
+   TABLE
+========================= */
+
+.admin-table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  background: #002c6d;
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.admin-table tr:hover {
+  background: #f8f9fc;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   IMAGE PREVIEW
+========================= */
+
+.thumbnail-preview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid #002c6d;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.scheduled {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.badge.live {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.badge.finished {
+  background: #e6f4ea;
+  color: #1e7e34;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .admin-form {
+    grid-template-columns: 1fr;
+  }
+}
+

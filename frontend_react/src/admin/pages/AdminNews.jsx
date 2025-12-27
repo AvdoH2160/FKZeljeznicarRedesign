@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
-import "./adminNews.css";
+import "../admin.css";
 
 export default function AdminNews() {
   const [news, setNews] = useState([]);
@@ -72,11 +72,11 @@ export default function AdminNews() {
   };
 
   return (
-    <div className="admin-news">
+    <div className="admin-card">
       <h1>Vijesti</h1>
 
       {/* CREATE / EDIT */}
-      <div className="news-form">
+      <div className="admin-form">
         <input
           placeholder="Naslov"
           value={title}
@@ -116,7 +116,7 @@ export default function AdminNews() {
               <img
                 src={`https://localhost:7010${news.find(n => n.id === editingId).thumbnailUrl}`}
                 alt="Current Thumbnail"
-                className="preview-image"
+                className="thumbnail-preview"
               />
             </div>
           )}
@@ -137,7 +137,7 @@ export default function AdminNews() {
                   key={index}
                   src={`https://localhost:7010$${img}`}
                   alt={`News Image ${index + 1}`}
-                  className="preview-image"
+                  className="thumbnail-preview"
                 />
               ))}
             </div>
@@ -145,7 +145,7 @@ export default function AdminNews() {
           {images.length > 0 && (
             <div className="gallery">
               {images.map((img, idx) => (
-                <img key={idx} src={URL.createObjectURL(img)} alt={`Preview ${idx}`} className="preview-image" />
+                <img key={idx} src={URL.createObjectURL(img)} alt={`Preview ${idx}`} className="thumbnail-preview" />
               ))}
             </div>
           )}
@@ -153,12 +153,12 @@ export default function AdminNews() {
 
         <div className="form-actions">
           <button onClick={createNews}>{editingId ? "Spasi promjene" : "Dodaj vijest"}</button>
-          {editingId && <button onClick={resetForm} className="cancel">Otkaži promjene</button>}
+          {editingId && <button onClick={resetForm} className="btn cancel">Otkaži promjene</button>}
         </div>
       </div>
 
       {/* TABLE */}
-      <table className="adminNews-table">
+      <table className="admin-table">
         <thead>
           <tr>
             <th>Naslov</th>
@@ -172,8 +172,8 @@ export default function AdminNews() {
               <td>{n.title}</td>
               <td>{new Date(n.publishedDate).toLocaleDateString()}</td>
               <td className="actions">
-                <button className="edit" onClick={() => handleEdit(n.id)}>Edit</button>
-                <button className="delete" onClick={() => deleteNews(n.id)}>Delete</button>
+                <button className="btn edit" onClick={() => handleEdit(n.id)}>Edit</button>
+                <button className="btn delete" onClick={() => deleteNews(n.id)}>Delete</button>
               </td>
             </tr>
           ))}

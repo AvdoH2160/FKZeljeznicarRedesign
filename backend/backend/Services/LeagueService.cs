@@ -29,6 +29,10 @@ namespace backend.Services
             {
                 return false;
             }
+            if (league.LogoUrl != null)
+            {
+                imageService.DeleteFile(league.LogoUrl);
+            }
             context.Remove(league);
             await context.SaveChangesAsync();
             return true;

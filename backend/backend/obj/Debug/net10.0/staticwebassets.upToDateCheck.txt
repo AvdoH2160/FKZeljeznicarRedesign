@@ -29,3 +29,5 @@ wwwroot\uploads\players\54d27c97-8ae8-4b61-b9be-0b13b112c9b4.png
 wwwroot\uploads\players\3e724311-c2de-4750-89b9-b08644d52542.png
 wwwroot\uploads\players\b3d6a349-c852-4011-8683-82c666485d11.png
 wwwroot\uploads\players\0a266458-f73d-4fbb-b974-6ea8198af0b3.png
+wwwroot\uploads\leagues\d8067a22-4e3a-41ba-bef8-3a4df48dd46f.png
+wwwroot\uploads\leagues\f20ee18b-720b-4676-b823-a634acc95aa0.png

@@ -21,7 +21,7 @@ namespace backend.Controllers
         public async Task<IActionResult> CreateLeague(LeagueCreateDto dto)
         {
             var result = await service.CreateAsync(dto);
-            if (result != null)
+            if (result == null)
             {
                 return BadRequest(result);
             }

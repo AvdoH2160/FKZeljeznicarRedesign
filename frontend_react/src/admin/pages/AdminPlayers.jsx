@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 import Notification from "../components/Notification"
-import "./adminPlayers.css";
+import "../admin.css";
 
 export default function AdminPlayers() {
   const [notification, setNotification] = useState(null);
@@ -123,14 +123,14 @@ export default function AdminPlayers() {
   };
 
   return (
-    <div className="admin-players">
+    <div className="admin-card">
       <Notification
         notification={notification}  
         onClose={() => setNotification(null)}
       />
       <h1>Players</h1>
 
-      <div className="player-form">
+      <div className="admin-form">
         <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
         <input placeholder="Surname" value={surname} onChange={e => setSurname(e.target.value)} />
         <textarea placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
@@ -153,7 +153,7 @@ export default function AdminPlayers() {
               <img
                 src={`https://localhost:7010${players.find(n => n.id === editingPlayer).thumbnailUrl}`}
                 alt="Current Thumbnail"
-                className="preview-image"
+                className="thumbnail-preview"
               />
             </div>
           )}
@@ -166,7 +166,7 @@ export default function AdminPlayers() {
 
         <div className="form-actions">
           <button onClick={savePlayer}>{editingPlayer ? "Update" : "Create"}</button>
-          <button className="cancel" onClick={resetForm}>Cancel</button>
+          <button className="btn cancel" onClick={resetForm}>Cancel</button>
         </div>
       </div>
 
@@ -186,8 +186,8 @@ export default function AdminPlayers() {
               <td>{p.number}</td>
               <td>{p.position}</td>
               <td className="actions">
-                <button className="edit" onClick={() => editPlayer(p.id)}>Edit</button>
-                <button className="delete" onClick={() => deletePlayer(p.id)}>Delete</button>
+                <button className="btn edit" onClick={() => editPlayer(p.id)}>Edit</button>
+                <button className="btn delete" onClick={() => deletePlayer(p.id)}>Delete</button>
               </td>
             </tr>
           ))}

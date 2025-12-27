@@ -22,6 +22,8 @@ import AdminGames from "./admin/pages/AdminGames.jsx"
 import AdminNews from "./admin/pages/AdminNews.jsx"
 import AdminPlayers from "./admin/pages/AdminPlayers.jsx"
 import AdminUsers from "./admin/pages/AdminUsers.jsx"
+import AdminLeagues from "./admin/pages/AdminLeagues.jsx"
+import AdminTeams from "./admin/pages/AdminTeams.jsx"
 
 
 const App = () => {
@@ -73,6 +75,8 @@ const App = () => {
                 <Route path="news" element={<AdminNews></AdminNews>}></Route>
                 <Route path="games" element={<AdminGames></AdminGames>}></Route>
                 <Route path="players" element={<AdminPlayers></AdminPlayers>}></Route>
+                <Route path="leagues" element={<AdminLeagues></AdminLeagues>}></Route>
+                <Route path="teams" element={<AdminTeams></AdminTeams>}></Route>
               </Route>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
