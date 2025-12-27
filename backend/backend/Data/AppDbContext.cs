@@ -1,7 +1,8 @@
 ﻿using backend.Model;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace backend.Data
 {
@@ -19,7 +20,9 @@ namespace backend.Data
         public DbSet<Player> Player => Set<Player>();
         public DbSet<Profile> Profiles => Set<Profile>();
         public DbSet<Membership> Memberships => Set<Membership>();
-        public DbSet<Games> Games => Set<Games>();
+        public DbSet<Game> Games => Set<Game>();
+        public DbSet<League> Leagues => Set<League>();
+        public DbSet<Team> Teams => Set<Team>();  
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,6 +35,24 @@ namespace backend.Data
             builder.Entity<ProductSize>()
                 .Property(ps => ps.PriceOverride)
                 .HasPrecision(18, 2);
+
+            builder.Entity<Game>()
+                .HasOne(g => g.HomeTeam)
+                .WithMany()
+                .HasForeignKey(g => g.HomeTeamId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Game>()
+                .HasOne(g => g.AwayTeam)
+                .WithMany()
+                .HasForeignKey(g => g.AwayTeamId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Game>()
+                .HasOne(g => g.League)
+                .WithMany()
+                .HasForeignKey(g => g.LeagueId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

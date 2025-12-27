@@ -5,11 +5,11 @@
         public int Id { get; set; }
 
         public int GameId { get; set; }
-        public Games Game { get; set; } = null!;
+        public Game Game { get; set; } = null!;
 
         public string ScorerName { get; set; } = string.Empty;
 
-        public int Minute { get; set; }      // 23, 45+2 = 47
+        public string Minute { get; set; } = string.Empty;
 
         public bool IsPenalty { get; set; }
         public bool IsOwnGoal { get; set; }

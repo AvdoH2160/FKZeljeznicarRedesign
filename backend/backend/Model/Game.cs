@@ -1,12 +1,12 @@
 ﻿namespace backend.Model
 {
-    public class Games
+    public class Game
     {
         public int Id { get; set; }
-        public string Home {  get; set; } = string.Empty;
-        public string Away {  get; set; } = string.Empty;
-        public string HomeLogoUrl {  get; set; } = string.Empty;
-        public string AwayLogoUrl { get; set; } =string.Empty;
+        public int HomeTeamId { get; set; }
+        public Team HomeTeam { get; set; } = null!;
+        public int AwayTeamId { get; set; }
+        public Team AwayTeam { get; set; } = null!;
         public int HomeScore { get; set; }
         public int AwayScore { get; set; }
         public ICollection<GameGoal> Goals { get; set; } = new List<GameGoal>();
@@ -16,9 +16,10 @@
         public DateTime KickOffTime { get; set; }
         public float GameLength { get; set; }
         public int? NewsId { get; set; }
+        public News? News { get; set; }
         public string Stadium { get; set; } = string.Empty;
-        public string LeagueName {  get; set; } = string.Empty;
+        public int LeagueId { get; set; }
+        public League League { get; set; } = null!;
         public string Season {  get; set; } = string.Empty;
-
     }
 }
