@@ -31,3 +31,8 @@ wwwroot\uploads\players\b3d6a349-c852-4011-8683-82c666485d11.png
 wwwroot\uploads\players\0a266458-f73d-4fbb-b974-6ea8198af0b3.png
 wwwroot\uploads\leagues\d8067a22-4e3a-41ba-bef8-3a4df48dd46f.png
 wwwroot\uploads\leagues\f20ee18b-720b-4676-b823-a634acc95aa0.png
+wwwroot\uploads\leagues\6f04f3a3-8f10-48e6-b745-7d8de8a3f5e1.png
+wwwroot\uploads\team\a3476342-da68-4aec-9998-bb6cec8525bc.png
+wwwroot\uploads\team\9bac4e82-0712-44e0-a54a-5bcaf9dbe67a.png
+wwwroot\uploads\leagues\096d444e-2fe8-4fe1-99fe-1499565469f6.png
+wwwroot\uploads\leagues\b01d1af2-c29d-4a64-bca5-b55f0ebf6fd7.png

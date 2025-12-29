@@ -1,6 +1,7 @@
 ﻿using backend.Data;
 using backend.Model;
 using backend.ViewModel;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Services
@@ -38,12 +39,14 @@ namespace backend.Services
 
                 LeagueName = g.League.Name,
                 LeagueLogoUrl = g.League.LogoUrl,
+                SmallLeagueLogoUrl = g.League.SmallLogoUrl,
                 Season = g.Season,
 
                 Stadium = g.Stadium,
 
                 Goals = g.Goals.Select(goal => new GameGoalDto
                 {
+                    Id = goal.Id,
                     Minute = goal.Minute,
                     ScorerName = goal.ScorerName,
                     IsHomeTeam = goal.IsHomeTeam,
@@ -112,7 +115,7 @@ namespace backend.Services
             return true;
         }
 
-        public async Task<GameGoal> AddGoalAsync(GameGoalCreateDto dto)
+        public async Task<GameGoalDto> AddGoalAsync(GameGoalCreateDto dto)
         {
             var game = await context.Games
                 .Include(g => g.Goals)
@@ -124,7 +127,6 @@ namespace backend.Services
             var goal = new GameGoal
             {
                 GameId = dto.GameId,
-                Game = game,
                 ScorerName = dto.ScorerName,
                 Minute = dto.Minute,
                 IsHomeTeam = dto.IsHomeTeam,
@@ -135,7 +137,15 @@ namespace backend.Services
             game.Goals.Add(goal);
             await context.SaveChangesAsync();
 
-            return goal;
+            return new GameGoalDto
+            {
+                Id = goal.Id,
+                ScorerName = goal.ScorerName,
+                Minute = goal.Minute,
+                IsHomeTeam = goal.IsHomeTeam,
+                IsOwnGoal = goal.IsOwnGoal,
+                IsPenalty = goal.IsPenalty
+            };
         }
 
         public async Task<bool> RemoveGoalAsync(int goalId)
@@ -151,6 +161,44 @@ namespace backend.Services
 
             await context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<GameEditDto?> GetGameByIdAsync(int id)
+        {
+            var game = await context.Games
+                .Include(g => g.HomeTeam)
+                .Include(g => g.AwayTeam)
+                .Include(g => g.League)
+                .Include(g => g.Goals)
+                .FirstOrDefaultAsync(g => g.Id == id);
+
+            if (game == null)
+                return null;
+
+            return new GameEditDto
+            {
+                Id = game.Id,
+                HomeTeamId = game.HomeTeamId,
+                AwayTeamId = game.AwayTeamId,
+                LeagueId = game.LeagueId,
+                HomeScore = game.HomeScore,
+                AwayScore = game.AwayScore,
+                Status = game.Status,
+                KickOffTime = game.KickOffTime,
+                IsHomeGame = game.IsHomeGame,
+                TicketsAvailable = game.TicketsAvailable,
+                Stadium = game.Stadium,
+                Season = game.Season,
+                Goals = game.Goals.Select(g => new GameGoalDto
+                {
+                    Id = g.Id,
+                    Minute = g.Minute,
+                    ScorerName = g.ScorerName,
+                    IsHomeTeam = g.IsHomeTeam,
+                    IsOwnGoal = g.IsOwnGoal,
+                    IsPenalty = g.IsPenalty
+                }).ToList()
+            };
         }
     }
 }

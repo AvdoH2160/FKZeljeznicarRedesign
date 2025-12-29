@@ -219,7 +219,33 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "backend.Model.GameGoal",
+        "Type": "backend.ViewModel.GameGoalDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.GamesController",
+    "Method": "GetGameById",
+    "RelativePath": "api/Games/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "backend.ViewModel.GameEditDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -317,6 +343,11 @@
       },
       {
         "Name": "Logo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "SmallLogoUrl",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       }

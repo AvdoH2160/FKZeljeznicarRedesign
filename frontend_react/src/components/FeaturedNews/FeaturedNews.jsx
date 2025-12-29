@@ -1,5 +1,6 @@
 import React,{useState, useRef, useEffect} from 'react'
 import "./featuredNews.css"
+import GamesTrack from '../GamesTrack/GamesTrack'
 import ArrowRight from "../../assets/svg/arrow_right.svg"
 
 const FeaturedNews = () => {
@@ -26,6 +27,7 @@ const FeaturedNews = () => {
                 </div>
             </div>
         )}
+        <GamesTrack></GamesTrack>
     </div>
   )
 }

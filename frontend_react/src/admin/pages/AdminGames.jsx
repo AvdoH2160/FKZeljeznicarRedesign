@@ -15,13 +15,18 @@ export default function AdminGames() {
   const [awayTeamId, setAwayTeamId] = useState("");
   const [leagueId, setLeagueId] = useState("");
   const [kickOffTime, setKickOffTime] = useState("");
-  const [status, setStatus] = useState("Scheduled");
+  const [status, setStatus] = useState(0);
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
 
   const [goalTeamId, setGoalTeamId] = useState("");
   const [goalPlayer, setGoalPlayer] = useState("");
   const [goalMinute, setGoalMinute] = useState("");
+
+  const [stadium, setStadium] = useState("");
+  const [season, setSeason] = useState("");
+  const [isHomeGame, setIsHomeGame] = useState(true);
+  const [ticketsAvailable, setTicketsAvailable] = useState(true);
 
   const [notification, setNotification] = useState(null);
 
@@ -48,18 +53,26 @@ export default function AdminGames() {
     setStatus("Scheduled");
     setHomeScore(0);
     setAwayScore(0);
+    setStadium("");
+    setSeason("");
+    setIsHomeGame(true);
+    setTicketsAvailable(true);
     setGoals([]);
   };
 
   const saveGame = async () => {
     const payload = {
-      homeTeamId,
-      awayTeamId,
-      leagueId,
+      homeTeamId: Number(homeTeamId),
+      awayTeamId: Number(awayTeamId),
+      leagueId: Number(leagueId),
       kickOffTime,
       status,
       homeScore,
-      awayScore
+      awayScore,
+      stadium,
+      season,
+      isHomeGame,
+      ticketsAvailable
     };
 
     if (editingGame) {
@@ -70,33 +83,62 @@ export default function AdminGames() {
       setEditingGame(res.data.id);
       setNotification("Game created – now you can add goals");
     }
-
+    resetForm();
     loadAll();
   };
 
   const editGame = async (game) => {
-    setEditingGame(game.id);
-    setHomeTeamId(game.homeTeamId);
-    setAwayTeamId(game.awayTeamId);
-    setLeagueId(game.leagueId);
-    setKickOffTime(game.kickOffTime.slice(0, 16));
-    setStatus(game.status);
-    setHomeScore(game.homeScore);
-    setAwayScore(game.awayScore);
+    const res = await api.get(`/games/${game.id}`);
+    const g = res.data;
 
-    const g = await api.get(`/games/${game.id}`);
-    setGoals(g.data.goals);
+    setEditingGame(g.id);
+    setHomeTeamId(String(g.homeTeamId));
+    setAwayTeamId(String(g.awayTeamId));
+    setLeagueId(String(g.leagueId));
+    setKickOffTime(g.kickOffTime.slice(0, 16));
+    setStatus(g.status);
+    setHomeScore(g.homeScore);
+    setAwayScore(g.awayScore);
+    setStadium(g.stadium);
+    setSeason(g.season);
+    setIsHomeGame(g.isHomeGame);
+    setTicketsAvailable(g.ticketsAvailable);
+
+
+    setGoals(g.goals ?? []);
+  };
+
+  const deleteGame = async (id) => {
+    if (!window.confirm("Delete game?")) return;
+    try {
+      await api.delete(`/games/${id}`);
+      loadAll();
+
+      setNotification({
+        type: "success",
+        message: "Utakmica uspješno obrisan"
+      });
+
+      setTimeout(() => setNotification(null), 3000);
+    } catch {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
   };
 
   const addGoal = async () => {
-    await api.post(`/games/${editingGame}/goals`, {
-      teamId: goalTeamId,
-      playerName: goalPlayer,
-      minute: goalMinute
+    const g = await api.post(`/games/${editingGame}/goals`, {
+      gameId: editingGame,
+      scorerName: goalPlayer,
+      minute: goalMinute,
+      isHomeTeam: Number(goalTeamId) === Number(homeTeamId),
+      isOwnGoal: false,
+      isPenalty: false
     });
 
-    const g = await api.get(`/games/${editingGame}`);
-    setGoals(g.data.goals);
+    setGoals(prev => [...prev, g.data]);
 
     setGoalPlayer("");
     setGoalMinute("");
@@ -134,9 +176,11 @@ export default function AdminGames() {
 
         <select value={awayTeamId} onChange={e => setAwayTeamId(e.target.value)}>
           <option value="">Away team</option>
-          {teams.map(t => (
-            <option key={t.id} value={t.id}>{t.name}</option>
-          ))}
+          {teams
+            .filter(t => t.id !== Number(homeTeamId))
+            .map(t => (
+              <option key={t.id} value={t.id}>{t.name}</option>
+            ))}
         </select>
 
         <input
@@ -145,19 +189,57 @@ export default function AdminGames() {
           onChange={e => setKickOffTime(e.target.value)}
         />
 
+        <input
+          placeholder="Stadium"
+          value={stadium}
+          onChange={e => setStadium(e.target.value)}
+        />
+
+        <input
+          placeholder="Season (e.g. 2024/25)"
+          value={season}
+          onChange={e => setSeason(e.target.value)}
+        />
+
+        <select value={status} onChange={e => setStatus(Number(e.target.value))}>
+          <option value={0}>Upcoming</option>
+          <option value={1}>Live</option>
+          <option value={2}>Finished</option>
+          <option value={3}>Postponed</option>
+        </select>
+
+        <label className="checkbox-row">
+          <input
+            type="checkbox"
+            checked={isHomeGame}
+            onChange={e => setIsHomeGame(e.target.checked)}
+          />
+          Home game
+        </label>
+
+        <label className="checkbox-row">
+          <input
+            type="checkbox"
+            checked={ticketsAvailable}
+            onChange={e => setTicketsAvailable(e.target.checked)}
+          />
+          Tickets available
+        </label>
+
         <div className="score-row">
           <input type="number" value={homeScore} onChange={e => setHomeScore(e.target.value)} />
           <span>:</span>
           <input type="number" value={awayScore} onChange={e => setAwayScore(e.target.value)} />
         </div>
 
-        <button onClick={saveGame}>
-          {editingGame ? "Update game" : "Create game"}
-        </button>
+        <div className="form-actions">
+          <button onClick={saveGame}>{editingGame ? "Update" : "Create"}</button>
+          <button className="btn cancel" onClick={resetForm}>Cancel</button>
+        </div>
 
-        {editingGame && (
+        {/* {editingGame && (
           <button className="btn cancel" onClick={resetForm}>Exit edit</button>
-        )}
+        )} */}
       </div>
 
       {editingGame && (
@@ -181,7 +263,6 @@ export default function AdminGames() {
             />
 
             <input
-              type="number"
               placeholder="Minute"
               value={goalMinute}
               onChange={e => setGoalMinute(e.target.value)}
@@ -192,7 +273,7 @@ export default function AdminGames() {
 
           {goals.map(g => (
             <div key={g.id} className="goal-row">
-              {g.minute}' – {g.playerName}
+              {g.minute}' – {g.scorerName}
               <button onClick={() => deleteGoal(g.id)}>❌</button>
             </div>
           ))}
@@ -212,11 +293,12 @@ export default function AdminGames() {
         <tbody>
           {games.map(g => (
             <tr key={g.id}>
-              <td>{g.homeTeam.name} vs {g.awayTeam.name}</td>
+              <td>{g.homeTeamName} vs {g.awayTeamName}</td>
               <td>{g.homeScore}:{g.awayScore}</td>
               <td>{new Date(g.kickOffTime).toLocaleString()}</td>
-              <td>
-                <button className="edit" onClick={() => editGame(g)}>Edit</button>
+              <td className="actions">
+                <button className="btn edit" onClick={() => editGame(g)}>Edit</button>
+                <button className="btn delete" onClick={() => deleteGame(g.id)}>Delete</button>
               </td>
             </tr>
           ))}

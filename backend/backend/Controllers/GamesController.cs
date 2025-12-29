@@ -11,10 +11,16 @@ namespace backend.Controllers
     [ApiController]
     public class GamesController(IGamesService service) : ControllerBase
     {
-        [HttpGet()]
+        [HttpGet]
         public async Task<ActionResult<List<GameStripDto>>> GetGamesForStrip()
         {
             return Ok(await service.GetAllGamesAsync());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GameEditDto>> GetGameById(int id)
+        {
+            return Ok(await service.GetGameByIdAsync(id));
         }
 
         [Authorize(Roles = "Admin")]
@@ -45,7 +51,7 @@ namespace backend.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost("{gameId}/goals")]
-        public async Task<ActionResult<GameGoal>> AddGoal(int gameId, [FromBody] GameGoalCreateDto dto)
+        public async Task<ActionResult<GameGoalDto>> AddGoal(int gameId, [FromBody] GameGoalCreateDto dto)
         {
             dto.GameId = gameId;
             var goal = await service.AddGoalAsync(dto);
@@ -58,7 +64,7 @@ namespace backend.Controllers
         {
             var success = await service.RemoveGoalAsync(goalId);
             if (!success) return NotFound();
-            return NoContent();
+            return Ok();
         }
     }
 }

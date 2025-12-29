@@ -14,8 +14,8 @@ namespace backend.ViewModel
         public string AwayTeamLogoUrl { get; set; } = string.Empty;
 
         // Score
-        public int HomeScore { get; set; }
-        public int AwayScore { get; set; }
+        public int? HomeScore { get; set; }
+        public int? AwayScore { get; set; }
 
         // Goals (za tooltip / expand animaciju)
         public List<GameGoalDto> Goals { get; set; } = new();
@@ -23,7 +23,7 @@ namespace backend.ViewModel
         // Status & time
         public GameStatus Status { get; set; }
         public DateTime KickOffTime { get; set; }
-        public float GameLength { get; set; }
+        public float? GameLength { get; set; }
 
         // Context
         public bool IsHomeGame { get; set; }
@@ -32,6 +32,7 @@ namespace backend.ViewModel
         // League / season
         public string LeagueName { get; set; } = string.Empty;
         public string LeagueLogoUrl { get; set; } = string.Empty;
+        public string SmallLeagueLogoUrl { get; set; } = string.Empty;
         public string Season { get; set; } = string.Empty;
 
         // Stadium (tooltip / subtitle)
