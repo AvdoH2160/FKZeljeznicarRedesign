@@ -43,5 +43,14 @@
     margin-left: 5px;
 }
 
+#games-membership-container {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 620px;
+    gap: 30px;
+}
 
 

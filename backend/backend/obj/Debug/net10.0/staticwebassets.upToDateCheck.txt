@@ -36,3 +36,7 @@ wwwroot\uploads\team\a3476342-da68-4aec-9998-bb6cec8525bc.png
 wwwroot\uploads\team\9bac4e82-0712-44e0-a54a-5bcaf9dbe67a.png
 wwwroot\uploads\leagues\096d444e-2fe8-4fe1-99fe-1499565469f6.png
 wwwroot\uploads\leagues\b01d1af2-c29d-4a64-bca5-b55f0ebf6fd7.png
+wwwroot\uploads\leagues\d366adba-15b1-4f20-ae50-1a2188de0344.png
+wwwroot\uploads\leagues\f3cc7686-7cd2-454b-ac5d-f03cd2bb1fd6.png
+wwwroot\uploads\team\65c9f816-f392-4418-bdfb-a5e235178da5.png
+wwwroot\uploads\team\1ea873a4-665e-4656-84ba-791f477e73b3.png

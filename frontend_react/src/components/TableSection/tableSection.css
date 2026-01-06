@@ -3,7 +3,6 @@
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: italic;
-    letter-spacing: "-0.05em";
 }
 
 #table-section-text {
@@ -63,7 +62,7 @@
     align-items: center;
     height: 80px;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 800;
     border-bottom: 2px solid #C4C4C4;
     overflow: hidden;
 }
@@ -126,3 +125,47 @@
     object-fit: contain;
     margin-right: 10px;
 }
+
+.position-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.position-circle {
+    width: 26px;
+    height: 26px;
+    /* min-width: 26px; */
+    border-radius: 50%;
+    /* font-size: 14px; */
+    /* line-height: 1; */
+}
+
+.position-circle.champs {
+    background-color: #28a745; /* zelena - Champions League */
+}
+
+.position-circle.conference {
+    background-color: #007bff; /* plava - Conference League */
+}
+
+.position-circle.relegation {
+    background-color: #dc3545; /* crvena - Relegation */
+}
+
+@keyframes rowEnter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-row {
+    opacity: 0;
+    animation: rowEnter 0.45s ease-out forwards;
+}
+

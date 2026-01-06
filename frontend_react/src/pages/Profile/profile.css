@@ -1,0 +1,117 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.profile-information-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #080E1D;
+    background-image: url("../../assets/images/Vector.png");
+    background-size: cover;
+}
+
+.profile-information-text {
+    color: white;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-information-text input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #0052cc, #0099ff);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn.primary:hover {
+  background: linear-gradient(90deg, #0041a8, #0077cc);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #0052cc;
+  border: 2px solid #0052cc;
+}
+
+.btn.secondary:hover {
+  background: #0052cc;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.edit-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.welcome-text {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.user-small {
+    font-size: 20px;
+    font-weight: 500;
+    color: gray;
+    text-align: left;
+}
+
+.user-big {
+    font-size: 30px;
+}
+
+.profile-information-membership {
+    justify-self: center;
+    align-content: center;
+}
+
+.profile-information-membershipCard {
+    height: 350px;
+    width: 600px;
+    border-radius: 30px;
+    background-image: url("../../assets/images/card_background.png");
+    background-size: cover;
+}
+
+.profile-tickets {
+    height: 100vh;
+}
+
+

@@ -13,7 +13,10 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
 
-  const isHome = location.pathname === "/";
+  const isHome = 
+    location.pathname === "/" ||
+    location.pathname.startsWith("/prvi-tim/") ||
+    location.pathname === "/profil";
 
 
   const clickOnOptions = () => {

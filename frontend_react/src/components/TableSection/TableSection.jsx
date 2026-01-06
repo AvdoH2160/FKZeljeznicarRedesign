@@ -36,19 +36,37 @@ const TableSection = () => {
             <span id="goals-header" className="table-header">GOALS</span>
             <span id="points-header" className="table-header">PTS</span>
           </div>
-          {standings.map((team, index) => (
-            <div className={`table-rows item-${index}`}>
-              <span id="position-data" className={`table-data item-${index}`}>{team.rank}</span>
-              <span id="team-data" className={`table-data item-${index}`}><img src={team.teamLogoUrl} className="logo"/>{team.teamName}</span>
-              <span id="played-data" className={`table-data item-${index}`}>{team.played}</span>
-              <span id="won-data" className={`table-data item-${index}`}>{team.wins}</span>
-              <span id="drawn-data" className={`table-data item-${index}`}>{team.draws}</span>
-              <span id="lost-data" className={`table-data item-${index}`}>{team.losses}</span>
-              <span id="goal-difference-data" className={`table-data item-${index}`}>{team.goalDifference}</span>
-              <span id="goals-data" className={`table-data item-${index}`}>{team.goalsFor}:{team.goalsAgainst}</span>
-              <span id="points-data" className={`table-data item-${index}`}>{team.points}</span>
-            </div>
-            ))}
+            {standings.map((team, index) => {
+              let circleClass = ""; 
+              if (index === 0) circleClass = "champs";        // Champions League
+              else if (index === 1 || index === 2) circleClass = "conference"; // Conference League
+              else if (index >= standings.length - 2) circleClass = "relegation"; // Relegation
+
+              return (
+                <div 
+                  className={`table-rows animate-row ${team.teamName === "Zeljeznicar Sarajevo" ? "zeljo-pulse" : ""} item-${index}`} 
+                  key={team.rank}
+                  style={{ animationDelay: `${index * 70}ms` }}
+                >
+                  <span className={`table-data`}>
+                    <span className="position-wrapper">
+                      <span className={`position-circle ${circleClass}`}>{team.rank}</span>
+                    </span>
+                  </span>
+                  <span className="table-data" id="team-data">
+                    <img src={team.teamLogoUrl} className="logo"/>
+                    {team.teamName}
+                  </span>
+                  <span className="table-data">{team.played}</span>
+                  <span className="table-data">{team.wins}</span>
+                  <span className="table-data">{team.draws}</span>
+                  <span className="table-data">{team.losses}</span>
+                  <span className="table-data">{team.goalDifference}</span>
+                  <span className="table-data">{team.goalsFor}:{team.goalsAgainst}</span>
+                  <span className="table-data">{team.points}</span>
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>

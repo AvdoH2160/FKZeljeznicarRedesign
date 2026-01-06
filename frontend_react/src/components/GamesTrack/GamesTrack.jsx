@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import api from "../../services/api"
 import "./gamesTrack.css"
 
 const GamesTrack = () => {
     const [games, setGames] = useState([]);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [isActive, setIsActive] = useState(0);
+    const sliderRef = useRef(null);
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
 
     useEffect(() => {
         const loadGames = async () => {
@@ -12,22 +18,31 @@ const GamesTrack = () => {
 
             const formatted = res.data.map(g => {
                 const iso = g.kickOffTime.includes("T")
-                ? g.kickOffTime
-                : g.kickOffTime.replace(" ", "T");
+                    ? g.kickOffTime
+                    : g.kickOffTime.replace(" ", "T");
+
+                const date = new Date(iso);
+
+                const day = String(date.getDate()).padStart(2, "0");
+                const month = String(date.getMonth() + 1).padStart(2, "0");
+                const year = date.getFullYear();
+
+                const hour = String(date.getHours()).padStart(2, "0");
+                const minute = String(date.getMinutes()).padStart(2, "0");
 
                 return {
-                ...g,
-                kickOffFormatted: new Date(iso).toLocaleString("bs-BA", {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit"
-                })
+                    ...g,
+                    kickOffDateFormatted: `${day}.${month}.${year}`, 
+                    kickOffTimeFormatted: `${hour}:${minute}`       
                 };
             });
+            const now = new Date();
+            formatted.sort((a,b) => new Date(a.kickOffTime) - new Date(b.kickOffTime));
 
-            console.log(formatted);
+            const nextIndex = formatted.findIndex(
+                g => new Date(g.kickOffTime) > now
+            );
+            setSelectedIndex(nextIndex === -1 ? formatted.length - 1 : nextIndex);
             setGames(formatted);
             } catch (err) {
             console.error("Greška prilikom dohvatanja utakmica:", err);
@@ -37,38 +52,97 @@ const GamesTrack = () => {
         loadGames();
     }, []);
 
+    useEffect(() => {
+        const container = document.querySelector(".gamesTrack-container");
+        if(container) {
+            container.scrollLeft = container.scrollWidth;
+        }
+    }, [games]);
+
+    const handleMouseDown = (e) => {
+      setIsDown(true);
+      setIsActive(0);
+      if(!sliderRef.current) return;
+      sliderRef.current.classList.add("dragging");
+      setStartX(e.pageX - sliderRef.current.offsetLeft);
+      setScrollLeft(sliderRef.current.scrollLeft);
+    };
+
+    const handleMouseLeave = () => {
+      setIsDown(false);
+      sliderRef.current?.classList.remove("dragging");
+    };
+    
+    const handleMouseUp = () => {
+      setIsDown(false);
+      sliderRef.current?.classList.remove("dragging");
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown || !sliderRef.current) return;
+      e.preventDefault();
+      const x = e.pageX - sliderRef.current.offsetLeft;
+      const walk = (x - startX) * 1; 
+      sliderRef.current.scrollLeft = scrollLeft - walk;
+    };
+
   return (
-    <div className='gamesTrack-container'>
-        {games.map((game, index) => (
-            <div key={game.id} className='game'>
+    <div 
+        className='gamesTrack-container' 
+        ref={sliderRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+    >
+        {games.map((game, index) =>  {
+            const isActive = index === selectedIndex;
+            if(index > selectedIndex) return null;
+
+            return (
+            <div 
+                key={game.id} 
+                className={`game ${isActive ? "active" : ""}`}
+            >
                 <div className='gameLogo-container'>
-                    <img src={`https://localhost:7010${game.smallLeagueLogoUrl}`}></img>
+                    <img src={!isActive ? `https://localhost:7010${game.smallLeagueLogoUrl}` : `https://localhost:7010${game.leagueLogoUrl}`}></img>
                 </div>
                 <div className='gameText-container'>
                     <div className='homeLogoText-container'>
                         <img src={`https://localhost:7010${game.homeTeamLogoUrl}`}></img>
                         <p className='teamName'> 
-                            {game.homeTeamName}
+                            {game.homeTeamName.toUpperCase()}
                         </p>
                         <p className='teamScore'>
-                            {game.homeScore}
+                            {!isActive ? game.homeScore : ""}
                         </p>
                     </div>
+                    {isActive && (
+                        <div className='gameDate-container'>
+                            <span>
+                                {game.kickOffTimeFormatted}
+                            </span><br/>
+                            {game.kickOffDateFormatted}<br/>
+                            {game.stadium}
+                        </div>
+                    )}
                     <div className='homeLogoText-container'>
                         <img src={`https://localhost:7010${game.awayTeamLogoUrl}`}></img>
                         <p className='teamName'>
-                            {game.awayTeamName}
+                            {game.awayTeamName.toUpperCase()}
                         </p>
                         <p className='teamScore'>
-                            {game.awayScore}
+                            {!isActive ? game.awayScore : ""}
                         </p>
                     </div>
-                    <div className='gameDate-container'>
-                        {game.kickOffFormatted}
-                    </div>
+                    {!isActive && (
+                        <div className='gameDate-container'>
+                            {game.kickOffDateFormatted}
+                        </div>
+                    )}
                 </div>
             </div>
-        ))}
+            )})}
     </div>
   )
 }

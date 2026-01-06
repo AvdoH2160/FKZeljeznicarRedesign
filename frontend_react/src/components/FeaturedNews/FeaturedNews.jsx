@@ -2,6 +2,7 @@ import React,{useState, useRef, useEffect} from 'react'
 import "./featuredNews.css"
 import GamesTrack from '../GamesTrack/GamesTrack'
 import ArrowRight from "../../assets/svg/arrow_right.svg"
+import MembershipCard from '../Membership/MembershipCard'
 
 const FeaturedNews = () => {
   const [news, setNews] = useState([]);
@@ -27,7 +28,10 @@ const FeaturedNews = () => {
                 </div>
             </div>
         )}
-        <GamesTrack></GamesTrack>
+        <div id="games-membership-container">
+          <GamesTrack></GamesTrack>
+          <MembershipCard></MembershipCard>
+        </div>
     </div>
   )
 }

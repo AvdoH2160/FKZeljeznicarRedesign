@@ -1198,6 +1198,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "backend.Controllers.ProfileController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/Profile/me",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "backend.ViewModel.ProfileUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "backend.Controllers.TableStandingsController",
     "Method": "GetTableStandings",
     "RelativePath": "api/TableStandings/{leagueId}/{season}",

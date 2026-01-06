@@ -1,0 +1,37 @@
+#membershipCard-container {
+    width: 590px;
+    background: rgba(255, 255, 255, 0.23);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 40px),
+        calc(100% - 40px) 100%,
+        0 100%
+    );
+}
+
+#membershipCard-container img {
+    justify-self: center;
+    align-self: center;
+}
+
+#membershipCardText-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+#membershipCardText-container .small {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#membershipCardText-container .big {
+    font-size: 40px;
+}

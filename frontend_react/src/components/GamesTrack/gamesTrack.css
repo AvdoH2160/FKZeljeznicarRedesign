@@ -2,15 +2,34 @@
     font-family: "Poppins";
     font-weight: 800;
     font-style: italic;
-    position: absolute;
-    bottom: 40px;
-    z-index: 10;
-    width: 100%;
     height: 250px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    will-change: scroll-position;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    scrollbar-width: none;
+    user-select: none;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    padding-left: 30px;
+}
+
+.gamesTrack-container::-webkit-scrollbar {
+    display: none;
+}
+
+.gamesTrack-container.dragging {
+    cursor: grabbing;
 }
 
 .game {
-    width: 300px;
+    min-width: 280px;
     background: rgba(255, 255, 255, 0.23);
     height: 100%;
     display: flex;
@@ -22,11 +41,66 @@
         calc(100% - 40px) 100%,
         0 100%
     );
+    transition: background 0.3s ease, transform 0.3s ease;
 }
+
+.game:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.game img {
+    pointer-events: none;
+}
+
+.game.active {
+    background-color: white;
+    min-width: 590px;
+    color: black;
+}
+
+.game.active .teamName {
+    color: black;
+}
+
+.game.active .gameLogo-container {
+    align-self: center;
+    margin-left: 0;
+}
+
+.game.active .gameLogo-container img {
+    height: 70px;
+}
+
+.game.active .homeLogoText-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.game.active .homeLogoText-container img {
+    height: 65px;
+    width: auto;
+}
+
+.game.active .gameText-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.game.active .gameDate-container {
+    margin-left: 0;
+    text-align: center;
+}
+
+.game.active .gameDate-container span {
+    font-size: 50px;
+}
+
 
 .gameLogo-container {
     margin-left: 15px;
     margin-top: 15px;
+    pointer-events: none; 
 }
 
 .homeLogoText-container {
@@ -34,12 +108,12 @@
     display: grid;
     grid-template-columns: 0.9fr 2.3fr 1fr;
     text-align: center;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
 .homeLogoText-container img {
-    /* display: block; */
+    display: block;
     height: 50px;
     width: auto;
 }
