@@ -3,12 +3,12 @@ import { useContext } from 'react';
 import { AuthContext } from "../../context/AuthContext";
 
 const ProtectedRoute = ({ children }) => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
 
-    if (!user) {
-        return <Navigate to="/prijava" replace />;
-    }
+    if (loading) return <div>Loading...</div>;
 
+    if (!user) return <Navigate to="/prijava" replace />;
+    
     return children;
 }
 

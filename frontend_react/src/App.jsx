@@ -24,6 +24,8 @@ import AdminPlayers from "./admin/pages/AdminPlayers.jsx"
 import AdminUsers from "./admin/pages/AdminUsers.jsx"
 import AdminLeagues from "./admin/pages/AdminLeagues.jsx"
 import AdminTeams from "./admin/pages/AdminTeams.jsx"
+import AdminMembership from "./admin/pages/AdminMembership.jsx"
+import MembershipPage from "./pages/MembershipPage/MembershipPage.jsx"
 
 
 const App = () => {
@@ -54,6 +56,16 @@ const App = () => {
               <Route path="/novosti" element={<NewsList></NewsList>}></Route>
               <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
               <Route path="/novost/:slug" element={<News></News>}></Route>
+              <Route path="/clanstvo" element={
+                <ProtectedRoute>
+                  <MembershipPage></MembershipPage>
+                </ProtectedRoute>
+              }></Route>
+              <Route path="/clanstvo/:mode" element={
+                <ProtectedRoute>
+                  <MembershipPage></MembershipPage>
+                </ProtectedRoute>
+              }></Route>
               <Route path="/prijava" element={
                 <PublicRoute>
                   <LoginRegister></LoginRegister>
@@ -77,6 +89,7 @@ const App = () => {
                 <Route path="players" element={<AdminPlayers></AdminPlayers>}></Route>
                 <Route path="leagues" element={<AdminLeagues></AdminLeagues>}></Route>
                 <Route path="teams" element={<AdminTeams></AdminTeams>}></Route>
+                <Route path="memberships" element={<AdminMembership></AdminMembership>}></Route>
               </Route>
               <Route path="*" element={<NotFound/>}/>
             </Routes>

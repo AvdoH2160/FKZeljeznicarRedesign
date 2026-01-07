@@ -1,5 +1,5 @@
 import React,{useState, useRef, useEffect, useContext} from 'react'
-import { Link, useLocation} from 'react-router-dom'
+import { Link, useLocation, useNavigate} from 'react-router-dom'
 import {AuthContext} from '../../context/AuthContext'
 import Zeljo from "../../assets/svg/zeljo_white_icon.svg"
 import ZeljoColor from "../../assets/svg/zeljo_color_icon.svg"
@@ -12,12 +12,23 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
   const location = useLocation();
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
+  const navigate = useNavigate();
 
   const isHome = 
     location.pathname === "/" ||
     location.pathname.startsWith("/prvi-tim/") ||
     location.pathname === "/profil";
 
+  const scrollToBottom = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/", { state: { scrollToBottom: true } });
+    }
+  };
 
   const clickOnOptions = () => {
     setIsExpanded(prev => !prev);
@@ -119,18 +130,18 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
               <div className="dropdown-menu">
                 <Link className="button" to="/prvi-tim">PRVI TIM</Link>
                 <Link className="button" to="/novosti/najave">HISTORIJA</Link>
-                <Link className="button" to="/novosti/izvještaji">KONTAKT</Link>
+                <p onClick={scrollToBottom} className="button" to="/novosti/izvještaji">KONTAKT</p>
               </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
             </div>
             <div className="dropdown header-option">
-              <Link to="/prvi-tim">
+              <Link to="/clanstvo">
                 ČLANSTVO
               </Link>
               <div className="dropdown-menu">
-                <Link className="button" to="/prvi-tim">UČLANI SE</Link>
-                <Link className="button" to="/novosti/najave">OBNOVA</Link>
-                <Link className="button" to="/novosti/izvještaji">PROVJERI STATUS</Link>
+                <Link className="button" to="/clanstvo/uclani-se">UČLANI SE</Link>
+                <Link className="button" to="/clanstvo/obnova">OBNOVA</Link>
+                <Link className="button" to="/clanstvo/provjeri">PROVJERI STATUS</Link>
               </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
             </div>

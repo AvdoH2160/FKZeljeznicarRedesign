@@ -20,6 +20,7 @@ namespace backend.Data
         public DbSet<Player> Player => Set<Player>();
         public DbSet<Profile> Profiles => Set<Profile>();
         public DbSet<Membership> Memberships => Set<Membership>();
+        public DbSet<MembershipApplication> MembershipApplications => Set<MembershipApplication>();
         public DbSet<Game> Games => Set<Game>();
         public DbSet<League> Leagues => Set<League>();
         public DbSet<Team> Teams => Set<Team>();  

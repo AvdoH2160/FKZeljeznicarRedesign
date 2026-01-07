@@ -1,26 +1,26 @@
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-style: italic;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
 }
 
 .profile-information-container {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #080E1D;
-    background-image: url("../../assets/images/Vector.png");
-    background-size: cover;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #080E1D;
+  background-image: url("../../assets/images/Vector.png");
+  background-size: cover;
 }
 
 .profile-information-text {
-    color: white;
-    justify-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  color: white;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .profile-information-text input {
@@ -53,13 +53,13 @@
 }
 
 .btn.primary {
-  background: linear-gradient(90deg, #0052cc, #0099ff);
+  background: linear-gradient(90deg, #0052cc, #4DA1FF);
   color: white;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .btn.primary:hover {
-  background: linear-gradient(90deg, #0041a8, #0077cc);
+  background: linear-gradient(90deg, #0041a8, #4DA1FF);
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
@@ -82,36 +82,185 @@
 }
 
 .welcome-text {
-    font-size: 60px;
-    margin-bottom: 20px;
+  font-size: 60px;
+  margin-bottom: 20px;
 }
 
 .user-small {
-    font-size: 20px;
-    font-weight: 500;
-    color: gray;
-    text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  color: gray;
+  text-align: left;
 }
 
 .user-big {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .profile-information-membership {
-    justify-self: center;
-    align-content: center;
+  justify-self: center;
+  align-content: center;
 }
 
 .profile-information-membershipCard {
-    height: 350px;
-    width: 600px;
-    border-radius: 30px;
-    background-image: url("../../assets/images/card_background.png");
-    background-size: cover;
+  height: 350px;
+  width: 600px;
+  border-radius: 30px;
+  background-image: url("../../assets/images/card_background.png");
+  background-size: cover;
+  display: grid;
+  grid-template-rows: 1.5fr 3fr 1fr;
+  color: white;
+}
+
+.profile-information-membershipCard .dots {
+  margin-left: 40px;
+  align-self: center;
+}
+
+.profile-information-membershipCard-header {
+  display: grid;
+  grid-template-columns: 1fr 0.1fr 1fr;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  align-items: center;
+}
+
+.profile-information-membershipCard-header img {
+  display: block;
+  justify-self: center;
+}
+
+.profile-information-membershipCard-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  font-size: 20px;
+  position: relative;
+}
+
+.profile-information-membershipCard-main::after {
+  content:"";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  height: 1px;
+  width: 90%;
+  background-color: gray;
+}
+
+.profile-information-membershipCard-main-text {
+  align-self: center;
+}
+
+.profile-information-membershipCard-main p {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.profile-information-membershipCard-main .main-text {
+  font-size: 30px;
+  margin-top: 20px;
+  transition: color 0.3s ease;
+}
+
+.profile-information-membershipCard-main .member:hover {
+  color:#4DA1FF;
+  cursor: pointer;
+}
+
+.profile-information-membershipCard-main img {
+  justify-self: end;
+  align-self: end;
+  height: 100%;
+}
+
+.profile-information-membershipCard-footer {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  color: white;
+  font-size: 20px;
+  justify-content: start;
+  margin-left: 40px;
+  align-items: center;
+}
+
+.profile-information-membershipCard-footer .year {
+  color: #4DA1FF;
 }
 
 .profile-tickets {
-    height: 100vh;
+  height: 100vh;
 }
 
 
+.membership-flip {
+  height: 350px;
+  width: 600px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.membership-flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+  border-radius: 30px;
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.membership-flip.flipped .membership-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.membership-front,
+.membership-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+}
+
+.membership-back {
+  transform: rotateY(180deg);
+  background-image: url("../../assets/images/Vector.png");
+  background-color: #080E1D;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-title {
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.qr-image {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.qr-code-text {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.membership-front::after {
+  content: "Klikni za QR";
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 20px;
+  opacity: 0.5;
+}

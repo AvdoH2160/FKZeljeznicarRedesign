@@ -146,6 +146,15 @@
   background: #fdecea;
   color: #c82333;
 }
+
+.admin-table .btn.approve {
+    background: #4DA1FF;
+    color: white;
+}
+.admin-table .btn.reject {
+    background: #FF4D4D;
+    color: white;
+}
 /* =========================
    TABLE
 ========================= */
@@ -221,6 +230,29 @@
 .badge.finished {
   background: #e6f4ea;
   color: #1e7e34;
+}
+
+.status {
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.status.pending {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.status.approved {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.status.rejected {
+    background-color: #d9534f;
+    color: white;
 }
 
 /* =========================

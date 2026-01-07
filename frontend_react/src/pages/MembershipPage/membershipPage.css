@@ -1,0 +1,49 @@
+.auth-page {
+    margin-top: 100px;
+}
+
+.membership-text {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.membership-text .quote {
+  font-style: italic;
+  color: #555;
+  margin: 10px 0;
+}
+
+.membership-text p {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.helper-link {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.helper-link span {
+  color: #4DA1FF;
+  cursor: pointer;
+}
+
+.auth-form input,
+.auth-form select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+    border-color: #4DA1FF;
+    box-shadow: 0 0 5px rgba(77, 161, 255, 0.5);
+}

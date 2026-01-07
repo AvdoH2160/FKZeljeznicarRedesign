@@ -17,13 +17,20 @@ namespace backend.Controllers
         [HttpGet("me")]
         public async Task<IActionResult> GetProfile()
         {
+            var currentYear = DateTime.UtcNow.Year;
+            var userId = int.Parse(userManager.GetUserId(User));
+
             var user = await userManager
                 .Users
                 .Include(u => u.Profile)
-                .FirstOrDefaultAsync(u => u.Id == int.Parse(userManager.GetUserId(User)));
+                .Include(u => u.Memberships)
+                .FirstOrDefaultAsync(u => u.Id == userId);
 
             if (user == null)
                 return Unauthorized();
+
+            var currentMembership = user.Memberships
+                .FirstOrDefault(m => m.Year == currentYear && m.IsActive);
 
             return Ok(new
             {
@@ -33,7 +40,16 @@ namespace backend.Controllers
                 user.Profile.FirstName,
                 user.Profile.LastName,
                 user.Profile.City,
-                user.Profile.DateOfBirth
+                user.Profile.DateOfBirth,
+                Membership = currentMembership == null ? null : new
+                {
+                    currentMembership.Id,
+                    currentMembership.MembershipNumber,
+                    currentMembership.CodeValue,
+                    currentMembership.Year,
+                    currentMembership.IsActive,
+                    currentMembership.CreatedAt
+                }
             });
         }
 

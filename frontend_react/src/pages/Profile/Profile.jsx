@@ -1,19 +1,27 @@
 import React from 'react'
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import api from "../../services/api"
 import EditIcon from "../../assets/svg/edit.svg"
+import ZeljoIcon from "../../assets/svg/zeljo_white_icon.svg"
+import Stadium from "../../assets/svg/stadium.svg"
 import "./profile.css"
 
 const formatDate = (date) => {
   if(!date) return "";
   const d = new Date(date);
-  return `${d.getMonth() + 1}.${d.getDate()}.${d.getFullYear()}`;
+  return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
 }
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [form, setForm] = useState({});
+    const [flipped, setFlipped] = useState(false);
+
+    const toggleFlip = () => {
+      setFlipped(prev => !prev);
+    }
 
     useEffect(() => {
         api.get('/profile/me')
@@ -112,14 +120,63 @@ const Profile = () => {
                 }}>
                   PROFIL <img src={EditIcon} alt="edit icon" className="edit-icon"/>
                 </button>
-                <button className="btn secondary">Učlani se</button>
               </>
             )}
           </div>
         </div>
-        <div className='profile-information-membership'>
-          <div className="profile-information-membershipCard">
+        <div className="profile-information-membership">
+          <div 
+            className={`membership-flip ${flipped ? "flipped" : ""}`} 
+            onClick={profile.membership ? toggleFlip : undefined}
+          >
+            <div className="membership-flip-inner">
+              <div className="membership-front profile-information-membershipCard">
+                <div className="profile-information-membershipCard-header">
+                  <p>MI SMO ŽELJINI</p>
+                  <img src={ZeljoIcon} />
+                  <p>ŽELJO JE NAS</p>
+                </div>
+                <div className='profile-information-membershipCard-main'>
+                  <div className='profile-information-membershipCard-main-text'>
+                    <p>ČLANSKA KARTA</p>
+                    {profile.membership ? (
+                      <p className='main-text'>
+                        {profile.firstName.toUpperCase()} {profile.lastName.toUpperCase()}
+                      </p>
+                    ) : (
+                      <Link to="/clanstvo/uclani-se">
+                        <p className='main-text member'>UČLANI SE</p>
+                      </Link>
+                    )}
+                  </div>
+                  <img src={Stadium} />
+                </div>
+                {profile.membership ? (
+                  <div className='profile-information-membershipCard-footer'>
+                    <p>{profile.membership.membershipNumber}</p>
+                    <p className='year'>{profile.membership.year}</p>
+                  </div>
+                ) : (
+                  <p className='dots'>----------------</p>
+                )}
+              </div>
+              <div className="membership-back profile-information-membershipCard">
+                <p className="qr-title">SKENIRAJ ZA PROVJERU</p>
 
+                {profile.membership && (
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${profile.membership.codeValue}`}
+                    alt="QR Code"
+                    className="qr-image"
+                  />
+                )}
+
+                {/* <p className="qr-code-text">
+                  {profile.membership?.codeValue}
+                </p> */}
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
