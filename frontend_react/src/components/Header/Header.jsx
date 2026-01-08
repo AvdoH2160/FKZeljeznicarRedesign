@@ -17,7 +17,8 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
   const isHome = 
     location.pathname === "/" ||
     location.pathname.startsWith("/prvi-tim/") ||
-    location.pathname === "/profil";
+    location.pathname === "/profil" ||
+    location.pathname === "/stadion-grbavica";
 
   const scrollToBottom = () => {
     if (location.pathname === "/") {
@@ -124,12 +125,13 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
             </div>
             <div className="dropdown header-option">
-              <Link to="/prvi-tim">
+              <Link to="/opste-informacije">
               KLUB
               </Link>
               <div className="dropdown-menu">
                 <Link className="button" to="/prvi-tim">PRVI TIM</Link>
-                <Link className="button" to="/novosti/najave">HISTORIJA</Link>
+                <Link className="button" to="/stadion-grbavica">STADION GRBAVICA</Link>
+                <Link className="button" to="/historija">HISTORIJA</Link>
                 <p onClick={scrollToBottom} className="button" to="/novosti/izvještaji">KONTAKT</p>
               </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>

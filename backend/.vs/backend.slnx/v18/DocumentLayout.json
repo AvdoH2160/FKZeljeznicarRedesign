@@ -206,8 +206,7 @@
               "RelativeToolTip": "backend\\Model\\ApplicationUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T15:21:37.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T15:21:37.291Z"
             },
             {
               "$type": "Document",
@@ -219,8 +218,7 @@
               "RelativeToolTip": "backend\\Controllers\\MembershipController.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwCcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T11:11:46.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T11:11:46.911Z"
             },
             {
               "$type": "Document",
@@ -232,8 +230,7 @@
               "RelativeToolTip": "backend\\Model\\Profile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:13:24.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:13:24.714Z"
             },
             {
               "$type": "Document",
@@ -258,8 +255,7 @@
               "RelativeToolTip": "backend\\ViewModel\\MembershipRenewalDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T11:34:09.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T11:34:09.297Z"
             },
             {
               "$type": "Document",
@@ -271,8 +267,7 @@
               "RelativeToolTip": "backend\\Model\\ApplicationStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T13:45:47.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T13:45:47.145Z"
             },
             {
               "$type": "Document",
@@ -284,8 +279,7 @@
               "RelativeToolTip": "backend\\ViewModel\\MembershipDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T14:03:36.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T14:03:36.864Z"
             },
             {
               "$type": "Document",
@@ -297,8 +291,7 @@
               "RelativeToolTip": "backend\\Model\\Membership.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T13:17:52.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T13:17:52.165Z"
             },
             {
               "$type": "Document",
@@ -310,8 +303,7 @@
               "RelativeToolTip": "backend\\Model\\MembershipApplication.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T11:07:23.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T11:07:23.521Z"
             },
             {
               "$type": "Document",
@@ -323,8 +315,7 @@
               "RelativeToolTip": "backend\\ViewModel\\AdminUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T13:01:51.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-23T13:01:51.889Z"
             },
             {
               "$type": "Document",
@@ -336,8 +327,7 @@
               "RelativeToolTip": "backend\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:37:06.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T16:37:06.357Z"
             },
             {
               "$type": "Document",
@@ -744,8 +734,7 @@
               "RelativeToolTip": "backend\\Services\\IMembershipService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T11:13:50.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T11:13:50.242Z"
             },
             {
               "$type": "Document",
@@ -757,8 +746,7 @@
               "RelativeToolTip": "backend\\ViewModel\\MembershipCheckDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T11:13:01.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T11:13:01.713Z"
             },
             {
               "$type": "Document",
@@ -770,8 +758,7 @@
               "RelativeToolTip": "backend\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T13:28:17.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:28:17.898Z"
             }
           ]
         }

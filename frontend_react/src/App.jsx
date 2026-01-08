@@ -26,6 +26,9 @@ import AdminLeagues from "./admin/pages/AdminLeagues.jsx"
 import AdminTeams from "./admin/pages/AdminTeams.jsx"
 import AdminMembership from "./admin/pages/AdminMembership.jsx"
 import MembershipPage from "./pages/MembershipPage/MembershipPage.jsx"
+import Stadium from "./pages/Stadium/Stadium.jsx"
+import ClubInfo from "./pages/ClubInfo/ClubInfo.jsx"
+import History from "./pages/History/History.jsx"
 
 
 const App = () => {
@@ -56,6 +59,9 @@ const App = () => {
               <Route path="/novosti" element={<NewsList></NewsList>}></Route>
               <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
               <Route path="/novost/:slug" element={<News></News>}></Route>
+              <Route path="/stadion-grbavica" element={<Stadium></Stadium>}></Route>
+              <Route path="/opste-informacije" element={<ClubInfo></ClubInfo>}></Route>
+              <Route path="/historija" element={<History></History>}></Route>
               <Route path="/clanstvo" element={
                 <ProtectedRoute>
                   <MembershipPage></MembershipPage>

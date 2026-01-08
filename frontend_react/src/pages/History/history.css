@@ -1,0 +1,66 @@
+.history-page {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: #002c6d;
+}
+
+/* HERO */
+.history-hero {
+  height: 60vh;
+  background: linear-gradient(
+      rgba(0, 44, 109, 0.75),
+      rgba(0, 44, 109, 0.75)
+    ),
+    url("/images/grbavica-history.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.history-hero h1 {
+  font-size: 64px;
+  font-weight: 800;
+}
+
+.history-hero p {
+  max-width: 600px;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+/* SECTIONS */
+.history-section {
+  padding: 80px 10%;
+  background: #fff;
+}
+
+.history-section.alt {
+  background: #f5f7fb;
+}
+
+.history-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.history-section p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 900px;
+  margin-bottom: 15px;
+}
+
+/* QUOTE */
+.history-quote {
+  padding: 100px 10%;
+  background: #002c6d;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  font-style: italic;
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useRef, useEffect} from 'react'
+import {Link} from "react-router-dom"
 import "./stadiumSection.css"
 import Stadium from "../../assets/images/image18.png"
 
@@ -18,7 +19,9 @@ const stadiumSection = () => {
                     Kapacitet: 13.057<br/>
                     Izgrađen: 13. septembar 1953. godine<br/>
                 </p><br/>
-                <h1>PROČITAJ VIŠE</h1>
+                <Link to="/stadion-grbavica" className='stadium-text-link'>
+                  <h1>PROČITAJ VIŠE</h1>
+                </Link>
             </div>
         </div>
     </div>
