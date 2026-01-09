@@ -1,0 +1,106 @@
+.shop-page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-family: "Poppins";
+    margin-top: 100px;
+}
+
+.shop-page-limited-container {
+    background-image: url("../../assets/images/limited.png");
+    margin-top: 70px;
+    height: 600px;
+    width: 100%;
+    
+}
+
+.shop-page-limited-text {
+    height: 100%;
+    width: 100%;
+    max-width: 1800px;
+    justify-self: center;
+    display: grid;
+    grid-template-rows: 0.5 fr 1fr 0.5fr;
+    
+}
+
+.shop-page-limited-container img {
+    align-self: center;
+}
+
+.shop-page-limited-container p {
+    color: white;
+    font-size: 200px;
+    font-weight: 800;
+    font-style: italic;
+    text-align: center;
+    align-self: center;
+}
+
+.shop-page-limited-container .small {
+    font-size: 50px;
+    text-align: left;
+    align-self: center;
+}
+
+
+
+.shop-page-categories-section {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.shop-page-categories-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1800px;
+    justify-self: center;
+}
+
+.shop-page-categories-image-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.shop-page-categories-overlay {
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+    font-style: italic;
+    bottom: 80px;
+    left: 50px;
+}
+
+.shop-page-categories-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.shop-page-categories-overlay .shop-button {
+    text-align: center;
+    align-content: center;
+    font-size: 25px;
+    background-color: white;
+    color: #002C6D;
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.shop-page-gift {
+    width: 100%;
+    height: 75vh;
+    margin-top: 80px;
+    margin-bottom: 15px;
+    background-image: url("../../assets/images/shop-gift.png");
+    background-size: cover;
+    overflow: hidden;
+}
+

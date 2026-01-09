@@ -29,6 +29,7 @@ import MembershipPage from "./pages/MembershipPage/MembershipPage.jsx"
 import Stadium from "./pages/Stadium/Stadium.jsx"
 import ClubInfo from "./pages/ClubInfo/ClubInfo.jsx"
 import History from "./pages/History/History.jsx"
+import Shop from "./pages/Shop/Shop.jsx"
 
 
 const App = () => {
@@ -62,6 +63,7 @@ const App = () => {
               <Route path="/stadion-grbavica" element={<Stadium></Stadium>}></Route>
               <Route path="/opste-informacije" element={<ClubInfo></ClubInfo>}></Route>
               <Route path="/historija" element={<History></History>}></Route>
+              <Route path="/shop" element={<Shop></Shop>}></Route>
               <Route path="/clanstvo" element={
                 <ProtectedRoute>
                   <MembershipPage></MembershipPage>
