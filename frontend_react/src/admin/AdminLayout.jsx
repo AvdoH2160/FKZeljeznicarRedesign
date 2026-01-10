@@ -14,6 +14,7 @@ export default function AdminLayout() {
                 <Link to="/admin/games">Games</Link>
                 <Link to="/admin/leagues">Leagues</Link>
                 <Link to="/admin/teams">Teams</Link>
+                <Link to="/admin/products">Products</Link>
             </aside>
 
             <main className="admin-content">

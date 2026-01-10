@@ -26,10 +26,12 @@ import AdminLeagues from "./admin/pages/AdminLeagues.jsx"
 import AdminTeams from "./admin/pages/AdminTeams.jsx"
 import AdminMembership from "./admin/pages/AdminMembership.jsx"
 import MembershipPage from "./pages/MembershipPage/MembershipPage.jsx"
+import AdminProducts from "./admin/pages/AdminProducts.jsx"
 import Stadium from "./pages/Stadium/Stadium.jsx"
 import ClubInfo from "./pages/ClubInfo/ClubInfo.jsx"
 import History from "./pages/History/History.jsx"
 import Shop from "./pages/Shop/Shop.jsx"
+
 
 
 const App = () => {
@@ -98,6 +100,7 @@ const App = () => {
                 <Route path="leagues" element={<AdminLeagues></AdminLeagues>}></Route>
                 <Route path="teams" element={<AdminTeams></AdminTeams>}></Route>
                 <Route path="memberships" element={<AdminMembership></AdminMembership>}></Route>
+                <Route path="products" element={<AdminProducts></AdminProducts>}></Route>
               </Route>
               <Route path="*" element={<NotFound/>}/>
             </Routes>

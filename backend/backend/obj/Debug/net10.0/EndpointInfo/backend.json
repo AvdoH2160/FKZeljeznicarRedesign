@@ -1847,6 +1847,12 @@
                   },
                   "ThumbnailUrl": {
                     "$ref": "#/components/schemas/IFormFile"
+                  },
+                  "ShopThumbnailUrl1": {
+                    "$ref": "#/components/schemas/IFormFile"
+                  },
+                  "ShopThumbnailUrl2": {
+                    "$ref": "#/components/schemas/IFormFile"
                   }
                 }
               }
@@ -2086,6 +2092,12 @@
                 "type": "object",
                 "properties": {
                   "ThumbnailUrl": {
+                    "$ref": "#/components/schemas/IFormFile"
+                  },
+                  "ShopThumbnailUrl1": {
+                    "$ref": "#/components/schemas/IFormFile"
+                  },
+                  "ShopThumbnailUrl2": {
                     "$ref": "#/components/schemas/IFormFile"
                   },
                   "GalleryImages": {
@@ -3192,6 +3204,18 @@
           "thumbnailUrl": {
             "type": "string"
           },
+          "shopThumbnailUrl1": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "shopThumbnailUrl2": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -3334,6 +3358,18 @@
           },
           "thumbnailUrl": {
             "type": "string"
+          },
+          "shopThumbnailUrl1": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "shopThumbnailUrl2": {
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "sizes": {
             "type": "array",

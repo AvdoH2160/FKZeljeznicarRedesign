@@ -17,6 +17,8 @@ namespace backend.ViewModel
         public List<string> GalleryImages { get; set; } = new List<string>();
         public int ViewCount { get; set; } = 0;
         public string ThumbnailUrl { get; set; } = string.Empty;
+        public string? ShopThumbnailUrl1 { get; set; } 
+        public string? ShopThumbnailUrl2 { get; set; } 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }

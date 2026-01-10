@@ -15,6 +15,8 @@ namespace backend.ViewModel
         public string Color { get; set; } = string.Empty;
         public List<IFormFile>? GalleryImages { get; set; }
         public int ViewCount { get; set; } = 0;
-        public IFormFile? ThumbnailUrl { get; set; } 
+        public IFormFile? ThumbnailUrl { get; set; }
+        public IFormFile? ShopThumbnailUrl1 { get; set; } 
+        public IFormFile? ShopThumbnailUrl2 { get; set; } 
     }
 }

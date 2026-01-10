@@ -255,6 +255,18 @@
     color: white;
 }
 
+.stock-zero input {
+    border: 2px solid #d32f2f;
+    background-color: #ffecec;
+}
+
+.stock-warning {
+    color: #d32f2f;
+    font-weight: 700;
+    margin-left: 10px;
+    align-self: center;
+}
+
 /* =========================
    RESPONSIVE
 ========================= */

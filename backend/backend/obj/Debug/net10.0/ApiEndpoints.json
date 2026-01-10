@@ -1130,6 +1130,16 @@
         "Name": "ThumbnailUrl",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
+      },
+      {
+        "Name": "ShopThumbnailUrl1",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ShopThumbnailUrl2",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -1205,6 +1215,16 @@
       },
       {
         "Name": "ThumbnailUrl",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ShopThumbnailUrl1",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ShopThumbnailUrl2",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       },

@@ -6,7 +6,9 @@
         public string? Description { get; set; }
         public decimal? Price { get; set; }
         public string? Category { get; set; }
-        public IFormFile? ThumbnailUrl { get; set; } 
+        public IFormFile? ThumbnailUrl { get; set; }
+        public IFormFile? ShopThumbnailUrl1 { get; set; }
+        public IFormFile? ShopThumbnailUrl2 { get; set; }
         public bool? IsFeatured { get; set; }
         public int? FeaturedOrder { get; set; }
         public string? Brand { get; set; }

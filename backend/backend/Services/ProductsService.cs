@@ -16,10 +16,18 @@ namespace backend.Services
                 throw new ArgumentNullException("ThumbnailMorabit poslan");
             var thumbnailUrl = await imageService.SaveFileAsync(create.ThumbnailUrl, "products");
 
+            string? shopThumbnailUrl1 = create.ShopThumbnailUrl1 != null
+                ? await imageService.SaveFileAsync(create.ShopThumbnailUrl1, "products")
+                : null;
+
+            string? shopThumbnailUrl2 = create.ShopThumbnailUrl2 != null
+                ? await imageService.SaveFileAsync(create.ShopThumbnailUrl2, "products")
+                : null;
+
             var imageUrl = new List<string>();
-            if(create.GalleryImages != null) 
+            if (create.GalleryImages != null)
             {
-                foreach(var img in create.GalleryImages)
+                foreach (var img in create.GalleryImages)
                 {
                     var url = await imageService.SaveFileAsync(img, "news");
                     imageUrl.Add(url);
@@ -28,14 +36,18 @@ namespace backend.Services
 
             if (create.IsFeatured)
             {
-                var existingFeatured = await context.Products.Where(p => p.IsFeatured).FirstOrDefaultAsync();
-                if (existingFeatured != null)
+                var featuredProducts = await context.Products
+                    .Where(p => p.IsFeatured)
+                    .OrderBy(p => p.Id)
+                    .ToListAsync();
+
+                if (featuredProducts.Count >= 4)
                 {
-                    existingFeatured.IsFeatured = false;
+                    featuredProducts.First().IsFeatured = false;
                 }
             }
 
-            if(create.FeaturedOrder != 0)
+            if (create.FeaturedOrder != 0)
             {
                 var existingFeatured = await context.Products.Where(p => p.FeaturedOrder == create.FeaturedOrder).FirstOrDefaultAsync();
                 if (existingFeatured != null)
@@ -56,6 +68,8 @@ namespace backend.Services
                 Brand = create.Brand,
                 Color = create.Color,
                 ThumbnailUrl = thumbnailUrl,
+                ShopThumbnailUrl1 = shopThumbnailUrl1,
+                ShopThumbnailUrl2 = shopThumbnailUrl2,
                 GalleryImages = imageUrl
             };
 
@@ -80,6 +94,8 @@ namespace backend.Services
                 FeaturedOrder = product.FeaturedOrder,
                 Category = product.Category,
                 ThumbnailUrl = product.ThumbnailUrl,
+                ShopThumbnailUrl1 = product.ShopThumbnailUrl1,
+                ShopThumbnailUrl2 = product.ShopThumbnailUrl2,
                 Sizes = product.Sizes
                     .Select(s => new ProductSizeDto
                     {
@@ -108,6 +124,14 @@ namespace backend.Services
             {
                 imageService.DeleteFile(product.ThumbnailUrl);
             }
+            if (product.ShopThumbnailUrl1 != null)
+            {
+                imageService.DeleteFile(product.ShopThumbnailUrl1);
+            }
+            if (product.ShopThumbnailUrl2 != null)
+            {
+                imageService.DeleteFile(product.ShopThumbnailUrl2);
+            }
             context.ProductSizes.RemoveRange(product.Sizes);
             context.Products.Remove(product);
             await context.SaveChangesAsync();
@@ -126,6 +150,8 @@ namespace backend.Services
                 Category = p.Category,
                 ViewCount = p.ViewCount,
                 ThumbnailUrl = p.ThumbnailUrl,
+                ShopThumbnailUrl1 = p.ShopThumbnailUrl1,
+                ShopThumbnailUrl2 = p.ShopThumbnailUrl2,
                 Sizes = p.Sizes
                     .Select(s => new ProductSizeDto
                     {
@@ -151,6 +177,8 @@ namespace backend.Services
                    Category = p.Category,
                    ViewCount = p.ViewCount,
                    ThumbnailUrl = p.ThumbnailUrl,
+                   ShopThumbnailUrl1 = p.ShopThumbnailUrl1,
+                   ShopThumbnailUrl2 = p.ShopThumbnailUrl2,
                    Sizes = p.Sizes
                        .Select(s => new ProductSizeDto
                        {
@@ -178,6 +206,8 @@ namespace backend.Services
                 Category = featuredProduct.Category,
                 ViewCount = featuredProduct.ViewCount,
                 ThumbnailUrl = featuredProduct.ThumbnailUrl,
+                ShopThumbnailUrl1 = featuredProduct.ShopThumbnailUrl1,
+                ShopThumbnailUrl2= featuredProduct.ShopThumbnailUrl2,
                 Sizes = featuredProduct.Sizes
                     .Select(s => new ProductSizeDto
                     {
@@ -218,6 +248,8 @@ namespace backend.Services
                 GalleryImages = product.GalleryImages,
                 ViewCount = product.ViewCount,
                 ThumbnailUrl = product.ThumbnailUrl,
+                ShopThumbnailUrl1 = product.ShopThumbnailUrl1,
+                ShopThumbnailUrl2 = product.ShopThumbnailUrl2,
                 CreatedAt = product.CreatedAt,
                 UpdatedAt = product.UpdatedAt
             };
@@ -233,11 +265,17 @@ namespace backend.Services
             if (product == null)
                 return false;
 
-            if (update.IsFeatured ==true)
+            if (update.IsFeatured == true)
             {
-                var currentFeatured = await context.Products.FirstOrDefaultAsync(p => p.IsFeatured);
-                if(currentFeatured != null) 
-                    currentFeatured.IsFeatured = false;
+                var featuredProducts = await context.Products
+                    .Where(p => p.IsFeatured)
+                    .OrderBy(p => p.Id)
+                    .ToListAsync();
+
+                if (featuredProducts.Count >= 4)
+                {
+                    featuredProducts.First().IsFeatured = false;
+                }
             }
 
             if (product.FeaturedOrder != 0)
@@ -254,9 +292,25 @@ namespace backend.Services
                 imageService.DeleteFile(product.ThumbnailUrl);
                 var thumbnailUrl = await imageService.SaveFileAsync(update.ThumbnailUrl, "products"); ;
                 product.ThumbnailUrl = thumbnailUrl;
-            }     
+            }
 
-            if(update.GalleryImages != null)
+            if (update.ShopThumbnailUrl1 != null)
+            {
+                if(product.ShopThumbnailUrl1 != null)
+                    imageService.DeleteFile(product.ShopThumbnailUrl1);
+                var shopThumbnailUrl1 = await imageService.SaveFileAsync(update.ShopThumbnailUrl1, "products"); ;
+                product.ShopThumbnailUrl1 = shopThumbnailUrl1;
+            }
+
+            if (update.ShopThumbnailUrl2 != null)
+            {
+                if (product.ShopThumbnailUrl2 != null)
+                    imageService.DeleteFile(product.ShopThumbnailUrl2);
+                var shopThumbnailUrl2 = await imageService.SaveFileAsync(update.ShopThumbnailUrl2, "products"); ;
+                product.ShopThumbnailUrl2 = shopThumbnailUrl2;
+            }
+
+            if (update.GalleryImages != null)
             {
                 foreach(var img in product.GalleryImages)
                 {

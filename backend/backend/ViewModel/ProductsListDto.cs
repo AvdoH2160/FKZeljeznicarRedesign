@@ -12,6 +12,8 @@ namespace backend.ViewModel
         public string Category { get; set; } = string.Empty;
         public int ViewCount { get; set; } = 0;
         public string ThumbnailUrl { get; set; } = string.Empty;
+        public string? ShopThumbnailUrl1 { get; set; } = string.Empty;
+        public string? ShopThumbnailUrl2 { get; set; } = string.Empty;
         public List<ProductSizeDto> Sizes { get; set; } = new(); 
     }
 }
