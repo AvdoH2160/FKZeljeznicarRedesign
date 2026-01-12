@@ -258,7 +258,6 @@ namespace backend.Services
         public async Task<bool> UpdateProductAsync(int id, ProductsUpdateDto update)
         {
             var product = await context.Products.
-                Include(p => p.GalleryImages).
                 Include(p => p.Sizes).
                 Where(p => p.Id == id).
                 FirstOrDefaultAsync();
@@ -334,6 +333,7 @@ namespace backend.Services
             if (update.Brand != null) product.Brand = update.Brand;
             if (update.Color != null) product.Color = update.Color;
 
+            await context.SaveChangesAsync();
             return true;
         }
     }

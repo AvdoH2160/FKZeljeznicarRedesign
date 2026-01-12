@@ -52,6 +52,10 @@ namespace backend.Controllers
         public async Task<ActionResult<ProductsListDto>> CreateProduct([FromForm] ProductsCreateDto create)
         {
             var product = await service.CreateProductAsync(create);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             return Ok(product);
         }
 

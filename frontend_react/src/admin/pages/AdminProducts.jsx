@@ -22,6 +22,7 @@ export default function AdminProducts() {
   const [galleryImages, setGalleryImages] = useState([]);
 
   const [sizes, setSizes] = useState([{ size: "", stock: "" }]);
+  const validSizes = sizes.filter(s => s.size && s.stock !== "");
 
   const loadProducts = () => {
     api.get("/products").then(res => setProducts(res.data));
@@ -82,9 +83,13 @@ export default function AdminProducts() {
     formData.append("isFeatured", isFeatured);
     formData.append("featuredOrder", featuredOrder);
 
-    sizes.forEach((s, i) => {
-      formData.append(`sizes[${i}].size`, s.size);
-      formData.append(`sizes[${i}].stock`, s.stock);
+    // sizes.forEach((s, i) => {
+    //   formData.append(`sizes[${i}].size`, s.size);
+    //   formData.append(`sizes[${i}].stock`, s.stock);
+    // });
+    validSizes.forEach((s, i) => {
+      formData.append(`Sizes[${i}].Size`, s.size);
+      formData.append(`Sizes[${i}].Stock`, s.stock);
     });
 
     if (thumbnail) formData.append("thumbnailUrl", thumbnail);
