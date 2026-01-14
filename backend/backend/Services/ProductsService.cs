@@ -191,25 +191,26 @@ namespace backend.Services
                }).ToListAsync();
         }
 
-        public async Task<ProductsListDto?> GetFeaturedProductAsync()
+        public async Task<List<ProductsListDto>> GetFeaturedProductAsync()
         {
-            var featuredProduct = await context.Products.Where(p => p.IsFeatured).FirstOrDefaultAsync();
-            if (featuredProduct == null)
-                return null;
-            return new ProductsListDto
-            {
-                Id = featuredProduct.Id,
-                Name = featuredProduct.Name,
-                Price = featuredProduct.Price,
-                IsFeatured = featuredProduct.IsFeatured,
-                FeaturedOrder = featuredProduct.FeaturedOrder,
-                Category = featuredProduct.Category,
-                ViewCount = featuredProduct.ViewCount,
-                ThumbnailUrl = featuredProduct.ThumbnailUrl,
-                ShopThumbnailUrl1 = featuredProduct.ShopThumbnailUrl1,
-                ShopThumbnailUrl2= featuredProduct.ShopThumbnailUrl2,
-                Sizes = featuredProduct.Sizes
-                    .Select(s => new ProductSizeDto
+            return await context.Products
+                .Where(p => p.IsFeatured)
+                .OrderBy(p => p.FeaturedOrder)
+                .Take(4)
+                .Include(p => p.Sizes)
+                .Select(p => new ProductsListDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    IsFeatured = p.IsFeatured,
+                    FeaturedOrder = p.FeaturedOrder,
+                    Category = p.Category,
+                    ViewCount = p.ViewCount,
+                    ThumbnailUrl = p.ThumbnailUrl,
+                    ShopThumbnailUrl1 = p.ShopThumbnailUrl1,
+                    ShopThumbnailUrl2 = p.ShopThumbnailUrl2,
+                    Sizes = p.Sizes.Select(s => new ProductSizeDto
                     {
                         Id = s.Id,
                         SizeLabel = s.SizeLabel,
@@ -217,7 +218,8 @@ namespace backend.Services
                         PriceOverride = s.PriceOverride,
                         ProductId = s.ProductId
                     }).ToList()
-            };
+                })
+                .ToListAsync();
         }
 
         public async Task<ProductsDetailsDto?> GetProductByIdAsync(int id)

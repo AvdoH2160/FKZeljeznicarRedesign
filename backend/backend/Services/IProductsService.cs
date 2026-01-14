@@ -5,7 +5,7 @@ namespace backend.Services
     public interface IProductsService
     {
         Task<List<ProductsListDto>> GetAllProductsAsync();
-        Task<ProductsListDto?> GetFeaturedProductAsync();
+        Task<List<ProductsListDto>> GetFeaturedProductAsync();
         Task<List<ProductsListDto>> GetCardFeaturedProductsAsync();
         Task<ProductsDetailsDto?> GetProductByIdAsync(int id);
         Task<ProductsListDto> CreateProductAsync(ProductsCreateDto create);

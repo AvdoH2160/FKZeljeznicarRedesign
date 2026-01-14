@@ -22,7 +22,7 @@ const ShopHero = () => {
             <Link className='category'>Odjeća</Link>
             <Link className='category'>Trening</Link>
             <Link className='category'>Asesoari</Link>
-             <Link className='category'>Poklon bon</Link>
+            <Link className='category'>Poklon bon</Link>
             <Link className='category'>Akcija</Link>
         </div>
         <div className='shop-page-hero-image'>

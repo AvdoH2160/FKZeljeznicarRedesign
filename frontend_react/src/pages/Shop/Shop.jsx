@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Link} from "react-router-dom"
 import "./shop.css"
+import ShopFeatured from "./components/ShopFeatured/ShopFeatured"
 import ShopHero from "./components/ShopHero/ShopHero"
 import ShopImage from "../../assets/svg/fkz_shop.svg"
 import ShopCategoryImage1 from "../../assets/images/shop-category1.png"
@@ -10,6 +11,7 @@ const Shop = () => {
   return (
     <div className='shop-page-container'>
         <ShopHero></ShopHero>
+        <ShopFeatured></ShopFeatured>
         <div className='shop-page-limited-container'>
             <div className='shop-page-limited-text'>
                 <img src={ShopImage}></img>
@@ -35,11 +37,11 @@ const Shop = () => {
                 </div>
             </div>
         </div>
-        <div className='shop-page-gift'>
+        {/* <div className='shop-page-gift'>
             <div className='shop-page-gift-text'>
 
             </div>
-        </div>
+        </div> */}
     </div>
   )
 }

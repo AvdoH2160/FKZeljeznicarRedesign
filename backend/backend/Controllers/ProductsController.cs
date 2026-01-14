@@ -16,7 +16,7 @@ namespace backend.Controllers
         }
 
         [HttpGet("featured")]
-        public async Task<ActionResult<ProductsListDto>> GetFeaturedProduct()
+        public async Task<ActionResult<List<ProductsListDto>>> GetFeaturedProduct()
         {
             var featuredProduct = await service.GetFeaturedProductAsync();
             if (featuredProduct == null)

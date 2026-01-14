@@ -1,0 +1,63 @@
+.shop-featured-container {
+    width: 100%;
+    font-family: "Poppins";
+    font-style: italic;
+    color: white;
+    font-weight: 800;
+    max-width: 1800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 10px;
+    margin-top: 80px;
+}
+
+.shop-featured-item {
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 40px),
+        calc(100% - 40px) 100%,
+        0 100%
+    );
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-featured-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease;
+}
+
+.img-main {
+    opacity: 1;
+    z-index: 1;
+}
+
+.img-hover {
+    opacity: 0;
+    z-index: 2;
+}
+
+.shop-featured-item:hover .img-main {
+    opacity: 0;
+}
+
+.shop-featured-item:hover .img-hover {
+    opacity: 1;
+}
+
+.shop-featured-overlay {
+    position: absolute;
+    z-index: 5;
+    font-size: 20px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

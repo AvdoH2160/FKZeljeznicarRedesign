@@ -1895,17 +1895,26 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductsListDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductsListDto"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductsListDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductsListDto"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductsListDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductsListDto"
+                  }
                 }
               }
             }
