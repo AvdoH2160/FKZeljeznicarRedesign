@@ -235,7 +235,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-14T21:13:11.285Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -247,8 +247,7 @@
               "RelativeToolTip": "backend\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T14:59:04.709Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T14:59:04.709Z"
             },
             {
               "$type": "Document",
@@ -260,8 +259,7 @@
               "RelativeToolTip": "backend\\Model\\ProductSize.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T14:58:52.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T14:58:52.99Z"
             },
             {
               "$type": "Document",
@@ -271,7 +269,7 @@
               "RelativeDocumentMoniker": "backend\\Services\\ProductsService.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ProductsService.cs",
               "RelativeToolTip": "backend\\Services\\ProductsService.cs",
-              "ViewState": "AgIAAMcAAAAAAAAAAAAcwNYAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAANkAAAAAAAAAAAAcwNYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-10T14:28:16.599Z",
               "EditorCaption": ""
@@ -827,6 +825,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T17:21:52.41Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         },
