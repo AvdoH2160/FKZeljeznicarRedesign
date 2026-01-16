@@ -15,6 +15,15 @@ namespace backend.Controllers
             return Ok(await service.GetAllProductsAsync());
         }
 
+        [HttpGet("slug/{slug}")]
+        public async Task<ActionResult<ProductsDetailsDto>> GetProductBySlug(string slug)
+        {
+            var product = await service.GetProductBySlugAsync(slug);
+            if (product == null)
+                return NotFound("Ne postoji");
+            return Ok(product);
+        }
+
         [HttpGet("featured")]
         public async Task<ActionResult<List<ProductsListDto>>> GetFeaturedProduct()
         {
@@ -79,6 +88,13 @@ namespace backend.Controllers
                 return NotFound("Product not found");
             }
             return NoContent();
-        } 
+        }
+
+        //[HttpPost("generate-slugs")]
+        //public async Task<IActionResult> GenerateSlugs()
+        //{
+        //    await service.GenerateSlugsForExistingProductsAsync();
+        //    return Ok("Slugs generated");
+        //}
     }
 }

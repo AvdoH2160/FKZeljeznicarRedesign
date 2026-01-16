@@ -32,6 +32,7 @@ import ClubInfo from "./pages/ClubInfo/ClubInfo.jsx"
 import History from "./pages/History/History.jsx"
 import Shop from "./pages/Shop/Shop.jsx"
 import ShopList from "./pages/Shop/ShopList.jsx"
+import Product from "./pages/Shop/Product.jsx"
 
 
 
@@ -68,6 +69,7 @@ const App = () => {
               <Route path="/historija" element={<History></History>}></Route>
               <Route path="/shop" element={<Shop></Shop>}></Route>
               <Route path="/shop/proizvodi" element={<ShopList></ShopList>}></Route>
+              <Route path="/shop/proizvodi/:slug" element={<Product></Product>} />
               <Route path="/clanstvo" element={
                 <ProtectedRoute>
                   <MembershipPage></MembershipPage>

@@ -50,3 +50,9 @@ wwwroot\uploads\products\e70d6fb8-2088-4696-b3b4-9385fb15adbe.png
 wwwroot\uploads\products\1e92ff9c-834b-4557-97ec-94a48eaf172d.png
 wwwroot\uploads\products\4dc2f223-1e2f-460c-b720-c6586b53029f.png
 wwwroot\uploads\products\55cb436f-a6dd-4589-9b8a-311e537e3826.png
+wwwroot\uploads\products\44a19571-230f-423e-a5fc-90c19ccaee55.png
+wwwroot\uploads\products\4993b708-6d4f-4647-b6bc-c56eb79f5b83.jpg
+wwwroot\uploads\products\9b9d592f-fe26-461f-8028-04bc3b9a6327.png
+wwwroot\uploads\products\20fad226-128c-4a71-bc1d-1a126854c8ef.png
+wwwroot\uploads\products\4ff45b1a-13f2-4fbb-89cd-5c022e2e6fae.png
+wwwroot\uploads\products\c56fcb1f-65c8-468d-af86-7898a8c34f38.png

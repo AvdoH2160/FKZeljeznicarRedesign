@@ -1,0 +1,133 @@
+.product-page {
+    max-width: 1800px;
+    margin: auto;
+    padding: 40px;
+    font-family: "Poppins";
+}
+
+.product-grid {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+/* IMAGES */
+.main-image {
+    overflow: hidden;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.main-image img {
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.main-image img:hover {
+    transform: scale(1.2);
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.thumbnails img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+
+.thumbnails img:hover {
+    opacity: 1;
+}
+
+/* INFO */
+.product-info h1 {
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.size-select label {
+    font-weight: 600;
+}
+
+.size-select select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.quantity label {
+    font-weight: 600;
+}
+
+.quantity button {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 15px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* DESCRIPTION */
+.description {
+    margin-top: 30px;
+    white-space: pre-line;
+}
+
+/* TABS */
+.product-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.product-tabs button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.product-tabs .active {
+    font-weight: 700;
+    border-bottom: 2px solid black;
+}
+
+.tab-content {
+    white-space: pre-line;
+    text-align: left;
+    margin-top: 20px;
+}

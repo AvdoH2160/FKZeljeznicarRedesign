@@ -6,6 +6,7 @@ namespace backend.ViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
+        public string Slug { get; set; } = string.Empty;
         public decimal Price { get; set; }
         public bool IsFeatured { get; set; }
         public int FeaturedOrder { get; set; } = 0;

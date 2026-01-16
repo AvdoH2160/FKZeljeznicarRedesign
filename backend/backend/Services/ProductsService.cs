@@ -73,6 +73,8 @@ namespace backend.Services
                 GalleryImages = imageUrl
             };
 
+            product.Slug = await GenerateUniqueSlugAsync(product.Name);
+
             var sizes = new List<ProductSizeCreateDto>();
             foreach (var s in create.Sizes)
             {
@@ -89,6 +91,7 @@ namespace backend.Services
             {
                 Id = product.Id,
                 Name = product.Name,
+                Slug = product.Slug,
                 Price = product.Price,
                 IsFeatured = product.IsFeatured,
                 FeaturedOrder = product.FeaturedOrder,
@@ -144,6 +147,7 @@ namespace backend.Services
             {
                 Id = p.Id,
                 Name = p.Name,
+                Slug = p.Slug,
                 Price = p.Price,
                 IsFeatured = p.IsFeatured,
                 FeaturedOrder = p.FeaturedOrder,
@@ -164,6 +168,45 @@ namespace backend.Services
             }).ToListAsync();
         }
 
+        public async Task<ProductsDetailsDto?> GetProductBySlugAsync(string slug)
+        {
+            var product = await context.Products
+                .Include(p => p.Sizes)
+                .Where(n => n.Slug == slug).FirstOrDefaultAsync();
+            if (product == null)
+                return null;
+            return new ProductsDetailsDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Slug = product.Slug,
+                Description = product.Description,
+                Price = product.Price,
+                Sizes = product.Sizes
+                    .Select(s => new ProductSizeDto
+                    {
+                        Id = s.Id,
+                        SizeLabel = s.SizeLabel,
+                        Stock = s.Stock,
+                        PriceOverride = s.PriceOverride,
+                        ProductId = s.ProductId
+                    }).ToList(),
+                IsFeatured = product.IsFeatured,
+                FeaturedOrder = product.FeaturedOrder,
+                Category = product.Category,
+                Brand = product.Brand,
+                Color = product.Color,
+                GalleryImages = product.GalleryImages,
+                ViewCount = product.ViewCount,
+                ThumbnailUrl = product.ThumbnailUrl,
+                ShopThumbnailUrl1 = product.ShopThumbnailUrl1,
+                ShopThumbnailUrl2 = product.ShopThumbnailUrl2,
+                CreatedAt = product.CreatedAt,
+                UpdatedAt = product.UpdatedAt
+            };
+
+        }
+
         public async Task<List<ProductsListDto>> GetCardFeaturedProductsAsync()
         {
             return await context.Products.Where(p => p.FeaturedOrder != 0)
@@ -171,6 +214,7 @@ namespace backend.Services
                {
                    Id = p.Id,
                    Name = p.Name,
+                   Slug = p.Slug,
                    Price = p.Price,
                    IsFeatured = p.IsFeatured,
                    FeaturedOrder = p.FeaturedOrder,
@@ -202,6 +246,7 @@ namespace backend.Services
                 {
                     Id = p.Id,
                     Name = p.Name,
+                    Slug = p.Slug,
                     Price = p.Price,
                     IsFeatured = p.IsFeatured,
                     FeaturedOrder = p.FeaturedOrder,
@@ -231,6 +276,7 @@ namespace backend.Services
             {
                 Id = product.Id,
                 Name = product.Name,
+                Slug = product.Slug,
                 Description = product.Description,
                 Price = product.Price,
                 Sizes = product.Sizes
@@ -326,7 +372,11 @@ namespace backend.Services
                 product.GalleryImages = imageUrl;
             }
 
-            if (update.Name != null) product.Name = update.Name;
+            if (update.Name != null)
+            {
+                product.Name = update.Name;
+                product.Slug = await GenerateUniqueSlugAsync(update.Name);
+            }
             if (update.Description != null) product.Description = update.Description;
             if (update.Price.HasValue) product.Price = update.Price.Value;
             if (update.Category != null) product.Category = update.Category;
@@ -337,6 +387,35 @@ namespace backend.Services
 
             await context.SaveChangesAsync();
             return true;
+        }
+
+        //public async Task GenerateSlugsForExistingProductsAsync()
+        //{
+        //    var products = await context.Products
+        //        .Where(p => string.IsNullOrEmpty(p.Slug))
+        //        .ToListAsync();
+
+        //    foreach (var product in products)
+        //    {
+        //        product.Slug = await GenerateUniqueSlugAsync(product.Name);
+        //    }
+
+        //    await context.SaveChangesAsync();
+        //}
+
+        public async Task<string> GenerateUniqueSlugAsync(string name)
+        {
+            string baseSlug = SlugHelper.GenerateSlug(name);
+            string slug = baseSlug;
+            int counter = 1;
+
+            while (await context.Products.AnyAsync(n => n.Slug == slug))
+            {
+                slug = $"{baseSlug}-{counter}";
+                counter++;
+            }
+
+            return slug;
         }
     }
 }

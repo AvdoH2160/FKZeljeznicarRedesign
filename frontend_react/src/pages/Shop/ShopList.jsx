@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import api from "../../services/api";
 import "./shopList.css";
 
@@ -29,7 +29,6 @@ const ShopList = () => {
       .catch(console.error);
   }, []);
 
-  /* sync URL ➜ state */
   useEffect(() => {
     setSelectedCategory(categoryFromUrl);
     setVisibleCount(ITEMS_PER_LOAD);
@@ -76,7 +75,7 @@ const ShopList = () => {
         </div>
         <div className="shop-products">
           {sorted.slice(0, visibleCount).map(p => (
-            <div key={p.id} className="product-card">
+            <Link key={p.id} className="product-card" to={`/shop/proizvodi/${p.slug}`}>
               <div className="shop-list-image-wrapper">
                 <img
                    src={`https://localhost:7010${p.thumbnailUrl}`}
@@ -86,10 +85,9 @@ const ShopList = () => {
               </div>
               <h4>{p.name}</h4>
               <p>{p.price} KM</p>
-            </div>
+            </Link>
           ))}
         </div>
-
         {/* LOAD MORE */}
         {visibleCount < sorted.length && (
           <div className="load-more-wrapper">
@@ -101,7 +99,6 @@ const ShopList = () => {
             </button>
           </div>
         )}
-
       </section>
     </div>
   );
