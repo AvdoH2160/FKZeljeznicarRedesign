@@ -70,7 +70,8 @@ namespace backend.Services
                 ThumbnailUrl = thumbnailUrl,
                 ShopThumbnailUrl1 = shopThumbnailUrl1,
                 ShopThumbnailUrl2 = shopThumbnailUrl2,
-                GalleryImages = imageUrl
+                GalleryImages = imageUrl,
+                Sizes = new List<ProductSize>()
             };
 
             product.Slug = await GenerateUniqueSlugAsync(product.Name);
@@ -80,8 +81,9 @@ namespace backend.Services
             {
                 product.Sizes.Add(new ProductSize
                 {
-                    SizeLabel = s.Size,
+                    SizeLabel = s.SizeLabel,
                     Stock = s.Stock,
+                    PriceOverride = s.PriceOverride
                 });
             }
 
@@ -269,7 +271,8 @@ namespace backend.Services
 
         public async Task<ProductsDetailsDto?> GetProductByIdAsync(int id)
         {
-            var product = await context.Products.Where(p => id == p.Id).FirstOrDefaultAsync();
+            var product = await context.Products.Include(p => p.Sizes)
+                .Where(p => id == p.Id).FirstOrDefaultAsync();
             if(product == null) 
                 return null;
             return new ProductsDetailsDto
@@ -370,6 +373,41 @@ namespace backend.Services
                     imageUrl.Add(url);
                 }
                 product.GalleryImages = imageUrl;
+            }
+
+            if (update.Sizes != null)
+            {
+                foreach (var s in update.Sizes)
+                {
+                    if (s.Id.HasValue)
+                    {
+                        var existing = product.Sizes.FirstOrDefault(x => x.Id == s.Id.Value);
+                        if (existing != null)
+                        {
+                            existing.SizeLabel = s.SizeLabel!;
+                            existing.Stock = s.Stock;
+                            existing.PriceOverride = s.PriceOverride;
+                        }
+                    }
+                    else
+                    {
+                        product.Sizes.Add(new ProductSize
+                        {
+                            SizeLabel = s.SizeLabel!,
+                            Stock = s.Stock,
+                            PriceOverride = s.PriceOverride
+                        });
+                    }
+                }
+            }
+
+            if (update.DeletedSizeIds.Any() && update.DeletedSizeIds !=null)
+            {
+                var toDelete = product.Sizes
+                    .Where(s => update.DeletedSizeIds.Contains(s.Id))
+                    .ToList();
+
+                context.ProductSizes.RemoveRange(toDelete);
             }
 
             if (update.Name != null)

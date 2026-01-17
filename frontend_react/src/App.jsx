@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from "react"
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, useLocation} from 'react-router-dom'
 import Home from './pages/Home/Home.jsx'
 import FirstTeam from './pages/FirstTeam/FirstTeam.jsx'
 import NotFound from './pages/NotFound/NotFound.jsx'
@@ -33,6 +33,8 @@ import History from "./pages/History/History.jsx"
 import Shop from "./pages/Shop/Shop.jsx"
 import ShopList from "./pages/Shop/ShopList.jsx"
 import Product from "./pages/Shop/Product.jsx"
+import { CartProvider } from "./pages/Shop/context/CartContext.jsx"
+import Cart from "./pages/Shop/Cart.jsx"
 
 
 
@@ -49,6 +51,7 @@ const App = () => {
     <div>
       <AuthProvider>
         <BrowserRouter>
+        <CartProvider>
           <Header isExpanded={headerExpanded} 
           setIsExpanded={setHeaderExpanded} 
           backgroundHeader={backgroundHeader}
@@ -56,6 +59,7 @@ const App = () => {
           {headerExpanded && (
             <div className="page-overlay" onClick={closeHeader}></div>
           )}
+            
             <ScrollManager/>
             <Routes>
               <Route path="/" element={<Home></Home>}></Route>
@@ -67,9 +71,11 @@ const App = () => {
               <Route path="/stadion-grbavica" element={<Stadium></Stadium>}></Route>
               <Route path="/opste-informacije" element={<ClubInfo></ClubInfo>}></Route>
               <Route path="/historija" element={<History></History>}></Route>
+              
               <Route path="/shop" element={<Shop></Shop>}></Route>
               <Route path="/shop/proizvodi" element={<ShopList></ShopList>}></Route>
               <Route path="/shop/proizvodi/:slug" element={<Product></Product>} />
+              <Route path="/shop/cart" element={<Cart></Cart>}></Route>
               <Route path="/clanstvo" element={
                 <ProtectedRoute>
                   <MembershipPage></MembershipPage>
@@ -109,6 +115,7 @@ const App = () => {
               <Route path="*" element={<NotFound/>}/>
             </Routes>
           <Footer/>
+        </CartProvider>
         </BrowserRouter>
       </AuthProvider>
     </div>

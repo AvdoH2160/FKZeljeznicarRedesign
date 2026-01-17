@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../services/api";
+import {useCart} from "./context/CartContext";
 import SizeTable from "./components/SizeTable/SizeTable"
 import "./product.css";
 
 const Product = () => {
   const { slug } = useParams();
+  const {addToCart} = useCart();
 
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState("");
@@ -21,6 +23,21 @@ const Product = () => {
       })
       .catch(err => console.error(err));
   }, [slug]);
+
+  const handleAddToCart = () => {
+    if (!product || !selectedSize) return;
+
+    const selected = product.sizes.find(s => s.sizeLabel === selectedSize);
+    addToCart(
+      {
+        ...product,
+        selectedSizeLabel: selected.sizeLabel,
+        selectedSizeId: selected.id
+      },
+      selected.sizeLabel, 
+      quantity
+    );
+  };
 
   if (!product) {
     return <div className="loading">Učitavanje proizvoda...</div>;
@@ -68,7 +85,7 @@ const Product = () => {
               {product.sizes.map(size => (
                 <option
                   key={size.id}
-                  value={size.id}
+                  value={size.sizeLabel}
                   disabled={size.stock === 0}
                 >
                   {size.sizeLabel}
@@ -90,6 +107,7 @@ const Product = () => {
           <button
             className="add-to-cart"
             disabled={!selectedSize}
+            onClick={handleAddToCart}
           >
             Dodaj u korpu
           </button>

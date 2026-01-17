@@ -21,8 +21,8 @@ export default function AdminProducts() {
   const [shopThumb2, setShopThumb2] = useState(null);
   const [galleryImages, setGalleryImages] = useState([]);
 
-  const [sizes, setSizes] = useState([{ size: "", stock: "" }]);
-  const validSizes = sizes.filter(s => s.size && s.stock !== "");
+  const [sizes, setSizes] = useState([]);
+  const [deletedSizeIds, setDeletedSizeIds] = useState([]);
 
   const loadProducts = () => {
     api.get("/products").then(res => setProducts(res.data));
@@ -46,7 +46,8 @@ export default function AdminProducts() {
     setShopThumb1(null);
     setShopThumb2(null);
     setGalleryImages([]);
-    setSizes([{ size: "", stock: "" }]);
+    setSizes([]);
+    setDeletedSizeIds([]);
   };
 
   const handleEdit = async (id) => {
@@ -65,6 +66,7 @@ export default function AdminProducts() {
 
     setSizes(
       p.sizes.map(s => ({
+        id: s.id,
         size: s.sizeLabel,
         stock: s.stock
       }))
@@ -83,13 +85,19 @@ export default function AdminProducts() {
     formData.append("isFeatured", isFeatured);
     formData.append("featuredOrder", featuredOrder);
 
-    // sizes.forEach((s, i) => {
-    //   formData.append(`sizes[${i}].size`, s.size);
-    //   formData.append(`sizes[${i}].stock`, s.stock);
-    // });
-    validSizes.forEach((s, i) => {
-      formData.append(`Sizes[${i}].Size`, s.size);
-      formData.append(`Sizes[${i}].Stock`, s.stock);
+    sizes.forEach((s, i) => {
+      if (!s.size || s.stock === "") return;
+
+      if (s.id) {
+        formData.append(`Sizes[${i}].Id`, s.id);
+      }
+
+      formData.append(`Sizes[${i}].SizeLabel`, s.size);
+      formData.append(`Sizes[${i}].Stock`, Number(s.stock));
+    });
+
+    deletedSizeIds.forEach((id, i) => {
+      formData.append(`DeletedSizeIds[${i}]`, id);
     });
 
     if (thumbnail) formData.append("thumbnailUrl", thumbnail);
@@ -103,7 +111,6 @@ export default function AdminProducts() {
     } else {
       await api.post("/products", formData);
     }
-
     resetForm();
     loadProducts();
   };
@@ -143,26 +150,46 @@ export default function AdminProducts() {
         {/* Sizes */}
         <h3>Sizes</h3>
         {sizes.map((s, i) => (
-            <div key={i} className={`row ${Number(s.stock) === 0 ? "stock-zero" : ""}`}>
-                <input
-                placeholder="Size"
-                value={s.size}
-                onChange={e => updateSize(i, "size", e.target.value)}
-                />
+          <div key={s.id ?? i} className="row">
+            <input
+              placeholder="Size"
+              value={s.size}
+              onChange={e => updateSize(i, "size", e.target.value)}
+            />
 
-                <input
-                type="number"
-                placeholder="Stock"
-                value={s.stock}
-                onChange={e => updateSize(i, "stock", e.target.value)}
-                />
+            <input
+              type="number"
+              placeholder="Stock"
+              value={s.stock}
+              onChange={e => updateSize(i, "stock", e.target.value)}
+            />
 
-                {Number(s.stock) === 0 && (
-                <span className="stock-warning">OUT OF STOCK</span>
-                )}
-            </div>
+            <button
+              className="btn delete"
+              onClick={() => {
+                const s = sizes[i];
+
+                if (s.id) {
+                  setDeletedSizeIds(prev => [...prev, s.id]);
+                }
+
+                const copy = [...sizes];
+                copy.splice(i, 1);
+                setSizes(copy);
+              }}
+            >
+              ✕
+            </button>
+          </div>
         ))}
-        <button onClick={() => setSizes([...sizes, { size: "", stock: "" }])}>+ Size</button>
+        <button
+          type="button"
+          onClick={() =>
+            setSizes(prev => [...prev, { id: null, size: "", stock: "" }])
+          }
+        >
+          + Size
+        </button>
 
         {/* Images */}
         <label>Thumbnail</label>

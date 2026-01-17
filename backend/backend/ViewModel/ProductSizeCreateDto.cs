@@ -2,7 +2,8 @@
 {
     public class ProductSizeCreateDto
     {
-        public string Size { get; set; }
+        public string SizeLabel { get; set; } = null!;
         public int Stock { get; set; }
+        public decimal? PriceOverride { get; set; }
     }
 }

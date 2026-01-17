@@ -17,5 +17,7 @@
         public List<IFormFile>? GalleryImages { get; set; }
 
         public List<ProductSizeUpdateDto>? Sizes { get; set; }
+
+        public List<int> DeletedSizeIds { get; set; } = new();
     }
 }

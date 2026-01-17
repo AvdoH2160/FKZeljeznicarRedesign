@@ -4,6 +4,7 @@ import {AuthContext} from '../../context/AuthContext'
 import Zeljo from "../../assets/svg/zeljo_white_icon.svg"
 import ZeljoColor from "../../assets/svg/zeljo_color_icon.svg"
 import ArrowDown from "../../assets/svg/arrow_down.svg"
+import FloatingCart from "../../pages/Shop/components/FloatingCart/FloatingCart.jsx"
 import User from "../../assets/svg/user.svg"
 import "./header.css"
 
@@ -172,6 +173,7 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
               </Link>
             )}
       </div>
+      {location.pathname.startsWith("/shop") && <FloatingCart></FloatingCart>}
       {isExpanded && (
         <div id="dropdown-container">
           <div className="dropdown-left">

@@ -2131,6 +2131,21 @@
                 "$ref": "#/components/schemas/ProductSizeUpdateDto"
               }
             }
+          },
+          {
+            "name": "DeletedSizeIds",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "pattern": "^-?(?:0|[1-9]\\d*)$",
+                "type": [
+                  "integer",
+                  "string"
+                ],
+                "format": "int32"
+              }
+            }
           }
         ],
         "requestBody": {
@@ -3280,7 +3295,7 @@
       "ProductSizeCreateDto": {
         "type": "object",
         "properties": {
-          "size": {
+          "sizeLabel": {
             "type": "string"
           },
           "stock": {
@@ -3290,6 +3305,15 @@
               "string"
             ],
             "format": "int32"
+          },
+          "priceOverride": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
           }
         }
       },
@@ -3337,16 +3361,21 @@
       "ProductSizeUpdateDto": {
         "type": "object",
         "properties": {
-          "sizeLabel": {
+          "id": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
               "null",
+              "integer",
               "string"
-            ]
+            ],
+            "format": "int32"
+          },
+          "sizeLabel": {
+            "type": "string"
           },
           "stock": {
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
-              "null",
               "integer",
               "string"
             ],
