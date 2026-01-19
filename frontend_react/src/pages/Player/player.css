@@ -7,9 +7,7 @@
     margin-bottom: 100px;
 }
 
-.player-info {
-    height: 100vh;
-    width: 100%;
+.player-info-container {
     background: linear-gradient(
         196.88deg, 
         #002C6D 40%, 
@@ -17,11 +15,18 @@
         #0055D3 109.23%
         );
     background-size: 150% 200%;
+}
+
+.player-info {
+    height: 100vh;
+    width: 100%;
     padding-top: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
     position: relative;
+    max-width: 2000px;
+    justify-self: center;
 }
 
 .player-text-container {
@@ -30,6 +35,10 @@
     margin-left: 100px;
     margin-top: 50px;
     z-index: 2;
+}
+
+.onlyPlayer-allDetails {
+    max-width: 1800px;
 }
 
 .onlyPlayer-name-surname-position{
@@ -41,7 +50,7 @@
 
 .onlyPlayer-name {
     font-size: 50px;
-    
+    transition: font-size 0.3s ease;
 }
 
 .onlyPlayer-surname {
@@ -49,10 +58,12 @@
     font-family: "Marck Script";
     color: #4DA1FF;
     font-weight: 500;
+    transition: font-size 0.3s ease;
 }
 
 .onlyPlayer-position {
     font-size: 25px;
+    transition: font-size 0.3s ease;
 }
 
 .player-image-container {
@@ -78,14 +89,6 @@
     rgba(255,255,255,0.1) 100%
     );
     background-size: 200% 100%;
-    /* background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #dfe4ef 25%,
-        #ffffff 50%,
-        #c8d0e0 75%,
-        #ffffff 100%
-    ); */
     opacity:0.6;
     -webkit-background-clip: text;
     background-clip: text;
@@ -97,6 +100,7 @@
     pointer-events: none;
     user-select: none;
     z-index: 1;
+    transition: font-size 0.3s ease;
 }
 
 .onlyPlayer-allDetails {
@@ -136,3 +140,120 @@ span.info-bottom {
     font-size: 30px;
     font-weight: 300;
 }
+
+@media (max-width: 1200px) {
+
+    .onlyPlayer-name {
+        font-size: 46px;
+    }
+
+    .onlyPlayer-surname {
+        font-size: 82px;
+    }
+
+    .onlyPlayer-position {
+        font-size: 30px;
+    }
+
+    .onlyPlayer-number {
+        font-size: 90vh;
+    }
+
+    .player-text-container {
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+
+    .onlyPlayer-details-info div.top {
+        font-size: 18px;
+    }
+
+    span.info-bottom {
+        font-size: 24px;
+    }
+
+    .onlyPlayer-details-biography,
+    .biography {
+        font-size: 24px;
+    }
+
+    .player-image-container img.onlyPlayer-image {
+        /* height: 70vh; */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .player-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        height: 100vh;
+        padding-top: 70px;
+        position: relative;
+    }
+
+    .player-info::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height:60%; 
+        background: linear-gradient(
+            to top,
+            #002C6D 0%,
+            #002C6D 36%,
+            rgba(0, 44, 109, 0.9) 55%,
+            rgba(0, 44, 109, 0.5) 75%,
+            rgba(0, 44, 109, 0) 100%
+        );
+        z-index: 3;         
+        pointer-events: none;
+    }
+
+    .player-image-container {
+        order: 0; 
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .player-text-container {
+        order: 1; 
+        position: static;    
+        display: flex;
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 90%;
+        margin-top: 0;
+        z-index: 4;
+        transform: translateY(-100px);
+    }
+
+    .onlyPlayer-name,
+    .onlyPlayer-surname,
+    .onlyPlayer-position {
+        margin: 5px 0;
+    }
+
+    .onlyPlayer-name { font-size: 40px; }
+    .onlyPlayer-surname { font-size: 70px; }
+    .onlyPlayer-position { font-size: 25px; }
+
+    .onlyPlayer-number {
+        font-size: 70vh;
+        top: 45%;
+    }
+
+    .player-image-container img.onlyPlayer-image {
+        width: 100%;
+        height: 70vh;
+        object-fit: contain;
+    }
+}
+
+
+

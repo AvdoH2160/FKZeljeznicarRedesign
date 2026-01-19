@@ -35,3 +35,31 @@
 #membershipCardText-container .big {
     font-size: 40px;
 }
+
+.smembershipCard-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.smembershipCard-link p {
+    transform: translateX(5px);
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.smembershipCard-link:hover p {
+    transform: translateX(-5px);
+}
+
+.smembershipCard-link img {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.smembershipCard-link:hover img {
+    opacity: 1;
+    transform: translateX(0);
+}

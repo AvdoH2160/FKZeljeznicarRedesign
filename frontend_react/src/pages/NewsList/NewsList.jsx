@@ -23,6 +23,7 @@ const NewsList = () => {
     if(category) {
       url.searchParams.append("category", category);
     }
+    document.title= category ? `${category.charAt(0).toUpperCase() + category.slice(1)} - Fk Željezničar` : "Vijesti - Fk Željezničar";
     fetch(url)
         .then(res => {
           if (!res.ok) throw new Error("Fetch error");
@@ -60,7 +61,7 @@ const NewsList = () => {
   return (
     <div id="news-list-container">
         <div id="news-list-header">
-            <h1 className="news-list-header-text">NOVOSTI</h1>
+            <h1 className="news-list-header-text">VIJESTI</h1>
             <div className="news-list-header-options">
               <Link 
                 className={`news-list-header-option ${isActive("sve") ? "active" : ""}`} 

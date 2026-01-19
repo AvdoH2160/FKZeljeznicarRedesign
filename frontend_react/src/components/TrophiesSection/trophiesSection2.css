@@ -107,6 +107,31 @@
 .article-text-container {
     font-size: 40px;
     color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-text-container p {
+    margin-right: 10px;
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+.article-text-container:hover p {
+    transform: translateX(-5px);
+}
+
+.article-text-container img {
+    height: 25px;
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.article-text-container:hover img {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .article-image-container {

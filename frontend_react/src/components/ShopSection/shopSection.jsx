@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useRef, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import "./shopSection.css"
 import FkzShop from "../../assets/svg/fkz_shop.svg"
 
@@ -47,9 +48,9 @@ const shopSection = () => {
             </div>
           ))}
         </div>
-        <div id="shop-button">
-          <h2>SHOP</h2>
-        </div>
+        <Link className="newsSection-shop-button" to="/shop">
+          SHOP
+        </Link>
     </div>
   )
 }

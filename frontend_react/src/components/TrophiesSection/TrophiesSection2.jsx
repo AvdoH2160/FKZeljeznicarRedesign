@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import {useState, useRef} from 'react'
+import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import './trophiesSection2.css'
@@ -11,6 +12,7 @@ import Trophy1 from "../../assets/svg/prvaci_jugoslavije_trofej.svg"
 import Trophy2 from "../../assets/svg/premijer_liga_trofej.svg"
 import Trophy3 from "../../assets/svg/kup_bih_trofej.svg"
 import Trophy4 from "../../assets/svg/superkup_bih_trofej.svg"
+import Arrow from "../../assets/svg/arrow_right.svg"
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -100,9 +102,13 @@ const TrophiesSection2 = () => {
             </div>
         </div>
         <div id="trophies-article-container">
-            <div className="article-text-container">
-                <p>PROČITAJ VIŠE</p>
-            </div>
+            <Link to="/historija" className="article-text-container-link">
+                <div className='article-text-container'>
+                    <p>PROČITAJ VIŠE</p>
+                    <img src={Arrow}></img>
+                    <img src={Arrow}></img>
+                </div>
+            </Link>
             <div className="article-image-container">
                 <img className="article-image"src={TrophyImage2}></img>
             </div>

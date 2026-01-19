@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useRef, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import "./footer.css"
 import ZeljoLogo from '../../assets/svg/zeljo_color_icon.svg'
 import GooglePlay from '../../assets/svg/google_play.svg'
@@ -29,28 +30,30 @@ const Footer = () => {
             <div id="footer-options-menu">
               <div className="options">
                 <p className='main'>KLUB</p>
-                <p className='option'>O NAMA</p>
-                <p className='option'>NAVIJAČI</p>
-                <p className='option'>PRVI TIM</p>
-                <p className='option'>HISTORIJA</p>
+                <Link to="/opste-informacije" className='option'>O NAMA</Link>
+                <Link to="/prvi-tim" className='option'>PRVI TIM</Link>
+                <Link to="/historija" className='option'>HISTORIJA</Link>
+                <Link to="/stadion-grbavica" className='option'>STADION</Link>
               </div>
               <div className="options">
                 <p className='main'>USLUGE</p>
-                <p className='option'>PROFIL</p>
-                <p className='option'>ULAZNICE</p>
-                <p className='option'>SHOP</p>
+                <Link to="/profil" className='option'>PROFIL</Link>
+                <Link to="/ulaznice" className='option'>ULAZNICE</Link>
+                <Link to="/shop" className='option'>SHOP</Link>
               </div>
               <div className="options">
-                <p className='main'>NOVOSTI</p>
-                <p className='option'>NAJAVE</p>
-                <p className='option'>IZVJEŠTAJI</p>
-                <p className='option'>FOTO GALERIJA</p>
+                <p className='main'>VIJESTI</p>
+                <Link to="/novosti" className='option'>SVE VIJESTI</Link>
+                <Link to="/novosti/novosti" className='option'>NOVOSTI</Link>
+                <Link to="/novosti/najave" className='option'>NAJAVE</Link>
+                <Link to="/novosti/izvjestaji" className='option'>IZVJEŠTAJI</Link>
+                <Link to="/novosti/galerija" className='option'>GALERIJA</Link>
               </div>
               <div className="options">
                 <p className='main'>POMOČ</p>
-                <p className='option'>ČLANSTVO</p>
-                <p className='option'>PRESS</p>
-                <p className='option'>KONTAKT</p>
+                <Link to="/clanstvo" className='option'>ČLANSTVO</Link>
+                {/* <p className='option'>PRESS</p>
+                <p className='option'>KONTAKT</p> */}
               </div>
             </div>
             <div></div>
@@ -63,7 +66,7 @@ const Footer = () => {
                   <p className='option-light'>Bosna i Hercegovina</p>
                 </div>
                 <div className='info'>
-                  <p className='option'><span className='option-light'>Kontakt:</span>info@fkzeljeznicar.ba</p>
+                  <p className='option'><span className='option-light'>Kontakt:</span> info@fkzeljeznicar.ba</p>
                   <p className='option'><span className='option-light'>Ulaznice:</span> tickets@fkzeljeznicar.ba</p>
                   <p className='option'><span className='option-light'>Telefon:</span> +387 (0)33 660 133</p>
                   <p className='option'>+387 (0)33 660 133</p>
@@ -79,11 +82,11 @@ const Footer = () => {
             </div>
           </div>
           <div id="footer-socials">
-            <img className="social" src={SocialFacebook}></img>
-            <img className="social" src={SocialX}></img>
-            <img className="social" src={SocialInstagram}></img>
-            <img className="social" src={SocialTikTok}></img>
-            <img className="social" src={SocialYoutube}></img>
+            <Link to="https://www.facebook.com/fkzeljeznicar"><img className="social" src={SocialFacebook}></img></Link>
+            <Link to="https://twitter.com/fkzeljeznicar"><img className="social" src={SocialX}></img></Link>
+            <Link to="https://www.instagram.com/fkzeljeznicar"><img className="social" src={SocialInstagram}></img></Link>
+            <Link to="https://www.tiktok.com/@fkzeljeznicar.ba"><img className="social" src={SocialTikTok}></img></Link>
+            <Link to="https://www.youtube.com/@fkzeljeznicartv"><img className="social" src={SocialYoutube}></img></Link>
           </div>
           <div id="footer-copyright">
             <p className='option-elight'>© 1921 - 2025. FK Željezničar<br/><br/>

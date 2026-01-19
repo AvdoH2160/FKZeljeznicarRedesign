@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
 import api from "../../../../services/api"
 import "./shopFeatured.css"
 
@@ -15,7 +16,7 @@ const ShopFeatured = () => {
   return (
     <div className='shop-featured-container'>
         {featured.map((item, index) => (
-            <div key={item.id} className='shop-featured-item'>
+            <Link key={item.id} to ={`/shop/proizvodi/${item.slug}`} className='shop-featured-item'>
                 <img
                     src={`https://localhost:7010${item.shopThumbnailUrl1}`}
                     className="featured-img img-main"
@@ -29,7 +30,7 @@ const ShopFeatured = () => {
                 <div className='shop-featured-overlay'>
                     {item.name.toUpperCase()}
                 </div>
-            </div>
+            </Link>
         ))}
     </div>
   )

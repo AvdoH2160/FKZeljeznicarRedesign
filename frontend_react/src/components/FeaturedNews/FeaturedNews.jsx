@@ -1,4 +1,5 @@
 import React,{useState, useRef, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import "./featuredNews.css"
 import GamesTrack from '../GamesTrack/GamesTrack'
 import ArrowRight from "../../assets/svg/arrow_right.svg"
@@ -22,10 +23,16 @@ const FeaturedNews = () => {
         {news && (
             <div id="featuredNewsImage-container">
                 <img src={`https://localhost:7010${news.thumbnailUrl}`} alt={news.title} id="featuredNews-image"/>
-                <div id="featuredNews-title">
+                <Link to={`/novost/${news.slug}`} className="featuredNews-link">
+                  <div className="featuredNews-title">
                     <h1>{news.title}</h1>
-                    <h2>PROCITAJ VISE <img className="arrowRight-container" src={ArrowRight}></img><img src={ArrowRight}></img></h2>
-                </div>
+                    <h2>
+                      PROCITAJ VISE
+                      <img className="arrowRight-container" src={ArrowRight} alt="" />
+                      <img src={ArrowRight} alt="" />
+                    </h2>
+                  </div>
+                </Link>
             </div>
         )}
         <div id="games-membership-container">

@@ -148,7 +148,7 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
               </div>
               <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
             </div>
-            <Link to="/novosti" className="no-dropdown header-option">
+            <Link to="/shop" className="no-dropdown header-option">
               SHOP
             </Link>
             <Link to="/novosti" className="no-dropdown header-option">

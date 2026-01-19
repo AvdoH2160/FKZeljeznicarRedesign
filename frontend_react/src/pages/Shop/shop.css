@@ -42,9 +42,32 @@
     font-size: 50px;
     text-align: left;
     align-self: center;
+    transition: color 0.3s ease;
 }
 
+.shop-page-limited-container .small {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-right: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
 
+.shop-page-limited-container .small img {
+    height: 35px;
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.small:hover img {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.shop-page-limited-container .small:hover {
+    transform: translateX(-5px);
+}
 
 .shop-page-categories-section {
     width: 100%;
@@ -92,6 +115,12 @@
     height: 40px;
     width: 200px;
     border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.shop-page-categories-overlay .shop-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .shop-page-gift {

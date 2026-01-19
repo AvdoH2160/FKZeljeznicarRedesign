@@ -47,25 +47,27 @@ const Player = () => {
 
   return (
     <div className='player-container'>
-        <div className='player-info' ref={backgroundRef}>
-            <div className="onlyPlayer-number" ref={numberRef}>
-                {player.number}
-            </div>
-            <div className='player-text-container'>
-                <div className="onlyPlayer-name-surname-position">
-                    <p className="onlyPlayer-name">
-                        {player.name.toUpperCase()}
-                    </p>
-                    <p className="onlyPlayer-surname">
-                        {player.surname}
-                    </p>
-                    <p className='onlyPlayer-position'>
-                        {player.position.toUpperCase()}
-                    </p>
+        <div className='player-info-container' ref={backgroundRef}> 
+            <div className='player-info'>
+                <div className="onlyPlayer-number" ref={numberRef}>
+                    {player.number}
                 </div>
-            </div>
-            <div className='player-image-container'>
-                <img className='onlyPlayer-image' src={`https://localhost:7010${player.thumbnailUrl}`}></img>
+                <div className='player-text-container'>
+                    <div className="onlyPlayer-name-surname-position">
+                        <p className="onlyPlayer-name">
+                            {player.name.toUpperCase()}
+                        </p>
+                        <p className="onlyPlayer-surname">
+                            {player.surname}
+                        </p>
+                        <p className='onlyPlayer-position'>
+                            {player.position.toUpperCase()}
+                        </p>
+                    </div>
+                </div>
+                <div className='player-image-container'>
+                    <img className='onlyPlayer-image' src={`https://localhost:7010${player.thumbnailUrl}`}></img>
+                </div>
             </div>
         </div>
         <div className="onlyPlayer-allDetails">

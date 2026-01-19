@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import {useState, useRef} from 'react'
+import { Link } from 'react-router-dom'
 import "./sponsorTrack.css"
 import gsap from 'gsap'
 import Wwin from "../../assets/svg/sponsor_wwin.svg"
@@ -32,28 +33,28 @@ const SponsorTrack = () => {
   return (
     <div id="sponsor-track-container">
         <div className="sponsor-track">
-            <img src={Wwin}></img>
-            <img src={Opcina}></img>
-            <img src={Garden}></img>
-            <img src={Admiral}></img>
-            <img src={Bhtelekom}></img>
-            <img src={Klix}></img>
-            <img src={Penny}></img>
-            <img src={Asabanka}></img>
-            <img src={Amko}></img>
-            <img src={S1}></img>
+          <Link to="https://wwin.com/"><img src={Wwin}></img></Link>
+          <Link to="https://www.centar.ba/"><img src={Opcina}></img></Link>
+          <Link to="https://gardencity.ba/"><img src={Garden}></img></Link>
+          <Link to="https://www.admiral.com/"><img src={Admiral}></img></Link>
+          <Link to="https://www.bhtelecom.ba/"><img src={Bhtelekom}></img></Link>
+          <Link to="https://www.klix.ba/"><img src={Klix}></img></Link>
+          <Link to="https://pennyshop.ba/"><img src={Penny}></img></Link>
+          <Link to="https://www.asabanka.ba/"><img src={Asabanka}></img></Link>
+          <Link to="https://www.amko.ba/"><img src={Amko}></img></Link>
+          <Link to="https://www.oslobodjenje.ba/sport/"><img src={S1}></img></Link>
         </div>
         <div className="sponsor-track">
-            <img src={Wwin}></img>
-            <img src={Opcina}></img>
-            <img src={Garden}></img>
-            <img src={Admiral}></img>
-            <img src={Bhtelekom}></img>
-            <img src={Klix}></img>
-            <img src={Penny}></img>
-            <img src={Asabanka}></img>
-            <img src={Amko}></img>
-            <img src={S1}></img>
+          <Link to="https://wwin.com/"><img src={Wwin}></img></Link>
+          <Link to="https://www.centar.ba/"><img src={Opcina}></img></Link>
+          <Link to="https://gardencity.ba/"><img src={Garden}></img></Link>
+          <Link to="https://www.admiral.com/"><img src={Admiral}></img></Link>
+          <Link to="https://www.bhtelecom.ba/"><img src={Bhtelekom}></img></Link>
+          <Link to="https://www.klix.ba/"><img src={Klix}></img></Link>
+          <Link to="https://pennyshop.ba/"><img src={Penny}></img></Link>
+          <Link to="https://www.asabanka.ba/"><img src={Asabanka}></img></Link>
+          <Link to="https://www.amko.ba/"><img src={Amko}></img></Link>
+          <Link to="https://www.oslobodjenje.ba/sport/"><img src={S1}></img></Link>
         </div>
     </div>
   )

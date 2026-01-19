@@ -43,3 +43,31 @@ p.stadium-text {
     font-weight: 300;
 }
 
+.stadium-text-button {
+    font-size: 30px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stadium-text-button p {
+    margin-right: 10px;
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+.stadium-text-button:hover p {
+    transform: translateX(-5px);
+}
+
+.stadium-text-button img {
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.stadium-text-button:hover img {
+    opacity: 1;
+    transform: translateX(0);
+}

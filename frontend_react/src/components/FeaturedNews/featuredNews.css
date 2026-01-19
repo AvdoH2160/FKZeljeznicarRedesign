@@ -27,7 +27,7 @@
     height: auto;
 }
 
-#featuredNews-title {
+.featuredNews-title {
     color: white;
     position:absolute;
     top: 60%;
@@ -35,8 +35,28 @@
     z-index: 3;
 }
 
-#featuredNews-title:hover {
+.featuredNews-title:hover {
     cursor: pointer;
+}
+
+.featuredNews-title h2 {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+}
+
+.featuredNews-title:hover h2 {
+    transform: translateX(0);
+}
+
+.featuredNews-title img {
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.featuredNews-title:hover img {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .arrowRight-container {

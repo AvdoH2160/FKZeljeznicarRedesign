@@ -163,20 +163,26 @@
     transform: var(--card-transform) translateX(-130px); 
 }
 
-#shop-button {
-    margin-top: 50px;
+.newsSection-shop-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     justify-self: center;
-    text-align: center;
-    align-content: center;
+
+    margin-top: 50px;
+    font-size: 20px;
     background-color: white;
     color: #002C6D;
     height: 40px;
     width: 200px;
     border-radius: 20px;
+    transition: transform 0.3s ease;
 }
 
-#shop-button:hover {
+.newsSection-shop-button:hover {
     cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* @keyframes bounce-right {

@@ -3,6 +3,7 @@ import {useState, useRef, useEffect} from 'react'
 import {Link} from "react-router-dom"
 import "./stadiumSection.css"
 import Stadium from "../../assets/images/image18.png"
+import Arrow from "../../assets/svg/arrow_right.svg"
 
 const stadiumSection = () => {
   return (
@@ -20,7 +21,11 @@ const stadiumSection = () => {
                     Izgrađen: 13. septembar 1953. godine<br/>
                 </p><br/>
                 <Link to="/stadion-grbavica" className='stadium-text-link'>
-                  <h1>PROČITAJ VIŠE</h1>
+                  <div className='stadium-text-button'>
+                    <p>PROČITAJ VIŠE</p>
+                    <img src={Arrow}></img>
+                    <img src={Arrow}></img>
+                  </div>
                 </Link>
             </div>
         </div>

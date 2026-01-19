@@ -12,21 +12,23 @@ const FirstTeam = () => {
             <h1 className="first-team-header-text">PRVI TIM</h1>
             <h2 className='first-team-header-text'>2025/26</h2>
         </div>
-        <div className="first-team" id="first-team-goalkeepers">
-            <h1 className="first-team-text">GOLMANI</h1>
-            <PlayerList position={"Golman"}></PlayerList>
-        </div>
-        <div className="first-team" id="first-team-defenders">
-            <h1 className="first-team-text">ODBRANA</h1>
-            <PlayerList position={"Odbrana"}></PlayerList>
-        </div>
-        <div className="first-team" id="first-team-defenders">
-            <h1 className="first-team-text">VEZNI RED</h1>
-            <PlayerList position={"Vezni red"}></PlayerList>
-        </div>
-        <div className="first-team" id="first-team-defenders">
-            <h1 className="first-team-text">NAPADAČI</h1>
-            <PlayerList position={"Napadač"}></PlayerList>
+        <div className='first-team-wrapper'>
+            <div className="first-team" id="first-team-goalkeepers">
+                <h1 className="first-team-text">GOLMANI</h1>
+                <PlayerList position={"Golman"}></PlayerList>
+            </div>
+            <div className="first-team" id="first-team-defenders">
+                <h1 className="first-team-text">ODBRANA</h1>
+                <PlayerList position={"Odbrana"}></PlayerList>
+            </div>
+            <div className="first-team" id="first-team-defenders">
+                <h1 className="first-team-text">VEZNI RED</h1>
+                <PlayerList position={"Vezni red"}></PlayerList>
+            </div>
+            <div className="first-team" id="first-team-defenders">
+                <h1 className="first-team-text">NAPADAČI</h1>
+                <PlayerList position={"Napadač"}></PlayerList>
+            </div>
         </div>
     </div>
   )

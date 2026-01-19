@@ -70,6 +70,33 @@
     font-size: 50px;
 }
 
+.shop-page-hero-image-overlay2 .small {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.shop-page-hero-image-overlay2 .small p {
+    margin-right: 10px;
+}
+
+.shop-page-hero-image-overlay2:hover .small {
+    transform: translateX(-5px);
+}
+
+.shop-page-hero-image-overlay2 .small img {
+    height: 35px;
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.shop-page-hero-image-overlay2:hover .small img {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .shop-page-hero-image-overlay span {
     color: #4DA1FF;
 }

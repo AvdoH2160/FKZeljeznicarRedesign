@@ -70,15 +70,27 @@
     justify-items: center;
 }
 
-p.main {
+.options {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.main {
     font-size: 30px;
     margin-bottom: 20px;
 }
 
-p.option {
+.option {
     font-size: 16px;
     font-weight: 300;
     margin-bottom: 5px;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.option:hover {
+    font-weight: 700;
+    color: #4DA1FF;
 }
 
 #footer-options-aboutus {

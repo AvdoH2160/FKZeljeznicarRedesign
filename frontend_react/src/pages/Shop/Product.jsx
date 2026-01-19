@@ -31,6 +31,7 @@ const Product = () => {
     addToCart(
       {
         ...product,
+        image: product.thumbnailUrl,
         selectedSizeLabel: selected.sizeLabel,
         selectedSizeId: selected.id
       },

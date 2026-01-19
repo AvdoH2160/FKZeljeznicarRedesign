@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import Cart from "../../../../assets/svg/cart.svg";
 import "./floatingCart.css";
 
 export default function FloatingCart() {
@@ -11,7 +13,7 @@ export default function FloatingCart() {
   return (
     <div className="floating-cart-container">
       <button className="floating-cart-button" onClick={toggleCart}>
-        🛒 {cartItems.length}
+        <img src={Cart}></img> {cartItems.length}
       </button>
 
       {isOpen && (
@@ -66,7 +68,7 @@ export default function FloatingCart() {
                             updateQuantity(
                               item.product.id,
                               item.size,
-                              Math.min(item.quantity + 1, sizeStock)
+                              item.quantity + 1
                             )
                           }
                         >
@@ -91,7 +93,10 @@ export default function FloatingCart() {
             </div>
           )}
           {cartItems.length > 0 && (
-            <h3 className="total">Ukupno: {totalPrice} KM</h3>
+            <div className="cart-summary">
+              <h3 className="total">Ukupno: {totalPrice} KM</h3>
+              <Link to="shop/cart" className="btn-cart" onClick={() => setIsOpen(false)}>Korpa</Link>
+            </div>
           )}
         </div>
       )}
