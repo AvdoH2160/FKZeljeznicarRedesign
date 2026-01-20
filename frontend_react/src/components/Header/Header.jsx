@@ -15,6 +15,13 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
   const lastScrollY = useRef(0);
   const navigate = useNavigate();
 
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const toggleDropdown = (menuName) => {
+    if (window.innerWidth < 850 && isExpanded)
+      setActiveDropdown(prev => prev === menuName ? null : menuName);
+  };
+
   const isHome = 
     location.pathname === "/" ||
     location.pathname.startsWith("/prvi-tim/") ||
@@ -34,6 +41,10 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
 
   const clickOnOptions = () => {
     setIsExpanded(prev => !prev);
+    if(isExpanded && window.scrollY <= 200 && isHome)
+      setBackgroundHeader(false);
+    if(!isExpanded && isHome && window.scrollY <= 200)
+      setBackgroundHeader(true);
   };
 
   useEffect(() => {
@@ -93,8 +104,26 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
     return () => {
       window.removeEventListener("wheel", preventScroll);
       window.removeEventListener("touchmove", preventScroll);
+      document.body.style.overflow = '';
     };
   }, [isExpanded]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 850 && isExpanded) {
+        setIsExpanded(false);
+        setActiveDropdown(null);
+        if(isHome)
+          setBackgroundHeader(window.scrollY > 200);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isExpanded, setIsExpanded, setBackgroundHeader]);
 
   if(loading) {
       return null;
@@ -104,125 +133,118 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
     <header className={`${showHeader ? "show" : "hide"}`} 
     id="header-container" 
     style={{
-      height:isExpanded ? "450px" : "100px", 
+      height:isExpanded ? "100vh" : "100px", 
       backgroundColor:backgroundHeader ? "#002C6D" : "transparent",
       }}
     >
       <div id="header-fixed"> 
-          <Link to="/"id="logo-option">
+          <Link to="/"id="logo-option" onClick={() => setIsExpanded(false)}>
             <img src={Zeljo} alt="logo"></img>
           </Link>
-          <div className="header-options">
-            <div className="dropdown header-option">
-              <Link to="/novosti">
-              VIJESTI
-              </Link>
-              <div className="dropdown-menu">
-                <Link className="button" to="/novosti/novosti">NOVOSTI</Link>
-                <Link className="button" to="/novosti/najave">NAJAVE</Link>
-                <Link className="button" to="/novosti/izvještaji">IZVJEŠTAJI</Link>
-                <Link className="button" to="/novosti/galerija">GALERIJA</Link>
+          <div className={`header-options` + (isExpanded ? " mobile-open" : "")}>
+            <div className={`dropdown header-option ${activeDropdown === 'vijesti' ? 'open' : ''}`}>
+              <div className='option-arrow'>
+                <div onClick={() => toggleDropdown('vijesti')}>
+                  VIJESTI
+                </div>
+                <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
               </div>
-              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            </div>
-            <div className="dropdown header-option">
-              <Link to="/opste-informacije">
-              KLUB
-              </Link>
               <div className="dropdown-menu">
-                <Link className="button" to="/prvi-tim">PRVI TIM</Link>
-                <Link className="button" to="/stadion-grbavica">STADION GRBAVICA</Link>
-                <Link className="button" to="/historija">HISTORIJA</Link>
-                <p onClick={scrollToBottom} className="button" to="/novosti/izvještaji">KONTAKT</p>
+                <Link className="button" to="/novosti" onClick={() => setIsExpanded(false)}>SVE VIJESTI</Link>
+                <Link className="button" to="/novosti/novosti" onClick={() => setIsExpanded(false)}>NOVOSTI</Link>
+                <Link className="button" to="/novosti/najave" onClick={() => setIsExpanded(false)}>NAJAVE</Link>
+                <Link className="button" to="/novosti/izvještaji" onClick={() => setIsExpanded(false)}>IZVJEŠTAJI</Link>
+                <Link className="button" to="/novosti/galerija" onClick={() => setIsExpanded(false)}>GALERIJA</Link>
               </div>
-              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
             </div>
-            <div className="dropdown header-option">
-              <Link to="/clanstvo">
-                ČLANSTVO
-              </Link>
+            <div className={`dropdown header-option ${activeDropdown === 'klub' ? 'open' : ''}`}>
+              <div className='option-arrow'>
+                <div onClick={() => toggleDropdown('klub')}>
+                  KLUB
+                </div>
+                <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+              </div>
               <div className="dropdown-menu">
-                <Link className="button" to="/clanstvo/uclani-se">UČLANI SE</Link>
-                <Link className="button" to="/clanstvo/obnova">OBNOVA</Link>
-                <Link className="button" to="/clanstvo/provjeri">PROVJERI STATUS</Link>
+                <Link className="button" to="/opste-informacije" onClick={() => setIsExpanded(false)}>O NAMA</Link>
+                <Link className="button" to="/prvi-tim" onClick={() => setIsExpanded(false)}>PRVI TIM</Link>
+                <Link className="button" to="/stadion-grbavica" onClick={() => setIsExpanded(false)}>STADION GRBAVICA</Link>
+                <Link className="button" to="/historija" onClick={() => setIsExpanded(false)}>HISTORIJA</Link>
+                <p className="button" to="/novosti/izvještaji" onClick={() => {setIsExpanded(false); scrollToBottom()}}>KONTAKT</p>
               </div>
-              <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
             </div>
-            <Link to="/shop" className="no-dropdown header-option">
+            <div className={`dropdown header-option ${activeDropdown === 'clanstvo' ? 'open' : ''}`}>
+              <div className='option-arrow'>
+                <div onClick={() => toggleDropdown('clanstvo')}>
+                  ČLANSTVO
+                </div>
+                <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+              </div>
+              <div className="dropdown-menu">
+                <Link className="button" to="/clanstvo/uclani-se" onClick={() => setIsExpanded(false)}>UČLANI SE</Link>
+                <Link className="button" to="/clanstvo/obnova" onClick={() => setIsExpanded(false)}>OBNOVA</Link>
+                <Link className="button" to="/clanstvo/provjeri" onClick={() => setIsExpanded(false)}>PROVJERI STATUS</Link>
+              </div>
+            </div>
+            <Link to="/shop" className="no-dropdown header-option" onClick={() => setIsExpanded(false)}>
               SHOP
             </Link>
-            <Link to="/novosti" className="no-dropdown header-option">
+            <Link to="/novosti" className="no-dropdown header-option" onClick={() => setIsExpanded(false)}>
               ULAZNICE
             </Link>
           </div>
           {!isAuthenticated ? (
-              <Link to="/prijava" className="no-dropdown user-option">
+            <Link to="/prijava" className="no-dropdown user-option" onClick={() => setIsExpanded(false)}>
+              <img src={User} alt="" className='user-icon'></img>
+              PRIJAVI SE
+            </Link>
+            ) : (
+            // <Link to="/profil" className="dropdown user-option" onClick={() => setIsExpanded(false)}>
+            //   <img src={User} alt="" className='user-icon'></img>
+            //   <span id="username">
+            //     {user?.username?.toUpperCase()}
+            //   </span>
+            //   <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+            //   <div className="dropdown-menu">
+            //     <div className="button" onClick={logout}>ODJAVA</div>
+            //   </div>
+            // </Link>
+            // <div className={`option-arrow user-option ${activeDropdown === 'korisnik' ? 'open' : ''}`}>
+            //   <img src={User} alt="" className='user-icon'></img>
+            //   <div className="username" onClick={() => toggleDropdown('korisnik')}>
+            //     {user?.username?.toUpperCase()}
+            //   </div>
+            //   <div className="dropdown-menu">
+            //     <div className="button" onClick={logout}>ODJAVA</div>
+            //   </div>
+            //   <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+            // </div>
+            <div className={`dropdown user-option ${activeDropdown === 'korisnik' ? 'open' : ''}`}>
+              <div className='option-arrow'>
                 <img src={User} alt="" className='user-icon'></img>
-                PRIJAVI SE
-              </Link>
-              ) : (
-              <Link to="/profil" className="dropdown user-option">
-                <img src={User} alt="" className='user-icon'></img>
-                <span id="username">
+                <div onClick={() => toggleDropdown('korisnik')}>
                   {user?.username?.toUpperCase()}
-                </span>
-                <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-                <div className="dropdown-menu">
-                  <div className="button" onClick={logout}>ODJAVA</div>
                 </div>
-              </Link>
-            )}
+                <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
+              </div>
+              <div className="dropdown-menu">
+                <Link className="button" to="/profil" onClick={() => setIsExpanded(false)}>PROFIL</Link>
+                <div className="button" onClick={logout}>ODJAVA</div>
+              </div>
+            </div>
+          )}
+          <div className='dropdown-menu-controls-container' onClick={clickOnOptions}> 
+            <div className={`upper-control ${isExpanded ? 'rotated' : ''}`}>
+
+            </div>
+            <div className={`middle-control ${isExpanded ? 'rotated' : ''}`}>
+
+            </div>
+            <div className={`lower-control ${isExpanded ? 'rotated' : ''}`}>
+
+            </div>
+          </div>
       </div>
       {location.pathname.startsWith("/shop") && <FloatingCart></FloatingCart>}
-      {isExpanded && (
-        <div id="dropdown-container">
-          <div className="dropdown-left">
-            <h1>ZA<br/>ŽIVOT<br/><div id="colored-text">CIJELI</div></h1>
-          </div>
-          <div id="dropdown-news" className="dropdown-items">
-            <h2>NOVOSTI</h2>
-            <br/>
-            <div className="dropdown-childItems">
-              <h3>NAJAVE</h3>
-              <h3>IZVJEŠTAJI</h3>
-            </div>
-          </div>
-          <div id="dropdown-shop" className="dropdown-items">
-            <h2>SHOP</h2>
-            <br/>
-            <div className="dropdown-childItems">
-              <h3>DRESOVI</h3>
-              <h3>AKCESOARI</h3>
-              <h3>ODJEČA</h3>
-            </div>
-          </div>
-          <div id="dropdown-tickets" className="dropdown-items">
-            <h2>ULAZNICE</h2>
-            <br/>
-            <div className="dropdown-childItems">
-              <h3>KUPI ULAZNICE</h3>
-            </div>
-          </div>
-          <div id="dropdown-membership" className="dropdown-items">
-            <h2>ČLANSTVO</h2>
-            <br/>
-            <div className="dropdown-childItems">
-              <h3>KAKO POSTATI ČLAN</h3>
-              <h3>OBNOVA ČLANARINE</h3>
-              <h3>PROVJERA STATUSA ČLANARINE</h3>
-            </div>
-          </div>
-          <div id="dropdown-aboutus" className="dropdown-items">
-            <h2>O NAMA</h2>
-            <br/>
-            <div className="dropdown-childItems">
-              <h3>PRVI TIM</h3>
-              <h3>STRUČNI ŠTAB</h3>
-              <h3>STADION GRBAVICA</h3>
-            </div>
-          </div>
-        </div>
-      )}
     </header>
   )
 }

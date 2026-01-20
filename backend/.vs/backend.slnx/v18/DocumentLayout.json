@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\productsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\productsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\iproductsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\iproductsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -218,7 +218,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ProductsUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\ProductsUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\ProductsUpdateDto.cs",
@@ -230,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductSizeUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\ProductSizeUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\ProductSizeUpdateDto.cs",
@@ -242,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Products.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Products.cs",
               "RelativeDocumentMoniker": "backend\\Model\\Products.cs",
@@ -254,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProductsService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ProductsService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\ProductsService.cs",
@@ -267,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\ProductsController.cs",
@@ -279,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IProductsService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IProductsService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\IProductsService.cs",
@@ -805,13 +805,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "NewsService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\NewsService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\NewsService.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\NewsService.cs",
               "RelativeToolTip": "backend\\Services\\NewsService.cs",
-              "ViewState": "AgIAANYAAAAAAAAAAAAuwPMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAANYAAAAAAAAAAAAuwO8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-05T12:10:43.093Z",
               "EditorCaption": ""

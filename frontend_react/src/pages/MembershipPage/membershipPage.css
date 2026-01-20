@@ -7,6 +7,7 @@
   font-weight: 500;
   margin-bottom: 20px;
   line-height: 1.5;
+  transition: font-size 0.3s ease;
 }
 
 .membership-text .quote {
@@ -18,6 +19,7 @@
 .membership-text p {
     font-weight: 500;
     font-size: 20px;
+    transition: font-size 0.3s ease;
 }
 
 .helper-link {
@@ -39,7 +41,7 @@
     font-size: 18px;
     border-radius: 5px;
     outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s, font-size 0.3s ease;
 }
 
 .auth-form input:focus,
@@ -47,3 +49,90 @@
     border-color: #4DA1FF;
     box-shadow: 0 0 5px rgba(77, 161, 255, 0.5);
 }
+
+.auth-tabs button {
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+
+  .membership-text p {
+    font-size: 18px;
+  }
+
+  .membership-text {
+    font-size: 13px;
+  }
+
+  .auth-form input,
+  .auth-form select {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .auth-tabs button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .membership-text p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .membership-text {
+    font-size: 12px;
+  }
+
+  .membership-text .quote {
+    font-size: 14px;
+  }
+
+  .auth-form input,
+  .auth-form select {
+    font-size: 15px;
+    padding: 9px;
+  }
+
+  .auth-tabs {
+    gap: 10px;
+  }
+
+  .auth-tabs button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .auth-form button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .membership-text p {
+    font-size: 15px;
+  }
+
+  .membership-text .quote {
+    font-size: 13px;
+  }
+
+  .auth-form input,
+  .auth-form select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .auth-tabs button {
+    font-size: 13px;
+  }
+
+  .auth-form button {
+    font-size: 14px;
+  }
+}
+
+

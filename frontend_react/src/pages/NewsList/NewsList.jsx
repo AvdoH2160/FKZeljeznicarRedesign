@@ -23,7 +23,7 @@ const NewsList = () => {
     if(category) {
       url.searchParams.append("category", category);
     }
-    document.title= category ? `${category.charAt(0).toUpperCase() + category.slice(1)} - Fk Željezničar` : "Vijesti - Fk Željezničar";
+    document.title= category ? `${category.charAt(0).toUpperCase() + category.slice(1)} - FK Željezničar` : "Vijesti - FK Željezničar";
     fetch(url)
         .then(res => {
           if (!res.ok) throw new Error("Fetch error");

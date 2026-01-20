@@ -230,13 +230,13 @@ span.info-bottom {
         width: 90%;
         margin-top: 0;
         z-index: 4;
-        transform: translateY(-100px);
+        transform: translateY(-80px);
     }
 
     .onlyPlayer-name,
     .onlyPlayer-surname,
     .onlyPlayer-position {
-        margin: 5px 0;
+        /* margin: 5px 0; */
     }
 
     .onlyPlayer-name { font-size: 40px; }

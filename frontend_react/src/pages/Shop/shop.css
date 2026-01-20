@@ -50,7 +50,7 @@
     flex-direction: row;
     width: fit-content;
     margin-right: 10px;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .shop-page-limited-container .small img {
@@ -60,7 +60,7 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.small:hover img {
+.shop-page-limited-container .small:hover img {
     opacity: 1;
     transform: translateX(0);
 }
