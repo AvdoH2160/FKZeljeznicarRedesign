@@ -256,4 +256,13 @@ span.info-bottom {
 }
 
 
+@media (max-width: 480px) {
+    .onlyPlayer-number {
+        font-size: 50vh;
+        top: 30%;
+    }
+    
+}
+
+
 

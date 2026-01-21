@@ -95,16 +95,16 @@ h1.first-team-text {
 @media (max-width: 480px) {
 
     h1.first-team-header-text { 
-        font-size: 28px;
+        font-size: 35px;
     }
 
     h2.first-team-header-text {
-        font-size: 18px;
+        font-size: 20px;
         margin-left: 0px;
     }
 
     h1.first-team-text {
-        font-size: 18px;
+        font-size: 35px;
     }
 }
 

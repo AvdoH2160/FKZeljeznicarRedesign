@@ -175,6 +175,10 @@
     .player-number {
         font-size: 100px;
     }
+
+    .player-image {
+        --card-transform: scale(0.8) translateX(clamp(30px, 50px , 80px)) translateY(clamp(50px, 50px, 80px));
+    }
 }
 
 

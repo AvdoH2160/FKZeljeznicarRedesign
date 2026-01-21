@@ -23,10 +23,18 @@ const ShopList = () => {
   const categoryFromUrl = searchParams.get("category") || "Svi proizvodi";
   const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
   useEffect(() => {
     api.get("/products")
       .then(res => setProducts(res.data))
       .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -65,6 +73,17 @@ const ShopList = () => {
         ))}
       </aside>
       <section className="shop-content">
+        {window.innerWidth <= 768 && (
+            <select
+              value={selectedCategory}
+              onChange={(e) => handleCategoryChange(e.target.value)}
+              className="mobile-category-select"
+            >
+              {categories.map(cat => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+          )}
         <div className="shop-sort">
           <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
             <option value="new">Najnovije</option>

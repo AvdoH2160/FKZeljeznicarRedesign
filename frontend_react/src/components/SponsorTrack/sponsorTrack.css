@@ -24,3 +24,48 @@
     cursor: pointer;
     transform: scale(1.1);
 }
+
+@media (max-width: 1200px) {
+    #sponsor-track-container {
+        height: 130px;
+    }
+
+    .sponsor-track {
+        gap: 70px;
+        padding-right: 70px;
+    }
+
+    .sponsor-track img {
+        height: 45px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #sponsor-track-container {
+        height: 130px;
+    }
+
+    .sponsor-track {
+        gap: 70px;
+        padding-right: 70px;
+    }
+
+    .sponsor-track img {
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    #sponsor-track-container {
+        height: 90px;
+    }
+
+    .sponsor-track {
+        gap: 35px;
+        padding-right: 35px;
+    }
+
+    .sponsor-track img {
+        height: 32px;
+    }
+}

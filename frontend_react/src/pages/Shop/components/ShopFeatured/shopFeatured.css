@@ -1,3 +1,12 @@
+.shop-featured-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
 .shop-featured-container {
     width: 100%;
     font-family: "Poppins";
@@ -5,10 +14,25 @@
     color: white;
     font-weight: 800;
     max-width: 1800px;
+
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-flow: column;       
+    grid-auto-columns: minmax(380px, 1fr); 
+
     gap: 10px;
-    margin-top: 80px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+
+    -ms-overflow-style: none;  /* IE i Edge */
+    scrollbar-width: none;     /* Firefox */
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.shop-featured-container::-webkit-scrollbar {
+    display: none;
 }
 
 .shop-featured-item {
@@ -19,9 +43,11 @@
         calc(100% - 40px) 100%,
         0 100%
     );
-    height: 650px;
+    scroll-snap-align: start;
     position: relative;
     overflow: hidden;
+    height: 650px;
+    width: 100%;
 }
 
 .shop-featured-item img {
@@ -32,6 +58,8 @@
     width: 100%;
     object-fit: cover;
     transition: opacity 1s ease;
+    pointer-events: none;
+    user-select: none;
 }
 
 .img-main {
@@ -61,3 +89,39 @@
     transform: translateX(-50%);
 }
 
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: transparent;
+    color: rgb(70, 59, 59);
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 292px 19px; 
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    opacity: 0.7; /
+}
+
+.scroll-btn:hover {
+    background-color: rgba(128, 128, 128, 0.5); 
+    color: white;
+    opacity: 1;
+}
+
+.scroll-btn.left {
+    left: 0px;
+}
+
+.scroll-btn.right {
+    right: 0px;
+}
+
+@media (max-width: 1200px) {
+
+    .shop-featured-wrapper {
+        margin-top: 50px;
+    }
+}

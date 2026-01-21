@@ -38,8 +38,9 @@ export default function FloatingCart() {
                       <p className="size">
                         Veličina: <strong>{item.size}</strong>
                       </p>
-                      <div className="quantity-controls">
+                      <div className="quantity-container">
                         <button
+                          className="qty-btn"
                           onClick={() =>
                             updateQuantity(
                               item.product.id,
@@ -59,11 +60,12 @@ export default function FloatingCart() {
                             updateQuantity(
                               item.product.id,
                               item.size,
-                              Number(e.target.value)
+                              Math.min(Number(e.target.value), sizeStock)
                             )
                           }
                         />
                         <button
+                          className="qty-btn"
                           onClick={() =>
                             updateQuantity(
                               item.product.id,
@@ -84,7 +86,7 @@ export default function FloatingCart() {
                         className="btn-remove"
                         onClick={() => removeFromCart(item.product.id, item.size)}
                       >
-                        Ukloni
+                        UKLONI
                       </button>
                     </div>
                   </div>
@@ -94,8 +96,8 @@ export default function FloatingCart() {
           )}
           {cartItems.length > 0 && (
             <div className="cart-summary">
-              <h3 className="total">Ukupno: {totalPrice} KM</h3>
-              <Link to="shop/cart" className="btn-cart" onClick={() => setIsOpen(false)}>Korpa</Link>
+              <h3 className="total">UKUPNO: {totalPrice} KM</h3>
+              <Link to="shop/cart" className="btn-cart" onClick={() => setIsOpen(false)}>KORPA</Link>
             </div>
           )}
         </div>

@@ -198,26 +198,6 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
               PRIJAVI SE
             </Link>
             ) : (
-            // <Link to="/profil" className="dropdown user-option" onClick={() => setIsExpanded(false)}>
-            //   <img src={User} alt="" className='user-icon'></img>
-            //   <span id="username">
-            //     {user?.username?.toUpperCase()}
-            //   </span>
-            //   <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            //   <div className="dropdown-menu">
-            //     <div className="button" onClick={logout}>ODJAVA</div>
-            //   </div>
-            // </Link>
-            // <div className={`option-arrow user-option ${activeDropdown === 'korisnik' ? 'open' : ''}`}>
-            //   <img src={User} alt="" className='user-icon'></img>
-            //   <div className="username" onClick={() => toggleDropdown('korisnik')}>
-            //     {user?.username?.toUpperCase()}
-            //   </div>
-            //   <div className="dropdown-menu">
-            //     <div className="button" onClick={logout}>ODJAVA</div>
-            //   </div>
-            //   <img src={ArrowDown} alt="ˇ" className='arrow-down'></img>
-            // </div>
             <div className={`dropdown user-option ${activeDropdown === 'korisnik' ? 'open' : ''}`}>
               <div className='option-arrow'>
                 <img src={User} alt="" className='user-icon'></img>

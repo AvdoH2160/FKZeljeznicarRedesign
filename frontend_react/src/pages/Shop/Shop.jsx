@@ -15,9 +15,9 @@ const Shop = () => {
         <ShopFeatured></ShopFeatured>
         <div className='shop-page-limited-container'>
             <div className='shop-page-limited-text'>
-                <img src={ShopImage}></img>
+                <img src={ShopImage} className='shop-page-limited-text-item'></img>
                 <p>LIMITED</p>
-                <Link to="proizvodi?category=Akcija" className='small'>
+                <Link to="proizvodi?category=Akcija" className='small shop-page-limited-text-item'>
                     <p className='small'>SAZNAJ VISE</p>
                     <img src={Arrow}></img><img src={Arrow}></img>
                 </Link>

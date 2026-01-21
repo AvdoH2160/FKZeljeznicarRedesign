@@ -64,6 +64,10 @@
   overflow: hidden;
 }
 
+.product-card p {
+  margin-top: 10px;
+}
+
 .shop-list-image-wrapper {
   overflow: hidden;
 }
@@ -84,12 +88,26 @@
   margin-top: 10px;
   margin-left: 10px;
   font-size: 18px;
+  font-weight: 500;
 }
 
 .product-card p {
   font-weight: 700;
   margin-bottom: 40px;
   margin-left: 10px;
+}
+
+.mobile-category-select {
+  width: 100%; /* zauzima širinu roditelja */
+  max-width: 100%; /* ne prelazi roditelja */
+  padding: 8px 12px;
+  font-size: 16px;
+  font-family: "Poppins";
+  box-sizing: border-box; /* bitno da padding ne raste izvan width */
+}
+
+.shop-filters button.active {
+  border-bottom: 2px solid #4DA1FF;
 }
 
 @media (max-width: 1200px) {
@@ -99,11 +117,40 @@
 }
 
 @media (max-width: 768px) {
+  .shop-filters {
+    display: none;
+  }
   .shop-list-page {
     grid-template-columns: 1fr;
   }
 
   .shop-products {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .shop-filters {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .shop-filters h3 {
+    display: none;
+  }
+
+  .shop-filters button {
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 8px 4px;
+    flex-shrink: 0;
+  }
+
+  .shop-list-page {
+    gap: 20px;
   }
 }

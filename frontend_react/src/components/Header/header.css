@@ -141,7 +141,7 @@ header.show {
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1270px) {
 
     #logo-option {
         margin-left: 35px;
@@ -195,12 +195,14 @@ header.show {
         flex-direction: column;
         z-index: 1000;
         transition: opacity 0.3s ease;
+        visibility: hidden;
     }
 
     .dropdown:hover .dropdown-menu,
     .dropdown .dropdown-menu:hover {
         user-select: all;
         pointer-events: all;
+        visibility: visible;
         opacity: 1;
     }
 
@@ -351,14 +353,28 @@ header.show {
     }
 
     /* Dropdown meni default sakriven */
-    .header-options.mobile-open .dropdown-menu {
+    /* .header-options.mobile-open .dropdown-menu {
         display: none;
         flex-direction: column;
+    } */
+
+    .header-options.mobile-open .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        transition:
+            opacity 0.25s ease,
+            max-height 0.35s ease;
     }
 
     /* Dropdown meni kada roditelj ima .open */
     .header-options.mobile-open .dropdown.open .dropdown-menu {
-        display: flex;
+        opacity: 1;
+        max-height: 500px; /* dovoljno za najveći meni */
+        pointer-events: auto;
     }
 
     /* Stil dugmadi unutar dropdown-a */

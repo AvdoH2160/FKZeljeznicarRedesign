@@ -11,7 +11,7 @@
       rgba(0, 44, 109, 0.75),
       rgba(0, 44, 109, 0.75)
     ),
-    url("/images/grbavica-history.jpg");
+    url("../../assets/images/grbavica-history.jpg");
   background-size: cover;
   background-position: center;
   color: white;
@@ -20,17 +20,20 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 10%;
+  transition: height 0.3s ease;
 }
 
 .history-hero h1 {
   font-size: 64px;
   font-weight: 800;
+  transition: font-size 0.3s ease;
 }
 
 .history-hero p {
   max-width: 600px;
   font-size: 20px;
   margin-top: 15px;
+  transition: font-size 0.3s ease;
 }
 
 /* SECTIONS */
@@ -46,6 +49,7 @@
 .history-section h2 {
   font-size: 36px;
   margin-bottom: 20px;
+  transition: font-size 0.3s ease;
 }
 
 .history-section p {
@@ -53,6 +57,7 @@
   line-height: 1.7;
   max-width: 900px;
   margin-bottom: 15px;
+  transition: font-size 0.3s ease;
 }
 
 /* QUOTE */
@@ -63,4 +68,105 @@
   text-align: center;
   font-size: 28px;
   font-style: italic;
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .history-hero {
+    height: 50vh;
+    padding: 0 8%;
+  }
+
+  .history-hero h1 {
+    font-size: 50px;
+  }
+
+  .history-hero p {
+    font-size: 18px;
+    max-width: 500px;
+  }
+
+  .history-section {
+    padding: 60px 8%;
+  }
+
+  .history-section h2 {
+    font-size: 30px;
+  }
+
+  .history-section p {
+    font-size: 16px;
+    max-width: 700px;
+  }
+
+  .history-quote {
+    padding: 80px 8%;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .history-hero {
+    height: 45vh;
+    padding: 0 6%;
+  }
+
+  .history-hero h1 {
+    font-size: 38px;
+  }
+
+  .history-hero p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .history-section {
+    padding: 50px 6%;
+  }
+
+  .history-section h2 {
+    font-size: 26px;
+  }
+
+  .history-section p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .history-quote {
+    padding: 60px 6%;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-hero {
+    height: 40vh;
+    padding: 0 5%;
+  }
+
+  .history-hero h1 {
+    font-size: 28px;
+  }
+
+  .history-hero p {
+    font-size: 14px;
+  }
+
+  .history-section {
+    padding: 40px 5%;
+  }
+
+  .history-section h2 {
+    font-size: 22px;
+  }
+
+  .history-section p {
+    font-size: 14px;
+  }
+
+  .history-quote {
+    padding: 50px 5%;
+    font-size: 18px;
+  }
 }
