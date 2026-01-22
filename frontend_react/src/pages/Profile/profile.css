@@ -6,21 +6,33 @@
   font-style: italic;
 }
 
-.profile-information-container {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #080E1D;
+.profile-information-wrapper {
   background-image: url("../../assets/images/Vector.png");
   background-size: cover;
+  background-color: #080E1D;
+  width: 100%; 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-information-container {
+  display: grid;
+  height: inherit;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1800px;
+  width: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .profile-information-text {
   color: white;
-  justify-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: start;
+  width: 100%;
 }
 
 .profile-information-text input {
@@ -84,6 +96,7 @@
 .welcome-text {
   font-size: 60px;
   margin-bottom: 20px;
+  transition: font-size 0.3s ease;
 }
 
 .user-small {
@@ -91,15 +104,18 @@
   font-weight: 500;
   color: gray;
   text-align: left;
+  transition: font-size 0.3s ease;
 }
 
 .user-big {
   font-size: 30px;
+  transition: font-size 0.3s ease;
 }
 
 .profile-information-membership {
-  justify-self: center;
+  justify-items: center;
   align-content: center;
+  width: 100%;
 }
 
 .profile-information-membershipCard {
@@ -111,6 +127,7 @@
   display: grid;
   grid-template-rows: 1.5fr 3fr 1fr;
   color: white;
+  transition: height 0.3s ease, width 0.3s ease;
 }
 
 .profile-information-membershipCard .dots {
@@ -125,6 +142,7 @@
   color: white;
   font-size: 25px;
   align-items: center;
+  transition: font-size 0.3s ease;
 }
 
 .profile-information-membershipCard-header img {
@@ -138,6 +156,7 @@
   color: white;
   font-size: 20px;
   position: relative;
+  transition: font-size 0.3s ease;
 }
 
 .profile-information-membershipCard-main::after {
@@ -162,7 +181,7 @@
 .profile-information-membershipCard-main .main-text {
   font-size: 30px;
   margin-top: 20px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .profile-information-membershipCard-main .member:hover {
@@ -185,6 +204,7 @@
   justify-content: start;
   margin-left: 40px;
   align-items: center;
+  transition: font-size 0.3s ease;
 }
 
 .profile-information-membershipCard-footer .year {
@@ -263,4 +283,213 @@
   right: 12px;
   font-size: 20px;
   opacity: 0.5;
+}
+
+@media (max-width: 1460px) {
+  .welcome-text {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .profile-information-wrapper {
+    height: fit-content;
+  }
+
+  .profile-information-container {
+    grid-template-columns: 1fr;
+    height: fit-content;
+    padding: 60px 40px;
+    gap: 50px;
+  }
+
+  .profile-information-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* TEXT */
+  .welcome-text {
+    font-size: 44px;
+    margin-top: 70px;
+  }
+
+  .user-small {
+    font-size: 18px;
+  }
+
+  .user-big {
+    font-size: 26px;
+  }
+
+  /* BUTTONS */
+  .btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+
+  /* MEMBERSHIP CARD */
+  .membership-flip,
+  .profile-information-membershipCard {
+    width: 490px;
+    height: 310px;
+  }
+
+  .profile-information-membershipCard-header {
+    font-size: 18px;
+  }
+
+  .profile-information-membershipCard-main {
+    font-size: 16px;
+  }
+
+  .profile-information-membershipCard-main .main-text {
+    font-size: 22px;
+  }
+
+  .profile-information-membershipCard-footer {
+    font-size: 16px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .profile-information-container {
+    padding: 40px 20px;
+  }
+
+  .profile-information-text {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome-text {
+    font-size: 32px;
+  }
+
+  .user-small {
+    font-size: 16px;
+  }
+
+  .user-big {
+    font-size: 22px;
+  }
+
+  .membership-flip,
+  .profile-information-membershipCard {
+    width: 400px;
+    height: 240px;
+  }
+
+  .profile-information-membershipCard-header {
+    font-size: 15px;
+  }
+
+  .profile-information-membershipCard-header img {
+    height: 35px;
+  }
+
+  .profile-information-membershipCard-main {
+    font-size: 13px;
+  }
+
+  .profile-information-membershipCard-main p {
+    margin-left: 30px;
+    margin-top: 0px;
+  }
+
+  .profile-information-membershipCard-main img{
+    height: 120px;
+  }
+
+  .profile-information-membershipCard-main .main-text {
+    font-size: 19px;
+  }
+
+  .profile-information-membershipCard-footer {
+    font-size: 13px;
+    gap: 30px;
+  }
+
+  .membership-front::after {
+    font-size: 16px;
+    bottom: 10px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+
+  .welcome-text {
+    font-size: 27px;
+  }
+
+  .user-small {
+    font-size: 14px;
+  }
+
+  .user-big {
+    font-size: 18px;
+  }
+
+  .membership-flip,
+  .profile-information-membershipCard {
+    width: 350px;
+    height: 200px;
+  }
+
+  .profile-information-membershipCard-header {
+    font-size: 13px;
+  }
+
+  .profile-information-membershipCard-header img {
+    height: 33px;
+  }
+
+  .profile-information-membershipCard-main {
+    font-size: 12px;
+  }
+
+  .profile-information-membershipCard-main p {
+    margin-left: 20px;
+    margin-top: 0px;
+  }
+
+  .profile-information-membershipCard-main img{
+    height: 100px;
+  }
+
+  .profile-information-membershipCard-main .main-text {
+    font-size: 17px;
+  }
+
+  .profile-information-membershipCard-footer {
+    font-size: 12px;
+    gap: 20px;
+  }
+
+  .membership-front::after {
+    font-size: 13px;
+    bottom: 8px;
+  }
+
+  .qr-title {
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+
+  .qr-image {
+    height: 160px;
+    width: auto;
+  }
+
+  .qr-code-text {
+    margin-top: 10px;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
 }

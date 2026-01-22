@@ -124,16 +124,16 @@ const Product = () => {
       {/* TABOVI */}
       <div className="product-tabs">
         <button
-          className={activeTab === "size" ? "active" : ""}
+          className={`sizes ${activeTab === "size" ? "active" : ""}`}
           onClick={() => setActiveTab("size")}
         >
-          Veličina
+          VELIČINE
         </button>
         <button
-          className={activeTab === "delivery" ? "active" : ""}
+          className={`delivery ${activeTab === "delivery" ? "active" : ""}`}
           onClick={() => setActiveTab("delivery")}
         >
-          Dostava
+          DOSTAVA
         </button>
       </div>
 
