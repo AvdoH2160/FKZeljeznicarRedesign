@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import Notification from "../components/Notification"
 import "../admin.css";
 
 export default function AdminNews() {
+  const [notification, setNotification] = useState(null);
   const [news, setNews] = useState([]);
   const [editingId, setEditingId] = useState(null);
 
@@ -55,43 +57,77 @@ export default function AdminNews() {
     if (thumbnail) formData.append("thumbnail", thumbnail);
     images.forEach(img => formData.append("images", img));
 
-    if (editingId) {
-      await api.put(`/news/${editingId}`, formData);
-    } else {
-      await api.post("/news", formData);
+    try {
+      if (editingId) {
+        await api.put(`/news/${editingId}`, formData);
+        setNotification({
+          type: "success",
+          message: "Vijest uspješno ažurirana"
+        });
+      } else {
+        await api.post("/news", formData);
+        setNotification({
+          type: "success",
+          message: "Vijest uspješno dodana"
+        });
+      }
+      resetForm();
+      loadNews();
+    } catch(err) {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
     }
-
-    resetForm();
-    loadNews();
+    setTimeout(() => setNotification(null), 3000);
   };
 
   const deleteNews = async (id) => {
     if (!window.confirm("Delete news?")) return;
-    await api.delete(`/news/${id}`);
-    loadNews();
+    try {
+      await api.delete(`/news/${id}`);
+      loadNews();
+      setNotification({
+        type: "success",
+        message: "Vijest uspješno obrisana"
+      });
+    } catch (err) {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
+    setTimeout(() => setNotification(null), 3000);
   };
 
   return (
     <div className="admin-card">
+      <Notification
+        notification={notification}  
+        onClose={() => setNotification(null)}
+      />
       <h1>Vijesti</h1>
 
-      {/* CREATE / EDIT */}
       <div className="admin-form">
+        <label>Naslov</label>
         <input
           placeholder="Naslov"
           value={title}
           onChange={e => setTitle(e.target.value)}
         />
+        <label>Sažetak</label>
         <input
           placeholder="Sažetak"
           value={summary}
           onChange={e => setSummary(e.target.value)}
         />
+        <label>Sadržaj</label>
         <textarea
           placeholder="Sadržaj"
           value={content}
           onChange={e => setContent(e.target.value)}
         />
+        <label>Kategorija</label>
         <input
           placeholder="Kategorija"
           value={category}
@@ -106,7 +142,6 @@ export default function AdminNews() {
           Izdvojeno
         </label>
 
-        {/* Thumbnail */}
         <div>
           <label>Thumbnail:</label>
           <input type="file" onChange={e => setThumbnail(e.target.files[0])} />
@@ -125,7 +160,6 @@ export default function AdminNews() {
           )}
         </div>
 
-        {/* News Images */}
         <div>
           <label>News Images:</label>
           <input type="file" multiple onChange={e => setImages([...e.target.files])} />
@@ -152,12 +186,11 @@ export default function AdminNews() {
         </div>
 
         <div className="form-actions">
-          <button onClick={createNews}>{editingId ? "Spasi promjene" : "Dodaj vijest"}</button>
-          {editingId && <button onClick={resetForm} className="btn cancel">Otkaži promjene</button>}
+          <button onClick={createNews}>{editingId ? "Ažuriraj" : "Napravi"}</button>
+          {editingId && <button onClick={resetForm} className="btn cancel">Poništi</button>}
         </div>
       </div>
 
-      {/* TABLE */}
       <table className="admin-table">
         <thead>
           <tr>
@@ -172,8 +205,8 @@ export default function AdminNews() {
               <td>{n.title}</td>
               <td>{new Date(n.publishedDate).toLocaleDateString()}</td>
               <td className="actions">
-                <button className="btn edit" onClick={() => handleEdit(n.id)}>Edit</button>
-                <button className="btn delete" onClick={() => deleteNews(n.id)}>Delete</button>
+                <button className="btn edit" onClick={() => handleEdit(n.id)}>Ažuriraj</button>
+                <button className="btn delete" onClick={() => deleteNews(n.id)}>Izbriši</button>
               </td>
             </tr>
           ))}

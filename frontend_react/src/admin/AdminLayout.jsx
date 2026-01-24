@@ -7,14 +7,14 @@ export default function AdminLayout() {
             <aside className="admin-sidebar">
                 <h2>ADMIN</h2>
                 <Link to="/admin">Dashboard</Link>
-                <Link to="/admin/users">Users</Link>
-                <Link to="/admin/news">News</Link>
-                <Link to="/admin/memberships">Memberships</Link>
-                <Link to="/admin/players">Players</Link>
-                <Link to="/admin/games">Games</Link>
-                <Link to="/admin/leagues">Leagues</Link>
-                <Link to="/admin/teams">Teams</Link>
-                <Link to="/admin/products">Products</Link>
+                <Link to="/admin/users">Korisnici</Link>
+                <Link to="/admin/news">Vijesti</Link>
+                <Link to="/admin/memberships">Članarine</Link>
+                <Link to="/admin/players">Igrači</Link>
+                <Link to="/admin/games">Utakmice</Link>
+                <Link to="/admin/leagues">Lige</Link>
+                <Link to="/admin/teams">Timovi</Link>
+                <Link to="/admin/products">Proizvodi</Link>
             </aside>
 
             <main className="admin-content">

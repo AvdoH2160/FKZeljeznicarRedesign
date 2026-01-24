@@ -12,16 +12,35 @@ api.interceptors.request.use(config => {
   return config;
 });
 
+// api.interceptors.response.use(
+//   response => response,
+//   error => {
+//     if (error.response?.status === 401) {
+//       console.warn("JWT expired or unauthorized – logging out");
+
+//       localStorage.removeItem("auth");
+
+//       window.location.href = "/prijava";
+//     }
+//     return Promise.reject(error);
+//   }
+// );
+
 api.interceptors.response.use(
   response => response,
   error => {
-    if (error.response?.status === 401) {
-      console.warn("JWT expired or unauthorized – logging out");
+    const status = error.response?.status;
+    const originalRequest = error.config?.url;
 
+    if (
+      status === 401 &&
+      !originalRequest?.includes("/Auth/login") &&
+      !originalRequest?.includes("/Auth/register")
+    ) {
+      console.warn("Token expired – logging out");
       localStorage.removeItem("auth");
-
-      window.location.href = "/prijava";
     }
+
     return Promise.reject(error);
   }
 );

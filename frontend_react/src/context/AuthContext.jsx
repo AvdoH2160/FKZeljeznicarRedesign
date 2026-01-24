@@ -33,9 +33,11 @@ export const AuthProvider = ({children}) => {
                 setUser(parsed);
             }
         } catch (err) {
-            if (err?.response?.status === 401) {
-                handleLogout();
-            }
+            // if (err?.response?.status === 401) {
+            //     handleLogout();
+            // }
+            setUser(null);
+            localStorage.removeItem("auth"); 
         }
         setLoading(false);
     }, []);
@@ -78,23 +80,26 @@ export const AuthProvider = ({children}) => {
     };
 
     const handleLogin = async (credentials) => {
-        const data = await login(credentials);
-        
-        const rolesArray = Array.isArray(data.roles)
-            ? data.roles
-            : data.roles ? [data.roles] : [];
+        try {
+            const data = await login(credentials);
 
-        const authUser = {
-            id: data.id,
-            username: data.username,
-            roles: rolesArray,
-            jwtToken: data.jwtToken,
-            refreshToken: data.refreshToken
-        };
-        console.log("logged user", authUser);
+            const rolesArray = Array.isArray(data.roles)
+                ? data.roles
+                : data.roles ? [data.roles] : [];
 
-        setUser(authUser);
-        localStorage.setItem("auth", JSON.stringify(authUser));
+            const authUser = {
+                id: data.id,
+                username: data.username,
+                roles: rolesArray,
+                jwtToken: data.jwtToken,
+                refreshToken: data.refreshToken
+            };
+
+            setUser(authUser);
+            localStorage.setItem("auth", JSON.stringify(authUser));
+        } catch (err) {
+            throw err; 
+        }
     };
 
     const handleLogout = () => {

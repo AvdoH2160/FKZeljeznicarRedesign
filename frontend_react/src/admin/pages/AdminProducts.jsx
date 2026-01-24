@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import Notification from "../components/Notification"
 import "../admin.css";
 
 export default function AdminProducts() {
+  const [notification, setNotification] = useState(null);
   const [products, setProducts] = useState([]);
   const [editingId, setEditingId] = useState(null);
 
@@ -106,19 +108,48 @@ export default function AdminProducts() {
 
     galleryImages.forEach(img => formData.append("galleryImages", img));
 
-    if (editingId) {
-      await api.put(`/products/${editingId}`, formData);
-    } else {
-      await api.post("/products", formData);
+    try {
+      if (editingId) {
+        await api.put(`/products/${editingId}`, formData);
+        setNotification({
+          type: "success",
+          message: "Proizvod uspjesno ažuriran"
+        });
+      } else {
+        await api.post("/products", formData);
+        setNotification({
+          type: "success",
+          message: "Proizvod uspješno dodan"
+        });
+      }
+      resetForm();
+      loadProducts();
+    } catch(err) {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
     }
-    resetForm();
-    loadProducts();
+    setTimeout(() => setNotification(null), 3000);
   };
 
   const deleteProduct = async (id) => {
     if (!window.confirm("Delete product?")) return;
-    await api.delete(`/products/${id}`);
-    loadProducts();
+
+    try {
+      await api.delete(`/products/${id}`);
+      loadProducts();
+      setNotification({
+        type: "success",
+        message: "Proizvod uspješno obrisan"
+      });
+    } catch(err) {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
+    setTimeout(() => setNotification(null), 3000);
   };
 
   const updateSize = (index, field, value) => {
@@ -129,37 +160,46 @@ export default function AdminProducts() {
 
   return (
     <div className="admin-card">
-      <h1>Products</h1>
+      <Notification
+        notification={notification}  
+        onClose={() => setNotification(null)}
+      />
+      <h1>Proizvodi</h1>
 
-      {/* FORM */}
       <div className="admin-form">
-        <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
-        <textarea placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
+        <label>Naziv</label>
+        <input placeholder="Naziv" value={name} onChange={e => setName(e.target.value)} />
+        <label>Opis</label>
+        <textarea placeholder="Opis" value={description} onChange={e => setDescription(e.target.value)} />
+        <label>Cijena</label>
         <input type="number" placeholder="Price" value={price} onChange={e => setPrice(e.target.value)} />
-        <input placeholder="Category" value={category} onChange={e => setCategory(e.target.value)} />
-        <input placeholder="Brand" value={brand} onChange={e => setBrand(e.target.value)} />
-        <input placeholder="Color" value={color} onChange={e => setColor(e.target.value)} />
+        <label>Kateogorija</label>
+        <input placeholder="Kategorija" value={category} onChange={e => setCategory(e.target.value)} />
+        <label>Brend</label>
+        <input placeholder="Brend" value={brand} onChange={e => setBrand(e.target.value)} />
+        <label>Boja</label>
+        <input placeholder="Boja" value={color} onChange={e => setColor(e.target.value)} />
 
         <label>
           <input type="checkbox" checked={isFeatured} onChange={e => setIsFeatured(e.target.checked)} />
           Featured
         </label>
 
+        <label>Da li je istaknuta na početnoj stranici (od 0-5)</label>
         <input type="number" placeholder="Featured order" value={featuredOrder} onChange={e => setFeaturedOrder(e.target.value)} />
 
-        {/* Sizes */}
-        <h3>Sizes</h3>
+        <h3>Veličine</h3>
         {sizes.map((s, i) => (
           <div key={s.id ?? i} className="row">
             <input
-              placeholder="Size"
+              placeholder="Veličina"
               value={s.size}
               onChange={e => updateSize(i, "size", e.target.value)}
             />
 
             <input
               type="number"
-              placeholder="Stock"
+              placeholder="Količina"
               value={s.stock}
               onChange={e => updateSize(i, "stock", e.target.value)}
             />
@@ -188,10 +228,9 @@ export default function AdminProducts() {
             setSizes(prev => [...prev, { id: null, size: "", stock: "" }])
           }
         >
-          + Size
+          + Veličina
         </button>
 
-        {/* Images */}
         <label>Thumbnail</label>
         <input type="file" onChange={e => setThumbnail(e.target.files[0])} />
         {editingId && products.find(p => p.id === editingId)?.thumbnailUrl && !thumbnail && (
@@ -252,8 +291,8 @@ export default function AdminProducts() {
         )}
 
         <div className="form-actions">
-          <button onClick={saveProduct}>{editingId ? "Save changes" : "Create product"}</button>
-          {editingId && <button className="btn cancel" onClick={resetForm}>Cancel</button>}
+          <button onClick={saveProduct}>{editingId ? "Ažuriraj" : "Dodaj"}</button>
+          {editingId && <button className="btn cancel" onClick={resetForm}>Poništi</button>}
         </div>
       </div>
 
@@ -261,10 +300,10 @@ export default function AdminProducts() {
       <table className="admin-table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Featured</th>
-            <th>Actions</th>
+            <th>Naziv</th>
+            <th>Cijena</th>
+            <th>Istaknuto</th>
+            <th>Akcije</th>
           </tr>
         </thead>
         <tbody>
@@ -274,8 +313,8 @@ export default function AdminProducts() {
               <td>{p.price} KM</td>
               <td>{p.isFeatured ? "✔" : "—"}</td>
               <td className="actions">
-                <button className="btn edit" onClick={() => handleEdit(p.id)}>Edit</button>
-                <button className="btn delete" onClick={() => deleteProduct(p.id)}>Delete</button>
+                <button className="btn edit" onClick={() => handleEdit(p.id)}>Ažuriraj</button>
+                <button className="btn delete" onClick={() => deleteProduct(p.id)}>Izbriši</button>
               </td>
             </tr>
           ))}

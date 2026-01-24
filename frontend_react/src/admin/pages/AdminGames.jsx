@@ -75,16 +75,24 @@ export default function AdminGames() {
       ticketsAvailable
     };
 
-    if (editingGame) {
-      await api.put(`/games/${editingGame}`, payload);
-      setNotification("Game updated successfully");
-    } else {
-      const res = await api.post("/games", payload);
-      setEditingGame(res.data.id);
-      setNotification("Game created – now you can add goals");
+    try {
+      if (editingGame) {
+        await api.put(`/games/${editingGame}`, payload);
+        setNotification("Utakmica uspješno ažurirana");
+        resetForm();
+        loadAll();
+      } else {
+        const res = await api.post("/games", payload);
+        setEditingGame(res.data.id);
+        setNotification("Utakmica uspješno dodana");
+      }
+    } catch(err) {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
     }
-    resetForm();
-    loadAll();
+    setTimeout(() => setNotification(null), 3000);
   };
 
   const editGame = async (game) => {
@@ -118,14 +126,13 @@ export default function AdminGames() {
         type: "success",
         message: "Utakmica uspješno obrisan"
       });
-
-      setTimeout(() => setNotification(null), 3000);
     } catch {
       setNotification({
         type: "error",
         message: "Akcija nije uspješna"
       });
     }
+    setTimeout(() => setNotification(null), 3000);
   };
 
   const addGoal = async () => {
@@ -153,54 +160,55 @@ export default function AdminGames() {
 
   return (
     <div className="admin-card">
-      <h1>Games</h1>
-
-      {notification && (
-        <Notification text={notification} onClose={() => setNotification(null)} />
-      )}
+      <Notification
+        notification={notification}  
+        onClose={() => setNotification(null)}
+      />
+      <h1>Utakmice</h1>
 
       <div className="admin-form">
         <select value={leagueId} onChange={e => setLeagueId(e.target.value)}>
-          <option value="">League</option>
+          <option value="">Liga</option>
           {leagues.map(l => (
             <option key={l.id} value={l.id}>{l.name}</option>
           ))}
         </select>
 
         <select value={homeTeamId} onChange={e => setHomeTeamId(e.target.value)}>
-          <option value="">Home team</option>
+          <option value="">Domaća ekipa</option>
           {teams.map(t => (
             <option key={t.id} value={t.id}>{t.name}</option>
           ))}
         </select>
 
         <select value={awayTeamId} onChange={e => setAwayTeamId(e.target.value)}>
-          <option value="">Away team</option>
+          <option value="">Gostujuća ekipa</option>
           {teams
             .filter(t => t.id !== Number(homeTeamId))
             .map(t => (
               <option key={t.id} value={t.id}>{t.name}</option>
             ))}
         </select>
-
+        <label>Datum i vrijeme početka</label>
         <input
           type="datetime-local"
           value={kickOffTime}
           onChange={e => setKickOffTime(e.target.value)}
         />
-
+        <label>Stadion</label>
         <input
-          placeholder="Stadium"
+          placeholder="Stadion"
           value={stadium}
           onChange={e => setStadium(e.target.value)}
         />
-
+        <label>Sezona</label>
         <input
-          placeholder="Season (e.g. 2024/25)"
+          placeholder="Sezona (e.g. 2024/25)"
           value={season}
           onChange={e => setSeason(e.target.value)}
         />
 
+        <label>Status</label>
         <select value={status} onChange={e => setStatus(Number(e.target.value))}>
           <option value={0}>Upcoming</option>
           <option value={1}>Live</option>
@@ -214,7 +222,7 @@ export default function AdminGames() {
             checked={isHomeGame}
             onChange={e => setIsHomeGame(e.target.checked)}
           />
-          Home game
+          Domaća utakmica
         </label>
 
         <label className="checkbox-row">
@@ -223,9 +231,10 @@ export default function AdminGames() {
             checked={ticketsAvailable}
             onChange={e => setTicketsAvailable(e.target.checked)}
           />
-          Tickets available
+          Karte dostupne
         </label>
-
+        
+        <label>Rezultat</label>
         <div className="score-row">
           <input type="number" value={homeScore} onChange={e => setHomeScore(e.target.value)} />
           <span>:</span>
@@ -233,8 +242,8 @@ export default function AdminGames() {
         </div>
 
         <div className="form-actions">
-          <button onClick={saveGame}>{editingGame ? "Update" : "Create"}</button>
-          <button className="btn cancel" onClick={resetForm}>Cancel</button>
+          <button onClick={saveGame}>{editingGame ? "Ažuriraj" : "Napravi"}</button>
+          <button className="btn cancel" onClick={resetForm}>Poništi</button>
         </div>
 
         {/* {editingGame && (
@@ -244,7 +253,7 @@ export default function AdminGames() {
 
       {editingGame && (
         <>
-          <h3>Goals</h3>
+          <h3>Golovi</h3>
 
           <div className="admin-form">
             <select value={goalTeamId} onChange={e => setGoalTeamId(e.target.value)}>
@@ -257,18 +266,18 @@ export default function AdminGames() {
             </select>
 
             <input
-              placeholder="Player"
+              placeholder="Igrač"
               value={goalPlayer}
               onChange={e => setGoalPlayer(e.target.value)}
             />
 
             <input
-              placeholder="Minute"
+              placeholder="Minuta"
               value={goalMinute}
               onChange={e => setGoalMinute(e.target.value)}
             />
 
-            <button onClick={addGoal}>Add goal</button>
+            <button onClick={addGoal}>Dodaj gol</button>
           </div>
 
           {goals.map(g => (
@@ -280,14 +289,14 @@ export default function AdminGames() {
         </>
       )}
 
-      <h3>All games</h3>
+      <h3>Sve utakmice</h3>
       <table className="admin-table">
         <thead>
           <tr>
-            <th>Match</th>
-            <th>Result</th>
-            <th>Kick off</th>
-            <th></th>
+            <th>Utakmica</th>
+            <th>Rezultat</th>
+            <th>Početak</th>
+            <th>Akcije</th>
           </tr>
         </thead>
         <tbody>
@@ -297,8 +306,8 @@ export default function AdminGames() {
               <td>{g.homeScore}:{g.awayScore}</td>
               <td>{new Date(g.kickOffTime).toLocaleString()}</td>
               <td className="actions">
-                <button className="btn edit" onClick={() => editGame(g)}>Edit</button>
-                <button className="btn delete" onClick={() => deleteGame(g.id)}>Delete</button>
+                <button className="btn edit" onClick={() => editGame(g)}>Ažuriraj</button>
+                <button className="btn delete" onClick={() => deleteGame(g.id)}>Izbriši</button>
               </td>
             </tr>
           ))}

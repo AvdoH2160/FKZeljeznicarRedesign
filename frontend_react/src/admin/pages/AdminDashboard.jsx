@@ -25,22 +25,22 @@ const AdminDashboard = () => {
 
       <div className="stats-grid">
         <div className="stat-card">
-          <h3>Users</h3>
+          <h3>Korisnici</h3>
           <p>{stats.users}</p>
         </div>
 
         <div className="stat-card">
-          <h3>News</h3>
+          <h3>Vijesti</h3>
           <p>{stats.news}</p>
         </div>
 
         <div className="stat-card">
-          <h3>Games</h3>
+          <h3>Utakmice</h3>
           <p>{stats.games}</p>
         </div>
 
         <div className="stat-card">
-          <h3>Players</h3>
+          <h3>Igrači</h3>
           <p>{stats.players}</p>
         </div>
       </div>

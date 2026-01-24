@@ -35,6 +35,7 @@ import ShopList from "./pages/Shop/ShopList.jsx"
 import Product from "./pages/Shop/Product.jsx"
 import { CartProvider } from "./pages/Shop/context/CartContext.jsx"
 import Cart from "./pages/Shop/Cart.jsx"
+import { ToastProvider } from "./context/ToastContext.jsx"
 
 
 
@@ -50,73 +51,76 @@ const App = () => {
   return (
     <div>
       <AuthProvider>
-        <BrowserRouter>
-        <CartProvider>
-          <Header isExpanded={headerExpanded} 
-          setIsExpanded={setHeaderExpanded} 
-          backgroundHeader={backgroundHeader}
-          setBackgroundHeader={setBackgroundHeader}/>
-          {headerExpanded && (
-            <div className="page-overlay" onClick={closeHeader}></div>
-          )}
-            
-            <ScrollManager/>
-            <Routes>
-              <Route path="/" element={<Home></Home>}></Route>
-              <Route path="/prvi-tim" element={<FirstTeam></FirstTeam>}></Route>
-              <Route path="/prvi-tim/:slug" element={<Player></Player>}></Route>
-              <Route path="/novosti" element={<NewsList></NewsList>}></Route>
-              <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
-              <Route path="/novost/:slug" element={<News></News>}></Route>
-              <Route path="/stadion-grbavica" element={<Stadium></Stadium>}></Route>
-              <Route path="/opste-informacije" element={<ClubInfo></ClubInfo>}></Route>
-              <Route path="/historija" element={<History></History>}></Route>
+        <ToastProvider>
+          <BrowserRouter>
+            <CartProvider>
               
-              <Route path="/shop" element={<Shop></Shop>}></Route>
-              <Route path="/shop/proizvodi" element={<ShopList></ShopList>}></Route>
-              <Route path="/shop/proizvodi/:slug" element={<Product></Product>} />
-              <Route path="/shop/cart" element={<Cart></Cart>}></Route>
-              <Route path="/clanstvo" element={
-                <ProtectedRoute>
-                  <MembershipPage></MembershipPage>
-                </ProtectedRoute>
-              }></Route>
-              <Route path="/clanstvo/:mode" element={
-                <ProtectedRoute>
-                  <MembershipPage></MembershipPage>
-                </ProtectedRoute>
-              }></Route>
-              <Route path="/prijava" element={
-                <PublicRoute>
-                  <LoginRegister></LoginRegister>
-                </PublicRoute>
-              }></Route>
-              <Route path="/profil" element={
-                <ProtectedRoute>
-                  <Profile></Profile>
-                </ProtectedRoute>
-              }></Route>
-              <Route path="/admin" element={
-                <RequireAuth role="Admin">
-                  <AdminLayout></AdminLayout>
-                </RequireAuth>
-                }
-              >
-                <Route index element={<AdminDashboard></AdminDashboard>}></Route>
-                <Route path="users" element={<AdminUsers></AdminUsers>}></Route>
-                <Route path="news" element={<AdminNews></AdminNews>}></Route>
-                <Route path="games" element={<AdminGames></AdminGames>}></Route>
-                <Route path="players" element={<AdminPlayers></AdminPlayers>}></Route>
-                <Route path="leagues" element={<AdminLeagues></AdminLeagues>}></Route>
-                <Route path="teams" element={<AdminTeams></AdminTeams>}></Route>
-                <Route path="memberships" element={<AdminMembership></AdminMembership>}></Route>
-                <Route path="products" element={<AdminProducts></AdminProducts>}></Route>
-              </Route>
-              <Route path="*" element={<NotFound/>}/>
-            </Routes>
-          <Footer/>
-        </CartProvider>
-        </BrowserRouter>
+              <Header isExpanded={headerExpanded} 
+              setIsExpanded={setHeaderExpanded} 
+              backgroundHeader={backgroundHeader}
+              setBackgroundHeader={setBackgroundHeader}/>
+              {headerExpanded && (
+                <div className="page-overlay" onClick={closeHeader}></div>
+              )}
+                
+                <ScrollManager/>
+                <Routes>
+                  <Route path="/" element={<Home></Home>}></Route>
+                  <Route path="/prvi-tim" element={<FirstTeam></FirstTeam>}></Route>
+                  <Route path="/prvi-tim/:slug" element={<Player></Player>}></Route>
+                  <Route path="/novosti" element={<NewsList></NewsList>}></Route>
+                  <Route path="/novosti/:category" element={<NewsList></NewsList>}></Route>
+                  <Route path="/novost/:slug" element={<News></News>}></Route>
+                  <Route path="/stadion-grbavica" element={<Stadium></Stadium>}></Route>
+                  <Route path="/opste-informacije" element={<ClubInfo></ClubInfo>}></Route>
+                  <Route path="/historija" element={<History></History>}></Route>
+                  
+                  <Route path="/shop" element={<Shop></Shop>}></Route>
+                  <Route path="/shop/proizvodi" element={<ShopList></ShopList>}></Route>
+                  <Route path="/shop/proizvodi/:slug" element={<Product></Product>} />
+                  <Route path="/shop/cart" element={<Cart></Cart>}></Route>
+                  <Route path="/clanstvo" element={
+                    <ProtectedRoute>
+                      <MembershipPage></MembershipPage>
+                    </ProtectedRoute>
+                  }></Route>
+                  <Route path="/clanstvo/:mode" element={
+                    <ProtectedRoute>
+                      <MembershipPage></MembershipPage>
+                    </ProtectedRoute>
+                  }></Route>
+                  <Route path="/prijava" element={
+                    <PublicRoute>
+                      <LoginRegister></LoginRegister>
+                    </PublicRoute>
+                  }></Route>
+                  <Route path="/profil" element={
+                    <ProtectedRoute>
+                      <Profile></Profile>
+                    </ProtectedRoute>
+                  }></Route>
+                  <Route path="/admin" element={
+                    <RequireAuth role="Admin">
+                      <AdminLayout></AdminLayout>
+                    </RequireAuth>
+                    }
+                  >
+                    <Route index element={<AdminDashboard></AdminDashboard>}></Route>
+                    <Route path="users" element={<AdminUsers></AdminUsers>}></Route>
+                    <Route path="news" element={<AdminNews></AdminNews>}></Route>
+                    <Route path="games" element={<AdminGames></AdminGames>}></Route>
+                    <Route path="players" element={<AdminPlayers></AdminPlayers>}></Route>
+                    <Route path="leagues" element={<AdminLeagues></AdminLeagues>}></Route>
+                    <Route path="teams" element={<AdminTeams></AdminTeams>}></Route>
+                    <Route path="memberships" element={<AdminMembership></AdminMembership>}></Route>
+                    <Route path="products" element={<AdminProducts></AdminProducts>}></Route>
+                  </Route>
+                  <Route path="*" element={<NotFound/>}/>
+                </Routes>
+              <Footer/>
+            </CartProvider>
+          </BrowserRouter>
+        </ToastProvider>
       </AuthProvider>
     </div>
   )

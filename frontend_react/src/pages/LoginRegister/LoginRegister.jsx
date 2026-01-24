@@ -1,11 +1,12 @@
-import React from 'react'
-import {useState, useRef, useEffect, useContext} from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../context/AuthContext'
-import Zeljo from '../../assets/svg/zeljo_color_icon.svg'
-import "./loginRegister.css"
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { useToast } from "../../context/ToastContext";
+import Zeljo from "../../assets/svg/zeljo_color_icon.svg";
+import "./loginRegister.css";
 
 const LoginRegister = () => {
+    const { addToast } = useToast();
     const [mode, setMode] = useState('login'); // 'login' or 'register'
 
     const { login, register, isAuthenticated } = useContext(AuthContext);
@@ -13,44 +14,56 @@ const LoginRegister = () => {
     const navigate = useNavigate();
 
     const [form, setForm] = useState({
-        email: "",
-        username: "",
-        password: "",
-        firstname: "",
-        lastname: "",
-        birthdate: "",   // YYYY-MM-DD
-        city: ""
+      email: "",
+      username: "",
+      password: "",
+      firstname: "",
+      lastname: "",
+      birthdate: "",   // YYYY-MM-DD
+      city: ""
     });
 
     const handleChange = e => {
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value
-        })
+      setForm({
+        ...form,
+        [e.target.name]: e.target.value
+      })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         if(mode === 'login') {
-            console.log('LOGIN:', form);
+          try {
             await login({
-                userName: form.username,
-                password: form.password
+              userName: form.username,
+              password: form.password
             });
-            navigate("/profil");
+            addToast("Uspješna prijava", "success");
+            setTimeout(() => {
+              navigate("/profil");
+            }, 1000);
+          } catch(err) {
+            addToast("Prijava nije uspješna", "error");
+          }
         } else {
-            console.log('REGISTER:', form);
+          try {
             await register({
-                email: form.email,
-                userName: form.username,
-                password: form.password,
-                firstName: form.firstname,  // mora postojati u form state
-                lastName: form.lastname,
-                dateOfBirth: form.birthdate, // npr. "2000-01-01"
-                city: form.city || ""         // optional, ali mora postojati
+              email: form.email,
+              userName: form.username,
+              password: form.password,
+              firstName: form.firstname,  // mora postojati u form state
+              lastName: form.lastname,
+              dateOfBirth: form.birthdate, // npr. "2000-01-01"
+              city: form.city || ""         // optional, ali mora postojati
             });
-            navigate("/prijava");
+            addToast("Uspješna registracija", "success");
+            setTimeout(() => {
+              navigate("/prijava");
+            }, 1000);
+          } catch(err) {
+            addToast("Registracija nije uspješna", "error");
+          }
         }
     }    
 
@@ -58,8 +71,8 @@ const LoginRegister = () => {
     <div className="auth-page">
       <div className="auth-card">
         <div className='auth-image'>
-            <img src={Zeljo} alt="Zeljo Icon"></img>
-            <p>ZA ŽIVOT <span>CIJELI</span></p>
+          <img src={Zeljo} alt="Zeljo Icon"></img>
+          <p>ZA ŽIVOT <span>CIJELI</span></p>
         </div>
         <div className="auth-tabs">
           <button

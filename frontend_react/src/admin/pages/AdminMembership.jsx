@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import Notification from "../components/Notification"
 import "../admin.css";
 
 export default function AdminMemberships() {
+  const [notification, setNotification] = useState(null);
   const [pending, setPending] = useState([]);
   const [active, setActive] = useState([]);
 
@@ -16,15 +18,40 @@ export default function AdminMemberships() {
 
   const approveMembership = async (id) => {
     if (!window.confirm("Potvrditi članstvo?")) return;
-    await api.post(`/membership/approve/${id}`);
-    loadPending();
-    loadActive();
+    try {
+      await api.post(`/membership/approve/${id}`);
+      setNotification({
+        type: "success",
+        message: "Članarina uspješno odobrena"
+      });
+      loadPending();
+      loadActive();
+
+    } catch (err) {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
+    setTimeout(() => setNotification(null), 3000);
   };
 
   const rejectMembership = async (id) => {
     if (!window.confirm("Odbiti članstvo?")) return;
-    await api.post(`/membership/reject/${id}`);
-    loadPending();
+    try {
+      await api.post(`/membership/reject/${id}`);
+      loadPending();
+      setNotification({
+        type: "success",
+        message: "Članstvo uspješno odbijeno"
+      });
+    } catch (err) {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
+    setTimeout(() => setNotification(null), 3000);
   };
 
   const getStatusLabel = (status) => {
@@ -38,6 +65,10 @@ export default function AdminMemberships() {
 
   return (
     <div className="admin-card">
+      <Notification
+        notification={notification}  
+        onClose={() => setNotification(null)}
+      />
       <h1>Članstva na čekanju</h1>
       <table className="admin-table">
         <thead>

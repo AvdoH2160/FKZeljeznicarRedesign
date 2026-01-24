@@ -54,3 +54,34 @@
     font-size: 20px;
     font-weight: 500;
 }
+
+@media (max-width: 1024px) {
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .related-container {
+        margin: 0 30px 40px 30px;
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-container {
+        margin: 0 20px 30px 20px;
+        font-size: 22px;
+    }
+
+    .related-title {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .related-category {
+        font-size: 14px;
+    }
+}

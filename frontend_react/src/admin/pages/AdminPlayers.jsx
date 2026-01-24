@@ -74,14 +74,13 @@ export default function AdminPlayers() {
       }
       resetForm();
       loadPlayers();
-      setTimeout(() => setNotification(null), 3000);
     } catch (err) {
-      console.error(err);
       setNotification({
         type: "error",
         message: "Akcija nije uspješna"
       });
     }
+    setTimeout(() => setNotification(null), 3000);
   };
 
   const editPlayer = async (id) => {
@@ -112,14 +111,13 @@ export default function AdminPlayers() {
         type: "success",
         message: "Igrač uspješno obrisan"
       });
-
-      setTimeout(() => setNotification(null), 3000);
     } catch {
       setNotification({
         type: "error",
         message: "Akcija nije uspješna"
       });
     }
+    setTimeout(() => setNotification(null), 3000);
   };
 
   return (
@@ -128,20 +126,29 @@ export default function AdminPlayers() {
         notification={notification}  
         onClose={() => setNotification(null)}
       />
-      <h1>Players</h1>
+      <h1>Igrači</h1>
 
       <div className="admin-form">
-        <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
-        <input placeholder="Surname" value={surname} onChange={e => setSurname(e.target.value)} />
-        <textarea placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
+        <label>Ime</label>
+        <input placeholder="Ime" value={name} onChange={e => setName(e.target.value)} />
+        <label>Prezime</label>
+        <input placeholder="Prezime" value={surname} onChange={e => setSurname(e.target.value)} />
+        <label>Biografija</label>
+        <textarea placeholder="Biografija" value={description} onChange={e => setDescription(e.target.value)} />
 
+        <label>Datum rođenja</label>
         <input type="date" placeholder="Birth Date" value={birthDate} onChange={e => setBirthDate(e.target.value)} />
-        <input placeholder="Place of Birth" value={placeOfBirth} onChange={e => setPlaceOfBirth(e.target.value)} />
-        <input placeholder="Nationality" value={nationality} onChange={e => setNationality(e.target.value)} />
+        <label>Mjesto rođenja</label>
+        <input placeholder="Mjesto rođenja" value={placeOfBirth} onChange={e => setPlaceOfBirth(e.target.value)} />
+        <label>Nacionalnost</label>
+        <input placeholder="Nacionalnost" value={nationality} onChange={e => setNationality(e.target.value)} />
 
+        <label>Broj dresa</label>
         <input type="number" placeholder="Number" value={number} onChange={e => setNumber(e.target.value)} />
-        <input placeholder="Position" value={position} onChange={e => setPosition(e.target.value)} />
-        <input type="text" placeholder="Previous Clubs (comma separated)" value={previousClubs} onChange={e => setPreviousClubs(e.target.value)} />
+        <label>Pozicija</label>
+        <input placeholder="Pozicija" value={position} onChange={e => setPosition(e.target.value)} />
+        <label>Bivši klubovi</label>
+        <input type="text" placeholder="Bivši klubovi (odvojeno zarezom)" value={previousClubs} onChange={e => setPreviousClubs(e.target.value)} />
 
         <label>
           Thumbnail:
@@ -165,18 +172,18 @@ export default function AdminPlayers() {
         </label>
 
         <div className="form-actions">
-          <button onClick={savePlayer}>{editingPlayer ? "Update" : "Create"}</button>
-          <button className="btn cancel" onClick={resetForm}>Cancel</button>
+          <button onClick={savePlayer}>{editingPlayer ? "Ažuriraj" : "Napravi"}</button>
+          <button className="btn cancel" onClick={resetForm}>Poništi</button>
         </div>
       </div>
 
       <table className="admin-table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Number</th>
-            <th>Position</th>
-            <th>Actions</th>
+            <th>Puno ime</th>
+            <th>Broj dresa</th>
+            <th>Pozicija</th>
+            <th>Akcije</th>
           </tr>
         </thead>
         <tbody>
@@ -186,8 +193,8 @@ export default function AdminPlayers() {
               <td>{p.number}</td>
               <td>{p.position}</td>
               <td className="actions">
-                <button className="btn edit" onClick={() => editPlayer(p.id)}>Edit</button>
-                <button className="btn delete" onClick={() => deletePlayer(p.id)}>Delete</button>
+                <button className="btn edit" onClick={() => editPlayer(p.id)}>Ažuriraj</button>
+                <button className="btn delete" onClick={() => deletePlayer(p.id)}>Izbriši</button>
               </td>
             </tr>
           ))}

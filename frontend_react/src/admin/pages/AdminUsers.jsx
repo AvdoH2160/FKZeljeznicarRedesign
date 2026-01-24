@@ -14,12 +14,68 @@ export default function AdminUsers() {
     loadUsers();
   }, []);
 
-  const ban = id => api.post(`/admin/users/${id}/ban`).then(loadUsers);
-  const unban = id => api.post(`/admin/users/${id}/unban`).then(loadUsers);
-  const promote = id => api.post(`/admin/users/${id}/promote`).then(loadUsers);
+  const ban = id => {
+    try {
+      api.post(`/admin/users/${id}/ban`).then(loadUsers);
+      setNotification({
+        type: "success",
+        message: "Akcija uspješna"
+      });
+    } catch {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
+    setTimeout(() => setNotification(null), 3000);
+  }
+
+  const unban = id => {
+    try {
+      api.post(`/admin/users/${id}/unban`).then(loadUsers);
+      setNotification({
+        type: "success",
+        message: "Akcija uspješna"
+      });
+    } catch {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
+    setTimeout(() => setNotification(null), 3000);
+  }
+
+  const promote = id => {
+    try {
+       api.post(`/admin/users/${id}/promote`).then(loadUsers);
+      setNotification({
+        type: "success",
+        message: "Akcija uspješna"
+      });
+    } catch {
+      setNotification({
+        type: "error",
+        message: "Akcija nije uspješna"
+      });
+    }
+    setTimeout(() => setNotification(null), 3000);
+  }
   const remove = id => {
     if (confirm("Obrisati korisnika?")) {
-      api.delete(`/admin/users/${id}`).then(loadUsers);
+      try {
+        api.delete(`/admin/users/${id}`).then(loadUsers);
+        setNotification({
+          type: "success",
+          message: "Akcija uspješna"
+        });
+      } catch {
+        setNotification({
+          type: "error",
+          message: "Akcija nije uspješna"
+        });
+      }
+      setTimeout(() => setNotification(null), 3000);
     }
   };
 
@@ -30,7 +86,7 @@ export default function AdminUsers() {
       <table className="admin-table">
         <thead>
           <tr>
-            <th>Username</th>
+            <th>Korisničko ime</th>
             <th>Email</th>
             <th>Rola</th>
             <th>Status</th>
@@ -58,12 +114,12 @@ export default function AdminUsers() {
 
                 {u.role !== "Admin" && (
                   <button className="btn promote" onClick={() => promote(u.id)}>
-                    Promote
+                    Unaprijedi
                   </button>
                 )}
 
                 <button className="btn delete" onClick={() => remove(u.id)}>
-                  Delete
+                  Izbriši
                 </button>
               </td>
             </tr>
