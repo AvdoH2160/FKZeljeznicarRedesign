@@ -4,6 +4,8 @@
     font-weight: 800;
     font-style: italic;
     letter-spacing: "-0.05em";
+    max-width: 2000px;
+    align-self: center;
 }
 
 #news-text {
@@ -18,14 +20,15 @@
     grid-template-rows: 1fr 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    margin: 0 50px 20px 50px;
-    height: 75vh;
+    margin: 0 50px 0 50px;
+    max-height: 700px;
 }
 
 .news-item {
     position: relative;
     overflow: hidden;
     color: white;
+    min-height: 330px;
 }
 
 .news-item:hover {
@@ -124,4 +127,118 @@
 .news-item:hover .summary {
     max-height: var(--summary-expand);
     opacity: 1;
+}
+
+/* @media (min-width: 2000px) {
+    #news-container {
+        max-height: 75vh;
+        min-height: 500px;
+    }
+} */
+
+@media (max-width: 1300px) {
+    .text-overlay {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    #newsSection-container{
+        width: 100%;
+    }
+
+    #news-text {
+        margin: 20px;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    #news-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        max-height: none;
+    }
+
+    .news-item.item-0,
+    .news-item.item-1,
+    .news-item.item-2 {
+        grid-area: auto;
+        height: 300px;
+        font-size: initial;
+    }
+
+    .news-item::after,
+    .news-item.item-0::after {
+        height: 40%;
+    }
+
+    .text-overlay {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #news-text {
+        font-size: 36px;
+    }
+
+    #news-container {
+        grid-template-columns: 1fr;
+        margin: 0 15px 0px 15px;
+        gap: 15px;
+    }
+
+    .news-item {
+        min-height: 260px;
+    }
+
+    .summary {
+        opacity: 1;
+        max-height: none;
+    }
+
+    .news-item::after,
+    .news-item.item-0::after {
+        height: 60%;
+    }
+
+    .text-overlay h1 {
+        font-size: 20px;
+    }
+
+    .top-overlay {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #news-text {
+        font-size: 33px;
+    }
+
+    #news-container {
+        grid-template-columns: 1fr;
+        margin: 0 15px 0px 15px;
+        gap: 15px;
+    }
+
+    .summary {
+        font-size: 12px;
+    }
+
+    .news-item::after,
+    .news-item.item-0::after {
+        height: 65%;
+    }
+
+    .text-overlay h1 {
+        font-size: 16px;
+    }
+
+    .top-overlay {
+        font-size: 12px;
+    }
 }

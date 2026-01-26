@@ -28,7 +28,6 @@ const newsSection = () => {
         }
         )
         setNews(formattedNews.slice(0, 3));
-        console.log(formattedNews)
     })
     .catch(err => console.error("Greska prilikom dohvacanja!", err))
     .finally(() => setLoading(false))
@@ -36,7 +35,7 @@ const newsSection = () => {
 
   return (
     <div id="newsSection-container">
-        <h1 id="news-text">NOVOSTI</h1>
+        <h1 id="news-text">VIJESTI</h1>
 
         <div id="news-container">
           {news.map((news, index) => ( 
