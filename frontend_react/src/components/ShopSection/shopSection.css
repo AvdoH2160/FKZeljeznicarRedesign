@@ -211,6 +211,11 @@
             #0055D3 100%
             );
     }
+
+    #text-container {
+        width: 2000px;
+        align-self: center;
+    }
 }
 
 @media (max-width: 1100px) {

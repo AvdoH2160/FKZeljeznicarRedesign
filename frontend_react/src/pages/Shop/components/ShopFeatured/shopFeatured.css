@@ -125,3 +125,10 @@
         margin-top: 50px;
     }
 }
+
+@media (max-width: 786px) {
+
+    .shop-featured-container {
+        margin: 0 20px;
+    }
+}

@@ -190,6 +190,14 @@
 
 @media (max-width: 850px) {
 
+    .shop-page-limited-text-item {
+        margin-left: 20px;
+    }
+
+    .shop-page-limited-text-item .small {
+        margin-left: 20px;
+    }
+
     .shop-page-limited-container {
         height: 500px;
         background-size: cover;

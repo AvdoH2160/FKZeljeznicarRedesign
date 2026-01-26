@@ -17,7 +17,6 @@
     user-select: none;
     -webkit-user-select: none; 
     -ms-user-select: none; 
-    padding-left: 30px;
 }
 
 .gamesTrack-container::-webkit-scrollbar {
@@ -133,4 +132,39 @@
 
 .gameDate-container {
     margin-left: 15px;
+}
+
+@media (max-width: 1590px) {
+    .gamesTrack-container {
+        height: 250px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 786px) {
+
+    .gamesTrack-container {
+        height: 250px;
+        gap: 15px;
+    }
+
+    .game {
+        min-width: 220px;
+    }
+
+    .game.active {
+        min-width: 260px;
+    }
+
+    .homeLogoText-container p {
+        font-size: 14px;
+    }
+
+    .homeLogoText-container .teamScore {
+        font-size: 24px;
+    }
+
+    .game.active .gameDate-container span {
+        font-size: 28px;
+    }
 }

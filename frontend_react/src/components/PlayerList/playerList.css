@@ -131,7 +131,7 @@
 @media (max-width: 768px) {
 
     #player-card-container {
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
     }
 
     .player-text {

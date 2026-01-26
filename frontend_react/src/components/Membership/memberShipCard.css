@@ -63,3 +63,26 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+@media (max-width: 1590px) {
+    #membershipCard-container img {
+        display: none;
+    }
+
+    #membershipCard-container {
+        width: 310px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 786px) {
+    #membershipCard-container {
+        width: 100%;
+        height: 250px;
+        grid-template-columns: 1fr;
+    }
+
+    #membershipCard-container img {
+        display: none;
+    }
+}

@@ -108,7 +108,7 @@
 
 .onlyPlayer-allDetails {
     padding-top: 50px;
-    width: 70%;
+    width: 80%;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -234,6 +234,11 @@ span.info-bottom {
         margin-top: 0;
         z-index: 4;
         transform: translateY(-80px);
+    }
+
+    .onlyPlayer-allDetails {
+        width: 90%;
+        margin: 0 20px;
     }
 
     .onlyPlayer-name,
