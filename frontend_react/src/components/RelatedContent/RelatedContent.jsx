@@ -54,7 +54,7 @@ const RelatedContent = ({ type, currentId, publishedDate, categoryId }) => {
         {items.map(item => (
           <Link 
             key={item.id}
-            to={type === "news" ? `/news/${item.slug}` : `/products/${item.slug}`}
+            to={type === "news" ? `/novost/${item.slug}` : `/products/${item.slug}`}
             className="related-card"
           >
             <div className="related-image-wrapper">

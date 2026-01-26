@@ -164,6 +164,13 @@
   .stadium-facts p {
     font-size: 15px;
   }
+
+  .stadium-page .stadium-text {
+    justify-self: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px 20px;
+  }
 }
 
 @media (max-width: 480px) {

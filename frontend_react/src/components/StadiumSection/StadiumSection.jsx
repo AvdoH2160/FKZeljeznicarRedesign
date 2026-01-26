@@ -9,7 +9,9 @@ const stadiumSection = () => {
   return (
     <div id="stadium-section-container">
         <div id="stadium-image-text-container">
-            <img id="stadium-image"src={Stadium}></img>
+            <div id="stadium-image-container">
+              <img id="stadium-image"src={Stadium}></img>
+            </div>
             <div id="stadium-text-container">
                 <h1>STADION GRBAVICA</h1><br/>
                 <p className="stadium-text">

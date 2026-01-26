@@ -67,7 +67,7 @@ const TrophiesSection2 = () => {
     <div id="trophies-section-container">
         <div id="trophies-text-image-container">
             <div id="trophies-fixed-text" ref={slider}>
-                <p ref={firstText}>FK ŽELJEZNIČAR - FK ŽELJEZNIČAR - FK ŽELJEZNIČAR</p>
+                <p ref={firstText}>FK ŽELJEZNIČAR - FK ŽELJEZNIČAR - FK ŽELJEZNIČAR - FK ŽELJEZNIČAR - FK ŽELJEZNIČAR</p>
                 {/* <p ref={secondText}>FK ŽELJEZNIČAR -</p> */}
             </div>
             <div id="trophies-text-container">

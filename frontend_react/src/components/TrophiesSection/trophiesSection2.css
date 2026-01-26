@@ -4,7 +4,7 @@
     font-style: italic;
     letter-spacing: "-0.05em";
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     background: linear-gradient(
         196.88deg, 
         #002C6D 40%, 
@@ -19,6 +19,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: relative;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #trophies-fixed-text {
@@ -79,10 +81,11 @@
 #trophies-image-container {
     align-content: center;
     justify-self: center;
-    margin-right: 50px;
+    /* margin-right: 50px; */
 }
 
 #trophies-image {
+    display: block;
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -97,11 +100,12 @@
 
 #trophies-article-container {
     display: grid;
-    grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr;
+    grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr;
     gap: 20px;
     align-items: center;
     justify-items: center;
     margin-right: 50px;
+    margin-left: 50px;
 }
 
 .article-text-container {
@@ -158,4 +162,218 @@
 .article-image:hover {
     transform: scale(1.2);
     z-index: 100;
+}
+
+@media (min-width: 2000px) {
+    #trophies-section-container {
+        width: 100%;
+        height: fit-content;
+        display: grid;
+        grid-template-rows: 1.4fr 1fr;
+        gap: 20px;
+        padding-bottom: 20px;
+        background: linear-gradient(
+            196.88deg, 
+            #002C6D 50%, 
+            #0043A6 90.37%, 
+            #0055D3 100%
+        );
+    }
+
+    .article-image:hover {
+        transform: none;
+        z-index: 100;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    #trophies-section-container {
+        height: 800px;
+    }
+
+    #trophies-text-image-container {
+        grid-template-columns: 1fr 1fr;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    
+    #trophies-fixed-text {
+        font-size: 16vw;
+        left: -60%;
+        opacity: 0.35;
+    }
+
+    #trophies-trophy-container {
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+
+    .trophy {
+        height: 100px;
+    }
+
+    #trophies-text {
+        font-size: 48px;
+    }
+
+    .larger {
+        font-size: 100px;
+    }
+
+
+    #trophies-image {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 40px),
+            calc(100% - 40px) 100%,
+            0 100%
+        );
+    }
+
+    #trophies-article-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-right: 20px;
+        margin-left: 20px;
+        gap: 15px;
+    }
+
+    .article-text-container {
+        font-size: 26px;
+    }
+
+    .article-text-container img {
+        height: 20px;
+    }
+
+    .article-image:hover {
+        transform: scale(1.15);
+    }
+}
+
+@media (max-width:1100px) {
+    #trophies-article-container {
+        display: grid;
+        margin-top: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-rows: 1fr 0.6fr; */
+        grid-template-rows: 1fr;
+        grid-auto-rows: minmax(150px, auto);
+        margin-right: 20px;
+        margin-left: 20px;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+    }
+
+    #trophies-text-image-container {
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+
+    .article-text-container-link {
+        grid-area: 2 / 1 / 3 / 4;
+    }
+
+    #trophies-image-container {
+        display: none;
+    }
+}
+
+@media (max-width: 786px) {
+
+    #trophies-section-container {
+        height: fit-content;
+        grid-template-rows: auto auto;
+        overflow: hidden; /* bitno zbog GSAP teksta */
+    }
+
+    #trophies-text-image-container {
+        margin-top: 25px;
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+
+    #trophies-fixed-text {
+        display: flex;
+        top: 40%;
+        left: -100%;
+        font-size: 32vw;
+        opacity: 0.25;
+        z-index: 0;
+    }
+
+    /* SLIKA DESNO SE GASI */
+    #trophies-image-container {
+        display: none;
+    }
+
+    /* CONTENT IZNAD BACKGROUND TEKSTA */
+    #trophies-text-container {
+        z-index: 1;
+        grid-template-rows: 1fr 0.8fr;
+    }
+
+    /* TROFEJI */
+    #trophies-trophy-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 0 20px;
+    }
+
+    .trophy {
+        height: 80px;
+    }
+
+    /* NASLOV */
+    #trophies-text {
+        font-size: 36px;
+        text-align: center;
+        align-self: center;
+        margin-top: 0px;
+    }
+
+    .larger {
+        font-size: 64px;
+    }
+
+    /* ARTICLE – SAMO LINK */
+
+    #trophies-article-container {
+        margin-top: 0px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        height: fit-content;
+        margin-right: 20px;
+        margin-left: 20px;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        padding-bottom: 0px;
+    }
+
+    .article-image-container {
+        display: none;
+    }
+
+    /* UGASI HOVER NA TOUCH */
+    .article-text-container:hover p,
+    .article-text-container:hover img,
+    .article-image:hover {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 450px)
+{
+    #trophies-fixed-text {
+        
+        top: 40%;
+        left: -0%;
+        font-size: 50vw;
+        opacity: 0.25;
+        z-index: 0;
+    }
 }

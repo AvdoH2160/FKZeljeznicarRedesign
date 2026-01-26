@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
+    max-width: 2000px;
+    justify-self: center;
 }
 
 #news-list-header {
@@ -176,7 +178,7 @@ img.left-arrow {
         flex-direction: column;
         width: 100%;
         margin-left: 0;
-        padding: 0 20px;
+        padding: 0 15px;
         gap: 10px;
     }
 
@@ -187,7 +189,7 @@ img.left-arrow {
 
     .news-list {
        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        margin: 20px;
+       margin: 15px 15px;
     }
 
     .news-list-item {

@@ -423,6 +423,9 @@
 
 @media (max-width: 480px) {
 
+  .profile-information-container {
+    width: fit-content;
+  }
   .welcome-text {
     font-size: 27px;
   }

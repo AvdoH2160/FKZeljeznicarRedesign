@@ -40,7 +40,8 @@ const ShopSection = () => {
 
       <div id="card-container" ref={containerRef}>
         {cardFeatured.map((item, index) => (
-          <div
+          <Link
+            to={`/shop/proizvodi/${item.slug}`}
             key={item.id}
             className={`shop-card item-${index} ${
               activeIndex === null
@@ -51,7 +52,7 @@ const ShopSection = () => {
                 ? `is-left is-left-${activeIndex - index}`
                 : `is-right is-right-${index - activeIndex}`
             } ${bounce ? "bounce" : ""}`}
-            onMouseEnter={() => {
+            onMouseEnter={() => { 
               setActiveIndex(index);
               setBounce(true);
               setTimeout(() => setBounce(false), 150);
@@ -60,18 +61,17 @@ const ShopSection = () => {
           >
             <img className="products-image" src={`https://localhost:7010${item.thumbnailUrl}`} />
             <h2 className="products-name">{item.name}</h2>
-          </div>
+          </Link>
         ))}
       </div>
       
       <div className="carousel-controls">
         <button onClick={scrollPrev} aria-label="Previous">‹</button>
+        <Link className="newsSection-shop-button" to="/shop">
+          SHOP
+        </Link>
         <button onClick={scrollNext} aria-label="Next">›</button>
       </div>
-
-      <Link className="newsSection-shop-button" to="/shop">
-        SHOP
-      </Link>
     </div>
   );
 };

@@ -144,6 +144,9 @@
     height: 26px;
     /* min-width: 26px; */
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* font-size: 14px; */
     /* line-height: 1; */
 }
@@ -410,13 +413,14 @@
         width: 100%;
     }
     #team-data {
-        flex: clamp(0.4, 8vw, 1);
+        /* flex: clamp(0.4, 8vw, 1); */
+        flex: 2;
         padding-left: 6px;
         gap: 6px;
     }
 
     #team-header {
-        flex: clamp(0.4, 8vw, 1);
+        flex: 2;
     }
 
     #team-data span,
@@ -429,7 +433,7 @@
     }
 
     #team-data {
-        font-size: 0;
+        font-size: 10;
     }
 }
 
