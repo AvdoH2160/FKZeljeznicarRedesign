@@ -7,7 +7,7 @@ import MembershipCardImage from "../../assets/images/clanska_karta.png"
 const MembershipCard = () => {
   return (
     <div id="membershipCard-container">
-        <img src={MembershipCardImage}></img>
+        <img className="membershipCard-image" src={MembershipCardImage}></img>
         <div id="membershipCardText-container">
             <p>
                 BROJ ČLANOVA

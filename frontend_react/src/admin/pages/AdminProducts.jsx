@@ -296,7 +296,6 @@ export default function AdminProducts() {
         </div>
       </div>
 
-      {/* TABLE */}
       <table className="admin-table">
         <thead>
           <tr>

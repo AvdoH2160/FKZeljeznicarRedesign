@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import api from "../../services/api"
 import "./gamesTrack.css"
 
-const GamesTrack = () => {
+const GamesTrack = ({showOnlyActive = false}) => {
     const [games, setGames] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isActive, setIsActive] = useState(0);
@@ -10,6 +10,9 @@ const GamesTrack = () => {
     const [isDown, setIsDown] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 786);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         const loadGames = async () => {
@@ -57,7 +60,7 @@ const GamesTrack = () => {
         if(container) {
             container.scrollLeft = container.scrollWidth;
         }
-    }, [games]);
+    }, [games, windowWidth]);
 
     const handleMouseDown = (e) => {
       setIsDown(true);
@@ -86,64 +89,85 @@ const GamesTrack = () => {
       sliderRef.current.scrollLeft = scrollLeft - walk;
     };
 
+    useEffect(() => {
+        const onResize = () => {
+            setIsMobile(window.innerWidth <= 786);
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", onResize);
+        return () => {
+            window.removeEventListener("resize", onResize);
+        }
+    }, []);
+
   return (
     <div 
-        className='gamesTrack-container' 
-        ref={sliderRef}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
+      className="gamesTrack-container"
+      ref={sliderRef}
+      onMouseDown={handleMouseDown}
+      onMouseLeave={handleMouseLeave}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
     >
-        {games.map((game, index) =>  {
+        {games.map((game, index) => {
             const isActive = index === selectedIndex;
-            if(index > selectedIndex) return null;
 
+            if (showOnlyActive) {
+                if (!isActive) return null;
+            }
+
+            if (!showOnlyActive) {
+                if (isMobile && isActive) return null;
+                if (index > selectedIndex) return null;
+            }
+            
             return (
-            <div 
-                key={game.id} 
-                className={`game ${isActive ? "active" : ""}`}
-            >
-                <div className='gameLogo-container'>
-                    <img src={!isActive ? `https://localhost:7010${game.smallLeagueLogoUrl}` : `https://localhost:7010${game.leagueLogoUrl}`}></img>
+            <div key={game.id} className={`game ${isActive ? "active" : ""}`}>
+                <div className="gameLogo-container">
+                <img
+                    src={`https://localhost:7010${
+                    isActive ? game.leagueLogoUrl : game.smallLeagueLogoUrl
+                    }`}
+                />
                 </div>
-                <div className='gameText-container'>
-                    <div className='homeLogoText-container'>
-                        <img src={`https://localhost:7010${game.homeTeamLogoUrl}`}></img>
-                        <p className='teamName'> 
-                            {game.homeTeamName.toUpperCase()}
-                        </p>
-                        <p className='teamScore'>
-                            {!isActive ? game.homeScore : ""}
-                        </p>
+
+                <div className="gameText-container">
+                <div className="homeLogoText-container">
+                    <img src={`https://localhost:7010${game.homeTeamLogoUrl}`} />
+                    <p className="teamName">
+                    {game.homeTeamName.toUpperCase()}
+                    </p>
+                    {!isActive && <p className="teamScore">{game.homeScore}</p>}
+                </div>
+
+                {isActive && (
+                    <div className="gameDate-container">
+                    <span>{game.kickOffTimeFormatted}</span><br />
+                    {game.kickOffDateFormatted}<br />
+                    {game.stadium}
                     </div>
-                    {isActive && (
-                        <div className='gameDate-container'>
-                            <span>
-                                {game.kickOffTimeFormatted}
-                            </span><br/>
-                            {game.kickOffDateFormatted}<br/>
-                            {game.stadium}
-                        </div>
-                    )}
-                    <div className='homeLogoText-container'>
-                        <img src={`https://localhost:7010${game.awayTeamLogoUrl}`}></img>
-                        <p className='teamName'>
-                            {game.awayTeamName.toUpperCase()}
-                        </p>
-                        <p className='teamScore'>
-                            {!isActive ? game.awayScore : ""}
-                        </p>
+                )}
+
+                <div className="homeLogoText-container">
+                    <img src={`https://localhost:7010${game.awayTeamLogoUrl}`} />
+                    <p className="teamName">
+                    {game.awayTeamName.toUpperCase()}
+                    </p>
+                    {!isActive && <p className="teamScore">{game.awayScore}</p>}
+                </div>
+
+                {!isActive && (
+                    <div className="gameDate-container">
+                    {game.kickOffDateFormatted}
                     </div>
-                    {!isActive && (
-                        <div className='gameDate-container'>
-                            {game.kickOffDateFormatted}
-                        </div>
-                    )}
+                )}
                 </div>
             </div>
-            )})}
+            );
+        })}
     </div>
+  
   )
 }
 

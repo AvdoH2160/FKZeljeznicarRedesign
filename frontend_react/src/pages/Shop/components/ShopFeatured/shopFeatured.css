@@ -85,8 +85,10 @@
     z-index: 5;
     font-size: 20px;
     bottom: 20px;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
+    text-align: center;
 }
 
 .scroll-btn {

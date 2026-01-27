@@ -37,6 +37,9 @@ const FeaturedNews = () => {
         )}
         <div id="games-membership-container">
           <GamesTrack></GamesTrack>
+          <div className="next-game-slot">
+            <GamesTrack showOnlyActive />
+          </div>
           <MembershipCard></MembershipCard>
         </div>
     </div>
