@@ -18,10 +18,10 @@ namespace backend.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> CreateTeam(TeamCreateDto dto)
+        public async Task<IActionResult> CreateTeam([FromForm] TeamCreateDto dto)
         {
             var result = await service.CreateAsync(dto);
-            if (result != null)
+            if (result == null)
             {
                 return BadRequest(result);
             }

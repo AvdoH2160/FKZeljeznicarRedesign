@@ -43,6 +43,8 @@ namespace backend.Services
                 Season = g.Season,
 
                 Stadium = g.Stadium,
+                NewsId = g.NewsId,
+                NewsSlug = g.News.Slug,
 
                 Goals = g.Goals.Select(goal => new GameGoalDto
                 {
@@ -189,6 +191,7 @@ namespace backend.Services
                 TicketsAvailable = game.TicketsAvailable,
                 Stadium = game.Stadium,
                 Season = game.Season,
+                NewsId = game.NewsId,
                 Goals = game.Goals.Select(g => new GameGoalDto
                 {
                     Id = g.Id,

@@ -13,5 +13,8 @@
         public string Category { get; set; } = string.Empty;
         public DateTime PublishedDate { get; set; }
         public ICollection<NewsImage> Images { get; set; } = new List<NewsImage>();
+
+        //public int? GameId { get; set;  }
+        //public Game? Game { get; set; }
     }
 }

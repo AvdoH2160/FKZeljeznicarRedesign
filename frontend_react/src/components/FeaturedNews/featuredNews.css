@@ -73,7 +73,7 @@
     z-index: 10;
     display: grid;
     grid-template-columns: 1fr 620px;
-    padding: 0 15px;
+    padding: 0 30px;
     gap: 30px;
     max-width: 2500px;
     justify-self: center;

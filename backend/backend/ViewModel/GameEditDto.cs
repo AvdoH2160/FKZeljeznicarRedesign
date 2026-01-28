@@ -22,6 +22,8 @@ namespace backend.ViewModel
         public string Stadium { get; set; } = string.Empty;
         public string Season { get; set; } = string.Empty;
 
+        public int? NewsId { get; set; } 
+
         public List<GameGoalDto> Goals { get; set; } = new();
     }
 }

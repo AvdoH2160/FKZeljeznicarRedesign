@@ -20,8 +20,9 @@
 
         public void DeleteFile(string fileName)
         {
-            if(File.Exists(fileName))
-                File.Delete(fileName);
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", fileName.TrimStart('/'));
+            if (File.Exists(filePath) && filePath.StartsWith(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")))
+                File.Delete(filePath);
         }
     }
 }

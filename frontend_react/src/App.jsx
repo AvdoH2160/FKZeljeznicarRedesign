@@ -36,6 +36,7 @@ import Product from "./pages/Shop/Product.jsx"
 import { CartProvider } from "./pages/Shop/context/CartContext.jsx"
 import Cart from "./pages/Shop/Cart.jsx"
 import { ToastProvider } from "./context/ToastContext.jsx"
+import GamesList from "./pages/GamesList/GamesList.jsx"
 
 
 
@@ -74,6 +75,7 @@ const App = () => {
                   <Route path="/stadion-grbavica" element={<Stadium></Stadium>}></Route>
                   <Route path="/opste-informacije" element={<ClubInfo></ClubInfo>}></Route>
                   <Route path="/historija" element={<History></History>}></Route>
+                  <Route path="/utakmice" element={<GamesList></GamesList>}></Route>
                   
                   <Route path="/shop" element={<Shop></Shop>}></Route>
                   <Route path="/shop/proizvodi" element={<ShopList></ShopList>}></Route>

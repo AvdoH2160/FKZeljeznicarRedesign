@@ -26,10 +26,11 @@ export default function AdminTeams() {
       await api.post("/team", fd);
       setName("");
       setLeagueId("");
+      setLogo(null);
       loadTeams();
       setNotification({
           type: "success",
-          message: "Tim uspjesno ažuriran"
+          message: "Tim uspjesno dodan"
         });
     } catch(err) {
       setNotification({
@@ -50,6 +51,7 @@ export default function AdminTeams() {
         message: "Tim uspješno obrisan"
       });
     } catch(err) {
+      console.log(err.response);
       setNotification({
         type: "error",
         message: "Akcija nije uspješna"

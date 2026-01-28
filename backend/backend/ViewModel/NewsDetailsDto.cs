@@ -12,5 +12,7 @@
         public string Category { get; set; } = string.Empty;
         public DateTime PublishedDate { get; set; }
         public List<string> ImageUrls { get; set; } = new();
+
+        //public int? GameId { get; set; }
     }
 }

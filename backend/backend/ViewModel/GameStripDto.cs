@@ -35,6 +35,9 @@ namespace backend.ViewModel
         public string SmallLeagueLogoUrl { get; set; } = string.Empty;
         public string Season { get; set; } = string.Empty;
 
+        public int? NewsId { get; set; }
+        public string? NewsSlug { get; set; }
+
         // Stadium (tooltip / subtitle)
         public string Stadium { get; set; } = string.Empty;
     }

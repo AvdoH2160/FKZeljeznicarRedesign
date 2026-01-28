@@ -19,6 +19,9 @@ export default function AdminGames() {
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
 
+  const [news, setNews] = useState([]);
+  const [newsId, setNewsId] = useState("");
+
   const [goalTeamId, setGoalTeamId] = useState("");
   const [goalPlayer, setGoalPlayer] = useState("");
   const [goalMinute, setGoalMinute] = useState("");
@@ -38,10 +41,12 @@ export default function AdminGames() {
     const g = await api.get("/games");
     const t = await api.get("/team");
     const l = await api.get("/league");
+    const n = await api.get("/news");
 
     setGames(g.data);
     setTeams(t.data);
     setLeagues(l.data);
+    setNews(n.data);
   };
 
   const resetForm = () => {
@@ -58,6 +63,7 @@ export default function AdminGames() {
     setIsHomeGame(true);
     setTicketsAvailable(true);
     setGoals([]);
+    setNewsId("");
   };
 
   const saveGame = async () => {
@@ -72,19 +78,26 @@ export default function AdminGames() {
       stadium,
       season,
       isHomeGame,
-      ticketsAvailable
+      ticketsAvailable,
+      newsId: newsId ? Number(newsId) : null
     };
 
     try {
       if (editingGame) {
         await api.put(`/games/${editingGame}`, payload);
-        setNotification("Utakmica uspješno ažurirana");
         resetForm();
         loadAll();
+        setNotification({ 
+          type:"success",
+          message: "Utakmica uspješno ažurirana"
+        });
       } else {
         const res = await api.post("/games", payload);
         setEditingGame(res.data.id);
-        setNotification("Utakmica uspješno dodana");
+        setNotification({ 
+          type:"success",
+          message: "Utakmica uspješno dodana"
+        });
       }
     } catch(err) {
       setNotification({
@@ -111,6 +124,7 @@ export default function AdminGames() {
     setSeason(g.season);
     setIsHomeGame(g.isHomeGame);
     setTicketsAvailable(g.ticketsAvailable);
+    setNewsId(String(g.newsId));
 
 
     setGoals(g.goals ?? []);
@@ -120,12 +134,11 @@ export default function AdminGames() {
     if (!window.confirm("Delete game?")) return;
     try {
       await api.delete(`/games/${id}`);
-      loadAll();
-
       setNotification({
         type: "success",
         message: "Utakmica uspješno obrisan"
       });
+      loadAll();
     } catch {
       setNotification({
         type: "error",
@@ -189,6 +202,16 @@ export default function AdminGames() {
               <option key={t.id} value={t.id}>{t.name}</option>
             ))}
         </select>
+
+        <select value={newsId} onChange={e => setNewsId(e.target.value)}>
+          <option value="">Izvještaj</option>
+          {news.map(n => (
+            <option key={n.id} value={n.id}>
+              {n.title}
+            </option>
+          ))}
+        </select>
+
         <label>Datum i vrijeme početka</label>
         <input
           type="datetime-local"

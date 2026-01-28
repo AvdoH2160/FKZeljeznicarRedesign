@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
+import {useNavigate} from "react-router-dom"
 import api from "../../services/api"
 import "./gamesTrack.css"
 
 const GamesTrack = ({showOnlyActive = false}) => {
+    const navigate = useNavigate();
     const [games, setGames] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isActive, setIsActive] = useState(0);
@@ -123,7 +125,15 @@ const GamesTrack = ({showOnlyActive = false}) => {
             }
             
             return (
-            <div key={game.id} className={`game ${isActive ? "active" : ""}`}>
+            <div 
+                key={game.id} 
+                className={`game ${isActive ? "active" : ""}`}
+                onClick={() => {
+                    if (game.newsId && game.newsSlug) {
+                        navigate(`/novost/${game.newsSlug}`)
+                    }
+                }}
+            >
                 <div className="gameLogo-container">
                 <img
                     src={`https://localhost:7010${

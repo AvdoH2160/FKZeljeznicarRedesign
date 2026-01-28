@@ -29,13 +29,6 @@ wwwroot\uploads\players\54d27c97-8ae8-4b61-b9be-0b13b112c9b4.png
 wwwroot\uploads\players\3e724311-c2de-4750-89b9-b08644d52542.png
 wwwroot\uploads\players\b3d6a349-c852-4011-8683-82c666485d11.png
 wwwroot\uploads\players\0a266458-f73d-4fbb-b974-6ea8198af0b3.png
-wwwroot\uploads\leagues\d8067a22-4e3a-41ba-bef8-3a4df48dd46f.png
-wwwroot\uploads\leagues\f20ee18b-720b-4676-b823-a634acc95aa0.png
-wwwroot\uploads\leagues\6f04f3a3-8f10-48e6-b745-7d8de8a3f5e1.png
-wwwroot\uploads\team\a3476342-da68-4aec-9998-bb6cec8525bc.png
-wwwroot\uploads\team\9bac4e82-0712-44e0-a54a-5bcaf9dbe67a.png
-wwwroot\uploads\leagues\096d444e-2fe8-4fe1-99fe-1499565469f6.png
-wwwroot\uploads\leagues\b01d1af2-c29d-4a64-bca5-b55f0ebf6fd7.png
 wwwroot\uploads\leagues\d366adba-15b1-4f20-ae50-1a2188de0344.png
 wwwroot\uploads\leagues\f3cc7686-7cd2-454b-ac5d-f03cd2bb1fd6.png
 wwwroot\uploads\team\65c9f816-f392-4418-bdfb-a5e235178da5.png
@@ -56,3 +49,4 @@ wwwroot\uploads\products\9b9d592f-fe26-461f-8028-04bc3b9a6327.png
 wwwroot\uploads\products\20fad226-128c-4a71-bc1d-1a126854c8ef.png
 wwwroot\uploads\products\4ff45b1a-13f2-4fbb-89cd-5c022e2e6fae.png
 wwwroot\uploads\products\c56fcb1f-65c8-468d-af86-7898a8c34f38.png
+wwwroot\uploads\team\f1ff4db6-182c-4b7b-9ea7-39729380bf3b.png

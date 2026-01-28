@@ -45,6 +45,7 @@ namespace backend.Services
                 Category = request.Category,
                 PublishedDate = DateTime.UtcNow,
                 Images = imageUrls.Select(x => new NewsImage { ImageUrl = x }).ToList()
+                //GameId = request.GameId,
             };
 
             news.Slug = await GenerateUniqueSlugAsync(news.Title);
@@ -79,6 +80,11 @@ namespace backend.Services
                     currentFeatured.IsFeatured = false;
                 }
             }
+
+            //if(request.GameId != null)
+            //{
+            //    news.GameId = request.GameId;
+            //}
 
             if(request.Title != null)
             {
@@ -203,6 +209,7 @@ namespace backend.Services
                 Category = news.Category,
                 PublishedDate = news.PublishedDate,
                 ImageUrls = news.Images.Select(i => i.ImageUrl).ToList()
+                //GameId = news.GameId
             };
         }
 
@@ -239,6 +246,7 @@ namespace backend.Services
                 Category = news.Category,
                 PublishedDate = news.PublishedDate,
                 ImageUrls = news.Images.Select(i => i.ImageUrl).ToList()
+                //GameId = news.GameId
             };
 
         }
@@ -341,5 +349,32 @@ namespace backend.Services
             }
             return result;
         }
+
+        //public async Task<NewsDetailsDto?> GetNewsByGameIdAsync(int gameId)
+        //{
+        //    var news = await context.News
+        //        .Include(n => n.Images)
+        //        .FirstOrDefaultAsync(n => n.GameId == gameId);
+
+        //    if (news == null)
+        //    {
+        //        return null;
+        //    }
+
+        //    return new NewsDetailsDto
+        //    {
+        //        Id = news.Id,
+        //        Title = news.Title,
+        //        Summary = news.Summary,
+        //        Content = news.Content,
+        //        ThumbnailUrl = news.ThumbnailUrl,
+        //        IsFeatured = news.IsFeatured,
+        //        ViewCount = news.ViewCount,
+        //        Category = news.Category,
+        //        PublishedDate = news.PublishedDate,
+        //        ImageUrls = news.Images.Select(i => i.ImageUrl).ToList(),
+        //        GameId = news.GameId
+        //    };
+        //}
     }
 }
