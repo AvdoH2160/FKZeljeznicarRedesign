@@ -94,6 +94,8 @@ export default function AdminGames() {
       } else {
         const res = await api.post("/games", payload);
         setEditingGame(res.data.id);
+        resetForm();
+        loadAll();
         setNotification({ 
           type:"success",
           message: "Utakmica uspješno dodana"

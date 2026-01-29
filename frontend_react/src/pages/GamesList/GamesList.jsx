@@ -28,10 +28,11 @@ const GamesList = () => {
 
           return {
             ...g,
+            _kickOffDate: date,
             kickOffDateFormatted: `${day}.${month}.${year}`,
             kickOffTimeFormatted: `${hour}:${minute}`,
           };
-        });
+        }).sort((a, b) => b._kickOffDate - a._kickOffDate);
 
         setGames(data);
 
@@ -105,6 +106,11 @@ const GamesList = () => {
                             alt={game.leagueName}
                         />
                         {/* <span>{game.leagueName}</span> */}
+                    </div>
+                    <div className="kickoff">
+                        <span>{game.kickOffDateFormatted}</span>
+                        <span>•</span>
+                        <span>{game.kickOffTimeFormatted}</span>
                     </div>
                     <div className="stadium">
                         {game.stadium}

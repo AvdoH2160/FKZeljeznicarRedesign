@@ -122,7 +122,7 @@
 }
 
 .gameRow:hover {
-    background-color: rgba(0, 44, 109, 0.2);
+    background-color: rgba(5, 98, 236, 0.2);
 }
 
 .gameRow:first-child {
@@ -147,13 +147,22 @@
 
 .gameRow-top {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .gameRow-top img {
     width: 90px;
     height: auto;
     display: block;
+}
+
+.gameRow-top .kickoff {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    align-items: center;
 }
 
 .gameRow-top .stadium {

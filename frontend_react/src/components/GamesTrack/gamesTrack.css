@@ -93,13 +93,24 @@
     color: black;
 }
 
+.game .gameLogo-container {
+    max-height: 50px;
+}
+
+.gameLogo-container img {
+    max-height: 30px;
+    display: block;
+}
+
 .game.active .gameLogo-container {
     align-self: center;
+    max-height: none;
     margin-left: 0;
 }
 
 .game.active .gameLogo-container img {
     height: 55px;
+    max-height: none;
 }
 
 .game.active .homeLogoText-container {
