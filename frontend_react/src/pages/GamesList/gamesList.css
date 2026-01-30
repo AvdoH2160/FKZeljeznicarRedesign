@@ -2,7 +2,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-style: italic;
-  
+  width: 100%;
 }
 
 .gamesPage-header {
@@ -14,8 +14,11 @@
 .gamesPage-header-container {
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
     max-width: 2000px;
+    margin: 0 auto;          
+    padding-left: 50px;      
+    padding-right: 50px;     
+    width: 100%;
     width: 100%;
     justify-self: center;
 }
@@ -49,6 +52,7 @@
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
+    padding: 0 5px;
 }
 
 .games-tabs .tab {
@@ -101,15 +105,16 @@
   align-items: center;
   max-width: 2000px;
   justify-self: center;
+  margin-bottom: 50px;
 }
 
-/* Jedna utakmica */
 .gameRow {
-  width: 60%;
-  height: 200px;
+  /* width: 60%; */
+  width: min(60%, 1200px);
+  height: fit-content;
   background: white;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   padding: 20px 30px;
   box-sizing: border-box;
 
@@ -117,7 +122,6 @@
   border-right: 1px solid rgba(0, 44, 109, 0.5);
   border-bottom: 1px solid rgba(0, 44, 109, 0.5);
   position: relative;
-  /* overflow: hidden; */
   transition:  background-color 0.3s ease;
 }
 
@@ -148,6 +152,8 @@
 .gameRow-top {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    height: fit-content;
+    align-items: center;
 }
 
 .gameRow-top img {
@@ -174,7 +180,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     text-align: center;
-    grid-auto-rows: 120px;
+    grid-auto-rows: 150px;
 }
 
 .gameRow-center .team {
@@ -185,6 +191,11 @@
     width: 100%;
     overflow: visible;
     align-content: center;
+}
+
+.gameRow-center .team span {
+    z-index: 1;
+    position: relative;
 }
 
 .gameRow-center .team::before {
@@ -198,11 +209,263 @@
     background-size: 100px;
 
     opacity: 0.3;
-    filter: grayscale(100%) brightness(0.7);
+    /* filter: grayscale(100%) brightness(0.7); */
 
     pointer-events: none;
+    z-index: 0;
+}
+
+.gameRow-center .score-goals {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+.gameRow-center .score-goals > .score:only-child {
+    font-size: 50px;
 }
 
 .gameRow-center .score {
-    font-size: 60px;
+    font-size: 40px;
+    font-weight: 900;
+    height: fit-content;
+}
+
+.goals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 10px;
+}
+
+.gameRow-bottom {
+    text-align: center;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    height: fit-content;
+    width: fit-content;
+    align-self: center;
+}
+
+.gameRow-bottom:hover {
+    color: #4DA1FF;
+}
+
+@media (max-width: 1200px) {
+  .gameRow {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1000px) {
+
+    .gamesPage-title {
+        font-size: 48px;
+    }
+
+    .gamesPage-filters {
+        font-size: 28px;
+    }
+
+    .gamesPage-filters select{
+        font-size: 28px;
+    }
+
+    .gamesPage-vertical {
+        padding: 0 15px;
+    }
+
+    .gameRow {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .gameRow-top img {
+        width: 80px;
+    }
+
+
+    .gameRow-top .stadium {
+        font-size: 16px;
+    }
+
+    .gameRow-center .team {
+        font-size: 25px;
+    }
+
+    .gameRow-center .score {
+        font-size: 35px;
+    }
+
+    .gameRow-center .score-goals > .score:only-child {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 786px) {
+    .gamesPage-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .gamesPage-filters {
+        font-size: 22px;
+        justify-content: center;
+    }
+
+    .gamesPage-filters select{
+        font-size: 22px;
+    }
+
+    .gameRow-top img {
+        width: 70px;
+    }
+
+    .gameRow-top .kickoff {
+        gap: 8px;
+        font-size: 15px;
+    }
+
+    .gameRow-top .stadium {
+        font-size: 15px;
+    }
+
+    .gameRow-center .team {
+        height: 120px;
+        font-size: 20px;
+    }
+
+    .gameRow-center .team::before {
+        background-size: 70px;
+    }
+
+    .gameRow-center .score {
+        font-size: 30px;
+    }
+
+    .gameRow-center .score-goals > .score:only-child {
+        font-size: 40px;
+    }
+
+    .goals {
+        font-size: 9px;
+    }
+
+    .gameRow-bottom {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .gameRow-top img {
+        width: 50px;
+    }
+
+    .gameRow-top .kickoff {
+        gap: 3px;
+        font-size: 13px;
+    }
+
+    .gameRow-top .stadium {
+        font-size: 14px;
+    }
+
+    .gameRow-center .team {
+        height: 80px;
+        font-size: 18px;
+    }
+
+    .gameRow-center .team::before {
+        background-size: 60px;
+    }
+
+    .gameRow-center .score {
+        font-size: 25px;
+    }
+
+    .gameRow-center .score-goals > .score:only-child {
+        font-size: 35px;
+    }
+
+    .goals {
+        font-size: 8px;
+    }
+
+    .gameRow-bottom {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gamesPage-title {
+        font-size: 35px;
+    }
+
+    .gamesPage-filters {
+        font-size: 20px;
+    }
+
+    .gamesPage-filters select{
+        font-size: 20px;
+    }
+
+    .games-tabs .tab {
+        padding: 5px 20px;
+        font-size: 16px;
+    }
+
+
+    .gameRow-top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gameRow-top .kickoff {
+        gap: 3px;
+        font-size: 13px;
+        justify-self: end;
+    }
+
+    .gameRow-top .stadium {
+        display: none;
+    }
+
+    .gameRow-center {
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+    }
+
+    .gameRow-center .team {
+        height: 50px;
+        font-size: 10px;
+        /* width: fit-content; */
+    }
+
+    /* .gameRow-center .team.home {
+        justify-self: start;
+    }
+
+    .gameRow-center .team.away {
+        justify-self: end;
+    } */
+
+    .gameRow-center .team::before {
+        background-size: 45px;
+    }
+
+    .gameRow-center .score {
+        font-size: 22px;
+    }
+
+    .gameRow-center .score-goals > .score:only-child {
+        font-size: 27px;
+    }
+
+    .goals {
+        font-size: 7px;
+    }
+
+    .gameRow-bottom {
+        font-size: 15px;
+    }
 }

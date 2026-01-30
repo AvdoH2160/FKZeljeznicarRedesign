@@ -50,3 +50,12 @@ wwwroot\uploads\products\4ff45b1a-13f2-4fbb-89cd-5c022e2e6fae.png
 wwwroot\uploads\products\c56fcb1f-65c8-468d-af86-7898a8c34f38.png
 wwwroot\uploads\team\67920f1f-ff49-4ec8-a9ff-f4b7dc34ce80.png
 wwwroot\uploads\team\84bdcc2a-c6b9-4139-9478-9e25eca5b155.png
+wwwroot\uploads\team\7e6f1ffe-820c-4c13-a02d-5e7f3b03ecad.png
+wwwroot\uploads\team\97ae60ba-9144-4b83-842f-34ea9fd0c9b7.png
+wwwroot\uploads\team\c692c33f-6885-4090-b57f-379000cc0788.png
+wwwroot\uploads\team\7eb3268b-a4f9-4ddf-a245-c9bb14bdce9c.png
+wwwroot\uploads\team\7faf6f7b-7f4b-4b3e-9a12-e24e9701e4ae.png
+wwwroot\uploads\team\d3b4f98c-a0a1-42ca-a089-e755ff8e4df8.png
+wwwroot\uploads\leagues\27a38308-2efa-4eef-8ada-efcd77067727.png
+wwwroot\uploads\leagues\dff0ca89-a561-47d4-b142-667b39e9be3b.png
+wwwroot\uploads\team\297fc55a-cdfc-47d5-800d-4c9ba021ff74.png

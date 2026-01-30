@@ -23,7 +23,7 @@ const FeaturedNews = () => {
         {news && (
             <div id="featuredNewsImage-container">
                 <img src={`https://localhost:7010${news.thumbnailUrl}`} alt={news.title} id="featuredNews-image"/>
-                <Link to={`/novost/${news.slug}`} className="featuredNews-link">
+                {/* <Link to={`/novost/${news.slug}`} className="featuredNews-link">
                   <div className="featuredNews-title">
                     <h1>{news.title}</h1>
                     <h2>
@@ -32,15 +32,35 @@ const FeaturedNews = () => {
                       <img src={ArrowRight} alt="" />
                     </h2>
                   </div>
-                </Link>
+                </Link> */}
             </div>
         )}
-        <div id="games-membership-container">
-          <GamesTrack></GamesTrack>
+        <div id="games-membership-text-container">
+          {news && (
+            <Link to={`/novost/${news.slug}`} className="featuredNews-link">
+              <div className="featuredNews-title">
+                <h1>{news.title}</h1>
+                <h2>
+                  PROCITAJ VISE
+                  <img className="arrowRight-container" src={ArrowRight} alt="" />
+                  <img src={ArrowRight} alt="" />
+                </h2>
+              </div>
+            </Link>
+          )}
+          <Link to="/utakmice" className='games-link'>UTAKMICE</Link>
+          <div id="games-membership-container">
+            <GamesTrack></GamesTrack>
+            <div className="next-game-slot">
+              <GamesTrack showOnlyActive />
+            </div>
+            <MembershipCard></MembershipCard>
+          </div>
+          {/* <GamesTrack></GamesTrack>
           <div className="next-game-slot">
             <GamesTrack showOnlyActive />
           </div>
-          <MembershipCard></MembershipCard>
+          <MembershipCard></MembershipCard> */}
         </div>
     </div>
   )

@@ -143,30 +143,30 @@ img.left-arrow {
 /* =========================
    TABLET (≤ 1024px)
 ========================= */
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
     h1.news-list-header-text {
         font-size: 48px;
-        margin-left: 30px;
+        margin-left: 15px;
         margin-top: 100px;
     }
 
     .news-list-header-options {
         flex-wrap: wrap;
-        gap: 12px;
-        margin-left: 30px;
+        gap: 5px;
+        margin-left: 15px;
         font-size: 18px;
     }
 
     .news-list {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        margin: 20px 30px;
+        margin: 10px 15px;
     }
 }
 
 /* =========================
    MOBILE (≤ 768px)
 ========================= */
-@media (max-width: 768px) {
+@media (max-width: 786px) {
 
     h1.news-list-header-text {
         font-size: 36px;

@@ -304,6 +304,7 @@ header.show {
     .header-options.mobile-open > *:nth-child(4) { animation-delay: 0.46s; }
     .header-options.mobile-open > *:nth-child(5) { animation-delay: 0.58s; }
     .header-options.mobile-open > *:nth-child(6) { animation-delay: 0.70s; }
+    .header-options.mobile-open > *:nth-child(7) { animation-delay: 0.82s; }
 
     .header-options.mobile-open 
     .dropdown-menu .button {
@@ -330,6 +331,9 @@ header.show {
 
     .header-options.mobile-open 
     .dropdown.open .dropdown-menu .button:nth-child(5) { animation-delay: 0.30s; }
+
+    .header-options.mobile-open 
+    .dropdown.open .dropdown-menu .button:nth-child(6) { animation-delay: 0.36s; }
 
     .header-options.mobile-open {
         pointer-events: all;

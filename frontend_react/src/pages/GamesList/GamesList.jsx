@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
 import api from "../../services/api";
 import "./gamesList.css";
 
@@ -47,14 +48,27 @@ const GamesList = () => {
     loadGames();
   }, []);
 
-  const filteredGames = games.filter(g => {
-    const now = new Date();
-    const gameDate = new Date(g.kickOffTime);
-    const seasonMatch = seasonFilter ? g.season === seasonFilter : true;
-    const typeMatch =
-      activeTab === "upcoming" ? gameDate >= now : gameDate < now;
-    return seasonMatch && typeMatch;
-  });
+  const filteredGames = games
+    .filter(g => {
+        const now = new Date();
+        const gameDate = new Date(g.kickOffTime);
+
+        const seasonMatch = seasonFilter ? g.season === seasonFilter : true;
+        const typeMatch =
+        activeTab === "upcoming" ? gameDate >= now : gameDate < now;
+
+        return seasonMatch && typeMatch;
+    })
+    .sort((a, b) => {
+        const dateA = new Date(a.kickOffTime);
+        const dateB = new Date(b.kickOffTime);
+
+        if (activeTab === "past") {
+        return dateB - dateA;
+        }
+
+        return dateA - dateB;
+   });
 
   return (
     <div className="gamesPage-container">
@@ -93,7 +107,14 @@ const GamesList = () => {
             <p>Nema utakmica za odabrani filter.</p>
         )}
 
-        {filteredGames.map(game => (
+        {filteredGames.map(game => {
+            const goals = game.goals
+                ?.slice()
+                .sort((a, b) => parseInt(a.minute) - parseInt(b.minute));
+        
+            const homeGoals = goals?.filter(g => g.isHomeTeam);
+            const awayGoals = goals?.filter(g => !g.isHomeTeam);
+            return (
             <div key={game.id} className="gameRow"
                 // style={{
                 //     "--league-logo": `url(https://localhost:7010${game.leagueLogoUrl})`
@@ -126,13 +147,38 @@ const GamesList = () => {
                         <span>{game.homeTeamName.toUpperCase()}</span>
                     </div>
                     {activeTab === "past" ? (
-                    <span className="score">
-                        {game.homeScore} : {game.awayScore}
-                    </span>
+                    <div className="score-goals">
+                        <div className="score">
+                            {game.homeScore} : {game.awayScore}
+                        </div>
+                        {goals?.length > 0 && (
+                            <div className="goals">
+                                <div className="goals-home">
+                                    {homeGoals.map(goal => (
+                                        <div key={goal.id} className="goal">
+                                            {goal.minute}'
+                                            {goal.isPenalty && " (P)"}
+                                            {goal.isOwnGoal && " (AG)"}
+                                            {" "}– {goal.scorerName}
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="goals-away">
+                                    {awayGoals.map(goal => (
+                                        <div key={goal.id} className="goal">
+                                            {goal.minute}'
+                                            {goal.isPenalty && " (P)"}
+                                            {goal.isOwnGoal && " (AG)"}
+                                            {" "}– {goal.scorerName}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
                     ) : (
-                    <div className="kickoff">
-                        <span>{game.kickOffDateFormatted}</span>
-                        <span>{game.kickOffTimeFormatted}</span>
+                    <div className="score">
+                            - : -
                     </div>
                     )}
                     <div 
@@ -144,11 +190,25 @@ const GamesList = () => {
                         <span>{game.awayTeamName.toUpperCase()}</span>
                     </div>
                 </div>
-                <div className="gameRow-bottom">
-
-                </div>
+                {activeTab === "past" ? (
+                    <>
+                        {game.newsSlug != null && (
+                            <div className="gameRow-bottom">
+                                <Link to={`/novost/${game.newsSlug}`}>IZVJEŠTAJ</Link>
+                            </div>
+                        )}
+                    </>
+                ) : (
+                    <>
+                        {game.isHomeGame && (
+                            <div className="gameRow-bottom">
+                                <Link to={`/novost/${game.newsSlug}`}>KUPI KARTU</Link>
+                            </div>
+                        )}
+                    </>
+                )}
             </div>
-        ))}
+        )})}
         </div>
     </div>
   );

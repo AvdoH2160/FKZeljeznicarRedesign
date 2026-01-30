@@ -166,6 +166,7 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
               </div>
               <div className="dropdown-menu">
                 <Link className="button" to="/opste-informacije" onClick={() => setIsExpanded(false)}>O NAMA</Link>
+                <Link className='button' to ="/utakmice" onClick={() => setIsExpanded(false)}>UTAKMICE</Link>
                 <Link className="button" to="/prvi-tim" onClick={() => setIsExpanded(false)}>PRVI TIM</Link>
                 <Link className="button" to="/stadion-grbavica" onClick={() => setIsExpanded(false)}>STADION GRBAVICA</Link>
                 <Link className="button" to="/historija" onClick={() => setIsExpanded(false)}>HISTORIJA</Link>
@@ -188,7 +189,7 @@ const Header = ({isExpanded, setIsExpanded, backgroundHeader, setBackgroundHeade
             <Link to="/shop" className="no-dropdown header-option" onClick={() => setIsExpanded(false)}>
               SHOP
             </Link>
-            <Link to="/novosti" className="no-dropdown header-option" onClick={() => setIsExpanded(false)}>
+            <Link to="/utakmice" className="no-dropdown header-option" onClick={() => setIsExpanded(false)}>
               ULAZNICE
             </Link>
           </div>

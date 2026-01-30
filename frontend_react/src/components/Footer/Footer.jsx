@@ -31,6 +31,7 @@ const Footer = () => {
               <div className="options">
                 <p className='main'>KLUB</p>
                 <Link to="/opste-informacije" className='option'>O NAMA</Link>
+                <Link to="/utakmice" className='option'>UTAKMICE</Link>
                 <Link to="/prvi-tim" className='option'>PRVI TIM</Link>
                 <Link to="/historija" className='option'>HISTORIJA</Link>
                 <Link to="/stadion-grbavica" className='option'>STADION</Link>
