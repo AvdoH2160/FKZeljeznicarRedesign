@@ -169,7 +169,7 @@
 
 .shop-card.is-left-1
 {
-    transform: var(--card-transform) translateX(-130px); 
+    transform: var(--card-transfcorm) translateX(-130px); 
 }
 
 .newsSection-shop-button {
