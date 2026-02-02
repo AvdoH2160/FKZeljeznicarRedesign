@@ -24,7 +24,6 @@
     padding: 0 100px;
     align-items: center;
     max-width: 2000px;
-    /* align-self: center; */
 }
 
 #shop-section-text {
@@ -169,7 +168,7 @@
 
 .shop-card.is-left-1
 {
-    transform: var(--card-transfcorm) translateX(-130px); 
+    transform: var(--card-transform) translateX(-130px); 
 }
 
 .newsSection-shop-button {
@@ -266,7 +265,6 @@
     }
 }
 
-/* Osnovni shop section ostaje isti za veće ekrane */
 
 @media (max-width: 786px) {
     
@@ -278,9 +276,9 @@
     .shop-card[class*="is-left"],
     .shop-card[class*="is-right"],
     .shop-card.bounce {
-        transform: none !important;
-        transition: none !important;
-        animation: none !important;
+        transform: none;
+        transition: none;
+        animation: none;
         box-shadow: none !important;
         z-index: auto !important;
         cursor: default !important;

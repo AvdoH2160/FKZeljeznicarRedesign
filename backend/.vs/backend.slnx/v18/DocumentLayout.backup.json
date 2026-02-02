@@ -3,6 +3,74 @@
   "WorkspaceRootPath": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\model\\sector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\model\\sector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\sectoravailabilitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\sectoravailabilitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\model\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\model\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\model\\sectortemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\model\\sectortemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\igamesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\igamesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\gamedetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\gamedetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\model\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\model\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Migrations\\20260202114200_AddTicketsAndSectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Migrations\\20260202114200_AddTicketsAndSectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\ticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\ticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\ticketbuydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\ticketbuydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,44 +83,12 @@
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\gamestripdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\gamestripdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\gamecreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\gamecreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\gameeditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\gameeditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\model\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\model\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\inewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\inewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\newscreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,10 +139,6 @@
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\model\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\membershipcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\membershipcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\membershiprenewaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\membershiprenewaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -131,10 +163,6 @@
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\adminuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\profileupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\profileupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -145,10 +173,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\leaguedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\viewmodel\\leaguedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\igamesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\igamesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\viewmodel\\gamegoalcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -187,10 +211,6 @@
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -214,11 +234,154 @@
       "DocumentGroups": [
         {
           "DockedWidth": 199,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
+              "Title": "SectorTemplate.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\SectorTemplate.cs",
+              "RelativeDocumentMoniker": "backend\\Model\\SectorTemplate.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\SectorTemplate.cs",
+              "RelativeToolTip": "backend\\Model\\SectorTemplate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T13:59:57.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameService.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\GameService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\GameService.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\GameService.cs",
+              "RelativeToolTip": "backend\\Services\\GameService.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T13:31:27.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "backend\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "backend\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAQwEoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T16:37:06.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SectorAvailabilityDto.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\SectorAvailabilityDto.cs",
+              "RelativeDocumentMoniker": "backend\\ViewModel\\SectorAvailabilityDto.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\SectorAvailabilityDto.cs",
+              "RelativeToolTip": "backend\\ViewModel\\SectorAvailabilityDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T11:39:54.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GamesController.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\GamesController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\GamesController.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\GamesController.cs",
+              "RelativeToolTip": "backend\\Controllers\\GamesController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwBQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T13:30:51.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IGamesService.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IGamesService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\IGamesService.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IGamesService.cs",
+              "RelativeToolTip": "backend\\Services\\IGamesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T13:31:20.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameDetailDto.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\GameDetailDto.cs",
+              "RelativeDocumentMoniker": "backend\\ViewModel\\GameDetailDto.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\GameDetailDto.cs",
+              "RelativeToolTip": "backend\\ViewModel\\GameDetailDto.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA3wB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T13:34:29.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "backend\\Model\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\ApplicationUser.cs",
+              "RelativeToolTip": "backend\\Model\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T11:35:51.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20260202114200_AddTicketsAndSectors.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Migrations\\20260202114200_AddTicketsAndSectors.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20260202114200_AddTicketsAndSectors.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Migrations\\20260202114200_AddTicketsAndSectors.cs",
+              "RelativeToolTip": "backend\\Migrations\\20260202114200_AddTicketsAndSectors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T11:42:00.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TicketDto.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\TicketDto.cs",
+              "RelativeDocumentMoniker": "backend\\ViewModel\\TicketDto.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\TicketDto.cs",
+              "RelativeToolTip": "backend\\ViewModel\\TicketDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T11:39:28.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TicketBuyDto.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\TicketBuyDto.cs",
+              "RelativeDocumentMoniker": "backend\\ViewModel\\TicketBuyDto.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\TicketBuyDto.cs",
+              "RelativeToolTip": "backend\\ViewModel\\TicketBuyDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T11:39:05.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "ImageService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ImageService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\ImageService.cs",
@@ -231,19 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GameService.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\GameService.cs",
-              "RelativeDocumentMoniker": "backend\\Services\\GameService.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\GameService.cs",
-              "RelativeToolTip": "backend\\Services\\GameService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T13:31:27.331Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 18,
               "Title": "TeamService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\TeamService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\TeamService.cs",
@@ -255,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 19,
               "Title": "TeamController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\TeamController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\TeamController.cs",
@@ -267,31 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GameStripDto.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\GameStripDto.cs",
-              "RelativeDocumentMoniker": "backend\\ViewModel\\GameStripDto.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\GameStripDto.cs",
-              "RelativeToolTip": "backend\\ViewModel\\GameStripDto.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA8wCUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T13:23:59.598Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GamesController.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\GamesController.cs",
-              "RelativeDocumentMoniker": "backend\\Controllers\\GamesController.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\GamesController.cs",
-              "RelativeToolTip": "backend\\Controllers\\GamesController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAADkAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T13:30:51.73Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 20,
               "Title": "GameCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\GameCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\GameCreateUpdateDto.cs",
@@ -303,19 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Game.cs",
-              "RelativeDocumentMoniker": "backend\\Model\\Game.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Game.cs",
-              "RelativeToolTip": "backend\\Model\\Game.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswAsAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T12:43:56.372Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 21,
               "Title": "GameEditDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\GameEditDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\GameEditDto.cs",
@@ -327,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "NewsCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\NewsCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\NewsCreateUpdateDto.cs",
@@ -339,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "ProductSizeUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\ProductSizeUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\ProductSizeUpdateDto.cs",
@@ -351,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "ProductsUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\ProductsUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\ProductsUpdateDto.cs",
@@ -363,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "ProductsService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ProductsService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\ProductsService.cs",
@@ -375,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\ProductsController.cs",
@@ -387,7 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "IProductsService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IProductsService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\IProductsService.cs",
@@ -399,7 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 28,
               "Title": "ProductSize.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\ProductSize.cs",
               "RelativeDocumentMoniker": "backend\\Model\\ProductSize.cs",
@@ -411,7 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "ProductsDetailsDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\ProductsDetailsDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\ProductsDetailsDto.cs",
@@ -423,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 30,
               "Title": "SlugHelper.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\SlugHelper.cs",
               "RelativeDocumentMoniker": "backend\\Model\\SlugHelper.cs",
@@ -435,19 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "MembershipController.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\MembershipController.cs",
-              "RelativeDocumentMoniker": "backend\\Controllers\\MembershipController.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\MembershipController.cs",
-              "RelativeToolTip": "backend\\Controllers\\MembershipController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T11:11:46.911Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "Profile.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Profile.cs",
               "RelativeDocumentMoniker": "backend\\Model\\Profile.cs",
@@ -459,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 31,
               "Title": "LeagueService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\LeagueService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\LeagueService.cs",
@@ -471,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\ProfileController.cs",
@@ -483,7 +586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 34,
               "Title": "MembershipRenewalDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\MembershipRenewalDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\MembershipRenewalDto.cs",
@@ -495,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 35,
               "Title": "ApplicationStatus.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\ApplicationStatus.cs",
               "RelativeDocumentMoniker": "backend\\Model\\ApplicationStatus.cs",
@@ -507,7 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 36,
               "Title": "MembershipDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\MembershipDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\MembershipDto.cs",
@@ -519,7 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 37,
               "Title": "Membership.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Membership.cs",
               "RelativeDocumentMoniker": "backend\\Model\\Membership.cs",
@@ -531,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 38,
               "Title": "MembershipApplication.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\MembershipApplication.cs",
               "RelativeDocumentMoniker": "backend\\Model\\MembershipApplication.cs",
@@ -543,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 39,
               "Title": "AdminUserDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\AdminUserDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\AdminUserDto.cs",
@@ -555,19 +658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "backend\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "backend\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:37:06.357Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "LeagueCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\LeagueCreateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\LeagueCreateDto.cs",
@@ -579,7 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "ProfileUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\ProfileUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\ProfileUpdateDto.cs",
@@ -591,7 +682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "LeagueDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\LeagueDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\LeagueDto.cs",
@@ -603,7 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 43,
               "Title": "GameGoalCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\GameGoalCreateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\GameGoalCreateDto.cs",
@@ -615,19 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "IGamesService.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IGamesService.cs",
-              "RelativeDocumentMoniker": "backend\\Services\\IGamesService.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IGamesService.cs",
-              "RelativeToolTip": "backend\\Services\\IGamesService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T13:31:20.829Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 55,
               "Title": "20251228152036_GameTableMakeNullable.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Migrations\\20251228152036_GameTableMakeNullable.cs",
               "RelativeDocumentMoniker": "backend\\Migrations\\20251228152036_GameTableMakeNullable.cs",
@@ -639,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 44,
               "Title": "LeagueController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\LeagueController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\LeagueController.cs",
@@ -651,7 +730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 45,
               "Title": "TeamDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\TeamDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\TeamDto.cs",
@@ -663,7 +742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 46,
               "Title": "ITeamService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ITeamService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\ITeamService.cs",
@@ -675,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 47,
               "Title": "ILeagueService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ILeagueService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\ILeagueService.cs",
@@ -687,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 48,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\PlayerController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\PlayerController.cs",
@@ -699,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 49,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Player.cs",
               "RelativeDocumentMoniker": "backend\\Model\\Player.cs",
@@ -711,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 51,
               "Title": "IAdminService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IAdminService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\IAdminService.cs",
@@ -723,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 50,
               "Title": "AdminService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\AdminService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\AdminService.cs",
@@ -735,19 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "backend\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "backend\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T12:35:28.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 53,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\AuthController.cs",
@@ -759,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 52,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IAuthService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\IAuthService.cs",
@@ -771,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 54,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\AuthService.cs",
@@ -785,7 +852,7 @@
         },
         {
           "DockedWidth": 201,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -793,52 +860,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NewsService.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\NewsService.cs",
-              "RelativeDocumentMoniker": "backend\\Services\\NewsService.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\NewsService.cs",
-              "RelativeToolTip": "backend\\Services\\NewsService.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAowC4AAABXAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Sector.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Sector.cs",
+              "RelativeDocumentMoniker": "backend\\Model\\Sector.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Sector.cs",
+              "RelativeToolTip": "backend\\Model\\Sector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T12:10:43.093Z",
+              "WhenOpened": "2026-02-02T11:33:57.178Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "INewsService.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\INewsService.cs",
-              "RelativeDocumentMoniker": "backend\\Services\\INewsService.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\INewsService.cs",
-              "RelativeToolTip": "backend\\Services\\INewsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABBAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Ticket.cs",
+              "RelativeDocumentMoniker": "backend\\Model\\Ticket.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Ticket.cs",
+              "RelativeToolTip": "backend\\Model\\Ticket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:51:59.987Z"
+              "WhenOpened": "2026-02-02T11:35:10.947Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "News.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\News.cs",
-              "RelativeDocumentMoniker": "backend\\Model\\News.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\News.cs",
-              "RelativeToolTip": "backend\\Model\\News.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "TicketsController.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\TicketsController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\TicketsController.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\TicketsController.cs",
+              "RelativeToolTip": "backend\\Controllers\\TicketsController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAswHUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:42:57.857Z"
+              "WhenOpened": "2026-02-02T11:54:30.056Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "NewsController.cs",
-              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\NewsController.cs",
-              "RelativeDocumentMoniker": "backend\\Controllers\\NewsController.cs",
-              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\NewsController.cs",
-              "RelativeToolTip": "backend\\Controllers\\NewsController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDwAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "TicketService.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\TicketService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\TicketService.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\TicketService.cs",
+              "RelativeToolTip": "backend\\Services\\TicketService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:50:36.246Z"
+              "WhenOpened": "2026-02-02T11:40:43.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITicketService.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ITicketService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\ITicketService.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ITicketService.cs",
+              "RelativeToolTip": "backend\\Services\\ITicketService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T11:40:15.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Game.cs",
+              "RelativeDocumentMoniker": "backend\\Model\\Game.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\Game.cs",
+              "RelativeToolTip": "backend\\Model\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T13:28:48.625Z",
+              "EditorCaption": ""
             }
           ]
         }

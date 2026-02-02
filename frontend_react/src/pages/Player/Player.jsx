@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useRef, useEffect} from 'react'
+import api from "../../services/api"
 import { useParams } from 'react-router-dom'
 import gsap from "gsap";
 import './player.css'
@@ -13,10 +14,16 @@ const Player = () => {
 
     useEffect(() => {
         if (!slug) return;
-        fetch(`https://localhost:7010/api/Player/slug/${slug}`)
-        .then(res => res.json())
-        .then(data => setPlayer(data))
-        .catch(err => console.error("Greska prilikom dohvacanja!", err))
+        const load = async () => {
+            try {
+                const res = await api.get(`/Player/slug/${slug}`);
+                setPlayer(res.data);
+            }
+            catch(err) {
+                cconsole.error("Greska prilikom dohvacanja!", err);
+            }
+        }
+        load();
     }, [slug]);
     
     useEffect(() => {

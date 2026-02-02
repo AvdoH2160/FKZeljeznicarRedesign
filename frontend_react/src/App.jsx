@@ -38,6 +38,7 @@ import Cart from "./pages/Shop/Cart.jsx"
 import { ToastProvider } from "./context/ToastContext.jsx"
 import GamesList from "./pages/GamesList/GamesList.jsx"
 import Tickets from "./pages/Tickets/Tickets.jsx"
+import AdminSectors from "./admin/pages/AdminSectors.jsx"
 
 
 
@@ -77,7 +78,11 @@ const App = () => {
                   <Route path="/opste-informacije" element={<ClubInfo></ClubInfo>}></Route>
                   <Route path="/historija" element={<History></History>}></Route>
                   <Route path="/utakmice" element={<GamesList></GamesList>}></Route>
-                  <Route path="/ulaznice" element={<Tickets></Tickets>}></Route>
+                  <Route path="/ulaznice/:gameId" element={
+                    <ProtectedRoute>
+                      <Tickets></Tickets>
+                    </ProtectedRoute>
+                  }></Route>
                   
                   <Route path="/shop" element={<Shop></Shop>}></Route>
                   <Route path="/shop/proizvodi" element={<ShopList></ShopList>}></Route>
@@ -118,6 +123,7 @@ const App = () => {
                     <Route path="teams" element={<AdminTeams></AdminTeams>}></Route>
                     <Route path="memberships" element={<AdminMembership></AdminMembership>}></Route>
                     <Route path="products" element={<AdminProducts></AdminProducts>}></Route>
+                    <Route path="sectors" element={<AdminSectors></AdminSectors>}></Route>
                   </Route>
                   <Route path="*" element={<NotFound/>}/>
                 </Routes>

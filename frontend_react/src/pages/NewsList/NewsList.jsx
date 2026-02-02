@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState, useRef, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
+import api from "../../services/api"
 import Pagination from "../../components/Pagination/Pagination.jsx"
 import './newsList.css'
 
@@ -16,43 +17,48 @@ const NewsList = () => {
   }
 
   useEffect(() => {
-    const url = new URL("https://localhost:7010/api/News/page")
+    const url = new URL("https://localhost:7010/api/News/page");
     url.searchParams.append("page", page);
     url.searchParams.append("pageSize", 12);
 
-    if(category) {
+    if (category) {
       url.searchParams.append("category", category);
     }
-    document.title= category ? `${category.charAt(0).toUpperCase() + category.slice(1)} - FK Željezničar` : "Vijesti - FK Željezničar";
-    fetch(url)
-        .then(res => {
-          if (!res.ok) throw new Error("Fetch error");
-          return res.json();
-        })
-        .then(data => {
-            setTotalPages(data.totalPages);
-            const formattedNews = data.items.map(item => 
-            {
-                const dateObj = new Date(item.publishedDate);
-                const formattedDate = dateObj.toLocaleString("bs-BA", 
-                    {
-                        day: "numeric",
-                        month: "numeric",
-                        year: "numeric",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                        hour12: false
-                    }
-                );
-                return {
-                    ...item, formattedDate
-                };
-            }
-            )
-            setNews(formattedNews);
-            console.log(formattedNews)
-        })
-        .catch(err => console.error("Greska prilikom dohvacanja!", err))
+
+    document.title = category
+      ? `${category.charAt(0).toUpperCase() + category.slice(1)} - FK Željezničar`
+      : "Vijesti - FK Željezničar";
+
+    const load = async () => {
+      try {
+        const res = await api.get(url);
+        const { items, totalPages } = res.data; // <-- ovdje
+
+        const formatted = items.map(g => {
+          const iso = g.publishedDate.includes("T")
+            ? g.publishedDate
+            : g.publishedDate.replace(" ", "T");
+          const date = new Date(iso);
+          const day = String(date.getDate()).padStart(2, "0");
+          const month = String(date.getMonth() + 1).padStart(2, "0");
+          const year = date.getFullYear();
+          const hour = String(date.getHours()).padStart(2, "0");
+          const minute = String(date.getMinutes()).padStart(2, "0");
+
+          return {
+            ...g,
+            formattedDate: `${day}.${month}.${year} ${hour}:${minute}`,
+          };
+        });
+
+        setTotalPages(totalPages);
+        setNews(formatted); // <-- ovo je tvoj state za prikaz vijesti
+      } catch (err) {
+        console.error("Greška prilikom dohvatanja vijesti:", err);
+      }
+    };
+
+    load();
   }, [page, category]);
 
   useEffect(() => {

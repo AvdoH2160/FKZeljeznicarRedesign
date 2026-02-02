@@ -81,6 +81,23 @@ namespace backend.Services
             context.Games.Add(game);
             await context.SaveChangesAsync();
 
+            if (game.IsHomeGame)
+            {
+                var templates = await context.SectorTemplates.ToListAsync();
+
+                var sectors = templates.Select(t => new Sector
+                {
+                    GameId = game.Id,
+                    Code = t.Code,
+                    Capacity = t.Capacity,
+                    Price = t.Price,
+                    SoldTickets = 0
+                }).ToList();
+
+                context.Sectors.AddRange(sectors);
+                await context.SaveChangesAsync();
+            }
+
             return game.Id;
         }
 
@@ -165,41 +182,59 @@ namespace backend.Services
             return true;
         }
 
-        public async Task<GameEditDto?> GetGameByIdAsync(int id)
+        public async Task<GameDetailDto?> GetGameByIdAsync(int id)
         {
-            var game = await context.Games
+            var g = await context.Games
                 .Include(g => g.HomeTeam)
                 .Include(g => g.AwayTeam)
                 .Include(g => g.League)
                 .Include(g => g.Goals)
+                .Include(g => g.News) // <-- obavezno Include
                 .FirstOrDefaultAsync(g => g.Id == id);
 
-            if (game == null)
+            if (g == null)
                 return null;
 
-            return new GameEditDto
+            if (!g.IsHomeGame || g.Status == GameStatus.Finished)
+                return null; 
+
+            return new GameDetailDto
             {
-                Id = game.Id,
-                HomeTeamId = game.HomeTeamId,
-                AwayTeamId = game.AwayTeamId,
-                LeagueId = game.LeagueId,
-                HomeScore = game.HomeScore,
-                AwayScore = game.AwayScore,
-                Status = game.Status,
-                KickOffTime = game.KickOffTime,
-                IsHomeGame = game.IsHomeGame,
-                TicketsAvailable = game.TicketsAvailable,
-                Stadium = game.Stadium,
-                Season = game.Season,
-                NewsId = game.NewsId,
-                Goals = game.Goals.Select(g => new GameGoalDto
+                Id = g.Id,
+
+                HomeTeamName = g.HomeTeam?.Name ?? "",
+                HomeTeamLogoUrl = g.HomeTeam?.LogoUrl ?? "",
+
+                AwayTeamName = g.AwayTeam?.Name ?? "",
+                AwayTeamLogoUrl = g.AwayTeam?.LogoUrl ?? "",
+
+                HomeScore = g.HomeScore,
+                AwayScore = g.AwayScore,
+
+                Status = g.Status,
+                KickOffTime = g.KickOffTime,
+                GameLength = g.GameLength,
+
+                IsHomeGame = g.IsHomeGame,
+                TicketsAvailable = g.TicketsAvailable,
+
+                LeagueName = g.League?.Name ?? "",
+                LeagueLogoUrl = g.League?.LogoUrl ?? "",
+                SmallLeagueLogoUrl = g.League?.SmallLogoUrl ?? "",
+                Season = g.Season,
+
+                Stadium = g.Stadium,
+                NewsId = g.NewsId,
+                NewsSlug = g.News?.Slug, // <-- sigurni pristup
+
+                Goals = g.Goals.Select(goal => new GameGoalDto
                 {
-                    Id = g.Id,
-                    Minute = g.Minute,
-                    ScorerName = g.ScorerName,
-                    IsHomeTeam = g.IsHomeTeam,
-                    IsOwnGoal = g.IsOwnGoal,
-                    IsPenalty = g.IsPenalty
+                    Id = goal.Id,
+                    Minute = goal.Minute,
+                    ScorerName = goal.ScorerName,
+                    IsHomeTeam = goal.IsHomeTeam,
+                    IsOwnGoal = goal.IsOwnGoal,
+                    IsPenalty = goal.IsPenalty
                 }).ToList()
             };
         }

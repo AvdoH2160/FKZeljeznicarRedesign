@@ -21,5 +21,7 @@
         public int LeagueId { get; set; }
         public League League { get; set; } = null!;
         public string Season {  get; set; } = string.Empty;
+
+        public List<Sector>? Sectors { get; set; }
     }
 }

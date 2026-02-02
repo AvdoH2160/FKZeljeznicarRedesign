@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import {useState, useRef} from 'react'
+import api from "../../services/api"
 import { Link } from 'react-router-dom'
 import "./playerList.css"
 
@@ -7,11 +8,18 @@ const PlayerList = ({position}) => {
     const [playerData, setPlayerData] = useState([]);
 
     useEffect(() => {
-    fetch(`https://localhost:7010/api/Player/position/${position}`)
-    .then(res => res.json())
-    .then(data => setPlayerData(data))
-    .catch(err => console.error("Greska prilikom dohvacanja!", err))
-  }, []);
+      const load = async () => {
+        try {
+          const res = await api.get(`/Player/position/${position}`);
+          setPlayerData(res.data);
+        }
+        catch(err) {
+          console.error("Greska prilikom dohvacanja!", err);
+        }
+      }
+
+      load();
+    }, []);
 
     function toSlug(name, surname) {
     return `${name}-${surname}`

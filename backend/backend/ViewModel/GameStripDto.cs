@@ -38,7 +38,7 @@ namespace backend.ViewModel
         public int? NewsId { get; set; }
         public string? NewsSlug { get; set; }
 
-        // Stadium (tooltip / subtitle)
+    
         public string Stadium { get; set; } = string.Empty;
     }
 }

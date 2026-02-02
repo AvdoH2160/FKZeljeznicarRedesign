@@ -14,6 +14,7 @@ namespace backend.Controllers
     [ApiController]
     public class ProfileController(UserManager<ApplicationUser> userManager, AppDbContext context) : ControllerBase
     {
+        [Authorize]
         [HttpGet("me")]
         public async Task<IActionResult> GetProfile()
         {

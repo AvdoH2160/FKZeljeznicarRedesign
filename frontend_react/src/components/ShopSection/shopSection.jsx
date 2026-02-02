@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import api from "../../services/api"
 import "./shopSection.css";
 import FkzShop from "../../assets/svg/fkz_shop.svg";
 
@@ -10,13 +11,17 @@ const ShopSection = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://localhost:7010/api/Products/cardFeatured")
-      .then(res => res.json())
-      .then(data => {
-        const sorted = data.sort((a, b) => a.featuredOrder - b.featuredOrder);
+    const load = async () => {
+      try {
+        const res = await api.get("/Products/cardFeatured");
+        const sorted = res.data.sort((a, b) => a.featuredOrder - b.featuredOrder);
         setCardFeatured(sorted);
-      })
-      .catch(err => console.error("Greska prilikom dohvacanja!", err));
+      }
+      catch(err) {
+        console.error("Greska prilikom dohvacanja!", err);
+      }
+    }
+    load();
   }, []);
 
   const scrollNext = () => {

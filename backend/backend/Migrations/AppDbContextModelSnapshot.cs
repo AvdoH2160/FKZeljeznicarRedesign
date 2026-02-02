@@ -701,6 +701,62 @@ namespace backend.Migrations
                     b.ToTable("Profiles");
                 });
 
+            modelBuilder.Entity("backend.Model.Sector", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("SoldTickets")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("Sectors");
+                });
+
+            modelBuilder.Entity("backend.Model.SectorTemplate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SectorTemplates");
+                });
+
             modelBuilder.Entity("backend.Model.TableStandings", b =>
                 {
                     b.Property<int>("Id")
@@ -783,6 +839,40 @@ namespace backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Teams");
+                });
+
+            modelBuilder.Entity("backend.Model.Ticket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<DateTime>("PurchasedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SectorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TicketNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SectorId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Tickets");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -935,17 +1025,51 @@ namespace backend.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("backend.Model.Sector", b =>
+                {
+                    b.HasOne("backend.Model.Game", "Game")
+                        .WithMany("Sectors")
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Game");
+                });
+
+            modelBuilder.Entity("backend.Model.Ticket", b =>
+                {
+                    b.HasOne("backend.Model.Sector", "Sector")
+                        .WithMany("Tickets")
+                        .HasForeignKey("SectorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("backend.Model.ApplicationUser", "User")
+                        .WithMany("Tickets")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Sector");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("backend.Model.ApplicationUser", b =>
                 {
                     b.Navigation("Memberships");
 
                     b.Navigation("Profile")
                         .IsRequired();
+
+                    b.Navigation("Tickets");
                 });
 
             modelBuilder.Entity("backend.Model.Game", b =>
                 {
                     b.Navigation("Goals");
+
+                    b.Navigation("Sectors");
                 });
 
             modelBuilder.Entity("backend.Model.News", b =>
@@ -956,6 +1080,11 @@ namespace backend.Migrations
             modelBuilder.Entity("backend.Model.Products", b =>
                 {
                     b.Navigation("Sizes");
+                });
+
+            modelBuilder.Entity("backend.Model.Sector", b =>
+                {
+                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,69 +1,69 @@
 import React, { useState, useRef } from "react";
+import "./stadiumMap.css"
 import {TransformWrapper, TransformComponent} from "react-zoom-pan-pinch"
-import SectorDetail from "../SectorDetail/SectorDetail"
 
-const StadiumMap = ({ onSelectSector }) => {
+const StadiumMap = ({ onSelectSector, selectedSector, sectors }) => {
     const [hoveredSector, setHoveredSector] = useState(null);
-    const [selectedSector, setSelectedSector] = useState(null);
 
-//   const handleClick = (e) => {
-//     const sectorGroup = e.target.closest("g[id^='Sector_']");
-//     if (!sectorGroup) return;
-//     const sectorCode = sectorGroup.id.replace("Sector_", "");
-//     if (onSelectSector) onSelectSector(sectorCode);
-//   };
+    const handleClick = (e) => {
+        const sectorGroup = e.target.closest("g[id^='Sector_']");
+        if (!sectorGroup) return;
+        const sectorCode = sectorGroup.id.replace("Sector_", "");
+        if (onSelectSector) onSelectSector(sectorCode);
+    };
 
 
-  const handleMouseMove = (e) => {
-    const sectorGroup = e.target.closest("g[id^='Sector_']");
-    if (sectorGroup) {
-        setHoveredSector(sectorGroup.id);
-    } else {
-        setHoveredSector(null); 
-    }
- };
+    const handleMouseMove = (e) => {
+        const sectorGroup = e.target.closest("g[id^='Sector_']");
+        if (sectorGroup) {
+            setHoveredSector(sectorGroup.id);
+        } else {
+            setHoveredSector(null); 
+        }
+    };
 
-    if (selectedSector) {
-        return (
-        <div style={{ width: "800px", margin: "0 auto" }}>
-            <button onClick={() => setSelectedSector(null)} style={{ marginBottom: "10px" }}>
-            ← Nazad na stadion
-            </button>
-            <SectorDetail sectorId={selectedSector} />
-        </div>
-        );
-    }
+    const getAvailable = (code) => {
+        const sector = sectors?.find(s => s.code === code);
+        return sector ? sector.available : "-";
+    };
+
+    const getSectorColor = (code) => {
+        const sector = sectors?.find(s => s.code === code);
+        if (!sector) return "gray"; // fallback
+
+        const percent = sector.available / sector.capacity * 100; 
+        if (percent >= 50) return "#9FCD83"; 
+        if (percent < 50 && percent >= 10) return "#FFB74D"; 
+        if (percent < 10) return "#E57373"; 
+        if (percent == 0) return "gray";       
+        return "gray";                           
+    };
+
+
 
   return (
     <div style={{
-        width: "800px",        // širina boxa
-        height: "600px",       // visina boxa
+        width: "800px",       
+        height: "600px",      
         border: "2px solid #ccc",
         borderRadius: "8px",
-        overflow: "hidden",    // da se ništa ne izlijeva van
+        overflow: "hidden",    
         position: "relative",
-        margin: "0 auto",      // centriranje
+        margin: "0 auto",      
     }}>
         <TransformWrapper
             defaultScale={1}
             defaultPositionX={0}
             defaultPositionY={0}
-            wheel={{ step: 0.1 }} // scroll zoom
-            pinch={{ step: 5 }}   // touch zoom
+            wheel={{ step: 0.1 }} 
+            pinch={{ step: 5 }}  
         >
             {({ zoomIn, zoomOut, resetTransform, ...rest}) => (
                 <>
-                    <div style={{
-                        position: "absolute",
-                        top: 10,
-                        left: 10,
-                        zIndex: 10,
-                        display: "flex",
-                        gap: "5px",
-                    }}>
-                        <button onClick={() => zoomIn()}>Zoom In</button>
-                        <button onClick={() => zoomOut()}>Zoom Out</button>
-                        <button onClick={() => resetTransform()}>Reset</button>
+                    <div className="map-controls">
+                        <button className="map-btn" onClick={() => zoomIn()}>＋</button>
+                        <button className="map-btn" onClick={() => zoomOut()}>−</button>
+                        <button className="map-btn reset" onClick={() => resetTransform()}>⟳</button>
                     </div>
                     <TransformComponent
                         wrapperStyle={{ width: "100%", height: "100%" }}
@@ -76,6 +76,7 @@ const StadiumMap = ({ onSelectSector }) => {
                             xmlns="http://www.w3.org/2000/svg"
                             onMouseMove={handleMouseMove}
                             onMouseLeave={() => setHoveredSector(null)}
+                            onClick={handleClick}
                         >
                             <g clipPath="url(#clip0_1185_1380)">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M646 816L1096 816L1096 516L1096 216L646 216L196 216L196 516L196 816L646 816ZM647.67 797.624L1080.14 797.624L1080.14 516.799L1080.14 235.973L647.67 235.973L215.202 235.973L215.202 516.799L215.202 797.625L647.67 797.624ZM229.919 792.831L240.462 792.831L236.848 789.036C234.86 786.949 230.117 782.024 226.305 778.092L219.377 770.942L219.377 781.887L219.377 792.831L229.919 792.831ZM232.943 778.631L246.51 792.735L444.585 792.783L642.661 792.831L642.661 709.007L642.661 625.182L637.025 624.666C608.114 622.021 585.541 612.03 565.803 593.144C544.981 573.219 533.823 548.708 532.684 520.394C530.348 462.293 576.067 412.407 635.668 408.023L642.66 407.509L642.66 323.738L642.66 239.968L443.75 240.034L244.84 240.099L232.108 253.338L219.376 266.577L219.376 299.211L219.376 331.846L290.341 331.846L361.306 331.846L361.306 397.358L361.306 462.871L363.677 462.871C368.075 462.871 378.882 466.002 384.933 469.028C392.672 472.9 403.315 482.832 407.441 490.035C416.097 505.143 416.977 523.798 409.735 538.609C401.303 555.85 385.154 567.534 366.707 569.739L361.723 570.334L361.51 635.644L361.296 700.953L290.336 700.953L219.377 700.953L219.377 732.741L219.377 764.528L232.943 778.631ZM225.902 253.468C229.491 249.778 233.855 245.231 235.6 243.363L238.773 239.968L229.074 239.968L219.376 239.968L219.376 250.072L219.376 260.176L225.902 253.468ZM288.672 696.16L357.132 696.16L357.132 516L357.132 335.84L288.671 335.84L220.211 335.84L220.211 375.387L220.211 414.935L252.354 414.935L284.497 414.935L284.497 516L284.497 617.065L252.354 617.065L220.211 617.065L220.211 656.613L220.211 696.16L288.672 696.16ZM250.267 613.071L280.323 613.071L280.323 516.399L280.323 419.728L250.267 419.728L220.211 419.728L220.211 516.399L220.211 613.071L250.267 613.071ZM363.635 565.933C364.916 565.933 368.204 565.391 370.941 564.728C390.387 560.017 405.847 544.123 409.397 525.188C414.532 497.794 394.248 471.182 365.272 467.299L361.306 466.767L361.306 516.351L361.306 565.933L363.635 565.933ZM537.548 528.954C539.58 545.651 547.671 564.955 558.378 578.648C564.068 585.926 575.914 597.02 583.384 602.068C598.57 612.328 622.461 620.261 638.178 620.261L642.661 620.261L642.66 515.919L642.66 411.577L636.608 412.126C574.559 417.752 530.362 469.877 537.548 528.954ZM848.667 792.766L1049.66 792.702L1062.81 779.025L1075.96 765.348L1075.96 733.15L1075.96 700.953L1005.42 700.953L934.868 700.953L934.868 635.519L934.868 570.085L929.92 569.535C909.008 567.213 890.67 552.717 883.41 532.77C881.33 527.055 881.086 525.299 881.086 516C881.086 506.701 881.33 504.945 883.41 499.23C890.572 479.551 907.652 465.751 928.522 462.781L934.868 461.878L934.868 396.861L934.868 331.846L1005.42 331.846L1075.96 331.846L1075.94 299.688L1075.92 267.531L1066.2 257.545C1060.85 252.052 1054.83 245.85 1052.83 243.763L1049.18 239.968L848.425 239.968L647.67 239.968L647.67 323.741L647.67 407.514L654.412 408.053C687.878 410.724 718.681 428.116 737.693 455.077C746.686 467.83 753.125 483.338 755.808 498.703C757.565 508.768 757.125 529.316 754.95 538.77C746.427 575.816 718.555 606.495 682.418 618.604C672.317 621.988 656.308 625.055 648.735 625.055C647.878 625.055 647.67 641.446 647.67 708.943L647.67 792.831L848.667 792.766ZM652.17 620.261C666.417 620.261 688.141 613.337 703.025 604.054C735.818 583.599 754.136 549.558 752.56 512.005C751.464 485.916 741.276 462.809 722.547 443.941C704.6 425.862 680.586 414.887 652.888 412.106L647.67 411.582L647.67 515.922L647.67 620.261L652.17 620.261ZM885.564 523.269C888.15 539.028 899.378 553.574 914.214 560.386C920.654 563.342 932.497 566.291 934.242 565.37C934.587 565.189 934.868 542.972 934.868 516C934.868 489.028 934.587 466.811 934.242 466.63C933.897 466.448 930.857 466.758 927.485 467.318C908.983 470.391 892.566 484.691 887.019 502.563C885.404 507.768 884.689 517.941 885.564 523.269ZM1007.5 696.959L1075.96 696.959L1075.96 657.012L1075.96 617.065L1042.99 617.065L1010.01 617.065L1010.01 516L1010.01 414.935L1042.99 414.935L1075.98 414.935L1075.76 375.587L1075.55 336.24L1007.29 336.035L939.043 335.831L939.043 516.395L939.043 696.959L1007.5 696.959ZM1044.24 612.272L1074.29 612.272L1074.29 515.601L1074.29 418.929L1044.24 418.929L1014.18 418.929L1014.18 515.601L1014.18 612.272L1044.24 612.272ZM1065.85 792.831L1075.96 792.831L1075.96 782.287L1075.96 771.741L1069.02 778.891C1065.21 782.823 1060.65 787.568 1058.91 789.435L1055.73 792.831L1065.85 792.831ZM1065.6 250.647L1075.55 260.926L1075.78 250.738C1075.91 245.135 1075.87 240.407 1075.68 240.232C1075.5 240.058 1070.92 240.018 1065.5 240.141L1055.65 240.368L1065.6 250.647Z" fill="#025622"/>
@@ -83,8 +84,11 @@ const StadiumMap = ({ onSelectSector }) => {
                                 {/* SEKTORI */}
                                 <g
                                     id="Sector_C1"
-                                    fill={hoveredSector === "Sector_C1" ? "#FFD700" : "gray"}
-                                    onClick={() => setSelectedSector("Sector_C1")}
+                                    fill={selectedSector === "C1" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_C1" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("C1")}
                                 >
                                     <rect width="160" height="178" transform="translate(232)" />
                                     <text
@@ -97,10 +101,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         C1
                                     </text>
+                                    <text x={232 + 80} y={130} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("C1")}
+                                    </text>
                                 </g>
                                 <g
                                     id="Sector_C2"
-                                    fill={hoveredSector === "Sector_C2" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "C2" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_C2" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("C2")}
                                 >
                                     <rect width="160" height="178" transform="translate(402)" />
                                     <text
@@ -113,10 +124,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         C2
                                     </text>
+                                    <text x={402 + 80}  y={130} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("C2")}
+                                    </text>
                                 </g>
                                 <g
                                     id="Sector_C3"
-                                    fill={hoveredSector === "Sector_C3" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "C3" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_C3" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("C3")}
                                 >
                                     <rect width="160" height="178" transform="translate(572)" />
                                     <text
@@ -129,10 +147,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         C3
                                     </text>
+                                    <text x={572 + 80} y={130} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("C3")}
+                                    </text>
                                 </g>
                                 <g
                                     id="Sector_C4"
-                                    fill={hoveredSector === "Sector_C4" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "C4" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_C4" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("C4")}
                                 >
                                     <rect width="160" height="178" transform="translate(742)" />
                                     <text
@@ -145,10 +170,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         C4
                                     </text>
+                                    <text x={742 + 80} y={130} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("C4")}
+                                    </text>
                                 </g>
                                 <g
                                     id="Sector_C5"
-                                    fill={hoveredSector === "Sector_C5" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "C5" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_C5" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("C5")}
                                 >
                                     <rect width="160" height="178" transform="translate(912)" />
                                     <text
@@ -161,11 +193,18 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         C5
                                     </text>
+                                    <text x={912 + 80} y={130} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("C5")}
+                                    </text>
                                 </g>
 
                                 <g 
                                     id="Sector_D1"
-                                    fill={hoveredSector === "Sector_D1" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "D1" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_D1" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("D1")}
                                 >
                                     <path d="M1096 139.08L1167.29 60C1232.63 130.839 1279.89 205.993 1305 267.635L1204.55 309C1168.5 230.731 1145.3 194.671 1096 139.08Z"/>
                                     <text
@@ -178,10 +217,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         D1
                                     </text>
+                                    <text x={1200} y={220} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("D1")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_D2"
-                                    fill={hoveredSector === "Sector_D2" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "D2" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_D2" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("D2")}
                                 >
                                     <path d="M1308.94 275L1208 316.361C1234.86 386.918 1246.26 430.306 1248.7 511L1359 511C1356.84 415.884 1343.53 361.371 1308.94 275Z" />
                                     <text
@@ -194,10 +240,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         D2
                                     </text>
+                                    <text x={1290} y={440} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("D2")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_D3"
-                                    fill={hoveredSector === "Sector_D3" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "D3" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_D3" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("D3")}
                                 >
                                     <path d="M1308.94 752L1208 710.639C1234.86 640.082 1246.26 596.694 1248.7 516L1359 516C1356.84 611.116 1343.53 665.629 1308.94 752Z"/>
                                     <text
@@ -210,10 +263,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         D3
                                     </text>
+                                    <text x={1290} y={660} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("D3")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_D4"
-                                    fill={hoveredSector === "Sector_D4" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "D4" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_D4" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("D4")}
                                 >
                                     <path d="M1096.25 891.92L1167.54 971C1232.89 900.161 1280.14 825.006 1305.25 763.365L1204.8 722C1168.75 800.269 1145.55 836.329 1096.25 891.92Z"/>
                                     <text
@@ -226,10 +286,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         D4
                                     </text>
+                                    <text x={1200} y={880} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("D4")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_B1"
-                                    fill={hoveredSector === "Sector_B1" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "B1" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_B1" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("B1")}
                                 >
                                     <path d="M222 1032L222 854.521H198.191L177.604 821L1.56277e-07 903.45C-0.00145849 979.693 10.207 1019.59 74.1497 1032H222Z"/>
                                     <text
@@ -242,10 +309,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         B1
                                     </text>
+                                    <text x={120} y={980} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("B1")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_B2"
-                                    fill={hoveredSector === "Sector_B2" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "B2" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_B2" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("B2")}
                                 >
                                     <path d="M0 894L178 811L178 699L0 699L0 894Z" />
                                     <text
@@ -258,10 +332,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         B2
                                     </text>
+                                    <text x={89} y={810} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("B2")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_B3"
-                                    fill={hoveredSector === "Sector_B3" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "B3" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_B3" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("B3")}
                                 >
                                     <rect width="178" height="168" transform="translate(0 521)"/>
                                     <text
@@ -274,10 +355,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         B3
                                     </text>
+                                    <text x={89} y={551 + 84} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("B3")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_B4"
-                                    fill={hoveredSector === "Sector_B4" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "B4" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_B4" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("B4")}
                                 >
                                     <rect width="178" height="169" transform="translate(0 342)"/>
                                     <text
@@ -290,10 +378,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         B4
                                     </text>
+                                    <text x={89} y={372 + 84} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("B4")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_B5"
-                                    fill={hoveredSector === "Sector_B5" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "B5" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_B5" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("B5")}
                                 >
                                     <path d="M0 139L178 221L178 333L0 333L0 139Z"/>
                                     <text
@@ -306,10 +401,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         B5
                                     </text>
+                                    <text x={89} y={295} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("B5")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_B6"
-                                    fill={hoveredSector === "Sector_B6" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "B6" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_B6" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("B6")}
                                 >
                                     <path d="M222 0L222 178.151L198.019 178.151L177.6 212L0 129.16C-0.00145862 52.5546 10.2068 12.4706 74.148 0L222 0Z"/>
                                     <text
@@ -320,12 +422,19 @@ const StadiumMap = ({ onSelectSector }) => {
                                         fontWeight="bold"
                                         textAnchor="middle"
                                     >
-                                        B1
+                                        B6
+                                    </text>
+                                    <text x={120} y={130} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("B6")}
                                     </text>
                                 </g>
                                 <g 
                                     id="Sector_A1"
-                                    fill={hoveredSector === "Sector_A1" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "A1" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_A1" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("A1")}
                                 >
                                     <rect width="355" height="107" transform="translate(232 854)"/>
                                     <text
@@ -338,10 +447,17 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         A1
                                     </text>
+                                    <text x={232 + 177} y={884 + 60} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("A1")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_A2"
-                                    fill={hoveredSector === "Sector_A2" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "A2" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_A2" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("A2")}
                                 >
                                     <rect width="107" height="160" transform="translate(757 854) rotate(90)"/>
                                     <text
@@ -354,21 +470,31 @@ const StadiumMap = ({ onSelectSector }) => {
                                     >
                                         A2
                                     </text>
+                                    <text x={675} y={884 + 60} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("A2")}
+                                    </text>
                                 </g>
                                 <g 
                                     id="Sector_A3"
-                                    fill={hoveredSector === "Sector_A3" ? "#FFD700" : "gray"}
+                                    fill={selectedSector === "A3" 
+                                        ? "#00FF00" 
+                                        : hoveredSector === "Sector_A3" 
+                                        ? "#FFD700" 
+                                        : getSectorColor("A3")}
                                 >
                                     <rect width="89" height="177" transform="translate(944 854) rotate(90)"/>
                                     <text
                                         x={944 - 89}  
-                                        y={854 + 55}   
+                                        y={844 + 55}   
                                         fill="#000"
                                         fontSize="20"
                                         fontWeight="bold"
                                         textAnchor="middle"
                                     >
-                                        A2
+                                        A3
+                                    </text>
+                                    <text x={944 - 89} y={874 + 55} fill="#000" fontSize="18" fontWeight="normal" textAnchor="middle">
+                                        {getAvailable("A3")}
                                     </text>
                                 </g>
                             </g>

@@ -1,0 +1,206 @@
+.tickets-page {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  padding: 20px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === GAME HEADER === */
+
+.tickets-page .game-header {
+  width: 100%;
+  max-width: 900px;
+  height: fit-content;
+}
+
+.tickets-page .teams {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tickets-page .team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tickets-page .team img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.tickets-page .team span {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #002c6d;
+}
+
+/* === GAME INFO (middle) === */
+
+.game-info {
+  text-align: center;
+}
+
+.datetime {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.stadium {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* === SECTOR TITLE === */
+
+.select-sector-title {
+  margin: 20px 0 20px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #002c6d;
+}
+
+/* === SECTOR CARD === */
+
+.sector-card {
+  margin-top: 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.sector-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #002c6d;
+  margin-bottom: 16px;
+}
+
+.sector-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.sector-row span {
+  color: #555;
+}
+
+.sector-row b {
+  color: #000;
+}
+
+/* === BUY BUTTON === */
+
+.buy-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #002c6d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.buy-btn:hover {
+  background: #001f4d;
+}
+
+.sector-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-sector {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #999;
+}
+
+.close-sector:hover {
+  color: #000;
+}
+
+.quantity-row {
+  align-items: center;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quantity-control button {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: #002c6d;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.quantity-control input {
+  width: 50px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.sector-total {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  /* Game header scaling */
+  .tickets-page .game-header {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .tickets-page .teams {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .tickets-page .team img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tickets-page .team span {
+    font-size: 16px;
+  }
+
+  .game-info .datetime {
+    font-size: 16px;
+  }
+
+  .game-info .stadium {
+    font-size: 12px;
+  }
+}

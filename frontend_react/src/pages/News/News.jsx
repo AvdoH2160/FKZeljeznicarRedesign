@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useRef, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
 import "./news.css"
+import api from "../../services/api"
 import RelatedContent from '../../components/RelatedContent/RelatedContent.jsx'
 
 const News = () => {
@@ -9,25 +10,34 @@ const News = () => {
   const [news, setNews] = useState(null);
 
   useEffect (() => {
-    fetch(`https://localhost:7010/api/News/slug/${slug}`)
-      .then(res => res.json())
-      .then(data => {
-        const dateObj = new Date(data.publishedDate)
-        const formattedDate = dateObj.toLocaleString("bs-BA", {
-          day: "numeric",
-          month: "numeric",
-          year: "numeric"
-        })
+      const load = async () => {
+      try {
+        const res = await api.get(`/News/slug/${slug}`);
 
-        const formattedNews = {
+        const data = res.data;
+
+        const iso = data.publishedDate.includes("T")
+            ? data.publishedDate
+            : data.publishedDate.replace(" ", "T");
+
+        const date = new Date(iso);
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const year = date.getFullYear();
+
+        setNews({
           ...data,
-          formattedDate
-        }
-          setNews(formattedNews);
-          console.log(formattedNews)
-        })
-      .catch(err => console.error("Greska prilikom dohvacanja!", err))
+          formattedDate: `${day}.${month}.${year}`
+        });
+      }
+      catch(err) {
+        console.error("Greska prilikom dohvacanja!", err);
+      }
+    }
+
+    load();
   }, [slug])
+
   if (!news) {
     return <div>Loading...</div>
   }

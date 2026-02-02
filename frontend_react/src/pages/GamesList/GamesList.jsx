@@ -202,7 +202,7 @@ const GamesList = () => {
                     <>
                         {game.isHomeGame && (
                             <div className="gameRow-bottom">
-                                <Link to={`/novost/${game.newsSlug}`}>KUPI KARTU</Link>
+                                <Link to={`/ulaznice/${game.id}`}>KUPI KARTU</Link>
                             </div>
                         )}
                     </>

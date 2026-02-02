@@ -6,6 +6,7 @@ import EditIcon from "../../assets/svg/edit.svg"
 import ZeljoIcon from "../../assets/svg/zeljo_white_icon.svg"
 import Stadium from "../../assets/svg/stadium.svg"
 import "./profile.css"
+import ProfileTickets from '../../components/ProfileTickets/ProfileTickets'
 
 const formatDate = (date) => {
   if(!date) return "";
@@ -183,7 +184,8 @@ const Profile = () => {
         </div>
       </div>
       <div className="profile-tickets">
-
+        <h2>KUPLJENE KARTE</h2>
+        <ProfileTickets />
       </div>
     </div>
   )

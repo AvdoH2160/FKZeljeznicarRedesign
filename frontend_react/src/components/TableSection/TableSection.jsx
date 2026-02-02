@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useRef, useEffect} from 'react'
+import api from "../../services/api"
 import "./tableSection.css"
 import WwinLeagueLogo from "../../assets/svg/wwin_league_blue.svg"
 
@@ -9,10 +10,19 @@ const TableSection = () => {
   const [standings, setStandings] = useState([]);
 
   useEffect(() => {
-    fetch(`https://localhost:7010/api/TableStandings/${leagueId}/${season}`)
-    .then(res => res.json())
-    .then(data => setStandings(data))
-    .catch(err => console.error("Greska prilikom dohvacanja!", err))
+    const load = async () => {
+      try {
+        const res = await api.get(`/TableStandings/${leagueId}/${season}`);
+        setStandings(res.data);
+      }
+      catch(err) {
+        console.error("Greska prilikom dohvacanja!", err)
+      }
+      finally {
+        setLoading(false);
+      }
+    }
+    load();
   }, []);
 
   return (

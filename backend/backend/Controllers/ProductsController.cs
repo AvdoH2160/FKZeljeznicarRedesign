@@ -1,5 +1,6 @@
 ﻿using backend.Services;
 using backend.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,6 +58,7 @@ namespace backend.Controllers
             return Ok(product);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<ProductsListDto>> CreateProduct([FromForm] ProductsCreateDto create)
         {
@@ -68,6 +70,7 @@ namespace backend.Controllers
             return Ok(product);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateProduct(int id, ProductsUpdateDto request)
         {
@@ -79,6 +82,7 @@ namespace backend.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteProduct(int id)
         {

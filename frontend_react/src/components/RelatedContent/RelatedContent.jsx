@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import api from "../../services/api"
 import "./relatedContent.css"
 
 const RelatedContent = ({ type, currentId, publishedDate, categoryId }) => {
@@ -9,37 +10,41 @@ const RelatedContent = ({ type, currentId, publishedDate, categoryId }) => {
     let url = ""
 
     if (type === "news") {
-      url = `https://localhost:7010/api/News/related?currentId=${currentId}&date=${publishedDate}`
+      url = `/News/related?currentId=${currentId}&date=${publishedDate}`
     }
 
     if (type === "product") {
-      url = `https://localhost:7010/api/Products/related?currentId=${currentId}&categoryId=${categoryId}`
+      url = `/Products/related?currentId=${currentId}&categoryId=${categoryId}`
     }
 
     if (!url) return
 
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-            const formattedNews = data.map(item => 
-            {
-                const dateObj = new Date(item.publishedDate);
-                const formattedDate = dateObj.toLocaleString("bs-BA", 
-                    {
-                        day: "numeric",
-                        month: "numeric",
-                        year: "numeric"
-                    }
-                );
-                return {
-                    ...item, formattedDate
-                };
-            }
-            )
-            setItems(formattedNews);
-            console.log(formattedNews)
+    const load = async () => {
+      try {
+        const res = await api.get(url);
+        const formatted = res.data.map(item => {
+          const iso = item.publishedDate.includes("T")
+              ? item.publishedDate
+              : item.publishedDate.replace(" ", "T");
+          
+          const date = new Date(iso);
+          
+          const day = String(date.getDate()).padStart(2, "0");
+          const month = String(date.getMonth() + 1).padStart(2, "0");
+          const year = date.getFullYear();
+          
+          return {
+            ...item,
+            formattedDate: `${day}.${month}.${year}`      
+          };
         })
-      .catch(err => console.error("Greška:", err))
+        setItems(formatted);
+      }
+      catch(err) {
+        console.error("Greška:", err)
+      }
+    }
+    load();
   }, [type, currentId, publishedDate, categoryId])
 
   if (items.length === 0) return null

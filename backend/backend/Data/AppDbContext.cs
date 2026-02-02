@@ -24,6 +24,9 @@ namespace backend.Data
         public DbSet<Game> Games => Set<Game>();
         public DbSet<League> Leagues => Set<League>();
         public DbSet<Team> Teams => Set<Team>();  
+        public DbSet<Sector> Sectors => Set<Sector>();
+        public DbSet<SectorTemplate> SectorTemplates => Set<SectorTemplate>();
+        public DbSet<Ticket> Tickets => Set<Ticket>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -54,6 +57,26 @@ namespace backend.Data
                 .WithMany()
                 .HasForeignKey(g => g.LeagueId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Ticket>()
+                .HasOne(t => t.User)
+                .WithMany(u => u.Tickets)
+                .HasForeignKey(t => t.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Ticket>()
+                .Property(t => t.Price)
+                .HasPrecision(10, 2);
+
+            builder.Entity<Sector>()
+                .Property(s => s.Price)
+                .HasPrecision(10, 2);
+
+            builder.Entity<SectorTemplate>()
+                .Property(s => s.Price)
+                .HasPrecision(10, 2);
+
+
         }
     }
 }

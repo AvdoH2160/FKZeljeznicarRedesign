@@ -1531,6 +1531,127 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "backend.Controllers.TicketsController",
+    "Method": "BuyTickets",
+    "RelativePath": "api/Tickets/buy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "backend.ViewModel.TicketBuyDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TicketsController",
+    "Method": "CreateSectorsForGame",
+    "RelativePath": "api/Tickets/createSectors/{gameId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TicketsController",
+    "Method": "MyTickets",
+    "RelativePath": "api/Tickets/my",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TicketsController",
+    "Method": "GetSectors",
+    "RelativePath": "api/Tickets/sectors/{gameId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TicketsController",
+    "Method": "GetSectorTemplates",
+    "RelativePath": "api/Tickets/templates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TicketsController",
+    "Method": "CreateSectorTemplate",
+    "RelativePath": "api/Tickets/templates",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "backend.ViewModel.SectorTemplateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TicketsController",
+    "Method": "UpdateSectorTemplate",
+    "RelativePath": "api/Tickets/templates/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "backend.ViewModel.SectorTemplateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.TicketsController",
+    "Method": "DeleteSectorTemplate",
+    "RelativePath": "api/Tickets/templates/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "backend.Controllers.NewsController",
     "Method": "GetNewsByCategory",
     "RelativePath": "category/{category}",

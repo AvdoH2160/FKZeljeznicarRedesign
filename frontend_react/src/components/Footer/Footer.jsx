@@ -53,8 +53,6 @@ const Footer = () => {
               <div className="options">
                 <p className='main'>POMOČ</p>
                 <Link to="/clanstvo" className='option'>ČLANSTVO</Link>
-                {/* <p className='option'>PRESS</p>
-                <p className='option'>KONTAKT</p> */}
               </div>
             </div>
             <div></div>

@@ -1,0 +1,47 @@
+.map-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+.map-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: #002c6d; /* klupska tamno plava */
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.map-btn:hover {
+  background: #0046ad;
+  transform: translateY(-1px);
+}
+
+.map-btn:active {
+  transform: scale(0.95);
+}
+
+.map-btn.reset {
+  background: #9fcd83; /* zelena */
+  color: #0f2d1f;
+}
+
+.map-btn.reset:hover {
+  background: #7fbf63;
+}

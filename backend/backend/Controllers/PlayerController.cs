@@ -1,5 +1,6 @@
 ﻿using backend.Services;
 using backend.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -59,6 +60,7 @@ namespace backend.Controllers
             return Ok(player);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<PlayerListDto>> CreatePlayer([FromForm] PlayerCreateDto create)
         {
@@ -66,6 +68,7 @@ namespace backend.Controllers
             return Ok(player);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdatePlayer(int id, PlayerUpdateDto request)
         {
@@ -77,6 +80,7 @@ namespace backend.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeletePlayer(int id)
         {
