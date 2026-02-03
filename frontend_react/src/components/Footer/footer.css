@@ -94,7 +94,7 @@
 }
 
 .option:hover {
-    font-weight: 700;
+    /* font-weight: 700; */
     color: #4DA1FF;
 }
 

@@ -1,4 +1,5 @@
-﻿using backend.Services;
+﻿using backend.Model;
+using backend.Services;
 using backend.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +17,18 @@ namespace backend.Controllers
             return Ok(await service.GetAllAsync());
         }
 
+        
+        [HttpGet("{id}")]
+        public async Task<ActionResult<LeagueDto>> GetPlayerById(int id)
+        {
+            var league = await service.GetLeagueByIdAsync(id);
+            if (league == null)
+            {
+                return NotFound("Ne postoji");
+            }
+            return Ok(league);
+        }
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateLeague(LeagueCreateDto dto)
@@ -26,6 +39,18 @@ namespace backend.Controllers
                 return BadRequest(result);
             }
             return Ok(result);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateLeague(int id, LeagueUpdateDto dto)
+        {
+            var isUpdated = await service.UpdateLeagueAsync(id, dto);
+            if (!isUpdated)
+            {
+                return NotFound("League not found");
+            }
+            return NoContent();
         }
 
         [Authorize(Roles = "Admin")]

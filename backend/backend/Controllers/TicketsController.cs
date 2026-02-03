@@ -74,17 +74,11 @@ namespace backend.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPut("templates/{id}")]
-        public async Task<IActionResult> UpdateSectorTemplate(int id, [FromBody] SectorTemplateDto dto)
+        public async Task<ActionResult> UpdateSectorTemplate(int id, [FromBody] SectorTemplateUpdateDto dto)
         {
-            try
-            {
-                var updated = await service.UpdateSectorTemplateAsync(id, dto);
-                return Ok(updated);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+            var sector = await service.UpdateSectorTemplateAsync(id, dto);
+            if (sector == null) return NotFound("Ne postoji");
+            return Ok(sector);
         }
 
         [Authorize(Roles = "Admin")]

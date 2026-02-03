@@ -64,8 +64,8 @@ const ShopSection = () => {
             }}
             onMouseLeave={() => setActiveIndex(null)}
           >
-            <img className="products-image" src={`https://localhost:7010${item.thumbnailUrl}`} />
-            <h2 className="products-name">{item.name}</h2>
+            <img className="products-image" src={`https://localhost:7010${item.shopThumbnailUrl1}`} />
+            <h2 className="products-name">{item.name.toUpperCase()}</h2>
           </Link>
         ))}
       </div>

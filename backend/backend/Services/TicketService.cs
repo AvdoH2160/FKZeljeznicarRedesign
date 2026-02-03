@@ -109,17 +109,21 @@ namespace backend.Services
             return dto;
         }
 
-        public async Task<SectorTemplateDto> UpdateSectorTemplateAsync(int id, SectorTemplateDto dto)
+        public async Task<bool> UpdateSectorTemplateAsync(int id, SectorTemplateUpdateDto dto)
         {
             var entity = await context.SectorTemplates.FindAsync(id);
-            if (entity == null) throw new Exception("Sector template not found");
+            if (entity == null)
+                return false;
 
-            entity.Code = dto.Code;
-            entity.Capacity = dto.Capacity;
-            entity.Price = dto.Price;
+            if(dto.Code != null)
+                entity.Code = dto.Code;
+            if(dto.Capacity.HasValue)
+                entity.Capacity = dto.Capacity.Value;
+            if (dto.Price.HasValue)
+                entity.Price = dto.Price.Value;
 
             await context.SaveChangesAsync();
-            return dto;
+            return true;
         }
 
         public async Task DeleteSectorTemplateAsync(int id)

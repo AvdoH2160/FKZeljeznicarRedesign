@@ -172,6 +172,11 @@ const GamesTrack = ({showOnlyActive = false}) => {
                     {game.kickOffDateFormatted}
                     </div>
                 )}
+                {!isActive && game.newsSlug != null && (
+                    <div className="gameLink-container">
+                     Klik za izvještaj
+                    </div>
+                )}
                 </div>
             </div>
             );

@@ -43,10 +43,18 @@ namespace backend.Services
                 ThumbnailUrl = thumbnailUrl,
                 IsFeatured = request.IsFeatured.Value,
                 Category = request.Category,
-                PublishedDate = DateTime.UtcNow,
                 Images = imageUrls.Select(x => new NewsImage { ImageUrl = x }).ToList()
                 //GameId = request.GameId,
             };
+
+            if (request.PublishedDate.HasValue)
+            {   
+                news.PublishedDate = request.PublishedDate.Value;
+            }
+            else
+            {
+                news.PublishedDate = DateTime.UtcNow;
+            }
 
             news.Slug = await GenerateUniqueSlugAsync(news.Title);
 
@@ -123,6 +131,11 @@ namespace backend.Services
                     imageUrls.Add(url);
                 }
                 news.Images = imageUrls.Select(x => new NewsImage { ImageUrl = x }).ToList();
+            }
+
+            if(request.PublishedDate.HasValue)
+            {
+                news.PublishedDate = request.PublishedDate.Value;
             }
 
             await context.SaveChangesAsync();
@@ -330,7 +343,7 @@ namespace backend.Services
                     PublishedDate = n.PublishedDate
                 }).ToListAsync();
 
-            if (!result.Any())
+            if (!result.Any() || result.Count() < 4)
             {
                 result = await context.News
                 .OrderByDescending(n => n.PublishedDate)

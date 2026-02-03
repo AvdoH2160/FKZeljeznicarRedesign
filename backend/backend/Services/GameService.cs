@@ -196,7 +196,7 @@ namespace backend.Services
                 return null;
 
             if (!g.IsHomeGame || g.Status == GameStatus.Finished)
-                return null; 
+                return null;
 
             return new GameDetailDto
             {
@@ -226,6 +226,53 @@ namespace backend.Services
                 Stadium = g.Stadium,
                 NewsId = g.NewsId,
                 NewsSlug = g.News?.Slug, // <-- sigurni pristup
+
+                Goals = g.Goals.Select(goal => new GameGoalDto
+                {
+                    Id = goal.Id,
+                    Minute = goal.Minute,
+                    ScorerName = goal.ScorerName,
+                    IsHomeTeam = goal.IsHomeTeam,
+                    IsOwnGoal = goal.IsOwnGoal,
+                    IsPenalty = goal.IsPenalty
+                }).ToList()
+            };
+        }
+
+        public async Task<GameEditDto?> GetGameForEditAsync(int id)
+        {
+            var g = await context.Games
+                .Include(g => g.HomeTeam)
+                .Include(g => g.AwayTeam)
+                .Include(g => g.League)
+                .Include(g => g.Goals)
+                .Include(g => g.News) // <-- obavezno Include
+                .FirstOrDefaultAsync(g => g.Id == id);
+
+            if (g == null)
+                return null;
+
+            return new GameEditDto
+            {
+                Id = g.Id,
+
+                HomeTeamId = g.HomeTeamId,
+                AwayTeamId = g.AwayTeamId,
+
+                HomeScore = g.HomeScore,
+                AwayScore = g.AwayScore,
+
+                Status = g.Status,
+                KickOffTime = g.KickOffTime,
+
+                IsHomeGame = g.IsHomeGame,
+                TicketsAvailable = g.TicketsAvailable,
+
+                LeagueId = g.LeagueId,
+                Season = g.Season,
+
+                Stadium = g.Stadium,
+                NewsId = g.NewsId,
 
                 Goals = g.Goals.Select(goal => new GameGoalDto
                 {

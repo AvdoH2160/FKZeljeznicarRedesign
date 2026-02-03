@@ -68,7 +68,7 @@ namespace backend.Services
                 Position = p.Position,
                 ThumbnailUrl = p.ThumbnailUrl,
                 IsFeatured = p.IsFeatured,
-            }).ToListAsync();
+            }).OrderBy(c => c.Number).ToListAsync();
         }
 
         public async Task<List<PlayerListDto>> GetFeaturedPlayersAsync()

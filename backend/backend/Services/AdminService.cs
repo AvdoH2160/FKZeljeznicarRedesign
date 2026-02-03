@@ -13,9 +13,14 @@ namespace backend.Services
             return new AdminStatsDto
             {
                 Users = await context.Users.CountAsync(),
+                Memberships = await context.Memberships.CountAsync(),
                 News = await context.News.CountAsync(),
-                //Games = await context.Games.CountAsync(),
-                Players = await context.Player.CountAsync()
+                Games = await context.Games.CountAsync(),
+                Players = await context.Player.CountAsync(),
+                Leagues = await context.Leagues.CountAsync(),
+                Teams = await context.Teams.CountAsync(),
+                Products = await context.Products.CountAsync(),
+                Sectors = await context.SectorTemplates.CountAsync(),
             };
         }
 

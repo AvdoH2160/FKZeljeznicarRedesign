@@ -33,6 +33,20 @@ namespace backend.Services
                 .ToListAsync();
         }
 
+        public async Task<LeagueDto?> GetLeagueByIdAsync(int id)
+        {
+            var league = await context.Leagues.FirstOrDefaultAsync(l => id == l.Id);
+            if (league == null)
+                return null;
+            return new LeagueDto
+            {
+                Id = league.Id,
+                Name = league.Name,
+                LogoUrl = league.LogoUrl,
+                SmallLogoUrl = league.SmallLogoUrl
+            };
+        }
+
         public async Task<bool> DeleteLeagueAsync(int id)
         {
             var league = await context.Leagues.FirstOrDefaultAsync(l => l.Id == id);
@@ -49,6 +63,34 @@ namespace backend.Services
                 imageService.DeleteFile(league.SmallLogoUrl);
             }
             context.Remove(league);
+            await context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> UpdateLeagueAsync(int id, LeagueUpdateDto dto)
+        {
+            var league = await context.Leagues.FirstOrDefaultAsync(l => id == l.Id);
+
+            if(league == null)
+                return false;
+
+            if(dto.Logo != null)
+            {
+                imageService.DeleteFile(league.LogoUrl);
+                var thumbnailUrl = await imageService.SaveFileAsync(dto.Logo, "leagues");
+                league.LogoUrl = thumbnailUrl;
+            }
+
+            if (dto.SmallLogoUrl != null)
+            {
+                imageService.DeleteFile(league.SmallLogoUrl);
+                var thumbnailUrl = await imageService.SaveFileAsync(dto.SmallLogoUrl, "leagues");
+                league.SmallLogoUrl = thumbnailUrl;
+            }
+
+            if(dto.Name != null)
+                league.Name = dto.Name;
+
             await context.SaveChangesAsync();
             return true;
         }

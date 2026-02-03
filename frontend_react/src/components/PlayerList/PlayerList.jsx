@@ -11,7 +11,7 @@ const PlayerList = ({position}) => {
       const load = async () => {
         try {
           const res = await api.get(`/Player/position/${position}`);
-          setPlayerData(res.data);
+          setPlayerData(res.data.sort((a, b) => a.number - b.number));
         }
         catch(err) {
           console.error("Greska prilikom dohvacanja!", err);

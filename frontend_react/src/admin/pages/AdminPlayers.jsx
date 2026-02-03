@@ -86,8 +86,6 @@ export default function AdminPlayers() {
   const editPlayer = async (id) => {
     const res = await api.get(`/player/${id}`);
     const n = res.data;
-    console.log("EDIT PLAYER ID:", id);
-    console.log("EDIT PLAYER ID:", n.id);
     setEditingPlayer(n.id);
     setName(n.name);
     setSurname(n.surname);
@@ -140,8 +138,8 @@ export default function AdminPlayers() {
         <input type="date" placeholder="Birth Date" value={birthDate} onChange={e => setBirthDate(e.target.value)} />
         <label>Mjesto rođenja</label>
         <input placeholder="Mjesto rođenja" value={placeOfBirth} onChange={e => setPlaceOfBirth(e.target.value)} />
-        <label>Nacionalnost</label>
-        <input placeholder="Nacionalnost" value={nationality} onChange={e => setNationality(e.target.value)} />
+        <label>Državljanstvo</label>
+        <input placeholder="Državljanstvo" value={nationality} onChange={e => setNationality(e.target.value)} />
 
         <label>Broj dresa</label>
         <input type="number" placeholder="Number" value={number} onChange={e => setNumber(e.target.value)} />

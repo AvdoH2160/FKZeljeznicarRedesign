@@ -38,7 +38,7 @@ const FeaturedNews = () => {
           {news && (
             <Link to={`/novost/${news.slug}`} className="featuredNews-link">
               <div className="featuredNews-title">
-                <h1>{news.title}</h1>
+                <h1>{news?.title?.toUpperCase()}</h1>
                 <h2>
                   PROCITAJ VISE
                   <img className="arrowRight-container" src={ArrowRight} alt="" />

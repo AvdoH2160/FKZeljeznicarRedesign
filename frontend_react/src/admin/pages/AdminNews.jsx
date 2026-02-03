@@ -16,6 +16,8 @@ export default function AdminNews() {
   const [thumbnail, setThumbnail] = useState(null);
   const [images, setImages] = useState([]);
 
+  const [publishedDate, setPublishedDate] = useState("");
+
   const loadNews = () => {
     api.get("/news").then(res => setNews(res.data));
   };
@@ -33,6 +35,7 @@ export default function AdminNews() {
     setIsFeatured(false);
     setThumbnail(null);
     setImages([]);
+    setPublishedDate("");
   };
 
   const handleEdit = async (id) => {
@@ -42,9 +45,9 @@ export default function AdminNews() {
     setTitle(n.title);
     setSummary(n.summary);
     setContent(n.content);
-    console.log(n.content);
     setCategory(n.category);
     setIsFeatured(n.isFeatured);
+    setPublishedDate(n.publishedDate.slice(0, 16));
   };
 
   const createNews = async () => {
@@ -54,6 +57,7 @@ export default function AdminNews() {
     formData.append("content", content);
     formData.append("category", category);
     formData.append("isFeatured", isFeatured);
+    formData.append("publishedDate", publishedDate);
     if (thumbnail) formData.append("thumbnail", thumbnail);
     images.forEach(img => formData.append("images", img));
 
@@ -133,6 +137,12 @@ export default function AdminNews() {
           value={category}
           onChange={e => setCategory(e.target.value)}
         />
+        <label>Datum objave</label>
+        <input
+          type="datetime-local"
+          value={publishedDate}
+          onChange={e => setPublishedDate(e.target.value)}
+        />
         <label>
           <input
             type="checkbox"
@@ -156,7 +166,7 @@ export default function AdminNews() {
             </div>
           )}
           {thumbnail && (
-            <img src={URL.createObjectURL(thumbnail)} alt="New Thumbnail" className="preview-image" />
+            <img src={URL.createObjectURL(thumbnail)} alt="New Thumbnail" className="thumbnail-preview" />
           )}
         </div>
 

@@ -41,5 +41,43 @@ namespace backend.Services
             .Select(t => new TeamDto { Id = t.Id, Name = t.Name, LogoUrl = t.LogoUrl, LeagueId = t.LeagueId })
             .ToListAsync();
         }
+
+        public async Task<TeamDto?> GetTeamByIdAsync(int id)
+        {
+            var team = await context.Teams.FirstOrDefaultAsync(t => id == t.Id);
+            if (team == null)
+                return null;
+            return new TeamDto
+            {
+                Id = team.Id,
+                Name = team.Name,
+                LogoUrl = team.LogoUrl,
+                LeagueId = team.LeagueId
+            };
+        }
+
+        public async Task<bool> UpdateTeamAsync(int id, TeamUpdateDto dto)
+        {
+            var team = await context.Teams.FirstOrDefaultAsync(t => id == t.Id);
+
+            if (team == null)
+                return false;
+
+            if (dto.Logo != null)
+            {
+                imageService.DeleteFile(team.LogoUrl);
+                var thumbnailUrl = await imageService.SaveFileAsync(dto.Logo, "team");
+                team.LogoUrl = thumbnailUrl;
+            }
+
+            if (dto.Name != null)
+                team.Name = dto.Name;
+
+            if (dto.LeagueId.HasValue)
+                team.LeagueId = dto.LeagueId.Value;
+
+            await context.SaveChangesAsync();
+            return true;
+        }
     }
 }

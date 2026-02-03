@@ -11,6 +11,7 @@ namespace backend.ViewModel
         public List<IFormFile>? Images { get; set; }
         public bool? IsFeatured { get; set; }
         public string? Category { get; set; } = string.Empty;
+        public DateTime? PublishedDate { get; set; }
         //public int? GameId { get; set; }
     }
 }

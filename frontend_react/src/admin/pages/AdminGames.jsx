@@ -55,7 +55,7 @@ export default function AdminGames() {
     setAwayTeamId("");
     setLeagueId("");
     setKickOffTime("");
-    setStatus("Scheduled");
+    setStatus(0);
     setHomeScore(0);
     setAwayScore(0);
     setStadium("");
@@ -111,7 +111,7 @@ export default function AdminGames() {
   };
 
   const editGame = async (game) => {
-    const res = await api.get(`/games/${game.id}`);
+    const res = await api.get(`/games/admin/${game.id}`);
     const g = res.data;
 
     setEditingGame(g.id);

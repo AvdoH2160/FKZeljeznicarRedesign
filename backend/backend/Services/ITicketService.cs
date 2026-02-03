@@ -10,7 +10,7 @@ namespace backend.Services
 
         Task<List<SectorTemplateDto>> GetSectorTemplatesAsync();
         Task<SectorTemplateDto> CreateSectorTemplateAsync(SectorTemplateDto dto);
-        Task<SectorTemplateDto> UpdateSectorTemplateAsync(int id, SectorTemplateDto dto);
+        Task<bool> UpdateSectorTemplateAsync(int id, SectorTemplateUpdateDto dto);
         Task DeleteSectorTemplateAsync(int id);
         Task CreateSectorsForGameAsync(int gameId);
     }

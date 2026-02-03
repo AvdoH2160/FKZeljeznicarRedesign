@@ -1,5 +1,5 @@
 #newsSection-container {
-    --summary-expand: 72px;
+    --summary-expand: 80px;
     font-family: "Poppins";
     font-weight: 800;
     font-style: italic;
@@ -200,6 +200,7 @@
         height: 60%;
     }
 
+
     .text-overlay h1 {
         font-size: 20px;
     }
@@ -227,7 +228,7 @@
 
     .news-item::after,
     .news-item.item-0::after {
-        height: 65%;
+        height: 80%;
     }
 
     .text-overlay h1 {

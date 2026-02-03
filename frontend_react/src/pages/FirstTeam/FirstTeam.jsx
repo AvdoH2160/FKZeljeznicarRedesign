@@ -26,8 +26,8 @@ const FirstTeam = () => {
                 <PlayerList position={"Vezni red"}></PlayerList>
             </div>
             <div className="first-team" id="first-team-defenders">
-                <h1 className="first-team-text">NAPADAČI</h1>
-                <PlayerList position={"Napadač"}></PlayerList>
+                <h1 className="first-team-text">NAPAD</h1>
+                <PlayerList position={"Napad"}></PlayerList>
             </div>
         </div>
     </div>

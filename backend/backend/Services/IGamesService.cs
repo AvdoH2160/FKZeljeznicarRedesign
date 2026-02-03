@@ -7,6 +7,7 @@ namespace backend.Services
     {
         Task<List<GameStripDto>> GetAllGamesAsync();
         Task<GameDetailDto?> GetGameByIdAsync(int id);
+        Task<GameEditDto?> GetGameForEditAsync(int id);
         Task<int> CreateAsync(GameCreateUpdateDto dto);
         Task<bool> UpdateAsync(int id, GameCreateUpdateDto dto);
         Task<bool> DeleteAsync(int id);

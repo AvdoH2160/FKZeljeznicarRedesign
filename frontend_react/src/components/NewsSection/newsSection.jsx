@@ -9,30 +9,6 @@ const newsSection = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // fetch("https://localhost:7010/api/News")
-    // .then(res => res.json())
-    // .then(data => {
-    //     const nonFeatured = data.filter(item => !item.isFeatured);
-    //     const formattedNews = nonFeatured.map(item => 
-    //     {
-    //         const dateObj = new Date(item.publishedDate);
-    //         const formattedDate = dateObj.toLocaleString("bs-BA", 
-    //             {
-    //                 day: "numeric",
-    //                 month: "numeric",
-    //                 year: "numeric"
-    //             }
-    //         );
-    //         return {
-    //             ...item, formattedDate
-    //         };
-    //     }
-    //     )
-    //     setNews(formattedNews.slice(0, 3));
-    // })
-    // .catch(err => console.error("Greska prilikom dohvacanja!", err))
-    // .finally(() => setLoading(false))
-
     const loadNews = async () => {
       try {
         const res = await api.get("/News");
@@ -54,7 +30,7 @@ const newsSection = () => {
                 formattedDate: `${day}.${month}.${year}`      
             };
         });
-        setNews(formatted.slice(0, 3));
+        setNews(formatted.filter(item => !item.isFeatured).slice(0, 3));
       }
       catch(err) {
         console.error("Greska prilikom dohvacanja!", err);

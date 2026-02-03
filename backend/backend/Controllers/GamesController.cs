@@ -24,6 +24,13 @@ namespace backend.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [HttpGet("admin/{id}")]
+        public async Task<ActionResult<GameEditDto>> GetGameForEdit(int id)
+        {
+            return Ok(await service.GetGameForEditAsync(id));
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(GameCreateUpdateDto dto)
         {

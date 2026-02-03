@@ -18,9 +18,6 @@ const TableSection = () => {
       catch(err) {
         console.error("Greska prilikom dohvacanja!", err)
       }
-      finally {
-        setLoading(false);
-      }
     }
     load();
   }, []);
