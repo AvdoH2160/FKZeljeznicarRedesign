@@ -58,6 +58,8 @@ const ShopList = () => {
     return new Date(b.createdAt) - new Date(a.createdAt);
   });
 
+  document.title=`${categoryFromUrl} - FK Željezničar`
+
   return (
     <div className="shop-list-page">
       <aside className="shop-filters">

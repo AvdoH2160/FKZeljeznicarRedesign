@@ -24,6 +24,8 @@ const Product = () => {
       .catch(err => console.error(err));
   }, [slug]);
 
+  
+
   const handleAddToCart = () => {
     if (!product || !selectedSize) return;
 
@@ -42,6 +44,10 @@ const Product = () => {
 
   if (!product) {
     return <div className="loading">Učitavanje proizvoda...</div>;
+  }
+  else
+  {
+    document.title=`${product.name} - FK Željezničar`
   }
 
   return (

@@ -38,6 +38,7 @@ const News = () => {
     load();
   }, [slug])
 
+
   if (!news) {
     return <div>Loading...</div>
   }

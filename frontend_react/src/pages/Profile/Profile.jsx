@@ -44,6 +44,10 @@ const Profile = () => {
     };
 
     if(!profile) { return <div>Loading...</div>; }
+    else
+    {
+      document.title= "Profil - FK Željezničar";
+    }
 
   return (
     <div className='profile-container'>

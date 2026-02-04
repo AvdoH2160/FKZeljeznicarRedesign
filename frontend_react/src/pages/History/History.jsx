@@ -2,6 +2,7 @@ import React from "react";
 import "./history.css";
 
 const History = () => {
+  document.title= "Historija - FK Željezničar";
   return (
     <div className="history-page">
 

@@ -9,10 +9,8 @@ import TrophiesSection2 from '../../components/TrophiesSection/TrophiesSection2.
 import StadiumSection from "../../components/StadiumSection/StadiumSection.jsx"
 
 const Home = () => {  
-  document.title="FK Željezničar"
 
   const location = useLocation();
-
   useEffect(() => {
     if (location.state?.scrollToBottom) {
       setTimeout(() => {
@@ -23,6 +21,9 @@ const Home = () => {
       }, 100);
     }
   }, [location]);
+  useEffect(() => {
+    document.title = "FK Željezničar";
+  }, []);
   return (
     <div id="home-container">
       <FeaturedNews></FeaturedNews>

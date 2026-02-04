@@ -9,6 +9,9 @@ import ShopCategoryImage2 from "../../assets/images/shop-category2.png"
 import Arrow from "../../assets/svg/arrow_right.svg"
 
 const Shop = () => {
+    useEffect(() => {
+        document.title = "Shop - FK Željezničar";
+    }, []);
   return (
     <div className='shop-page-container'>
         <ShopHero></ShopHero>

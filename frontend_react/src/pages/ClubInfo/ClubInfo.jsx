@@ -2,6 +2,7 @@ import React from "react";
 import "./clubInfo.css";
 
 const ClubInfo = () => {
+  document.title = "O nama - FK Željezničar"
   return (
     <div className="club-info-page">
 

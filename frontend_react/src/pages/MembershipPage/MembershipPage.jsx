@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useToast } from "../../context/ToastContext";
 import api from "../../services/api";
 import Zeljo from "../../assets/svg/zeljo_color_icon.svg";
 import "./membershipPage.css";
 
 const MembershipPage = () => {
+    const { addToast } = useToast();
     const {mode: routeMode} = useParams();
     const navigate = useNavigate();
     const[mode, setMode] = useState(null);
@@ -68,7 +70,8 @@ const MembershipPage = () => {
         try {
         if (mode === "new") {
             await api.post("/membership/apply", { ...form, type: "New" });
-            alert("Prijava za učlanjenje poslana.");
+            // alert("Prijava za učlanjenje poslana.");
+            addToast("Prijava za učlanjenje poslana.", "success");
         } else if (mode === "renew") {
             await api.post("/membership/renew", {
             firstName: form.firstName,
@@ -76,16 +79,19 @@ const MembershipPage = () => {
             membershipNumber: form.membershipNumber,
             year: form.year
             });
-            alert("Zahtjev za obnovu poslan.");
+            addToast("Prijava za obnovu poslana.", "success");
         } else if (mode === "check") {
             const res = await api.get(`/membership/check/${form.membershipNumber}`);
             alert(`${res.data.firstName} ${res.data.lastName} – ${res.data.year}`);
         }
         } catch (err) {
         console.error(err);
-        alert("Greška pri slanju zahtjeva");
+        addToast("Greška pri slanju zahtjeva.", "error");
         }
     };
+
+    document.title= "Članstvo - FK Željezničar";
+
 
   return (
     <div className="auth-page">

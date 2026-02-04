@@ -30,6 +30,8 @@ const LoginRegister = () => {
       })
     }
 
+    document.title="Prijava - FK Željezničar"
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 

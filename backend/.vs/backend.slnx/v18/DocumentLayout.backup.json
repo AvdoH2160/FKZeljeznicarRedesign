@@ -80,7 +80,7 @@
               "RelativeDocumentMoniker": "backend\\Services\\PlayerService.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\PlayerService.cs",
               "RelativeToolTip": "backend\\Services\\PlayerService.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowEYAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-03T21:15:23.745Z",
               "EditorCaption": ""
@@ -95,8 +95,7 @@
               "RelativeToolTip": "backend\\Model\\News.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T18:26:49.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T18:26:49.945Z"
             },
             {
               "$type": "Document",
@@ -108,8 +107,7 @@
               "RelativeToolTip": "backend\\ViewModel\\NewsCreateUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T18:26:11.257Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T18:26:11.257Z"
             },
             {
               "$type": "Document",
@@ -121,8 +119,7 @@
               "RelativeToolTip": "backend\\Services\\NewsService.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAgwFkBAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T18:26:34.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T18:26:34.919Z"
             },
             {
               "$type": "Document",
@@ -134,8 +131,7 @@
               "RelativeToolTip": "backend\\ViewModel\\GameEditDto.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T20:35:42.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T20:35:42.113Z"
             }
           ]
         },
@@ -157,8 +153,7 @@
               "RelativeToolTip": "backend\\Services\\IGamesService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T19:57:31.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T19:57:31.703Z"
             },
             {
               "$type": "Document",
@@ -183,8 +178,7 @@
               "RelativeToolTip": "backend\\Controllers\\GamesController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAcwB0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T19:48:39.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T19:48:39.284Z"
             },
             {
               "$type": "Document",
@@ -196,8 +190,7 @@
               "RelativeToolTip": "backend\\ViewModel\\AdminStatsDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T15:40:16.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T15:40:16.052Z"
             },
             {
               "$type": "Document",
@@ -209,8 +202,7 @@
               "RelativeToolTip": "backend\\Services\\AdminService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T15:39:10.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T15:39:10.464Z"
             },
             {
               "$type": "Document",
@@ -222,8 +214,7 @@
               "RelativeToolTip": "backend\\Controllers\\AdminController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T15:38:43.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T15:38:43.808Z"
             },
             {
               "$type": "Document",
@@ -235,8 +226,7 @@
               "RelativeToolTip": "backend\\Controllers\\TicketsController.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAcwFAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T15:17:43.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T15:17:43.517Z"
             },
             {
               "$type": "Document",
@@ -248,8 +238,7 @@
               "RelativeToolTip": "backend\\ViewModel\\SectorTemplateUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T15:16:57.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T15:16:57.688Z"
             },
             {
               "$type": "Document",
@@ -261,8 +250,7 @@
               "RelativeToolTip": "backend\\Services\\ITicketService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T15:27:06.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T15:27:06.491Z"
             },
             {
               "$type": "Document",
@@ -274,8 +262,7 @@
               "RelativeToolTip": "backend\\Services\\TicketService.cs",
               "ViewState": "AgIAAGQAAAAAAAAAAAAcwHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T15:16:10.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T15:16:10.523Z"
             }
           ]
         }

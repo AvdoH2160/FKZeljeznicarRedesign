@@ -24,6 +24,7 @@ const Tickets = () => {
     ? TRIBINE[selectedSector.code.charAt(0)]
     : null;
 
+  document.title= "Ulaznice - FK Željezničar";
   useEffect(() => {
       const loadData = async () => {
         try {

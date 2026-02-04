@@ -9,7 +9,7 @@ const GamesList = () => {
   const [activeTab, setActiveTab] = useState("upcoming");
   const [seasons, setSeasons] = useState([]);
 
-
+  document.title= "Utakmice - FK Željezničar";
   useEffect(() => {
     const loadGames = async () => {
       try {
