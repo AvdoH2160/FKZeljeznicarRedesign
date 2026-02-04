@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+      SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  backend:
+    build: ./backend
+    container_name: api
+    environment:
+      DB_HOST: db
+      DB_PORT: 1433
+      DB_NAME: ${DB_NAME}
+      DB_USER: sa
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+      ASPNETCORE_ENVIRONMENT: Production
+    volumes:
+      - ./backend/backend/wwwroot:/app/wwwroot
+    depends_on:
+      - db
+    command: >
+      sh -c "
+      until /opt/mssql-tools/bin/sqlcmd -S db -U sa -P ${MSSQL_SA_PASSWORD} -Q 'SELECT 1' > /dev/null 2>&1; do
+        echo 'Waiting for DB...'
+        sleep 3
+      done
+      && dotnet backend.dll
+      "
+    ports:
+      - "8080:8080"
+
+volumes:
+  sql_data:

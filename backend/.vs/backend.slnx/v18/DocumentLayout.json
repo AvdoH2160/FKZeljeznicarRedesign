@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|c:\\users\\avdoh\\onedrive\\dokumenti\\github\\fkzeljeznicarredesign\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|backend\\backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -87,6 +91,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ImageService.cs",
+              "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ImageService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\ImageService.cs",
+              "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ImageService.cs",
+              "RelativeToolTip": "backend\\Services\\ImageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T21:55:30.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "backend\\appsettings.json",
@@ -94,12 +111,11 @@
               "RelativeToolTip": "backend\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-04T12:24:06.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T12:24:06.755Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\appsettings.Development.json",
               "RelativeDocumentMoniker": "backend\\appsettings.Development.json",
@@ -111,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DataSeeder.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\DataSeeder.cs",
               "RelativeDocumentMoniker": "backend\\Model\\DataSeeder.cs",
@@ -123,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PlayerService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\PlayerService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\PlayerService.cs",
@@ -135,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "News.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Model\\News.cs",
               "RelativeDocumentMoniker": "backend\\Model\\News.cs",
@@ -147,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "NewsCreateUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\NewsCreateUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\NewsCreateUpdateDto.cs",
@@ -159,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "NewsService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\NewsService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\NewsService.cs",
@@ -171,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "GameEditDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\GameEditDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\GameEditDto.cs",
@@ -193,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "IGamesService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\IGamesService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\IGamesService.cs",
@@ -205,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GameService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\GameService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\GameService.cs",
@@ -218,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "GamesController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\GamesController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\GamesController.cs",
@@ -230,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "AdminStatsDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\AdminStatsDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\AdminStatsDto.cs",
@@ -242,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AdminService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\AdminService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\AdminService.cs",
@@ -254,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\AdminController.cs",
@@ -266,7 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "TicketsController.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\TicketsController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\TicketsController.cs",
@@ -278,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "SectorTemplateUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\SectorTemplateUpdateDto.cs",
               "RelativeDocumentMoniker": "backend\\ViewModel\\SectorTemplateUpdateDto.cs",
@@ -290,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ITicketService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\ITicketService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\ITicketService.cs",
@@ -302,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "TicketService.cs",
               "DocumentMoniker": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Services\\TicketService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\TicketService.cs",

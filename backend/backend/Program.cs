@@ -42,8 +42,20 @@ builder.Services.AddCors(options =>
     });
 });
 
+// builder.Services.AddDbContext<AppDbContext>(options => 
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// var connectionString = 
+//     builder.Configuration.GetConnectionString("DefaultConnection") ??
+//     Environment.GetEnvironmentVariable("DB_CONNECTION");
+
+// builder.Services.AddDbContext<AppDbContext>(options => 
+//     options.UseSqlServer(connectionString));
+
+var connectionString = $"Server={Environment.GetEnvironmentVariable("DB_HOST")},{Environment.GetEnvironmentVariable("DB_PORT")};Database={Environment.GetEnvironmentVariable("DB_NAME")};User Id={Environment.GetEnvironmentVariable("DB_USER")};Password={Environment.GetEnvironmentVariable("MSSQL_SA_PASSWORD")};TrustServerCertificate=True;";
+
 builder.Services.AddDbContext<AppDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>(options =>
 {
