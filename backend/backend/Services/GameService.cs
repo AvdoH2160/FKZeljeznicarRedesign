@@ -189,7 +189,7 @@ namespace backend.Services
                 .Include(g => g.AwayTeam)
                 .Include(g => g.League)
                 .Include(g => g.Goals)
-                .Include(g => g.News) // <-- obavezno Include
+                .Include(g => g.News) 
                 .FirstOrDefaultAsync(g => g.Id == id);
 
             if (g == null)
@@ -225,7 +225,7 @@ namespace backend.Services
 
                 Stadium = g.Stadium,
                 NewsId = g.NewsId,
-                NewsSlug = g.News?.Slug, // <-- sigurni pristup
+                NewsSlug = g.News?.Slug,
 
                 Goals = g.Goals.Select(goal => new GameGoalDto
                 {
@@ -246,7 +246,7 @@ namespace backend.Services
                 .Include(g => g.AwayTeam)
                 .Include(g => g.League)
                 .Include(g => g.Goals)
-                .Include(g => g.News) // <-- obavezno Include
+                .Include(g => g.News) 
                 .FirstOrDefaultAsync(g => g.Id == id);
 
             if (g == null)
