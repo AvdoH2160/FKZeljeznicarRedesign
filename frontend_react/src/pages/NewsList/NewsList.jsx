@@ -3,7 +3,7 @@ import {useState, useRef, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
 import api from "../../services/api"
 import Pagination from "../../components/Pagination/Pagination.jsx"
-import './newsList.css'
+import './NewsList.css'
 import { getImageUrl } from "../../services/imageService";
 
 const NewsList = () => {

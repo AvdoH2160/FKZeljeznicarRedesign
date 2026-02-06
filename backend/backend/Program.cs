@@ -38,7 +38,7 @@ builder.Services.AddCors(options =>
     {
         policy.AllowAnyHeader()
               .AllowAnyMethod()
-              .WithOrigins("http://localhost:5173");
+              .WithOrigins(Environment.GetEnvironmentVariable("FRONTEND_URL"));
     });
 });
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "./membershipCard.css"
+import "./memberShipCard.css"
 import Arrow from "../../assets/svg/arrow_right.svg"
 import MembershipCardImage from "../../assets/images/clanska_karta.png"
 

@@ -22,6 +22,7 @@ services:
       DB_NAME: ${DB_NAME}
       DB_USER: sa
       MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+      FRONTEND_URL: ${FRONTEND_URL}
       ASPNETCORE_ENVIRONMENT: Production
     volumes:
       - ./backend/backend/wwwroot:/app/wwwroot
@@ -37,6 +38,14 @@ services:
       "
     ports:
       - "8080:8080"
+
+  frontend:
+    build: ./frontend_react
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
 
 volumes:
   sql_data:
