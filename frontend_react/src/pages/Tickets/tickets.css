@@ -61,16 +61,12 @@
   margin-top: 4px;
 }
 
-/* === SECTOR TITLE === */
-
 .select-sector-title {
   margin: 20px 0 20px;
   font-size: 28px;
   font-weight: 800;
   color: #002c6d;
 }
-
-/* === SECTOR CARD === */
 
 .sector-card {
   margin-top: 30px;
@@ -103,8 +99,6 @@
 .sector-row b {
   color: #000;
 }
-
-/* === BUY BUTTON === */
 
 .buy-btn {
   margin-top: 16px;
@@ -176,7 +170,6 @@
 }
 
 @media (max-width: 600px) {
-  /* Game header scaling */
   .tickets-page .game-header {
     max-width: 100%;
     padding: 10px;
@@ -202,5 +195,10 @@
 
   .game-info .stadium {
     font-size: 12px;
+  }
+
+  .select-sector-title {
+    margin: 15px 0 15px;
+    font-size: 20px;
   }
 }

@@ -122,8 +122,7 @@
               "RelativeToolTip": "backend\\Model\\SlugHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T22:56:25.88Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T22:56:25.88Z"
             },
             {
               "$type": "Document",
@@ -135,8 +134,7 @@
               "RelativeToolTip": "backend\\Model\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T22:56:01.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T22:56:01.445Z"
             },
             {
               "$type": "Document",
@@ -146,7 +144,7 @@
               "RelativeDocumentMoniker": "backend\\ViewModel\\PlayerDetailsDto.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\ViewModel\\PlayerDetailsDto.cs",
               "RelativeToolTip": "backend\\ViewModel\\PlayerDetailsDto.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA9wBUAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T22:53:33.23Z",
               "EditorCaption": ""
@@ -161,8 +159,7 @@
               "RelativeToolTip": "backend\\Services\\ImageService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T22:50:57.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T22:50:57.16Z"
             },
             {
               "$type": "Document",
@@ -174,8 +171,7 @@
               "RelativeToolTip": "backend\\Services\\PlayerService.cs",
               "ViewState": "AgIAAGcAAAAAAAAAAAAcwHQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T21:15:23.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T21:15:23.745Z"
             },
             {
               "$type": "Document",
@@ -187,8 +183,7 @@
               "RelativeToolTip": "backend\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-04T12:24:06.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T12:24:06.755Z"
             },
             {
               "$type": "Document",
@@ -200,8 +195,7 @@
               "RelativeToolTip": "backend\\Model\\News.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T18:26:49.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T18:26:49.945Z"
             },
             {
               "$type": "Document",
@@ -225,8 +219,7 @@
               "RelativeToolTip": "backend\\ViewModel\\NewsCreateUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T18:26:11.257Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T18:26:11.257Z"
             },
             {
               "$type": "Document",
@@ -282,7 +275,7 @@
               "RelativeDocumentMoniker": "backend\\Controllers\\NewsController.cs",
               "ToolTip": "C:\\Users\\avdoh\\OneDrive\\Dokumenti\\GitHub\\FKZeljeznicarRedesign\\backend\\backend\\Controllers\\NewsController.cs",
               "RelativeToolTip": "backend\\Controllers\\NewsController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA5wFAAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwFAAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T22:48:44.173Z",
               "EditorCaption": ""
@@ -297,8 +290,7 @@
               "RelativeToolTip": "backend\\Model\\Game.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T22:44:01.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T22:44:01.236Z"
             },
             {
               "$type": "Document",
@@ -310,8 +302,7 @@
               "RelativeToolTip": "backend\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T22:43:51.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T22:43:51.017Z"
             },
             {
               "$type": "Document",
@@ -323,8 +314,7 @@
               "RelativeToolTip": "backend\\Services\\IGamesService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T19:57:31.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T19:57:31.703Z"
             },
             {
               "$type": "Document",
@@ -336,8 +326,7 @@
               "RelativeToolTip": "backend\\Services\\GameService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAADoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T19:52:30.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T19:52:30.822Z"
             },
             {
               "$type": "Document",
@@ -349,8 +338,7 @@
               "RelativeToolTip": "backend\\Controllers\\GamesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T19:48:39.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T19:48:39.284Z"
             },
             {
               "$type": "Document",

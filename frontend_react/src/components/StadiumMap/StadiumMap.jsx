@@ -43,8 +43,9 @@ const StadiumMap = ({ onSelectSector, selectedSector, sectors }) => {
 
   return (
     <div style={{
-        width: "800px",       
-        height: "600px",      
+        width: "100%",
+        maxWidth: "800px",
+        aspectRatio: "4 / 3",             
         border: "2px solid #ccc",
         borderRadius: "8px",
         overflow: "hidden",    
