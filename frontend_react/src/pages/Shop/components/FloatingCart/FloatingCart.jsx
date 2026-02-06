@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import Cart from "../../../../assets/svg/cart.svg";
 import "./floatingCart.css";
-import { getImageUrl } from "../../services/imageService";
+import { getImageUrl } from "../../../../services/imageService";
 
 export default function FloatingCart() {
   const { cartItems, removeFromCart, updateQuantity, totalPrice } = useCart();
