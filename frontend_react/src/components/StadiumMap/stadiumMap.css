@@ -45,3 +45,20 @@
 .map-btn.reset:hover {
   background: #7fbf63;
 }
+
+@media (max-width: 786px) {
+  .map-controls {
+    top: 5px;
+    right: 5px;
+    gap: 4px;
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  .map-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+}
