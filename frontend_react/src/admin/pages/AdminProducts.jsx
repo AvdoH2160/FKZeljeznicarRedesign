@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import Notification from "../components/Notification"
+import { getImageUrl } from "../../services/imageService";
 import "../admin.css";
 
 export default function AdminProducts() {
@@ -237,7 +238,7 @@ export default function AdminProducts() {
             <div className="preview-container">
                 <span className="preview-label">Current Thumbnail</span>
                 <img
-                src={`https://localhost:7010${products.find(p => p.id === editingId).thumbnailUrl}`}
+                src={getImageUrl(products.find(p => p.id === editingId).thumbnailUrl)}
                 className="thumbnail-preview"
                 />
             </div>
@@ -247,7 +248,7 @@ export default function AdminProducts() {
         <input type="file" onChange={e => setShopThumb1(e.target.files[0])} />
         {editingId && !shopThumb1 && products.find(p => p.id === editingId)?.shopThumbnailUrl1 && (
             <img
-                src={`https://localhost:7010${products.find(p => p.id === editingId).shopThumbnailUrl1}`}
+                src={getImageUrl(products.find(p => p.id === editingId).shopThumbnailUrl1)}
                 className="thumbnail-preview"
             />
         )}
@@ -256,7 +257,7 @@ export default function AdminProducts() {
         <input type="file" onChange={e => setShopThumb2(e.target.files[0])} />
         {editingId && !shopThumb2 && products.find(p => p.id === editingId)?.shopThumbnailUrl2 && (
             <img
-                src={`https://localhost:7010${products.find(p => p.id === editingId).shopThumbnailUrl2}`}
+                src={getImageUrl(products.find(p => p.id === editingId).shopThumbnailUrl2)}
                 className="thumbnail-preview"
             />
         )}
@@ -272,7 +273,7 @@ export default function AdminProducts() {
                     .galleryImages.map((img, i) => (
                     <img
                         key={i}
-                        src={`https://localhost:7010${img}`}
+                        src={getImageUrl(img)}
                         className="thumbnail-preview"
                     />
                     ))}

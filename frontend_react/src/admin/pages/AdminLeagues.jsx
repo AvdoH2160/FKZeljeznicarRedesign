@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 import Notification from "../components/Notification";
+import { getImageUrl } from "../../services/imageService";
 import "../admin.css";
 
 export default function AdminLeagues() {
@@ -118,7 +119,7 @@ export default function AdminLeagues() {
             <div className="preview-container">
               <span className="preview-label">Current Thumbnail:</span>
               <img
-                src={`https://localhost:7010${leagues.find(l => l.id === editingLeague).logoUrl}`}
+                src={getImageUrl(leagues.find(l => l.id === editingLeague).logoUrl)}
                 className="thumbnail-preview"
                 alt="Current logo"
               />
@@ -145,7 +146,7 @@ export default function AdminLeagues() {
             <div className="preview-container">
               <span className="preview-label">Current Small Thumbnail:</span>
               <img
-                src={`https://localhost:7010${leagues.find(l => l.id === editingLeague).smallLogoUrl}`}
+                src={getImageUrl(leagues.find(l => l.id === editingLeague).smallLogoUrl)}
                 className="thumbnail-preview"
                 alt="Current logo"
               />

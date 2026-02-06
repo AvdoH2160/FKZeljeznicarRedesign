@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom'
 import api from "../../services/api"
 import Pagination from "../../components/Pagination/Pagination.jsx"
 import './newsList.css'
+import { getImageUrl } from "../../services/imageService";
 
 const NewsList = () => {
   const [news, setNews] = useState([]);
@@ -105,7 +106,7 @@ const NewsList = () => {
           {news.map(n => (
             <Link key={n.id} to={`/novost/${n.slug}`} className="news-list-item">
               <div className="news-list-image-wrapper">
-                <img className="news-list-image" src={`https://localhost:7010${n.thumbnailUrl}`}></img>
+                <img className="news-list-image" src={getImageUrl(n.thumbnailUrl)}></img>
               </div>
               <p className='news-list-category'>{n.category+ ": "}{n.formattedDate}</p>
               <p className='news-list-title'>{n.title}</p>

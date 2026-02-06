@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import {useNavigate} from "react-router-dom"
 import api from "../../services/api"
+import { getImageUrl } from "../../services/imageService";
 import "./gamesTrack.css"
 
 const GamesTrack = ({showOnlyActive = false}) => {
@@ -136,15 +137,15 @@ const GamesTrack = ({showOnlyActive = false}) => {
             >
                 <div className="gameLogo-container">
                 <img
-                    src={`https://localhost:7010${
-                    isActive ? game.leagueLogoUrl : game.smallLeagueLogoUrl
-                    }`}
+                    src={getImageUrl(
+                        isActive ? game.leagueLogoUrl : game.smallLeagueLogoUrl
+                    )}
                 />
                 </div>
 
                 <div className="gameText-container">
                 <div className="homeLogoText-container">
-                    <img src={`https://localhost:7010${game.homeTeamLogoUrl}`} />
+                    <img src={getImageUrl(game.homeTeamLogoUrl)} />
                     <p className="teamName">
                     {game.homeTeamName.toUpperCase()}
                     </p>
@@ -160,7 +161,7 @@ const GamesTrack = ({showOnlyActive = false}) => {
                 )}
 
                 <div className="homeLogoText-container">
-                    <img src={`https://localhost:7010${game.awayTeamLogoUrl}`} />
+                    <img src={getImageUrl(game.awayTeamLogoUrl)} />
                     <p className="teamName">
                     {game.awayTeamName.toUpperCase()}
                     </p>

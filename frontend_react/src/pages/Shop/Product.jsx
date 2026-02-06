@@ -4,6 +4,7 @@ import api from "../../services/api";
 import {useCart} from "./context/CartContext";
 import SizeTable from "./components/SizeTable/SizeTable"
 import "./product.css";
+import { getImageUrl } from "../../services/imageService";
 
 const Product = () => {
   const { slug } = useParams();
@@ -59,14 +60,14 @@ const Product = () => {
         {/* LIJEVA STRANA */}
         <div className="product-images">
           <div className="main-image">
-            <img src={`https://localhost:7010${mainImage}`} alt={product.name} />
+            <img src={getImageUrl(mainImage)} alt={product.name} />
           </div>
 
           <div className="thumbnails">
             {product.galleryImages?.slice(0, 3).map((img, i) => (
               <img
                 key={i}
-                src={`https://localhost:7010${img}`}
+                src={getImageUrl(img)}
                 className={activeTab === img ? "active" : ""}
                 onClick={() => setMainImage(img)}
                 alt=""

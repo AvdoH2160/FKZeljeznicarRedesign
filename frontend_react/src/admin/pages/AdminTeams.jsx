@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import Notification from "../components/Notification";
+import { getImageUrl } from "../../services/imageService";
 import "../admin.css";
 
 export default function AdminTeams() {
@@ -131,7 +132,7 @@ export default function AdminTeams() {
             <div className="preview-container">
               <span className="preview-label">Current Logo:</span>
               <img
-                src={`https://localhost:7010${teams.find(t => t.id === editingTeam).logoUrl}`}
+                src={getImageUrl(teams.find(t => t.id === editingTeam).logoUrl)}
                 className="thumbnail-preview"
                 alt="Current logo"
               />

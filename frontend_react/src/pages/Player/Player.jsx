@@ -4,6 +4,7 @@ import api from "../../services/api"
 import { useParams } from 'react-router-dom'
 import gsap from "gsap";
 import './player.css'
+import { getImageUrl } from "../../services/imageService";
 
 const Player = () => {
     const{ slug } = useParams();
@@ -73,7 +74,7 @@ const Player = () => {
                     </div>
                 </div>
                 <div className='player-image-container'>
-                    <img className='onlyPlayer-image' src={`https://localhost:7010${player.thumbnailUrl}`}></img>
+                    <img className='onlyPlayer-image' src={getImageUrl(player.thumbnailUrl)}></img>
                 </div>
             </div>
         </div>

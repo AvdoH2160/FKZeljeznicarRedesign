@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import Cart from "../../../../assets/svg/cart.svg";
 import "./floatingCart.css";
+import { getImageUrl } from "../../services/imageService";
 
 export default function FloatingCart() {
   const { cartItems, removeFromCart, updateQuantity, totalPrice } = useCart();
@@ -30,7 +31,7 @@ export default function FloatingCart() {
                 return (
                   <div key={i} className="cart-card">
                     <img
-                      src={`https://localhost:7010${item.product.image}`}
+                      src={getImageUrl(item.product.image)}
                       alt={item.product.name}
                     />
                     <div className="cart-details">

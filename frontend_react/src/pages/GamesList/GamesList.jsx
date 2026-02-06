@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import api from "../../services/api";
+import { getImageUrl } from "../../services/imageService";
 import "./gamesList.css";
 
 const GamesList = () => {
@@ -115,15 +116,11 @@ const GamesList = () => {
             const homeGoals = goals?.filter(g => g.isHomeTeam);
             const awayGoals = goals?.filter(g => !g.isHomeTeam);
             return (
-            <div key={game.id} className="gameRow"
-                // style={{
-                //     "--league-logo": `url(https://localhost:7010${game.leagueLogoUrl})`
-                // }}
-            >
+            <div key={game.id} className="gameRow">
                 <div className="gameRow-top">
                     <div className="league">
                         <img
-                            src={`https://localhost:7010${game.smallLeagueLogoUrl}`}
+                            src={getImageUrl(game.smallLeagueLogoUrl)}
                             alt={game.leagueName}
                         />
                         {/* <span>{game.leagueName}</span> */}
@@ -141,7 +138,7 @@ const GamesList = () => {
                     <div 
                         className="team home"
                         style={{
-                            "--team-logo": `url(https://localhost:7010${game.homeTeamLogoUrl})`
+                            "--team-logo": `url(${getImageUrl(game.homeTeamLogoUrl)})`
                         }}
                     >
                         <span>{game.homeTeamName.toUpperCase()}</span>
@@ -184,7 +181,7 @@ const GamesList = () => {
                     <div 
                         className="team away"
                         style={{
-                            "--team-logo": `url(https://localhost:7010${game.awayTeamLogoUrl})`
+                            "--team-logo": `url(${getImageUrl(game.awayTeamLogoUrl)})`
                         }}
                     >
                         <span>{game.awayTeamName.toUpperCase()}</span>

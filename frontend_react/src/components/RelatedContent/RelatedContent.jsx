@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import api from "../../services/api"
+import { getImageUrl } from "../../services/imageService";
 import "./relatedContent.css"
 
 const RelatedContent = ({ type, currentId, publishedDate, categoryId }) => {
@@ -63,7 +64,7 @@ const RelatedContent = ({ type, currentId, publishedDate, categoryId }) => {
             className="related-card"
           >
             <div className="related-image-wrapper">
-                <img className="related-image" src={`https://localhost:7010${item.thumbnailUrl}`} />
+                <img className="related-image" src={getImageUrl(item.thumbnailUrl)} />
             </div>
             <p className='related-category'>
                 {item.category+ ": "}{type === "news" ? item.formattedDate : ""}

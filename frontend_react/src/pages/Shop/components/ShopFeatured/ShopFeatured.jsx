@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState, useRef } from "react"
 import { Link } from 'react-router-dom'
 import api from "../../../../services/api"
+import { getImageUrl } from '../../../../services/imageService'
 import "./shopFeatured.css"
 
 const ShopFeatured = () => {
@@ -58,12 +59,12 @@ const ShopFeatured = () => {
                     }}
                 >
                     <img
-                        src={`https://localhost:7010${item.shopThumbnailUrl1}`}
+                        src={getImageUrl(item.shopThumbnailUrl1)}
                         className="featured-img img-main"
                         alt={item.name}
                     />
                     <img
-                        src={`https://localhost:7010${item.shopThumbnailUrl2}`}
+                        src={getImageUrl(item.shopThumbnailUrl2)}
                         className="featured-img img-hover"
                         alt={item.name}
                     />

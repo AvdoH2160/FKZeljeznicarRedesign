@@ -17,7 +17,7 @@
   height: 40px;
   border: none;
   border-radius: 10px;
-  background: #002c6d; /* klupska tamno plava */
+  background: #002c6d; 
   color: #fff;
   font-size: 20px;
   font-weight: 700;
@@ -38,7 +38,7 @@
 }
 
 .map-btn.reset {
-  background: #9fcd83; /* zelena */
+  background: #9fcd83; 
   color: #0f2d1f;
 }
 

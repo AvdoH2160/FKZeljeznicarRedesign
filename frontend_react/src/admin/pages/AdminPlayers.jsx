@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 import Notification from "../components/Notification"
+import { getImageUrl } from "../../services/imageService";
 import "../admin.css";
 
 export default function AdminPlayers() {
@@ -156,7 +157,7 @@ export default function AdminPlayers() {
             <div className="preview-container">
               <span className="preview-label">Current Thumbnail:</span>
               <img
-                src={`https://localhost:7010${players.find(n => n.id === editingPlayer).thumbnailUrl}`}
+                src={getImageUrl(players.find(n => n.id === editingPlayer).thumbnailUrl)}
                 alt="Current Thumbnail"
                 className="thumbnail-preview"
               />

@@ -1,5 +1,6 @@
 import { useCart } from "./context/CartContext.jsx";
 import "./cart.css";
+import { getImageUrl } from "../../services/imageService";
 
 export default function Cart() {
   const { cartItems, removeFromCart, updateQuantity, totalPrice } = useCart();
@@ -21,7 +22,7 @@ export default function Cart() {
               return (
                 <div key={i} className="cart-card">
                   <img
-                    src={`https://localhost:7010${item.product.image}`}
+                    src={getImageUrl(item.product.image)}
                     alt={item.product.name}
                     className="cart-image"
                   />

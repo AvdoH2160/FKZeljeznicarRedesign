@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import Notification from "../components/Notification"
+import { getImageUrl } from "../../services/imageService";
 import "../admin.css";
 
 export default function AdminNews() {
@@ -159,7 +160,7 @@ export default function AdminNews() {
             <div className="preview-container">
               <span className="preview-label">Current Thumbnail:</span>
               <img
-                src={`https://localhost:7010${news.find(n => n.id === editingId).thumbnailUrl}`}
+                src={getImageUrl(news.find(n => n.id === editingId).thumbnailUrl)}
                 alt="Current Thumbnail"
                 className="thumbnail-preview"
               />

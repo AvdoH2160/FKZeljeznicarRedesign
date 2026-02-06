@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import api from "../../services/api"
 import "./shopSection.css";
 import FkzShop from "../../assets/svg/fkz_shop.svg";
+import { getImageUrl } from "../../services/imageService";
 
 const ShopSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -64,7 +65,7 @@ const ShopSection = () => {
             }}
             onMouseLeave={() => setActiveIndex(null)}
           >
-            <img className="products-image" src={`https://localhost:7010${item.shopThumbnailUrl1}`} />
+            <img className="products-image" src={getImageUrl(item.shopThumbnailUrl1)} />
             <h2 className="products-name">{item.name.toUpperCase()}</h2>
           </Link>
         ))}

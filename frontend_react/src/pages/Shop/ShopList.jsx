@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import api from "../../services/api";
+import { getImageUrl } from "../../services/imageService";
 import "./shopList.css";
 
 const ITEMS_PER_LOAD = 9;
@@ -99,7 +100,7 @@ const ShopList = () => {
             <Link key={p.id} className="product-card" to={`/shop/proizvodi/${p.slug}`}>
               <div className="shop-list-image-wrapper">
                 <img
-                   src={`https://localhost:7010${p.thumbnailUrl}`}
+                   src={getImageUrl(p.thumbnailUrl)}
                    alt={p.name}
                    loading="lazy"
                 />

@@ -5,6 +5,7 @@ import "./featuredNews.css"
 import GamesTrack from '../GamesTrack/GamesTrack'
 import ArrowRight from "../../assets/svg/arrow_right.svg"
 import MembershipCard from '../Membership/MembershipCard'
+import { getImageUrl } from "../../services/imageService";
 
 const FeaturedNews = () => {
   const [news, setNews] = useState([]);
@@ -31,7 +32,7 @@ const FeaturedNews = () => {
         {loading && <p>Loading...</p>}
         {news && (
             <div id="featuredNewsImage-container">
-                <img src={`https://localhost:7010${news.thumbnailUrl}`} alt={news.title} id="featuredNews-image"/>
+                <img src={getImageUrl(news.thumbnailUrl)} alt={news.title} id="featuredNews-image"/>
             </div>
         )}
         <div id="games-membership-text-container">

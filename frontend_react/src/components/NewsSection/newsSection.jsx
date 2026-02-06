@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useRef, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import api from "../../services/api"
+import { getImageUrl } from "../../services/imageService";
 import "./newsSection.css"
 
 const newsSection = () => {
@@ -50,7 +51,7 @@ const newsSection = () => {
         <div id="news-container">
           {news.map((news, index) => ( 
             <Link key={news.id} to={`/novost/${news.slug}`} className={`news-item item-${index}`}>
-                <img className={`news-image item-${index}`} src={`https://localhost:7010${news.thumbnailUrl}`}></img>
+                <img className={`news-image item-${index}`} src={getImageUrl(news.thumbnailUrl)}></img>
                 <div className="text-overlay">
                     <h3 className="top-overlay">{news.category+ ": "}{news.formattedDate}</h3>
                     <h1>{news.title.toUpperCase()}</h1>

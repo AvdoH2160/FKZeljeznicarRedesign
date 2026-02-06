@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import {useState, useRef} from 'react'
 import api from "../../services/api"
 import { Link } from 'react-router-dom'
+import { getImageUrl } from "../../services/imageService";
 import "./playerList.css"
 
 const PlayerList = ({position}) => {
@@ -41,7 +42,7 @@ const PlayerList = ({position}) => {
               <h1 className="player-position">{player.position}</h1>
             </div>
             <h1 className="player-number">{player.number}</h1>
-            <img className="player-image" src={`https://localhost:7010${player.thumbnailUrl}`}></img>
+            <img className="player-image" src={getImageUrl(player.thumbnailUrl)}></img>
           </Link>
         ))}
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./tickets.css"
 import { useParams, useNavigate } from "react-router-dom";
 import StadiumMap from "../../components/StadiumMap/StadiumMap";
+import { getImageUrl } from "../../services/imageService";
 import api from "../../services/api";
 
 const Tickets = () => {
@@ -99,7 +100,7 @@ const Tickets = () => {
         <div className="game-header">
           <div className="teams">
             <div className="team">
-              <img src={`https://localhost:7010${game.homeTeamLogoUrl}`} alt={game.homeTeamName} />
+              <img src={getImageUrl(game.homeTeamLogoUrl)} alt={game.homeTeamName} />
               <span>{game.homeTeamName}</span>
             </div>
 
@@ -111,7 +112,7 @@ const Tickets = () => {
             </div>
 
             <div className="team">
-              <img src={`https://localhost:7010${game.awayTeamLogoUrl}`} alt={game.awayTeamName} />
+              <img src={getImageUrl(game.awayTeamLogoUrl)} alt={game.awayTeamName} />
               <span>{game.awayTeamName}</span>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom'
 import "./news.css"
 import api from "../../services/api"
 import RelatedContent from '../../components/RelatedContent/RelatedContent.jsx'
+import { getImageUrl } from "../../services/imageService";
 
 const News = () => {
   const {slug} = useParams();
@@ -49,7 +50,7 @@ const News = () => {
         <div id="onlyNews-image-wrapper">
         <img 
           className="onlyNews-image" 
-          src={`https://localhost:7010${news.thumbnailUrl}`}
+          src={getImageUrl(news.thumbnailUrl)}
         ></img>
         </div>
         <div id="onlyNews-title-wrapper">
