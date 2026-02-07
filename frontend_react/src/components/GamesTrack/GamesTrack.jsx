@@ -20,26 +20,44 @@ const GamesTrack = ({showOnlyActive = false}) => {
     useEffect(() => {
         const loadGames = async () => {
             try {
-            const res = await api.get("/games");
+            // const res = await api.get("/games");
 
-            const formatted = res.data.map(g => {
-                const iso = g.kickOffTime.includes("T")
-                    ? g.kickOffTime
-                    : g.kickOffTime.replace(" ", "T");
+            // const formatted = res.data.map(g => {
+            //     const iso = g.kickOffTime.includes("T")
+            //         ? g.kickOffTime
+            //         : g.kickOffTime.replace(" ", "T");
 
+            //     const date = new Date(iso);
+
+            //     const day = String(date.getDate()).padStart(2, "0");
+            //     const month = String(date.getMonth() + 1).padStart(2, "0");
+            //     const year = date.getFullYear();
+
+            //     const hour = String(date.getHours()).padStart(2, "0");
+            //     const minute = String(date.getMinutes()).padStart(2, "0");
+
+            //     return {
+            //         ...g,
+            //         kickOffDateFormatted: `${day}.${month}.${year}`, 
+            //         kickOffTimeFormatted: `${hour}:${minute}`       
+            //     };
+            // });
+            const dataArray = Array.isArray(res.data) ? res.data : (Array.isArray(res.data.games) ? res.data.games : []);
+            const formatted = dataArray.map(g => {
+                const iso = g.kickOffTime.includes("T") ? g.kickOffTime : g.kickOffTime.replace(" ", "T");
                 const date = new Date(iso);
 
-                const day = String(date.getDate()).padStart(2, "0");
-                const month = String(date.getMonth() + 1).padStart(2, "0");
+                const day = String(date.getDate()).padStart(2,"0");
+                const month = String(date.getMonth()+1).padStart(2,"0");
                 const year = date.getFullYear();
 
-                const hour = String(date.getHours()).padStart(2, "0");
-                const minute = String(date.getMinutes()).padStart(2, "0");
+                const hour = String(date.getHours()).padStart(2,"0");
+                const minute = String(date.getMinutes()).padStart(2,"0");
 
                 return {
                     ...g,
-                    kickOffDateFormatted: `${day}.${month}.${year}`, 
-                    kickOffTimeFormatted: `${hour}:${minute}`       
+                    kickOffDateFormatted: `${day}.${month}.${year}`,
+                    kickOffTimeFormatted: `${hour}:${minute}`
                 };
             });
             const now = new Date();
