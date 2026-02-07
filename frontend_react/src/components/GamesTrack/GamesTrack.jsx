@@ -20,7 +20,7 @@ const GamesTrack = ({showOnlyActive = false}) => {
     useEffect(() => {
         const loadGames = async () => {
             try {
-            // const res = await api.get("/games");
+            //const res = await api.get("/games");
 
             // const formatted = res.data.map(g => {
             //     const iso = g.kickOffTime.includes("T")
@@ -42,6 +42,7 @@ const GamesTrack = ({showOnlyActive = false}) => {
             //         kickOffTimeFormatted: `${hour}:${minute}`       
             //     };
             // });
+            const res = await api.get("/games");
             const dataArray = Array.isArray(res.data) ? res.data : (Array.isArray(res.data.games) ? res.data.games : []);
             const formatted = dataArray.map(g => {
                 const iso = g.kickOffTime.includes("T") ? g.kickOffTime : g.kickOffTime.replace(" ", "T");
