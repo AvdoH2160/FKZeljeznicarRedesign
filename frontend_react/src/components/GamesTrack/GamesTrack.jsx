@@ -43,9 +43,29 @@ const GamesTrack = ({showOnlyActive = false}) => {
             //     };
             // });
             const res = await api.get("/games");
-            const dataArray = Array.isArray(res.data) ? res.data : (Array.isArray(res.data.games) ? res.data.games : []);
+
+            let parsedData;
+            if (typeof res.data === "string") {
+                try {
+                    parsedData = JSON.parse(res.data);
+                } catch (err) {
+                    console.error("Ne mogu parsirati JSON:", res.data);
+                    parsedData = [];
+                }
+            } else {
+                parsedData = res.data;
+            }
+
+            const dataArray = Array.isArray(parsedData)
+                ? parsedData
+                : Array.isArray(parsedData.games)
+                    ? parsedData.games
+                    : [];
+
             const formatted = dataArray.map(g => {
-                const iso = g.kickOffTime.includes("T") ? g.kickOffTime : g.kickOffTime.replace(" ", "T");
+                const iso = g.kickOffTime?.includes("T")
+                    ? g.kickOffTime
+                    : g.kickOffTime?.replace(" ", "T") || "";
                 const date = new Date(iso);
 
                 const day = String(date.getDate()).padStart(2,"0");
@@ -61,6 +81,7 @@ const GamesTrack = ({showOnlyActive = false}) => {
                     kickOffTimeFormatted: `${hour}:${minute}`
                 };
             });
+
             const now = new Date();
             formatted.sort((a,b) => new Date(a.kickOffTime) - new Date(b.kickOffTime));
 
