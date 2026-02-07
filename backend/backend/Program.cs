@@ -36,10 +36,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.AllowAnyHeader()
+        policy.WithOrigins("FRONTEND_URL") 
+              .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials()
-              .WithOrigins(Environment.GetEnvironmentVariable("FRONTEND_URL"));
+              .AllowCredentials();
     });
 });
 
@@ -94,6 +94,8 @@ builder.Configuration.AddEnvironmentVariables();
 
 var app = builder.Build();
 
+app.UseCors("AllowFrontend");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -106,8 +108,6 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
-
-app.UseCors("AllowFrontend");
 
 app.UseStaticFiles();
 
