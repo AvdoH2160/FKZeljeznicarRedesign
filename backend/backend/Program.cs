@@ -38,6 +38,7 @@ builder.Services.AddCors(options =>
     {
         policy.AllowAnyHeader()
               .AllowAnyMethod()
+              .AllowCredentials()
               .WithOrigins(Environment.GetEnvironmentVariable("FRONTEND_URL"));
     });
 });
