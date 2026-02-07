@@ -30,10 +30,45 @@ const NewsList = () => {
       ? `${category.charAt(0).toUpperCase() + category.slice(1)} - FK Željezničar`
       : "Vijesti - FK Željezničar";
 
+    // const load = async () => {
+    //   try {
+    //     const res = await api.get(url);
+    //     const { items, totalPages } = res.data;
+
+    //     const formatted = items.map(g => {
+    //       const iso = g.publishedDate.includes("T")
+    //         ? g.publishedDate
+    //         : g.publishedDate.replace(" ", "T");
+    //       const date = new Date(iso);
+    //       const day = String(date.getDate()).padStart(2, "0");
+    //       const month = String(date.getMonth() + 1).padStart(2, "0");
+    //       const year = date.getFullYear();
+    //       const hour = String(date.getHours()).padStart(2, "0");
+    //       const minute = String(date.getMinutes()).padStart(2, "0");
+
+    //       return {
+    //         ...g,
+    //         formattedDate: `${day}.${month}.${year} ${hour}:${minute}`,
+    //       };
+    //     });
+
+    //     setTotalPages(totalPages);
+    //     setNews(formatted); 
+    //   } catch (err) {
+    //     console.error("Greška prilikom dohvatanja vijesti:", err);
+    //   }
+    // };
     const load = async () => {
       try {
-        const res = await api.get(url);
-        const { items, totalPages } = res.data; // <-- ovdje
+        const res = await api.get("/News/page", {
+          params: {
+            page,
+            pageSize: 12,
+            ...(category && { category }),
+          },
+        });
+
+        const { items, totalPages } = res.data;
 
         const formatted = items.map(g => {
           const iso = g.publishedDate.includes("T")
@@ -53,7 +88,7 @@ const NewsList = () => {
         });
 
         setTotalPages(totalPages);
-        setNews(formatted); // <-- ovo je tvoj state za prikaz vijesti
+        setNews(formatted);
       } catch (err) {
         console.error("Greška prilikom dohvatanja vijesti:", err);
       }
