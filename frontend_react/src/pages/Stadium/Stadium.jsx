@@ -31,14 +31,13 @@ const Stadium = () => {
       const video = videoRef.current;
       if (!video) return;
 
-      video.muted = false; 
       const playPromise = video.play();
 
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
-            setCanAutoplay(true); 
-            setMuted(video.muted);
+            setCanAutoplay(true);
+            setMuted(video.muted); 
           })
           .catch((error) => {
             console.log("iOS video play failed", error);
@@ -51,12 +50,12 @@ const Stadium = () => {
         <video
             ref={videoRef}
             src={"/assets/images/zeljo-stadion-video.mp4"}
+            poster='/assets/images/zeljo-stadion-poster.png'
             autoPlay
             muted
             loop
             playsInline
             preload='auto'
-            poster='/assets/images/zeljo-stadion-poster.png'
         />
         {!canAutoplay && (
           <div
