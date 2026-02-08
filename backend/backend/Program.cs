@@ -36,10 +36,16 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("FRONTEND_URL") 
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+        // policy.WithOrigins("FRONTEND_URL") 
+        //       .AllowAnyHeader()
+        //       .AllowAnyMethod()
+        //       .AllowCredentials();
+        policy.WithOrigins(
+            Environment.GetEnvironmentVariable("FRONTEND_URL")!
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials();
     });
 });
 
@@ -93,6 +99,13 @@ builder.Configuration.AddEnvironmentVariables();
 
 
 var app = builder.Build();
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = 
+        Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedFor |
+        Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedProto
+});
 
 app.UseCors("AllowFrontend");
 
