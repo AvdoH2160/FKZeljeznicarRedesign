@@ -92,9 +92,8 @@
   font-size: 22px;
   font-weight: bold;
   text-align: center;
-  cursor: pointer;
-  z-index: 10;
   transition: background 0.3s;
+  pointer-events: none;
 }
 
 .stadium-video-overlay-tap:hover {

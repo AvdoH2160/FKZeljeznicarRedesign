@@ -56,11 +56,11 @@ const Stadium = () => {
             loop
             playsInline
             preload='auto'
+            onClick={handleTapToPlay}
         />
         {!canAutoplay && (
           <div
             className="stadium-video-overlay-tap"
-            onClick={handleTapToPlay}
           >
             <h2>UPALI VIDEO</h2>
           </div>
