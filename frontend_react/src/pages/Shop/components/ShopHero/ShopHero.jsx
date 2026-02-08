@@ -8,8 +8,8 @@ import HeroImage2 from "/assets/images/shop-hero-image2.png"
 import "./shopHero.css"
 
 const ShopHero = () => {
-    const images = [HeroImage1, HeroImage2];
-        const [index, setIndex] = useState(0);
+    
+    const [index, setIndex] = useState(0);
     
     useEffect(() => {
         const interval = setInterval(() => {
@@ -18,6 +18,11 @@ const ShopHero = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+    const images = [
+        "/assets/images/shop-hero-image1.png",
+        "/assets/images/shop-hero-image2.png"
+    ];
   return (
     <div className='shop-page-hero'>
         <div className='shop-page-hero-categories'>

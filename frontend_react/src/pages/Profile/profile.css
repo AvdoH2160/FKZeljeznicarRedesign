@@ -7,7 +7,7 @@
 }
 
 .profile-information-wrapper {
-  background-image: url("../../assets/images/Vector.png");
+  background-image: url("/assets/images/Vector.png");
   background-size: cover;
   background-color: #080E1D;
   width: 100%; 
@@ -122,7 +122,7 @@
   height: 350px;
   width: 600px;
   border-radius: 30px;
-  background-image: url("../../assets/images/card_background.png");
+  background-image: url("/assets/images/card_background.png");
   background-size: cover;
   display: grid;
   grid-template-rows: 1.5fr 3fr 1fr;
@@ -246,7 +246,7 @@
 
 .membership-back {
   transform: rotateY(180deg);
-  background-image: url("../../assets/images/Vector.png");
+  background-image: url("/assets/images/Vector.png");
   background-color: #080E1D;
   color: white;
   display: flex;

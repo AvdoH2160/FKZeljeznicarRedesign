@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./memberShipCard.css"
 import Arrow from "../../assets/svg/arrow_right.svg"
-import MembershipCardImage from "../../assets/images/clanska_karta.png"
+// import MembershipCardImage from "../../assets/images/clanska_karta.png"
 
 const MembershipCard = () => {
   return (
     <div id="membershipCard-container">
         <div className='membershipCard-image-wrapper'>
-            <img className="membershipCard-image" src={MembershipCardImage}></img>
+            <img className="membershipCard-image" src={"/assets/images/clanska_karta.png"}></img>
         </div>
         <div id="membershipCardText-container">
             <p>
