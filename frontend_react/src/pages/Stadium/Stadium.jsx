@@ -30,8 +30,20 @@ const Stadium = () => {
     const handleTapToPlay = () => {
       const video = videoRef.current;
       if (!video) return;
-      video.play();
-      setCanAutoplay(true);
+
+      video.muted = false; 
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setCanAutoplay(true); 
+            setMuted(video.muted);
+          })
+          .catch((error) => {
+            console.log("iOS video play failed", error);
+          });
+      }
     };
   return (
     <div className="stadium-page">
@@ -44,6 +56,7 @@ const Stadium = () => {
             loop
             playsInline
             preload='auto'
+            poster='/assets/images/zeljo-stadion-poster.jpg'
         />
         {!canAutoplay && (
           <div
