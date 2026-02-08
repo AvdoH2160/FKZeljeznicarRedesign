@@ -25,6 +25,7 @@ services:
       MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
       FRONTEND_URL: ${FRONTEND_URL}
       ASPNETCORE_ENVIRONMENT: Production
+      UPLOADS_PATH: /var/www/fkz/uploads
     volumes:
       - ./backend/backend/wwwroot:/app/wwwroot
     depends_on:
