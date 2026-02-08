@@ -110,6 +110,36 @@ namespace backend.Services
             return (jwt, refresh);
         }
 
+        // private async Task<string> CreateToken(ApplicationUser user)
+        // {
+        //     var claims = new List<Claim>
+        //     {
+        //         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        //         new Claim(ClaimTypes.Name, user.UserName!)
+        //     };
+
+        //     var roles = await userManager.GetRolesAsync(user);
+        //     foreach (var role in roles)
+        //     {
+        //         claims.Add(new Claim(ClaimTypes.Role, role));
+        //     }
+
+        //     var key = new SymmetricSecurityKey(
+        //         Encoding.UTF8.GetBytes(configuration["AppSettings:Token"]!)
+        //         );
+
+        //     var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
+
+        //     var jwt = new JwtSecurityToken(
+        //         issuer: configuration["AppSettings:Issuer"],
+        //         audience: configuration["AppSettings:Audience"],
+        //         claims: claims,
+        //         expires: DateTime.UtcNow.AddMinutes(30),
+        //         signingCredentials: creds
+        //         );
+
+        //     return new JwtSecurityTokenHandler().WriteToken(jwt);
+        // }
         private async Task<string> CreateToken(ApplicationUser user)
         {
             var claims = new List<Claim>
@@ -120,23 +150,25 @@ namespace backend.Services
 
             var roles = await userManager.GetRolesAsync(user);
             foreach (var role in roles)
-            {
                 claims.Add(new Claim(ClaimTypes.Role, role));
-            }
 
-            var key = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(configuration["AppSettings:Token"]!)
-                );
+            var jwtToken = Environment.GetEnvironmentVariable("JWT_TOKEN") 
+                        ?? throw new Exception("JWT_TOKEN env var is missing");
+            var jwtIssuer = Environment.GetEnvironmentVariable("JWT_ISSUER") 
+                            ?? throw new Exception("JWT_ISSUER env var is missing");
+            var jwtAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE") 
+                            ?? throw new Exception("JWT_AUDIENCE env var is missing");
 
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtToken));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
 
             var jwt = new JwtSecurityToken(
-                issuer: configuration["AppSettings:Issuer"],
-                audience: configuration["AppSettings:Audience"],
+                issuer: jwtIssuer,
+                audience: jwtAudience,
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(30),
                 signingCredentials: creds
-                );
+            );
 
             return new JwtSecurityTokenHandler().WriteToken(jwt);
         }
