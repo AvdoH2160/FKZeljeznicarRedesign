@@ -30,7 +30,7 @@ services:
       JWT_ISSUER: ${JWT_ISSUER}
       JWT_AUDIENCE: ${JWT_AUDIENCE}
     volumes:
-      - ./backend/backend/wwwroot:/app/wwwroot
+      - /root/fkz/backend/backend/uploads:/var/www/fkz/uploads
     depends_on:
       - db
     command: >
