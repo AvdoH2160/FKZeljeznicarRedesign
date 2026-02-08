@@ -26,6 +26,9 @@ services:
       FRONTEND_URL: ${FRONTEND_URL}
       ASPNETCORE_ENVIRONMENT: Production
       UPLOADS_PATH: /var/www/fkz/uploads
+      JWT_TOKEN: ${JWT_TOKEN}
+      JWT_ISSUER: ${JWT_ISSUER}
+      JWT_AUDIENCE: ${JWT_AUDIENCE}
     volumes:
       - ./backend/backend/wwwroot:/app/wwwroot
     depends_on:
