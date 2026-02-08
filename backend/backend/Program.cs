@@ -103,6 +103,11 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
+if (!app.Environment.IsProduction())
+{
+    app.UseHttpsRedirection();
+}
+
 //app.UseHttpsRedirection();
 
 app.UseAuthentication();
