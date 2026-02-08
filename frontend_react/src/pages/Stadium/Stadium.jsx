@@ -56,7 +56,7 @@ const Stadium = () => {
             loop
             playsInline
             preload='auto'
-            poster='/assets/images/zeljo-stadion-poster.jpg'
+            poster='/assets/images/zeljo-stadion-poster.png'
         />
         {!canAutoplay && (
           <div
