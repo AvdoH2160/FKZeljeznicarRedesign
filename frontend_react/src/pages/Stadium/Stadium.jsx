@@ -1,5 +1,5 @@
 import React  from 'react'
-import {useRef, useState} from "react"
+import {useRef, useState, useEffect} from "react"
 import "./stadium.css"
 
 const Stadium = () => {
