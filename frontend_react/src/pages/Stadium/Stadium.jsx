@@ -3,11 +3,10 @@ import {useRef, useState, useEffect} from "react"
 import "./stadium.css"
 
 const Stadium = () => {
-    const videoRef = useRef<HTMLVideoElement | null>(null);
+    const videoRef = useRef(null);
     const [muted, setMuted] = useState(true);
     const [canAutoplay, setCanAutoplay] = useState(false);
     
-    document.title = "Stadion Grbavica - FK Željezničar";
 
     useEffect(() => {
       const video = videoRef.current;
@@ -19,6 +18,7 @@ const Stadium = () => {
           .then(() => setCanAutoplay(true))
           .catch(() => setCanAutoplay(false));
       }
+      document.title = "Stadion Grbavica - FK Željezničar";
     }, []);
 
     const toggleSound = () => {
