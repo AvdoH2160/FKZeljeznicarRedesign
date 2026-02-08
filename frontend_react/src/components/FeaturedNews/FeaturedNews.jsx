@@ -17,6 +17,7 @@ const FeaturedNews = () => {
         const res = await api.get("/News/featured");
         setNews(res.data);
         console.log(getImageUrl(news.thumbnailUrl));
+        console.log(res.data);
       }
       catch(err) {
         console.error("Greška prilikom dohvata istaknute novosti:", err);
