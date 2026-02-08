@@ -2,7 +2,7 @@ import React from 'react'
 import {useState, useRef, useEffect} from 'react'
 import {Link} from "react-router-dom"
 import "./stadiumSection.css"
-import Stadium from "../../assets/images/image18.png"
+// import Stadium from "../../assets/images/image18.png"
 import Arrow from "../../assets/svg/arrow_right.svg"
 
 const stadiumSection = () => {
@@ -10,7 +10,7 @@ const stadiumSection = () => {
     <div id="stadium-section-container">
         <div id="stadium-image-text-container">
             <div id="stadium-image-container">
-              <img id="stadium-image"src={Stadium}></img>
+              <img id="stadium-image"src={"/assets/images/image18.png"}></img>
             </div>
             <div id="stadium-text-container">
                 <h1>STADION GRBAVICA</h1><br/>

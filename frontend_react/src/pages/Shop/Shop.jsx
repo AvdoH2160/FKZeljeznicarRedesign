@@ -4,8 +4,8 @@ import "./shop.css"
 import ShopFeatured from "./components/ShopFeatured/ShopFeatured"
 import ShopHero from "./components/ShopHero/ShopHero"
 import ShopImage from "../../assets/svg/fkz_shop.svg"
-import ShopCategoryImage1 from "../../assets/images/shop-category1.png"
-import ShopCategoryImage2 from "../../assets/images/shop-category2.png"
+// import ShopCategoryImage1 from "../../assets/images/shop-category1.png"
+// import ShopCategoryImage2 from "../../assets/images/shop-category2.png"
 import Arrow from "../../assets/svg/arrow_right.svg"
 
 const Shop = () => {
@@ -29,14 +29,14 @@ const Shop = () => {
         <div className='shop-page-categories-section'>
             <div className='shop-page-categories-container'>
                 <div className='shop-page-categories-image-wrapper'>
-                    <img src={ShopCategoryImage1}></img>
+                    <img src={"/assets/images/shop-category1.png"}></img>
                     <div className='shop-page-categories-overlay'>
                         <p>TRENING KOLEKCIJA</p>
                         <Link to="proizvodi?category=Trening"><div className='shop-button'>SHOP</div></Link>
                     </div>
                 </div>
                 <div className='shop-page-categories-image-wrapper'>
-                    <img src={ShopCategoryImage2}></img>
+                    <img src={"/assets/images/shop-category2.png"}></img>
                     <div className='shop-page-categories-overlay'>
                         <p>LIFESTYLE KOLEKCIJA</p>
                         <Link to="proizvodi?category=Odjeća"><div className='shop-button'>SHOP</div></Link>

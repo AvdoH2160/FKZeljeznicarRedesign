@@ -1,7 +1,6 @@
 import React  from 'react'
 import {useRef, useState} from "react"
 import "./stadium.css"
-import StadiumVideo from "../../assets/images/zeljo-stadion-video.mp4"
 
 const Stadium = () => {
     const videoRef = useRef(null);
@@ -18,7 +17,7 @@ const Stadium = () => {
       <div className="stadium-video">
         <video
             ref={videoRef}
-            src={StadiumVideo}
+            src={"/assets/images/zeljo-stadion-video.mp4"}
             autoPlay
             muted
             loop

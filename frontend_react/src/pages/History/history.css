@@ -11,7 +11,7 @@
       rgba(0, 44, 109, 0.75),
       rgba(0, 44, 109, 0.75)
     ),
-    url("../../assets/images/grbavica-history.jpg");
+    url("/assets/images/grbavica-history.jpg");
   background-size: cover;
   background-position: center;
   color: white;

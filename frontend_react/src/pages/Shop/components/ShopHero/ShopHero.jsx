@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import {Link} from "react-router-dom"
 import Arrow from "../../../../assets/svg/arrow_right.svg"
-import HeroImage1 from "../../../../assets/images/shop-hero-image1.png"
-import HeroImage2 from "../../../../assets/images/shop-hero-image2.png"
+// import HeroImage1 from "../../../../assets/images/shop-hero-image1.png"
+// import HeroImage2 from "../../../../assets/images/shop-hero-image2.png"
+import HeroImage1 from "/assets/images/shop-hero-image1.png"
+import HeroImage2 from "/assets/images/shop-hero-image2.png"
 import "./shopHero.css"
 
 const ShopHero = () => {

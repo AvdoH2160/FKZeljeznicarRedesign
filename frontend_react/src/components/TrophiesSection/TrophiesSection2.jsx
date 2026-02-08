@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import './trophiesSection2.css'
-import TrophyImage1 from "../../assets/images/image14.png"
-import TrophyImage2 from "../../assets/images/zajko-zeba-vedran-kojsevski-fk-zeljeznicar.jpg"
-import TrophyImage3 from "../../assets/images/2002-05-11-Titula-Fedja-Krvavac.jpg"
-import TrophyImage4 from "../../assets/images/image17.png"
+// import TrophyImage1 from "../../assets/images/image14.png"
+// import TrophyImage2 from "../../assets/images/zajko-zeba-vedran-kojsevski-fk-zeljeznicar.jpg"
+// import TrophyImage3 from "../../assets/images/2002-05-11-Titula-Fedja-Krvavac.jpg"
+// import TrophyImage4 from "../../assets/images/image17.png"
 import Trophy1 from "../../assets/svg/prvaci_jugoslavije_trofej.svg"
 import Trophy2 from "../../assets/svg/premijer_liga_trofej.svg"
 import Trophy3 from "../../assets/svg/kup_bih_trofej.svg"
@@ -61,7 +61,12 @@ const TrophiesSection2 = () => {
     //     xPercent += 0.05 * direction;
     //     requestAnimationFrame(animation);
     // };
-
+    const TrophyImages = [
+        "/assets/images/image14.png",
+        "/assets/images/zajko-zeba-vedran-kojsevski-fk-zeljeznicar.jpg",
+        "/assets/images/2002-05-11-Titula-Fedja-Krvavac.jpg",
+        "/assets/images/image17.png"
+    ];
     
   return (
     <div id="trophies-section-container">
@@ -98,7 +103,7 @@ const TrophiesSection2 = () => {
                 </h1>
             </div>
             <div id="trophies-image-container">
-                <img id="trophies-image" src={TrophyImage1}></img>
+                <img id="trophies-image" src={TrophyImages[0]}></img>
             </div>
         </div>
         <div id="trophies-article-container">
@@ -110,13 +115,13 @@ const TrophiesSection2 = () => {
                 </div>
             </Link>
             <div className="article-image-container">
-                <img className="article-image"src={TrophyImage2}></img>
+                <img className="article-image"src={TrophyImages[1]}></img>
             </div>
             <div className="article-image-container">
-                <img className="article-image" src={TrophyImage3}></img>
+                <img className="article-image" src={TrophyImages[2]}></img>
             </div>
             <div className="article-image-container">
-                <img className="article-image" src={TrophyImage4}></img>
+                <img className="article-image" src={TrophyImages[3]}></img>
             </div>
         </div>
 
