@@ -3,14 +3,35 @@ import {useRef, useState} from "react"
 import "./stadium.css"
 
 const Stadium = () => {
-    const videoRef = useRef(null);
+    const videoRef = useRef<HTMLVideoElement | null>(null);
     const [muted, setMuted] = useState(true);
-    document.title = "Stadion Grbavica - FK Željezničar"
+    const [canAutoplay, setCanAutoplay] = useState(false);
+    
+    document.title = "Stadion Grbavica - FK Željezničar";
+
+    useEffect(() => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => setCanAutoplay(true))
+          .catch(() => setCanAutoplay(false));
+      }
+    }, []);
 
     const toggleSound = () => {
         const video = videoRef.current;
         video.muted = !video.muted;
         setMuted(video.muted);
+    };
+
+    const handleTapToPlay = () => {
+      const video = videoRef.current;
+      if (!video) return;
+      video.play();
+      setCanAutoplay(true);
     };
   return (
     <div className="stadium-page">
@@ -22,7 +43,16 @@ const Stadium = () => {
             muted
             loop
             playsInline
+            preload='auto'
         />
+        {!canAutoplay && (
+          <div
+            className="stadium-video-overlay-tap"
+            onClick={handleTapToPlay}
+          >
+            <h2>UPALI VIDEO</h2>
+          </div>
+        )}
         <div className="stadium-video-overlay">
           <h1>STADION GRBAVICA</h1>
           <p>Dolina Ćupova</p>
