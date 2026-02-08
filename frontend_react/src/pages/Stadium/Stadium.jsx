@@ -58,13 +58,13 @@ const Stadium = () => {
             preload='auto'
             onClick={handleTapToPlay}
         />
-        {!canAutoplay && (
+        {/* {!canAutoplay && (
           <div
             className="stadium-video-overlay-tap"
           >
             <h2>UPALI VIDEO</h2>
           </div>
-        )}
+        )} */}
         <div className="stadium-video-overlay">
           <h1>STADION GRBAVICA</h1>
           <p>Dolina Ćupova</p>
