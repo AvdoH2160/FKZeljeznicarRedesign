@@ -84,13 +84,17 @@ Ovaj projekat je isključivo prikaz mojih vještina i redizajn, prava na sadrža
 
 ## 🔋 Features / Funkcionalnosti
 
-- Responsive Home Page / Responzivna početna stranica  
+- Responsive Web Page / Responzivna web stranica  
 - News & Articles Section / Sekcija vijesti i članaka  
 - Matches & League Table / Utakmice i liga tabela  
 - Shop / Online trgovina FKŽ merchandise-a  
 - Stadium Map / Interaktivna mapa stadiona  
+- Ticket Sales / Prodaja karata  
+- Players List / Lista igrača FK Željezničara  
+- Membership / Mogućnost učlanjivanja u klub  
+- About Club / Sekcije o klubu, historiji kluba i stadionu  
 - Admin Panel / Panel za upravljanje sadržajem  
-- Mobile & Desktop Friendly / Prilagođeno mobilnim uređajima i desktopu  
+- Mobile & Desktop Friendly / Prilagođeno mobilnim uređajima i desktopu
 
 ---
 
