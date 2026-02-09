@@ -109,7 +109,7 @@ Klikni na thumbnail da pogledaš video walkthrough za mobile verziju:<br/>
 
 ## 👨‍💻 Authors / Autori
 
-Avdo Hrnjić – Full Stack Developer, Hosting & Backend
+<a href="https://www.linkedin.com/in/avdo-hrnji%C4%87-20102a3b0/">Avdo Hrnjić</a> – Full Stack Developer and Hosting 
 
-[UI/UX <a href="https://ba.linkedin.com/in/alen-sadikovic-461283290">Alen Sadiković</a>, Avdo Hrnjić] – Design & User Interface
+[UI/UX <a href="https://ba.linkedin.com/in/alen-sadikovic-461283290">Alen Sadiković</a>, <a href="https://www.linkedin.com/in/avdo-hrnji%C4%87-20102a3b0/">Avdo Hrnjić</a>] – Design & User Interface
 
