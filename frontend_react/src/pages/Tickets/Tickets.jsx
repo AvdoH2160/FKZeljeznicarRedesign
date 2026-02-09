@@ -88,6 +88,7 @@ const Tickets = () => {
       });
 
       addToast("Karta uspješno kupljena", "success");
+      alert("Karta uspješno kupljena");
       setSelectedSector(null);
     } catch (err) {
       addToast("Greška prilikom kupovine karte", "error");
