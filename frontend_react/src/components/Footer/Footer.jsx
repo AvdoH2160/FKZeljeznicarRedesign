@@ -39,7 +39,7 @@ const Footer = () => {
               <div className="options">
                 <p className='main'>USLUGE</p>
                 <Link to="/profil" className='option'>PROFIL</Link>
-                <Link to="/ulaznice" className='option'>ULAZNICE</Link>
+                <Link to="/utakmice" className='option'>ULAZNICE</Link>
                 <Link to="/shop" className='option'>SHOP</Link>
               </div>
               <div className="options">
@@ -51,7 +51,7 @@ const Footer = () => {
                 <Link to="/novosti/galerija" className='option'>GALERIJA</Link>
               </div>
               <div className="options">
-                <p className='main'>POMOČ</p>
+                <p className='main'>POMOĆ</p>
                 <Link to="/clanstvo" className='option'>ČLANSTVO</Link>
               </div>
             </div>
