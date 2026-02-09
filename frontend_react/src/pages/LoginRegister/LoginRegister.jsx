@@ -61,7 +61,7 @@ const LoginRegister = () => {
             });
             addToast("Uspješna registracija", "success");
             setTimeout(() => {
-              navigate("/prijava");
+              setMode("login");
             }, 1000);
           } catch(err) {
             addToast("Registracija nije uspješna", "error");
