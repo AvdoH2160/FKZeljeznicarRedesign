@@ -94,12 +94,12 @@ Pogledajte aktivnu verziju stranice ovdje: https://avdoh2160.com
 
 ## 🖼️ Preview / Video walkthrough
 ### Desktop View / Desktop prikaz
-Klikni na thumbnail da pogledaš video walkthrough za desktop verziju:
-[![Desktop Preview](https://img.youtube.com/vi/R0Jfh29TKuk/0.jpg)](https://www.youtube.com/watch?v=R0Jfh29TKuk)
+Klikni na thumbnail da pogledaš video walkthrough za desktop verziju:<br/>
+[![Desktop Preview](https://img.youtube.com/vi/R0Jfh29TKuk/0.jpg)](https://www.youtube.com/watch?v=R0Jfh29TKuk)<br/>
 
 ### Mobile View / Mobilni prikaz
-Klikni na thumbnail da pogledaš video walkthrough za mobile verziju:
-[![Mobile Preview](https://img.youtube.com/vi/JJ2F5N40A4E/0.jpg)](https://www.youtube.com/watch?v=JJ2F5N40A4E)
+Klikni na thumbnail da pogledaš video walkthrough za mobile verziju:<br/>
+[![Mobile Preview](https://img.youtube.com/vi/JJ2F5N40A4E/0.jpg)](https://www.youtube.com/watch?v=JJ2F5N40A4E)<br/>
 
 ## 👨‍💻 Authors / Autori
 
