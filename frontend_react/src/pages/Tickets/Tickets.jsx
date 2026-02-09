@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./tickets.css"
 import { useParams, useNavigate } from "react-router-dom";
 import StadiumMap from "../../components/StadiumMap/StadiumMap";
+import { useToast } from "../../context/ToastContext";
 import { getImageUrl } from "../../services/imageService";
 import api from "../../services/api";
 
@@ -86,11 +87,10 @@ const Tickets = () => {
         quantity: quantity               
       });
 
-      alert("Karta kupljena 🎟️");
+      addToast("Karta uspješno kupljena", "success");
       setSelectedSector(null);
     } catch (err) {
-      console.error(err);
-      alert("Greška prilikom kupovine karte!");
+      addToast("Greška prilikom kupovine karte", "error");
     }
   };
 
