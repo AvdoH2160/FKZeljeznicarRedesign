@@ -76,7 +76,10 @@ Pogledajte aktivnu verziju stranice ovdje: https://avdoh2160.com
 
 **Infrastructure / Infrastruktura:**
 - Docker + Nginx  
-- Hetzner Cloud hosting  
+- Hetzner Cloud hosting
+
+**Design / Dizajn:**
+- Figma
 
 ---
 
