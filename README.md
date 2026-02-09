@@ -17,6 +17,14 @@
 </div>
 <br />
 
+## 🔗 Live Website / Aktivna stranica
+
+Check out the live website here: https://avdoh2160.com
+
+Pogledajte aktivnu verziju stranice ovdje: https://avdoh2160.com
+
+---
+
 # FK Željezničar – Website Redesign / Redizajn web stranice
 
 **Modern redesign of the official FK Željezničar website**, showcasing desktop and mobile UI/UX improvements and full-stack capabilities.  
@@ -24,10 +32,9 @@
 
 ---
 
-## 📋 Table of Contents / Sadržaj
+## 📋 Table of Contents / Sadržaj 
 - 🤖 Introduction / Uvod
-- ⚠️ Disclaimer / Odricanje odgovornosti 
-- 🔗 Live Website / Aktivna stranica   
+- ⚠️ Disclaimer / Odricanje odgovornosti  
 - ⚙️ Tech Stack / Tehnologije  
 - 🔋 Features / Funkcionalnosti  
 - 🖼️ Preview / Video walkthrough    
@@ -49,14 +56,6 @@ Glavni cilj je prikazati **frontend i backend vještine** u realnom okruženju, 
 
 All content, logos, and trademarks belong to FK Željezničar.
 Ovaj projekat je isključivo prikaz mojih vještina i redizajn, prava na sadržaj zadržava FK Željezničar.
-
----
-
-## 🔗 Live Website / Aktivna stranica
-
-Check out the live website here: https://avdoh2160.com
-
-Pogledajte aktivnu verziju stranice ovdje: https://avdoh2160.com
 
 ---
 
