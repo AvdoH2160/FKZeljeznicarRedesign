@@ -36,7 +36,8 @@ Pogledajte aktivnu verziju stranice <a href="https://avdoh2160.com">ovdje</a>
 - 🤖 Introduction / Uvod
 - ⚠️ Disclaimer / Odricanje odgovornosti  
 - ⚙️ Tech Stack / Tehnologije  
-- 🔋 Features / Funkcionalnosti  
+- 🔋 Features / Funkcionalnosti
+- 🚀 Deployment & DevOps / Implementacija i DevOps
 - 🖼️ Preview / Video walkthrough    
 - 👨‍💻 Authors / Autori  
 
@@ -50,11 +51,14 @@ Ovaj projekat predstavlja **potpun redizajn web stranice FK Željezničar**, sa 
 The main goal is to showcase **frontend and backend skills** in a real-world scenario, while the original rights belong to FK Željezničar.  
 Glavni cilj je prikazati **frontend i backend vještine** u realnom okruženju, uz napomenu da prava na sadržaj zadržava FK Željezničar.
 
+The project uses a dedicated **deployment branch** containing production-ready configuration, with fully dockerized frontend, backend, and database services deployed via Nginx and secured using HTTPS and JWT-based authentication.<br/>
+Projekat koristi poseban **deployment branch** koji sadrži konfiguraciju spremnu za produkcijsko okruženje, sa potpuno dockerizovanim frontendom, backendom i bazom podataka, deployanim putem Nginx-a te osiguranim HTTPS protokolom i JWT-baziranom autentifikacijom.
+
 ---
 
 ## ⚠️ Disclaimer / Odricanje odgovornosti
 
-All content, logos, and trademarks belong to FK Željezničar.
+All content, logos, and trademarks belong to FK Željezničar.<br/>
 Ovaj projekat je isključivo prikaz mojih vještina i redizajn, prava na sadržaj zadržava FK Željezničar.
 
 ---
@@ -68,13 +72,17 @@ Ovaj projekat je isključivo prikaz mojih vještina i redizajn, prava na sadrža
 
 **Backend / Backend:**
 - ASP.NET Core (.NET 10)  
-- REST API  
+- REST API
+- Microsoft Identity
+- JWT Authentication (Access & Refresh Tokens)
 
 **Database / Baza podataka:**
 - Microsoft SQL Server  
 
 **Infrastructure / Infrastruktura:**
-- Docker + Nginx  
+- Docker (containerized frontend, backend, and database)
+- Nginx (reverse proxy & HTTPS termination)
+- HTTPS (SSL/TLS via Let’s Encrypt)
 - Hetzner Cloud hosting
 
 **Design / Dizajn:**
@@ -93,8 +101,19 @@ Ovaj projekat je isključivo prikaz mojih vještina i redizajn, prava na sadrža
 - Players List / Lista igrača FK Željezničara  
 - Membership / Mogućnost učlanjivanja u klub  
 - About Club / Sekcije o klubu, historiji kluba i stadionu  
-- Admin Panel / Panel za upravljanje sadržajem  
+- Admin Panel / Panel za upravljanje sadržajem
+- Role-based authentication & authorization (Admin/User) / Autentifikacija i autorizacija zasnovana na ulogama (Admin/Korisnik)
+- Secure API access using JWT and refresh tokens / Siguran pristup API-ju korištenjem JWT i osvježavajućih tokena
 - Mobile & Desktop Friendly / Prilagođeno mobilnim uređajima i desktopu
+
+---
+
+## 🚀 Deployment & DevOps
+
+ - Separate **deployment branch** used for production deployment / Poseban **deployment branch** za produkcijsko okruženje
+ - Dockerized frontend, backend, and database / Dockerizovan frontend, backend i baza podataka
+ - Nginx reverse proxy with HTTPS (SSL/TLS) / Nginx kao reverse proxy sa HTTPS (SSL/TLS)
+ - Deployed on Hetzner Cloud / Implementacija na Hetzner Cloud
 
 ---
 
