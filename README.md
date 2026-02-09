@@ -19,9 +19,9 @@
 
 ## 🔗 Live Website / Aktivna stranica
 
-Check out the live website here: https://avdoh2160.com
+Check out the live website <a href="https://avdoh2160.com">here</a>
 
-Pogledajte aktivnu verziju stranice ovdje: https://avdoh2160.com
+Pogledajte aktivnu verziju stranice <a href="https://avdoh2160.com">ovdje</a>
 
 ---
 
