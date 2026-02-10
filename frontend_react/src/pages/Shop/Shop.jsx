@@ -12,6 +12,7 @@ const Shop = () => {
     useEffect(() => {
         document.title = "Shop - FK Željezničar";
     }, []);
+    
   return (
     <div className='shop-page-container'>
         <ShopHero></ShopHero>

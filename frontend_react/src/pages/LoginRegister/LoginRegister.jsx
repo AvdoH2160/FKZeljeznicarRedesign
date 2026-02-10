@@ -7,7 +7,7 @@ import "./loginRegister.css";
 
 const LoginRegister = () => {
     const { addToast } = useToast();
-    const [mode, setMode] = useState('login'); // 'login' or 'register'
+    const [mode, setMode] = useState('login'); 
 
     const { login, register, isAuthenticated } = useContext(AuthContext);
 
@@ -19,7 +19,7 @@ const LoginRegister = () => {
       password: "",
       firstname: "",
       lastname: "",
-      birthdate: "",   // YYYY-MM-DD
+      birthdate: "",   
       city: ""
     });
 
@@ -54,10 +54,10 @@ const LoginRegister = () => {
               email: form.email,
               userName: form.username,
               password: form.password,
-              firstName: form.firstname,  // mora postojati u form state
+              firstName: form.firstname,  
               lastName: form.lastname,
-              dateOfBirth: form.birthdate, // npr. "2000-01-01"
-              city: form.city || ""         // optional, ali mora postojati
+              dateOfBirth: form.birthdate, 
+              city: form.city || ""         
             });
             addToast("Uspješna registracija", "success");
             setTimeout(() => {

@@ -6,7 +6,6 @@ const History = () => {
   return (
     <div className="history-page">
 
-      {/* HERO */}
       <section className="history-hero">
         <h1>Historija FK Željezničar</h1>
         <p>
@@ -15,7 +14,6 @@ const History = () => {
         </p>
       </section>
 
-      {/* OSNIVANJE */}
       <section className="history-section">
         <h2>Osnivanje i prvi koraci (1921–1945)</h2>
         <p>
@@ -31,7 +29,6 @@ const History = () => {
         </p>
       </section>
 
-      {/* ZLATNE GODINE */}
       <section className="history-section alt">
         <h2>Zlatne godine i evropski uspjesi (1960–1985)</h2>
         <p>
@@ -46,7 +43,6 @@ const History = () => {
         </p>
       </section>
 
-      {/* RAT I OBNOVA */}
       <section className="history-section">
         <h2>Rat, razaranje i povratak (1992–2000)</h2>
         <p>
@@ -60,7 +56,6 @@ const History = () => {
         </p>
       </section>
 
-      {/* MODERNA ERA */}
       <section className="history-section alt">
         <h2>Moderna era (2000 – danas)</h2>
         <p>
@@ -74,7 +69,6 @@ const History = () => {
         </p>
       </section>
 
-      {/* CITAT */}
       <section className="history-quote">
         <p>
           “Željezničar nije klub koji se voli –  

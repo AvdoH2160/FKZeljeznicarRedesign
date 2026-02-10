@@ -26,9 +26,14 @@
         // }
         public async Task<string> SaveFileAsync(IFormFile file, string path)
         {
-            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", path);
+            var uploadsRoot = Environment.GetEnvironmentVariable("UPLOADS_PATH") ?? 
+                            Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+
+            var uploadsFolder = Path.Combine(uploadsRoot, path);
+
             if (!Directory.Exists(uploadsFolder))
                 Directory.CreateDirectory(uploadsFolder);
+
             var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
             var filePath = Path.Combine(uploadsFolder, fileName);
 
@@ -42,8 +47,12 @@
 
         public void DeleteFile(string fileName)
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", fileName.TrimStart('/'));
-            if (File.Exists(filePath) && filePath.StartsWith(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")))
+            var uploadsRoot = Environment.GetEnvironmentVariable("UPLOADS_PATH") ?? 
+                            Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+
+            var filePath = Path.Combine(uploadsRoot, fileName.TrimStart('/'));
+
+            if (File.Exists(filePath) && filePath.StartsWith(uploadsRoot))
                 File.Delete(filePath);
         }
     }
