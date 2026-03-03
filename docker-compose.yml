@@ -8,8 +8,9 @@ services:
       ACCEPT_EULA: "Y"
       MSSQL_PID: "Express"
       SA_PASSWORD: ${MSSQL_SA_PASSWORD}
-    ports:
-      - "1433:1433"
+    # ports:
+    #   - "1433:1433"
+    #
     volumes:
       - sql_data:/var/opt/mssql
 
@@ -41,8 +42,8 @@ services:
       done
       && dotnet backend.dll
       "
-    ports:
-      - "8080:8080"
+    # ports:
+    #   - "8080:8080"
 
   # frontend:
   #   build: ./frontend_react
