@@ -64,6 +64,8 @@ services:
       - /var/www/fkz/dist:/usr/share/nginx/html
     depends_on:
       - backend
+    networks:
+      - fkznet
     ports:
       - "80:80"
       - "443:443"
