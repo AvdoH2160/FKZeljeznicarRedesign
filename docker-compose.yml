@@ -13,6 +13,8 @@ services:
     #
     volumes:
       - sql_data:/var/opt/mssql
+    networks:
+      - fkznet
 
   backend:
     build: ./backend
@@ -34,6 +36,8 @@ services:
       - /root/fkz/backend/backend/uploads:/var/www/fkz/uploads
     depends_on:
       - db
+    networks:
+      - fkznet
     command: >
       sh -c "
       until /opt/mssql-tools/bin/sqlcmd -S db -U sa -P ${MSSQL_SA_PASSWORD} -Q 'SELECT 1' > /dev/null 2>&1; do
@@ -52,6 +56,19 @@ services:
   #     - backend
   #   ports:
   #     - "3000:80"
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - /var/www/fkz/dist:/usr/share/nginx/html
+    depends_on:
+      - backend
+    networks:
+      - fkznet
+    ports:
+      - "80:80"
+      - "443:443"
 
 volumes:
   sql_data:
