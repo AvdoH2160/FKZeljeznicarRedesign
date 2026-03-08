@@ -33,7 +33,7 @@ services:
       JWT_ISSUER: ${JWT_ISSUER}
       JWT_AUDIENCE: ${JWT_AUDIENCE}
     volumes:
-      - /root/fkz/backend/backend/uploads:/var/www/fkz/uploads
+      - /root/fkz/backend/backend/wwwroot/uploads:/var/www/fkz/uploads
     depends_on:
       - db
     networks:
